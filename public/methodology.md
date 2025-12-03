@@ -1,9 +1,5 @@
 # Smart Growth Value Index
 
-## Methodology Documentation
-
----
-
 ## Overview
 
 The Smart Growth Value Index is a composite measure that evaluates every parcel within the City of Chico according to principles of fiscally sustainable, infrastructure-efficient development. The index assigns each parcel a score from 0 to 100, where higher scores indicate stronger alignment with smart growth principles.
@@ -22,7 +18,6 @@ Smart growth is a planning philosophy that prioritizes development patterns whic
 
 The Smart Growth Value Index quantifies these principles using measurable data for every parcel in the city.
 
----
 
 ## Index Components
 
@@ -35,8 +30,6 @@ The index combines five components, each measuring a distinct aspect of smart gr
 | Infrastructure Accessibility | 20% | Access to public facilities |
 | Zoning Capacity Headroom | 15% | Potential for infill development |
 | Location Efficiency | 10% | Strategic positioning |
-
----
 
 ### Component 1: Fiscal Productivity (30%)
 
@@ -63,8 +56,6 @@ A parcel scoring 75 on this component generates more tax revenue per acre than 7
 
 **Data Source**: Butte County Assessor Parcel Data (Tax_Amnt, Lt_Acre fields)
 
----
-
 ### Component 2: Land Utilization (25%)
 
 **What It Measures**
@@ -88,8 +79,6 @@ A single-family home on a quarter-acre lot uses land less efficiently than a dup
 4. Average the two percentile ranks
 
 **Data Sources**: Butte County Assessor Parcel Data, Building Footprints GIS layer
-
----
 
 ### Component 3: Infrastructure Accessibility (20%)
 
@@ -120,8 +109,6 @@ The curb and gutter component is binary: parcels with complete street infrastruc
 The final infrastructure score is the weighted average of all three sub-metrics.
 
 **Data Sources**: City of Chico Parks and Recreation GIS layer, Bike Facilities GIS layer, Lack of Curb/Gutter GIS layer
-
----
 
 ### Component 4: Zoning Capacity Headroom (15%)
 
@@ -160,8 +147,6 @@ A single-family home (intensity 2) on R3-zoned land (intensity 5) would have hea
 
 **Data Sources**: City of Chico Assessor Parcel Data (Use_Code field), Zoning and General Plan GIS layer
 
----
-
 ### Component 5: Location Efficiency (10%)
 
 **What It Measures**
@@ -185,8 +170,6 @@ Both sub-metrics use distance-based scoring:
 Scores decrease linearly with distance, with parcels at or beyond the benchmark distance receiving the minimum score.
 
 **Data Sources**: City of Chico Opportunity Sites GIS layer, City Boundaries GIS layer
-
----
 
 ## Composite Score Calculation
 
@@ -218,8 +201,6 @@ Parcels meeting both of the following criteria are flagged as redevelopment oppo
 
 These parcels combine significant development capacity under existing zoning with favorable strategic locations, making them prime candidates for infill development.
 
----
-
 ## Data Sources
 
 This analysis uses official City of Chico geographic information system (GIS) data:
@@ -235,8 +216,6 @@ This analysis uses official City of Chico geographic information system (GIS) da
 | LackofCurbGutter | Streets lacking complete infrastructure | 914 |
 
 All geographic data uses the California State Plane Zone 2 coordinate system (EPSG:2226).
-
----
 
 ## Methodological Notes
 
@@ -292,8 +271,6 @@ Users should be aware of the following limitations:
 
 5. **Data Completeness**: Approximately 53% of parcels successfully matched to zoning data. Parcels without zoning matches use default intensity assumptions.
 
----
-
 ## Interpreting the Map
 
 ### High-Scoring Areas
@@ -322,14 +299,10 @@ The index is most useful for identifying patterns across the city rather than ev
 
 Residents viewing their own property's score should consider which components contribute most to their rating. A low score on fiscal productivity may simply reflect that the property is residential rather than commercial; a low infrastructure score may reflect distance from amenities rather than any deficiency of the property itself.
 
----
-
 ## About This Analysis
 
 This analysis was prepared by Smart Growth Advocates of Chico using Python geospatial analysis tools (GeoPandas, Shapely) applied to official City of Chico and Butte County GIS data. The methodology is designed to be transparent, reproducible, and grounded in established smart growth planning principles.
 
 For questions about the methodology or to request the underlying data and code, contact Smart Growth Advocates of Chico.
-
----
 
 *Analysis Date: December 2025*
