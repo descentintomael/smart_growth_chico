@@ -1,0 +1,81 @@
+{
+  "generated": "2025-12-03T09:32:40.158580",
+  "description": "Upzoning scenario projections for Chico parcels",
+  "total_eligible_parcels": 11255,
+  "total_eligible_acres": 3398.7,
+  "current_totals": {
+    "r1_parcels": 9770,
+    "r2_parcels": 1485,
+    "total_current_units": 68105,
+    "total_current_tax": 150938451.0
+  },
+  "tier_summary": {
+    "1_priority": {
+      "description": "R1 parcels within 1/4 mile of opportunity sites \u2192 R3",
+      "parcels": 6115,
+      "acres": 1343.4
+    },
+    "2_transit": {
+      "description": "R1 parcels within 1/4 mile of bike facilities \u2192 R2",
+      "parcels": 3490,
+      "acres": 1370.6
+    },
+    "3_all_r1": {
+      "description": "All other R1 parcels \u2192 R2",
+      "parcels": 165,
+      "acres": 274.8
+    },
+    "4_r2_to_r3": {
+      "description": "R2 parcels \u2192 R3",
+      "parcels": 1485,
+      "acres": 410.0
+    }
+  },
+  "tax_medians_per_acre": {
+    "R1": 19025.0,
+    "R2": 28362.0,
+    "R3": 28118.0
+  },
+  "adoption_scenarios": {
+    "10": {
+      "parcels": 1125,
+      "acres": 208.7,
+      "tax_increase_annual": 2599209.0,
+      "new_units": 3074,
+      "avg_sg_change": 8.4
+    },
+    "25": {
+      "parcels": 2813,
+      "acres": 564.1,
+      "tax_increase_annual": 6650752.0,
+      "new_units": 8349,
+      "avg_sg_change": 8.0
+    },
+    "50": {
+      "parcels": 5627,
+      "acres": 1232.0,
+      "tax_increase_annual": 14581471.0,
+      "new_units": 18222,
+      "avg_sg_change": 7.8
+    },
+    "75": {
+      "parcels": 8441,
+      "acres": 1967.0,
+      "tax_increase_annual": 23488146.0,
+      "new_units": 23001,
+      "avg_sg_change": 7.6
+    },
+    "100": {
+      "parcels": 11255,
+      "acres": 3398.8,
+      "tax_increase_annual": 51485167.0,
+      "new_units": 32241,
+      "avg_sg_change": 5.8
+    }
+  },
+  "max_potential": {
+    "tax_increase_annual": 51485167.0,
+    "new_units": 32241,
+    "avg_sg_index_change": 5.8
+  }
+}

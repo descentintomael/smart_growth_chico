@@ -88,3 +88,69 @@ export interface DistrictProperties {
 
 export type DistrictFeature = Feature<Geometry, DistrictProperties>
 export type DistrictCollection = FeatureCollection<Geometry, DistrictProperties>
+
+// Upzone scenario types
+export interface UpzoneParcelProperties {
+  APN: string
+  cur_zone: string
+  upzone_to: string
+  cur_tax_acre: number
+  proj_tax_acre: number
+  delta_tax_acre: number
+  delta_tax_total: number
+  cur_sg_index: number
+  proj_sg_index: number
+  delta_sg_index: number
+  cur_units: number
+  proj_units: number
+  delta_units: number
+  upzone_elig: 0 | 1
+  upzone_tier: 0 | 1 | 2 | 3 | 4
+  sc_fiscal: number
+  sc_util: number
+  sc_infra: number
+  sc_zone: number
+  sc_loc: number
+  Lt_Acre: number
+  adoption_priority: number | null
+}
+
+export type UpzoneFeature = Feature<Geometry, UpzoneParcelProperties>
+export type UpzoneCollection = FeatureCollection<Geometry, UpzoneParcelProperties>
+
+export type UpzoneViewMode = 'current' | 'projected'
+
+export interface AdoptionScenario {
+  parcels: number
+  acres: number
+  tax_increase_annual: number
+  new_units: number
+  avg_sg_change: number
+}
+
+export interface TierSummary {
+  description: string
+  parcels: number
+  acres: number
+}
+
+export interface UpzoneSummary {
+  generated: string
+  description: string
+  total_eligible_parcels: number
+  total_eligible_acres: number
+  current_totals: {
+    r1_parcels: number
+    r2_parcels: number
+    total_current_units: number
+    total_current_tax: number
+  }
+  tier_summary: Record<string, TierSummary>
+  tax_medians_per_acre: Record<string, number>
+  adoption_scenarios: Record<string, AdoptionScenario>
+  max_potential: {
+    tax_increase_annual: number
+    new_units: number
+    avg_sg_index_change: number
+  }
+}

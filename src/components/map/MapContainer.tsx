@@ -4,6 +4,8 @@ import { useLayerStore } from '@/stores/layerStore'
 import { LAYER_CONFIGS } from '@/data/layerConfig'
 import { useGeoJSON, prefetchGeoJSON } from '@/hooks/useGeoJSON'
 import { GeoJSONLayer } from './GeoJSONLayer'
+import { UpzoneScenarioLayer } from '@/components/layers/UpzoneScenarioLayer'
+import type { UpzoneCollection } from '@/types'
 
 // Chico, CA coordinates
 const CHICO_CENTER: [number, number] = [39.7285, -121.8375]
@@ -27,6 +29,11 @@ function LayerRenderer({ layerId }: { layerId: string }) {
 
   if (!config || !isVisible || loading || error || !data) {
     return null
+  }
+
+  // Use specialized layer component for upzone scenario
+  if (layerId === 'upzone-scenario') {
+    return <UpzoneScenarioLayer data={data as UpzoneCollection} opacity={opacity} />
   }
 
   return <GeoJSONLayer config={config} data={data} opacity={opacity} />
