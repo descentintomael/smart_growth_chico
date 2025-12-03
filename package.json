@@ -20,11 +20,14 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "chroma-js": "^3.1.2",
     "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.10.0",
     "recharts": "^3.5.1",
     "zustand": "^5.0.2"
   },
