@@ -72,6 +72,38 @@ export const LAYER_CONFIGS: LayerConfig[] = [
       ],
     },
   },
+  {
+    id: 'commercial-viability',
+    name: 'Commercial Viability',
+    description: 'Business viability analysis for opportunity sites',
+    dataUrl: `${import.meta.env.BASE_URL}data/commercial-viability.geojson`,
+    type: 'polygon',
+    defaultVisible: false,
+    group: 'planning',
+    // Note: choropleth styling is handled dynamically in CommercialViabilityLayer
+    popup: {
+      title: '{site_name}',
+      fields: [
+        {
+          label: 'Site Acres',
+          property: 'site_acres',
+          format: (v) => `${(v as number).toFixed(1)} acres`,
+        },
+        { label: 'Current Viable Businesses', property: 'cur_biz_cnt' },
+        { label: 'Viable at 100% Adoption', property: 'biz_100_cnt' },
+        {
+          label: 'New Businesses Enabled',
+          property: 'new_biz_cnt',
+          format: (v) => `+${v}`,
+        },
+        {
+          label: 'Population (1 mi)',
+          property: 'cur_pop_1mi',
+          format: (v) => (v as number).toLocaleString(),
+        },
+      ],
+    },
+  },
 ]
 
 export function getLayerConfig(layerId: string): LayerConfig | undefined {

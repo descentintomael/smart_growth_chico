@@ -154,3 +154,81 @@ export interface UpzoneSummary {
     avg_sg_index_change: number
   }
 }
+
+// Commercial viability site properties (from GeoJSON)
+export interface CommercialViabilitySiteProperties {
+  site_name: string
+  site_acres: number
+  cur_pop_qtr: number
+  cur_pop_half: number
+  cur_pop_1mi: number
+  upz_unit_qtr: number
+  upz_unit_half: number
+  upz_unit_1mi: number
+  cur_biz_cnt: number
+  biz_100_cnt: number
+  new_biz_cnt: number
+}
+
+export type CommercialViabilitySiteFeature = Feature<Geometry, CommercialViabilitySiteProperties>
+export type CommercialViabilitySiteCollection = FeatureCollection<
+  Geometry,
+  CommercialViabilitySiteProperties
+>
+
+// Commercial viability summary types
+export interface CommercialViabilitySummary {
+  generated: string
+  description: string
+  methodology: {
+    pph_factor: number
+    catchment_distances_ft: Record<string, number>
+    source: string
+  }
+  retail_thresholds: Record<
+    string,
+    { population: number; catchment: string; label: string }
+  >
+  total_opportunity_sites: number
+  opportunity_sites: CommercialViabilitySite[]
+  aggregate_totals: CommercialViabilityAggregate
+}
+
+export interface CommercialViabilitySite {
+  name: string
+  acres: number
+  current_population: Record<string, number>
+  businesses_currently_viable: string[]
+  businesses_current_count: number
+  adoption_scenarios: Record<string, CommercialViabilityScenario>
+}
+
+export interface CommercialViabilityScenario {
+  new_residents: number
+  total_population: Record<string, number>
+  businesses_viable: string[]
+  businesses_viable_count: number
+  new_businesses_enabled: string[]
+  new_businesses_count: number
+}
+
+export interface CommercialViabilityAggregate {
+  current: {
+    total_population: number
+    total_businesses_viable: number
+    businesses_by_type: Record<string, number>
+  }
+  [key: string]:
+    | {
+        new_residents?: number
+        total_businesses_viable?: number
+        new_businesses_enabled?: number
+        businesses_by_type?: Record<string, number>
+        new_businesses_by_type?: Record<string, number>
+      }
+    | {
+        total_population: number
+        total_businesses_viable: number
+        businesses_by_type: Record<string, number>
+      }
+}

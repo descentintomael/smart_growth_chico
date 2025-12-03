@@ -10,8 +10,13 @@ const LAYER_OPTIONS = [
   },
   {
     id: 'upzone-scenario',
-    name: 'Upzone Scenario',
+    name: 'Upzone',
     description: 'What-if upzoning analysis',
+  },
+  {
+    id: 'commercial-viability',
+    name: 'Commercial',
+    description: 'Business viability for opportunity sites',
   },
 ] as const
 

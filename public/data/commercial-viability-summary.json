@@ -1,0 +1,1733 @@
+{
+  "generated": "2025-12-03T13:06:01.459560",
+  "description": "Commercial viability analysis for Chico opportunity sites",
+  "methodology": {
+    "pph_factor": 2.3,
+    "catchment_distances_ft": {
+      "quarter_mile": 1320,
+      "half_mile": 2640,
+      "one_mile": 5280
+    },
+    "source": "ULI/ICSC retail gravity thresholds"
+  },
+  "retail_thresholds": {
+    "coffee_shop": {
+      "population": 2500,
+      "catchment": "quarter_mile",
+      "label": "Coffee Shop"
+    },
+    "small_restaurant": {
+      "population": 4000,
+      "catchment": "quarter_mile",
+      "label": "Small Restaurant"
+    },
+    "convenience_store": {
+      "population": 3000,
+      "catchment": "quarter_mile",
+      "label": "Convenience Store"
+    },
+    "neighborhood_grocery": {
+      "population": 6500,
+      "catchment": "half_mile",
+      "label": "Neighborhood Grocery"
+    },
+    "pharmacy": {
+      "population": 7500,
+      "catchment": "half_mile",
+      "label": "Pharmacy"
+    },
+    "medium_grocery": {
+      "population": 12500,
+      "catchment": "one_mile",
+      "label": "Medium Grocery"
+    },
+    "fitness_center": {
+      "population": 15000,
+      "catchment": "one_mile",
+      "label": "Fitness Center"
+    },
+    "hardware_store": {
+      "population": 20000,
+      "catchment": "one_mile",
+      "label": "Hardware Store"
+    }
+  },
+  "total_opportunity_sites": 15,
+  "opportunity_sites": [
+    {
+      "name": "North Esplanade",
+      "acres": 172.2,
+      "current_units": {
+        "quarter_mile": 519,
+        "half_mile": 1964,
+        "one_mile": 7193
+      },
+      "current_population": {
+        "quarter_mile": 1193,
+        "half_mile": 4517,
+        "one_mile": 16543
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 65,
+        "half_mile": 604,
+        "one_mile": 2519
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 2,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 1833,
+          "total_population": {
+            "quarter_mile": 1231,
+            "half_mile": 4864,
+            "one_mile": 17992
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        },
+        "50": {
+          "new_residents": 3666,
+          "total_population": {
+            "quarter_mile": 1268,
+            "half_mile": 5211,
+            "one_mile": 19440
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        },
+        "75": {
+          "new_residents": 5499,
+          "total_population": {
+            "quarter_mile": 1305,
+            "half_mile": 5559,
+            "one_mile": 20889
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [
+            "hardware_store"
+          ],
+          "new_businesses_count": 1
+        },
+        "100": {
+          "new_residents": 7332,
+          "total_population": {
+            "quarter_mile": 1343,
+            "half_mile": 5906,
+            "one_mile": 22337
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [
+            "hardware_store"
+          ],
+          "new_businesses_count": 1
+        }
+      }
+    },
+    {
+      "name": "North Vally Plaza",
+      "acres": 119.8,
+      "current_units": {
+        "quarter_mile": 523,
+        "half_mile": 1987,
+        "one_mile": 7695
+      },
+      "current_population": {
+        "quarter_mile": 1202,
+        "half_mile": 4570,
+        "one_mile": 17698
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 162,
+        "half_mile": 1250,
+        "one_mile": 3323
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 2,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 2722,
+          "total_population": {
+            "quarter_mile": 1296,
+            "half_mile": 5288,
+            "one_mile": 19609
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        },
+        "50": {
+          "new_residents": 5445,
+          "total_population": {
+            "quarter_mile": 1389,
+            "half_mile": 6007,
+            "one_mile": 21519
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [
+            "hardware_store"
+          ],
+          "new_businesses_count": 1
+        },
+        "75": {
+          "new_residents": 8167,
+          "total_population": {
+            "quarter_mile": 1482,
+            "half_mile": 6726,
+            "one_mile": 23430
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 4,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "hardware_store"
+          ],
+          "new_businesses_count": 2
+        },
+        "100": {
+          "new_residents": 10890,
+          "total_population": {
+            "quarter_mile": 1575,
+            "half_mile": 7445,
+            "one_mile": 25341
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 4,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "hardware_store"
+          ],
+          "new_businesses_count": 2
+        }
+      }
+    },
+    {
+      "name": "Mangrove Avenue",
+      "acres": 63.0,
+      "current_units": {
+        "quarter_mile": 542,
+        "half_mile": 1974,
+        "one_mile": 7294
+      },
+      "current_population": {
+        "quarter_mile": 1246,
+        "half_mile": 4540,
+        "one_mile": 16776
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 761,
+        "half_mile": 2481,
+        "one_mile": 6666
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 2,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 5697,
+          "total_population": {
+            "quarter_mile": 1684,
+            "half_mile": 5966,
+            "one_mile": 20609
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [
+            "hardware_store"
+          ],
+          "new_businesses_count": 1
+        },
+        "50": {
+          "new_residents": 11394,
+          "total_population": {
+            "quarter_mile": 2121,
+            "half_mile": 7393,
+            "one_mile": 24442
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 4,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "hardware_store"
+          ],
+          "new_businesses_count": 2
+        },
+        "75": {
+          "new_residents": 17091,
+          "total_population": {
+            "quarter_mile": 2559,
+            "half_mile": 8819,
+            "one_mile": 28275
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 6,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 4
+        },
+        "100": {
+          "new_residents": 22788,
+          "total_population": {
+            "quarter_mile": 2996,
+            "half_mile": 10246,
+            "one_mile": 32107
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 6,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 4
+        }
+      }
+    },
+    {
+      "name": "Vanella Orchard",
+      "acres": 33.1,
+      "current_units": {
+        "quarter_mile": 720,
+        "half_mile": 2675,
+        "one_mile": 10040
+      },
+      "current_population": {
+        "quarter_mile": 1655,
+        "half_mile": 6152,
+        "one_mile": 23092
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 1109,
+        "half_mile": 3802,
+        "one_mile": 9854
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center",
+        "hardware_store"
+      ],
+      "businesses_current_count": 3,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 8489,
+          "total_population": {
+            "quarter_mile": 2293,
+            "half_mile": 8338,
+            "one_mile": 28758
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy"
+          ],
+          "new_businesses_count": 2
+        },
+        "50": {
+          "new_residents": 16979,
+          "total_population": {
+            "quarter_mile": 2931,
+            "half_mile": 10524,
+            "one_mile": 34424
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 6,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy"
+          ],
+          "new_businesses_count": 3
+        },
+        "75": {
+          "new_residents": 25469,
+          "total_population": {
+            "quarter_mile": 3569,
+            "half_mile": 12710,
+            "one_mile": 40090
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "convenience_store",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 7,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "convenience_store",
+            "neighborhood_grocery",
+            "pharmacy"
+          ],
+          "new_businesses_count": 4
+        },
+        "100": {
+          "new_residents": 33959,
+          "total_population": {
+            "quarter_mile": 4206,
+            "half_mile": 14897,
+            "one_mile": 45756
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "small_restaurant",
+            "convenience_store",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 8,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "small_restaurant",
+            "convenience_store",
+            "neighborhood_grocery",
+            "pharmacy"
+          ],
+          "new_businesses_count": 5
+        }
+      }
+    },
+    {
+      "name": "Pomona Avenue",
+      "acres": 37.1,
+      "current_units": {
+        "quarter_mile": 519,
+        "half_mile": 1613,
+        "one_mile": 4936
+      },
+      "current_population": {
+        "quarter_mile": 1193,
+        "half_mile": 3709,
+        "one_mile": 11352
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 300,
+        "half_mile": 357,
+        "one_mile": 1641
+      },
+      "businesses_currently_viable": [],
+      "businesses_current_count": 0,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 1321,
+          "total_population": {
+            "quarter_mile": 1366,
+            "half_mile": 3915,
+            "one_mile": 12296
+          },
+          "businesses_viable": [],
+          "businesses_viable_count": 0,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        },
+        "50": {
+          "new_residents": 2642,
+          "total_population": {
+            "quarter_mile": 1538,
+            "half_mile": 4120,
+            "one_mile": 13239
+          },
+          "businesses_viable": [
+            "medium_grocery"
+          ],
+          "businesses_viable_count": 1,
+          "new_businesses_enabled": [
+            "medium_grocery"
+          ],
+          "new_businesses_count": 1
+        },
+        "75": {
+          "new_residents": 3964,
+          "total_population": {
+            "quarter_mile": 1711,
+            "half_mile": 4325,
+            "one_mile": 14183
+          },
+          "businesses_viable": [
+            "medium_grocery"
+          ],
+          "businesses_viable_count": 1,
+          "new_businesses_enabled": [
+            "medium_grocery"
+          ],
+          "new_businesses_count": 1
+        },
+        "100": {
+          "new_residents": 5285,
+          "total_population": {
+            "quarter_mile": 1883,
+            "half_mile": 4531,
+            "one_mile": 15127
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "new_businesses_count": 2
+        }
+      }
+    },
+    {
+      "name": "E 8th & 9th Streets Corridor",
+      "acres": 91.8,
+      "current_units": {
+        "quarter_mile": 565,
+        "half_mile": 1839,
+        "one_mile": 7171
+      },
+      "current_population": {
+        "quarter_mile": 1299,
+        "half_mile": 4229,
+        "one_mile": 16493
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 936,
+        "half_mile": 2871,
+        "one_mile": 7426
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 2,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 6458,
+          "total_population": {
+            "quarter_mile": 1837,
+            "half_mile": 5880,
+            "one_mile": 20763
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [
+            "hardware_store"
+          ],
+          "new_businesses_count": 1
+        },
+        "50": {
+          "new_residents": 12917,
+          "total_population": {
+            "quarter_mile": 2375,
+            "half_mile": 7531,
+            "one_mile": 25033
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 3
+        },
+        "75": {
+          "new_residents": 19376,
+          "total_population": {
+            "quarter_mile": 2914,
+            "half_mile": 9182,
+            "one_mile": 29303
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 6,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 4
+        },
+        "100": {
+          "new_residents": 25835,
+          "total_population": {
+            "quarter_mile": 3452,
+            "half_mile": 10833,
+            "one_mile": 33573
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "convenience_store",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 7,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "convenience_store",
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 5
+        }
+      }
+    },
+    {
+      "name": "The Wedge",
+      "acres": 48.9,
+      "current_units": {
+        "quarter_mile": 499,
+        "half_mile": 1670,
+        "one_mile": 6058
+      },
+      "current_population": {
+        "quarter_mile": 1147,
+        "half_mile": 3840,
+        "one_mile": 13933
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 391,
+        "half_mile": 1344,
+        "one_mile": 4104
+      },
+      "businesses_currently_viable": [
+        "medium_grocery"
+      ],
+      "businesses_current_count": 1,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 3357,
+          "total_population": {
+            "quarter_mile": 1372,
+            "half_mile": 4613,
+            "one_mile": 16293
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [
+            "fitness_center"
+          ],
+          "new_businesses_count": 1
+        },
+        "50": {
+          "new_residents": 6714,
+          "total_population": {
+            "quarter_mile": 1597,
+            "half_mile": 5386,
+            "one_mile": 18653
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [
+            "fitness_center"
+          ],
+          "new_businesses_count": 1
+        },
+        "75": {
+          "new_residents": 10072,
+          "total_population": {
+            "quarter_mile": 1822,
+            "half_mile": 6159,
+            "one_mile": 21012
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [
+            "fitness_center",
+            "hardware_store"
+          ],
+          "new_businesses_count": 2
+        },
+        "100": {
+          "new_residents": 13429,
+          "total_population": {
+            "quarter_mile": 2046,
+            "half_mile": 6932,
+            "one_mile": 23372
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 4,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "new_businesses_count": 3
+        }
+      }
+    },
+    {
+      "name": "Park Avenue",
+      "acres": 41.8,
+      "current_units": {
+        "quarter_mile": 502,
+        "half_mile": 1922,
+        "one_mile": 7354
+      },
+      "current_population": {
+        "quarter_mile": 1154,
+        "half_mile": 4420,
+        "one_mile": 16914
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 740,
+        "half_mile": 2644,
+        "one_mile": 5654
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 2,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 5196,
+          "total_population": {
+            "quarter_mile": 1580,
+            "half_mile": 5940,
+            "one_mile": 20165
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [
+            "hardware_store"
+          ],
+          "new_businesses_count": 1
+        },
+        "50": {
+          "new_residents": 10393,
+          "total_population": {
+            "quarter_mile": 2005,
+            "half_mile": 7461,
+            "one_mile": 23416
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 4,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "hardware_store"
+          ],
+          "new_businesses_count": 2
+        },
+        "75": {
+          "new_residents": 15590,
+          "total_population": {
+            "quarter_mile": 2431,
+            "half_mile": 8981,
+            "one_mile": 26667
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 3
+        },
+        "100": {
+          "new_residents": 20787,
+          "total_population": {
+            "quarter_mile": 2856,
+            "half_mile": 10501,
+            "one_mile": 29918
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 6,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 4
+        }
+      }
+    },
+    {
+      "name": "E 20th Street",
+      "acres": 200.5,
+      "current_units": {
+        "quarter_mile": 496,
+        "half_mile": 2469,
+        "one_mile": 7698
+      },
+      "current_population": {
+        "quarter_mile": 1140,
+        "half_mile": 5678,
+        "one_mile": 17705
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 3,
+        "half_mile": 1168,
+        "one_mile": 4281
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 2,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 3134,
+          "total_population": {
+            "quarter_mile": 1142,
+            "half_mile": 6350,
+            "one_mile": 20166
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [
+            "hardware_store"
+          ],
+          "new_businesses_count": 1
+        },
+        "50": {
+          "new_residents": 6269,
+          "total_population": {
+            "quarter_mile": 1144,
+            "half_mile": 7021,
+            "one_mile": 22628
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 4,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "hardware_store"
+          ],
+          "new_businesses_count": 2
+        },
+        "75": {
+          "new_residents": 9404,
+          "total_population": {
+            "quarter_mile": 1145,
+            "half_mile": 7693,
+            "one_mile": 25090
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 3
+        },
+        "100": {
+          "new_residents": 12539,
+          "total_population": {
+            "quarter_mile": 1147,
+            "half_mile": 8365,
+            "one_mile": 27551
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 3
+        }
+      }
+    },
+    {
+      "name": "Skyway",
+      "acres": 59.7,
+      "current_units": {
+        "quarter_mile": 359,
+        "half_mile": 1631,
+        "one_mile": 5397
+      },
+      "current_population": {
+        "quarter_mile": 825,
+        "half_mile": 3751,
+        "one_mile": 12413
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 1,
+        "half_mile": 376,
+        "one_mile": 2048
+      },
+      "businesses_currently_viable": [],
+      "businesses_current_count": 0,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 1394,
+          "total_population": {
+            "quarter_mile": 826,
+            "half_mile": 3967,
+            "one_mile": 13590
+          },
+          "businesses_viable": [
+            "medium_grocery"
+          ],
+          "businesses_viable_count": 1,
+          "new_businesses_enabled": [
+            "medium_grocery"
+          ],
+          "new_businesses_count": 1
+        },
+        "50": {
+          "new_residents": 2788,
+          "total_population": {
+            "quarter_mile": 826,
+            "half_mile": 4183,
+            "one_mile": 14768
+          },
+          "businesses_viable": [
+            "medium_grocery"
+          ],
+          "businesses_viable_count": 1,
+          "new_businesses_enabled": [
+            "medium_grocery"
+          ],
+          "new_businesses_count": 1
+        },
+        "75": {
+          "new_residents": 4183,
+          "total_population": {
+            "quarter_mile": 827,
+            "half_mile": 4399,
+            "one_mile": 15945
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "new_businesses_count": 2
+        },
+        "100": {
+          "new_residents": 5577,
+          "total_population": {
+            "quarter_mile": 827,
+            "half_mile": 4616,
+            "one_mile": 17123
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "new_businesses_count": 2
+        }
+      }
+    },
+    {
+      "name": "South Campus",
+      "acres": 137.0,
+      "current_units": {
+        "quarter_mile": 897,
+        "half_mile": 3247,
+        "one_mile": 7386
+      },
+      "current_population": {
+        "quarter_mile": 2063,
+        "half_mile": 7468,
+        "one_mile": 16987
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 10,
+        "half_mile": 615,
+        "one_mile": 3809
+      },
+      "businesses_currently_viable": [
+        "neighborhood_grocery",
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 3,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 2549,
+          "total_population": {
+            "quarter_mile": 2068,
+            "half_mile": 7821,
+            "one_mile": 19177
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 4,
+          "new_businesses_enabled": [
+            "pharmacy"
+          ],
+          "new_businesses_count": 1
+        },
+        "50": {
+          "new_residents": 5099,
+          "total_population": {
+            "quarter_mile": 2074,
+            "half_mile": 8175,
+            "one_mile": 21368
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 2
+        },
+        "75": {
+          "new_residents": 7648,
+          "total_population": {
+            "quarter_mile": 2080,
+            "half_mile": 8528,
+            "one_mile": 23558
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 2
+        },
+        "100": {
+          "new_residents": 10198,
+          "total_population": {
+            "quarter_mile": 2086,
+            "half_mile": 8882,
+            "one_mile": 25748
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 2
+        }
+      }
+    },
+    {
+      "name": "Nord Avenue",
+      "acres": 138.1,
+      "current_units": {
+        "quarter_mile": 467,
+        "half_mile": 2440,
+        "one_mile": 8151
+      },
+      "current_population": {
+        "quarter_mile": 1074,
+        "half_mile": 5612,
+        "one_mile": 18747
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 786,
+        "half_mile": 3381,
+        "one_mile": 10173
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 2,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 8245,
+          "total_population": {
+            "quarter_mile": 1526,
+            "half_mile": 7556,
+            "one_mile": 24596
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 3
+        },
+        "50": {
+          "new_residents": 16491,
+          "total_population": {
+            "quarter_mile": 1977,
+            "half_mile": 9500,
+            "one_mile": 30446
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 3
+        },
+        "75": {
+          "new_residents": 24736,
+          "total_population": {
+            "quarter_mile": 2429,
+            "half_mile": 11444,
+            "one_mile": 36295
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 3
+        },
+        "100": {
+          "new_residents": 32982,
+          "total_population": {
+            "quarter_mile": 2881,
+            "half_mile": 13388,
+            "one_mile": 42145
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 6,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 4
+        }
+      }
+    },
+    {
+      "name": "W East Avenue",
+      "acres": 62.6,
+      "current_units": {
+        "quarter_mile": 784,
+        "half_mile": 2125,
+        "one_mile": 7258
+      },
+      "current_population": {
+        "quarter_mile": 1803,
+        "half_mile": 4887,
+        "one_mile": 16693
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 419,
+        "half_mile": 2327,
+        "one_mile": 8233
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 2,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 6312,
+          "total_population": {
+            "quarter_mile": 2044,
+            "half_mile": 6225,
+            "one_mile": 21427
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [
+            "hardware_store"
+          ],
+          "new_businesses_count": 1
+        },
+        "50": {
+          "new_residents": 12625,
+          "total_population": {
+            "quarter_mile": 2285,
+            "half_mile": 7563,
+            "one_mile": 26161
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 3
+        },
+        "75": {
+          "new_residents": 18938,
+          "total_population": {
+            "quarter_mile": 2525,
+            "half_mile": 8901,
+            "one_mile": 30895
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 6,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 4
+        },
+        "100": {
+          "new_residents": 25251,
+          "total_population": {
+            "quarter_mile": 2766,
+            "half_mile": 10239,
+            "one_mile": 35629
+          },
+          "businesses_viable": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 6,
+          "new_businesses_enabled": [
+            "coffee_shop",
+            "neighborhood_grocery",
+            "pharmacy",
+            "hardware_store"
+          ],
+          "new_businesses_count": 4
+        }
+      }
+    },
+    {
+      "name": "Downtown",
+      "acres": 140.0,
+      "current_units": {
+        "quarter_mile": 566,
+        "half_mile": 2204,
+        "one_mile": 8779
+      },
+      "current_population": {
+        "quarter_mile": 1301,
+        "half_mile": 5069,
+        "one_mile": 20191
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 57,
+        "half_mile": 1149,
+        "one_mile": 6661
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center",
+        "hardware_store"
+      ],
+      "businesses_current_count": 3,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 4523,
+          "total_population": {
+            "quarter_mile": 1334,
+            "half_mile": 5729,
+            "one_mile": 24021
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        },
+        "50": {
+          "new_residents": 9047,
+          "total_population": {
+            "quarter_mile": 1367,
+            "half_mile": 6390,
+            "one_mile": 27851
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 3,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        },
+        "75": {
+          "new_residents": 13570,
+          "total_population": {
+            "quarter_mile": 1400,
+            "half_mile": 7051,
+            "one_mile": 31681
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 4,
+          "new_businesses_enabled": [
+            "neighborhood_grocery"
+          ],
+          "new_businesses_count": 1
+        },
+        "100": {
+          "new_residents": 18094,
+          "total_population": {
+            "quarter_mile": 1432,
+            "half_mile": 7711,
+            "one_mile": 35512
+          },
+          "businesses_viable": [
+            "neighborhood_grocery",
+            "pharmacy",
+            "medium_grocery",
+            "fitness_center",
+            "hardware_store"
+          ],
+          "businesses_viable_count": 5,
+          "new_businesses_enabled": [
+            "neighborhood_grocery",
+            "pharmacy"
+          ],
+          "new_businesses_count": 2
+        }
+      }
+    },
+    {
+      "name": "Eaton Road",
+      "acres": 2.1,
+      "current_units": {
+        "quarter_mile": 747,
+        "half_mile": 1953,
+        "one_mile": 6976
+      },
+      "current_population": {
+        "quarter_mile": 1718,
+        "half_mile": 4491,
+        "one_mile": 16044
+      },
+      "upzone_delta_units": {
+        "quarter_mile": 0,
+        "half_mile": 0,
+        "one_mile": 37
+      },
+      "businesses_currently_viable": [
+        "medium_grocery",
+        "fitness_center"
+      ],
+      "businesses_current_count": 2,
+      "adoption_scenarios": {
+        "25": {
+          "new_residents": 21,
+          "total_population": {
+            "quarter_mile": 1718,
+            "half_mile": 4491,
+            "one_mile": 16066
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        },
+        "50": {
+          "new_residents": 42,
+          "total_population": {
+            "quarter_mile": 1718,
+            "half_mile": 4491,
+            "one_mile": 16087
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        },
+        "75": {
+          "new_residents": 63,
+          "total_population": {
+            "quarter_mile": 1718,
+            "half_mile": 4491,
+            "one_mile": 16108
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        },
+        "100": {
+          "new_residents": 85,
+          "total_population": {
+            "quarter_mile": 1718,
+            "half_mile": 4491,
+            "one_mile": 16129
+          },
+          "businesses_viable": [
+            "medium_grocery",
+            "fitness_center"
+          ],
+          "businesses_viable_count": 2,
+          "new_businesses_enabled": [],
+          "new_businesses_count": 0
+        }
+      }
+    }
+  ],
+  "aggregate_totals": {
+    "current": {
+      "total_population": 251581,
+      "total_businesses_viable": 28,
+      "businesses_by_type": {
+        "coffee_shop": 0,
+        "small_restaurant": 0,
+        "convenience_store": 0,
+        "neighborhood_grocery": 1,
+        "pharmacy": 0,
+        "medium_grocery": 13,
+        "fitness_center": 12,
+        "hardware_store": 2
+      }
+    },
+    "25": {
+      "new_residents": 61251,
+      "total_businesses_viable": 41,
+      "new_businesses_enabled": 13,
+      "businesses_by_type": {
+        "coffee_shop": 0,
+        "small_restaurant": 0,
+        "convenience_store": 0,
+        "neighborhood_grocery": 3,
+        "pharmacy": 3,
+        "medium_grocery": 14,
+        "fitness_center": 13,
+        "hardware_store": 8
+      },
+      "new_businesses_by_type": {
+        "coffee_shop": 0,
+        "small_restaurant": 0,
+        "convenience_store": 0,
+        "neighborhood_grocery": 2,
+        "pharmacy": 3,
+        "medium_grocery": 1,
+        "fitness_center": 1,
+        "hardware_store": 6
+      }
+    },
+    "50": {
+      "new_residents": 122511,
+      "total_businesses_viable": 52,
+      "new_businesses_enabled": 24,
+      "businesses_by_type": {
+        "coffee_shop": 1,
+        "small_restaurant": 0,
+        "convenience_store": 0,
+        "neighborhood_grocery": 8,
+        "pharmacy": 5,
+        "medium_grocery": 15,
+        "fitness_center": 13,
+        "hardware_store": 10
+      },
+      "new_businesses_by_type": {
+        "coffee_shop": 1,
+        "small_restaurant": 0,
+        "convenience_store": 0,
+        "neighborhood_grocery": 7,
+        "pharmacy": 5,
+        "medium_grocery": 2,
+        "fitness_center": 1,
+        "hardware_store": 8
+      }
+    },
+    "75": {
+      "new_residents": 183770,
+      "total_businesses_viable": 64,
+      "new_businesses_enabled": 36,
+      "businesses_by_type": {
+        "coffee_shop": 4,
+        "small_restaurant": 0,
+        "convenience_store": 1,
+        "neighborhood_grocery": 10,
+        "pharmacy": 8,
+        "medium_grocery": 15,
+        "fitness_center": 14,
+        "hardware_store": 12
+      },
+      "new_businesses_by_type": {
+        "coffee_shop": 4,
+        "small_restaurant": 0,
+        "convenience_store": 1,
+        "neighborhood_grocery": 9,
+        "pharmacy": 8,
+        "medium_grocery": 2,
+        "fitness_center": 2,
+        "hardware_store": 10
+      }
+    },
+    "100": {
+      "new_residents": 245031,
+      "total_businesses_viable": 71,
+      "new_businesses_enabled": 43,
+      "businesses_by_type": {
+        "coffee_shop": 6,
+        "small_restaurant": 1,
+        "convenience_store": 2,
+        "neighborhood_grocery": 11,
+        "pharmacy": 9,
+        "medium_grocery": 15,
+        "fitness_center": 15,
+        "hardware_store": 12
+      },
+      "new_businesses_by_type": {
+        "coffee_shop": 6,
+        "small_restaurant": 1,
+        "convenience_store": 2,
+        "neighborhood_grocery": 10,
+        "pharmacy": 9,
+        "medium_grocery": 2,
+        "fitness_center": 3,
+        "hardware_store": 10
+      }
+    }
+  }
+}
