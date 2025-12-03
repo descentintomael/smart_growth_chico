@@ -24,7 +24,8 @@
       "Bash(npx tsx:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(ogr2ogr:*)"
+      "Bash(ogr2ogr:*)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": [],
     "ask": []
