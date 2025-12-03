@@ -1,26 +1,32 @@
 import { useLayerStore } from '@/stores/layerStore'
 import { LAYER_CONFIGS } from '@/data/layerConfig'
 
-// Layer options for the toggle
-const LAYER_OPTIONS = [
+// Layer options grouped by category
+const LAYER_GROUPS = [
   {
-    id: 'smart-growth-index',
-    name: 'Current Index',
-    description: 'Current Smart Growth Index scores',
+    label: 'Current State',
+    options: [{ id: 'smart-growth-index', name: 'Smart Growth Index' }],
   },
   {
-    id: 'upzone-scenario',
-    name: 'Upzone',
-    description: 'What-if upzoning analysis',
+    label: 'Upzoning Scenarios',
+    options: [
+      { id: 'upzone-scenario', name: 'Upzone Scenario' },
+      { id: 'commercial-viability', name: 'Commercial Viability' },
+    ],
   },
   {
-    id: 'commercial-viability',
-    name: 'Commercial',
-    description: 'Business viability for opportunity sites',
+    label: 'Retrofit Scenarios',
+    options: [
+      { id: 'parking-retrofit', name: 'Parking Retrofit' },
+      { id: 'vacant-infill', name: 'Vacant Infill' },
+      { id: 'commercial-retrofit', name: 'Commercial Retrofit' },
+    ],
   },
 ] as const
 
-type LayerId = (typeof LAYER_OPTIONS)[number]['id']
+// Flatten all layer IDs for type safety
+const ALL_LAYER_IDS = LAYER_GROUPS.flatMap((group) => group.options.map((opt) => opt.id))
+type LayerId = (typeof ALL_LAYER_IDS)[number]
 
 export function LayerControl() {
   const visibleLayers = useLayerStore((state) => state.visibleLayers)
@@ -29,23 +35,30 @@ export function LayerControl() {
   const setLayerOpacity = useLayerStore((state) => state.setLayerOpacity)
 
   // Find which layer is currently active
-  const activeLayer = LAYER_OPTIONS.find((opt) => visibleLayers.has(opt.id))?.id ?? 'smart-growth-index'
+  const activeLayer =
+    ALL_LAYER_IDS.find((id) => visibleLayers.has(id)) ?? 'smart-growth-index'
   const activeConfig = LAYER_CONFIGS.find((c) => c.id === activeLayer)
   const opacity = layerOpacity[activeLayer] ?? 1
 
   // Switch to a specific layer (mutually exclusive)
-  const switchToLayer = (layerId: LayerId) => {
+  const switchToLayer = (layerId: string) => {
+    const targetId = layerId as LayerId
     // Turn off other layers, turn on this one
-    LAYER_OPTIONS.forEach((opt) => {
-      const isTarget = opt.id === layerId
-      const isCurrentlyVisible = visibleLayers.has(opt.id)
+    ALL_LAYER_IDS.forEach((id) => {
+      const isTarget = id === targetId
+      const isCurrentlyVisible = visibleLayers.has(id)
 
       if (isTarget && !isCurrentlyVisible) {
-        toggleLayer(opt.id)
+        toggleLayer(id)
       } else if (!isTarget && isCurrentlyVisible) {
-        toggleLayer(opt.id)
+        toggleLayer(id)
       }
     })
+  }
+
+  // Handle dropdown change
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    switchToLayer(e.target.value)
   }
 
   return (
@@ -57,29 +70,33 @@ export function LayerControl() {
       </div>
 
       <div className="p-4 space-y-4">
-        {/* Layer toggle buttons */}
-        <div className="flex rounded-lg border border-gray-200 overflow-hidden">
-          {LAYER_OPTIONS.map((option) => (
-            <button
-              key={option.id}
-              onClick={() => switchToLayer(option.id)}
-              className={`flex-1 px-3 py-2 text-sm font-medium transition-colors
-                ${
-                  activeLayer === option.id
-                    ? 'bg-primary-100 text-primary-700'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
-              aria-pressed={activeLayer === option.id}
-            >
-              {option.name}
-            </button>
-          ))}
+        {/* Layer dropdown selector */}
+        <div className="space-y-1">
+          <label htmlFor="layer-select" className="sr-only">
+            Select view mode
+          </label>
+          <select
+            id="layer-select"
+            value={activeLayer}
+            onChange={handleSelectChange}
+            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-50 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+          >
+            {LAYER_GROUPS.map((group) => (
+              <optgroup key={group.label} label={group.label}>
+                {group.options.map((option) => (
+                  <option key={option.id} value={option.id}>
+                    {option.name}
+                  </option>
+                ))}
+              </optgroup>
+            ))}
+          </select>
         </div>
 
         {/* Layer description */}
         <p className="text-sm text-gray-600">{activeConfig?.description}</p>
 
-        {/* Opacity slider (only show for Smart Growth Index - upzone has its own in control panel) */}
+        {/* Opacity slider (only show for Smart Growth Index - others have their own in control panels) */}
         {activeLayer === 'smart-growth-index' && (
           <div className="flex items-center gap-2">
             <label className="text-xs text-gray-500" htmlFor="opacity-slider">

@@ -14,7 +14,7 @@ export interface LayerConfig {
   style?: LayerStyle
 }
 
-export type LayerGroup = 'voting' | 'planning' | 'infrastructure' | 'demographics'
+export type LayerGroup = 'voting' | 'planning' | 'infrastructure' | 'demographics' | 'retrofit'
 
 export interface ChoroplethConfig {
   property: string
@@ -232,3 +232,174 @@ export interface CommercialViabilityAggregate {
         businesses_by_type: Record<string, number>
       }
 }
+
+// Parking Retrofit properties (GeoJSON)
+export interface ParkingRetrofitProperties {
+  APN: string
+  acres: number
+  cur_tax: number
+  cur_tx_ac: number
+  pot_tax: number
+  pot_tx_ac: number
+  forgn_tax: number
+  pot_units: number
+  pot_resid: number
+}
+
+export type ParkingRetrofitFeature = Feature<Geometry, ParkingRetrofitProperties>
+export type ParkingRetrofitCollection = FeatureCollection<Geometry, ParkingRetrofitProperties>
+
+// Vacant Infill properties (GeoJSON)
+export interface VacantInfillProperties {
+  APN: string
+  acres: number
+  size_cat: 'small' | 'medium' | 'large'
+  Zoning: string
+  cur_tax: number
+  pot_tax: number
+  tax_incr: number
+  pot_units: number
+  pot_resid: number
+}
+
+export type VacantInfillFeature = Feature<Geometry, VacantInfillProperties>
+export type VacantInfillCollection = FeatureCollection<Geometry, VacantInfillProperties>
+
+// Commercial Retrofit properties (GeoJSON)
+export interface CommercialRetrofitProperties {
+  APN: string
+  land_use: string
+  acres: number
+  bldg_cov: number
+  imp_ratio: number
+  priority: 'high' | 'medium' | 'low'
+  cur_tax: number
+  pot_tax: number
+  tax_incr: number
+  pot_units: number
+  pot_resid: number
+}
+
+export type CommercialRetrofitFeature = Feature<Geometry, CommercialRetrofitProperties>
+export type CommercialRetrofitCollection = FeatureCollection<Geometry, CommercialRetrofitProperties>
+
+// Retrofit adoption scenario (shared across scenarios)
+export interface RetrofitAdoptionScenario {
+  parcels_developed?: number
+  parcels_retrofitted?: number
+  acres_developed?: number
+  acres_retrofitted?: number
+  housing_units: number
+  new_residents: number
+  tax_increase: number
+}
+
+// Retrofit summary types
+export interface ParkingRetrofitSummary {
+  generated: string
+  description: string
+  case_study_reference: string
+  methodology: {
+    development_type: string
+    units_per_acre: number
+    pph_factor: number
+    potential_tax_per_acre: number
+    source: string
+  }
+  totals: {
+    parking_parcels: number
+    total_acres: number
+    current_tax_revenue: number
+    potential_tax_revenue: number
+    forgone_tax_revenue: number
+    potential_housing_units: number
+    potential_residents: number
+  }
+  key_metrics: {
+    avg_current_tax_per_acre: number
+    avg_forgone_tax_per_acre: number
+    tax_ratio: number
+  }
+}
+
+export interface VacantInfillSummary {
+  generated: string
+  description: string
+  case_study_reference: string
+  methodology: {
+    development_type: string
+    units_per_acre: number
+    pph_factor: number
+    min_parcel_size_acres: number
+    potential_tax_per_acre: number
+    source: string
+  }
+  totals: {
+    vacant_parcels: number
+    buildable_parcels: number
+    excluded_parcels: number
+    total_acres: number
+    current_tax_revenue: number
+    potential_tax_revenue: number
+    tax_increase: number
+    potential_housing_units: number
+    potential_residents: number
+  }
+  by_size_category: Record<
+    string,
+    {
+      count: number
+      acres: number
+      potential_units: number
+      potential_tax_increase: number
+      label: string
+    }
+  >
+  adoption_scenarios: Record<string, RetrofitAdoptionScenario>
+}
+
+export interface CommercialRetrofitSummary {
+  generated: string
+  description: string
+  case_study_reference: string
+  methodology: {
+    development_type: string
+    units_per_acre: number
+    pph_factor: number
+    underutilized_threshold_bldg_cov: number
+    underutilized_threshold_imp_ratio: number
+    potential_tax_per_acre: number
+    source: string
+  }
+  totals: {
+    commercial_parcels: number
+    underutilized_parcels: number
+    commercial_acres: number
+    underutilized_acres: number
+    current_tax_revenue: number
+    potential_tax_revenue: number
+    tax_increase: number
+    potential_housing_units: number
+    potential_residents: number
+  }
+  by_priority: Record<
+    string,
+    {
+      count: number
+      acres: number
+      potential_units: number
+      potential_tax_increase: number
+      avg_bldg_coverage: number
+    }
+  >
+  adoption_scenarios: Record<string, RetrofitAdoptionScenario>
+}
+
+// Union type for all retrofit properties
+export type RetrofitProperties =
+  | ParkingRetrofitProperties
+  | VacantInfillProperties
+  | CommercialRetrofitProperties
+
+// Retrofit layer IDs
+export type RetrofitLayerId = 'parking-retrofit' | 'vacant-infill' | 'commercial-retrofit'
