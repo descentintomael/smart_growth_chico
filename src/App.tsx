@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { MapContainer } from './components/map/MapContainer'
 import { Legend } from './components/ui/Legend'
+import { UpzoneLegend } from './components/ui/UpzoneLegend'
 import { PrintButton } from './components/ui/PrintButton'
 import { LayerControl } from './components/panels/LayerControl'
 import { FilterPanel } from './components/panels/FilterPanel'
+import { UpzoneControlPanel } from './components/panels/UpzoneControlPanel'
 import { InfoPanel } from './components/panels/InfoPanel'
 
 export default function App() {
@@ -42,13 +44,14 @@ export default function App() {
         {/* Sidebar - desktop always visible, mobile toggleable */}
         <aside
           className={`
-            absolute inset-y-0 left-0 z-20 flex w-80 flex-col border-r border-gray-200 bg-white
+            absolute inset-y-0 left-0 z-20 flex w-80 flex-col border-r border-gray-200 bg-white overflow-y-auto
             transition-transform duration-300 ease-in-out
             md:relative md:translate-x-0
             ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
           `}
         >
           <LayerControl />
+          <UpzoneControlPanel />
           <FilterPanel />
           <InfoPanel />
         </aside>
@@ -57,6 +60,7 @@ export default function App() {
         <div className="relative flex-1">
           <MapContainer />
           <Legend />
+          <UpzoneLegend />
         </div>
 
         {/* Mobile overlay when sidebar is open */}

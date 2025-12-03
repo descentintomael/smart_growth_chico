@@ -30,6 +30,48 @@ export const LAYER_CONFIGS: LayerConfig[] = [
       ],
     },
   },
+  {
+    id: 'upzone-scenario',
+    name: 'Upzone Scenario',
+    description: 'What-if scenario for R1 to R2/R3 upzoning',
+    dataUrl: `${import.meta.env.BASE_URL}data/upzone-scenario.geojson`,
+    type: 'polygon',
+    defaultVisible: false,
+    group: 'planning',
+    // Note: choropleth styling is handled dynamically in UpzoneScenarioLayer
+    popup: {
+      title: 'Parcel {APN}',
+      fields: [
+        { label: 'Current Zone', property: 'cur_zone' },
+        { label: 'Upzone To', property: 'upzone_to', format: (v) => (v as string) || 'N/A' },
+        {
+          label: 'Eligible',
+          property: 'upzone_elig',
+          format: (v) => ((v as number) === 1 ? 'Yes' : 'No'),
+        },
+        { label: 'Priority Tier', property: 'upzone_tier', format: (v) => ((v as number) === 0 ? 'N/A' : String(v)) },
+        { label: 'Current SG Index', property: 'cur_sg_index', format: (v) => (v as number).toFixed(1) },
+        { label: 'Projected SG Index', property: 'proj_sg_index', format: (v) => (v as number).toFixed(1) },
+        {
+          label: 'SG Index Change',
+          property: 'delta_sg_index',
+          format: (v) => {
+            const num = v as number
+            return num >= 0 ? `+${num.toFixed(1)}` : num.toFixed(1)
+          },
+        },
+        { label: 'New Units', property: 'delta_units', format: (v) => `+${(v as number).toLocaleString()}` },
+        {
+          label: 'Tax Change',
+          property: 'delta_tax_total',
+          format: (v) => {
+            const num = v as number
+            return num >= 0 ? `+$${num.toLocaleString()}` : `-$${Math.abs(num).toLocaleString()}`
+          },
+        },
+      ],
+    },
+  },
 ]
 
 export function getLayerConfig(layerId: string): LayerConfig | undefined {
