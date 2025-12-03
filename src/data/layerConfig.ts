@@ -94,10 +94,11 @@ export const LAYER_CONFIGS: LayerConfig[] = [
       weight: 2,
     },
     popup: {
-      title: 'District {district_number}',
+      title: '{name}',
       fields: [
-        { label: 'Population', property: 'population', format: (v) => (v as number)?.toLocaleString() ?? 'N/A' },
-        { label: 'Households', property: 'households', format: (v) => (v as number)?.toLocaleString() ?? 'N/A' },
+        { label: 'Council Member', property: 'council_member' },
+        { label: 'Term', property: 'term_dates' },
+        { label: 'Email', property: 'email' },
       ],
     },
   },
