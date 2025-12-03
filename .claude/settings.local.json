@@ -25,7 +25,9 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(ogr2ogr:*)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(find:*)",
+      "Bash(git remote add:*)"
     ],
     "deny": [],
     "ask": []

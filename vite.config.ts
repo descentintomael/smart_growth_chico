@@ -4,7 +4,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/smart_growth_visualizer/',
+  base: '/smart_growth_chico/',
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),

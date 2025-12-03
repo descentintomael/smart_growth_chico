@@ -24,22 +24,34 @@ export function InfoPanel() {
 
   if (!selectedFeature) {
     return (
-      <div className="flex flex-1 flex-col items-center justify-center p-6 text-center">
-        <svg
-          className="mb-4 h-12 w-12 text-gray-300"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
-          />
-        </svg>
-        <p className="text-sm text-gray-500">Click on a feature to see details</p>
-      </div>
+      <section
+        role="region"
+        aria-labelledby="info-panel-heading"
+        className="flex flex-1 flex-col border-t border-gray-200"
+      >
+        <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
+          <h3 id="info-panel-heading" className="text-base font-semibold text-gray-900">
+            Parcel Details
+          </h3>
+        </div>
+        <div className="flex flex-1 flex-col items-center justify-center p-6 text-center">
+          <svg
+            className="mb-4 h-12 w-12 text-gray-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+            />
+          </svg>
+          <p className="text-sm text-gray-500">Click on a parcel to see details</p>
+        </div>
+      </section>
     )
   }
 
@@ -47,7 +59,7 @@ export function InfoPanel() {
   const config = selectedLayerId ? getLayerConfig(selectedLayerId) : null
 
   // Get title from popup config or use default
-  let title = 'Feature Details'
+  let title = 'Parcel Details'
   if (config?.popup?.title) {
     title = config.popup.title.replace(/\{(\w+)\}/g, (_, key) => {
       const value = properties[key]
@@ -63,15 +75,21 @@ export function InfoPanel() {
     }))
 
   return (
-    <div className="flex flex-1 flex-col">
+    <section
+      role="region"
+      aria-labelledby="info-panel-heading"
+      className="flex flex-1 flex-col border-t border-gray-200"
+    >
       <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
-        <h3 className="text-base font-semibold text-gray-900">{title}</h3>
+        <h3 id="info-panel-heading" className="text-base font-semibold text-gray-900">
+          {title}
+        </h3>
         <button
           onClick={clearSelection}
           className="text-gray-400 hover:text-gray-500"
-          aria-label="Close"
+          aria-label="Close parcel details"
         >
-          <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path
               fillRule="evenodd"
               d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -100,6 +118,6 @@ export function InfoPanel() {
           })}
         </dl>
       </div>
-    </div>
+    </section>
   )
 }

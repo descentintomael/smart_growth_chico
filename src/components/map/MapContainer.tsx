@@ -1,7 +1,8 @@
+import { useEffect } from 'react'
 import { MapContainer as LeafletMapContainer, TileLayer, ZoomControl } from 'react-leaflet'
 import { useLayerStore } from '@/stores/layerStore'
 import { LAYER_CONFIGS } from '@/data/layerConfig'
-import { useGeoJSON } from '@/hooks/useGeoJSON'
+import { useGeoJSON, prefetchGeoJSON } from '@/hooks/useGeoJSON'
 import { GeoJSONLayer } from './GeoJSONLayer'
 
 // Chico, CA coordinates
@@ -32,6 +33,15 @@ function LayerRenderer({ layerId }: { layerId: string }) {
 }
 
 export function MapContainer() {
+  // Prefetch all layer data on mount for snappier layer toggling
+  useEffect(() => {
+    LAYER_CONFIGS.forEach(config => {
+      prefetchGeoJSON(config.dataUrl).catch(() => {
+        // Silently ignore prefetch errors - data will be fetched when layer is enabled
+      })
+    })
+  }, [])
+
   return (
     <LeafletMapContainer
       center={CHICO_CENTER}
