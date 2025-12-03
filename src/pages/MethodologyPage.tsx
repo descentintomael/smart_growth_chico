@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { Link } from 'react-router-dom'
 
 export function MethodologyPage() {
@@ -64,7 +65,7 @@ export function MethodologyPage() {
         {/* Methodology content */}
         <article className="rounded-lg bg-white p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-h1:text-3xl prose-h2:text-2xl prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2 prose-h3:text-xl prose-a:text-primary-600 prose-table:text-sm">
-            <ReactMarkdown>{content}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
           </div>
         </article>
 
