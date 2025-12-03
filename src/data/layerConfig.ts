@@ -104,6 +104,96 @@ export const LAYER_CONFIGS: LayerConfig[] = [
       ],
     },
   },
+  {
+    id: 'parking-retrofit',
+    name: 'Parking Retrofit',
+    description: 'Convert parking lots to mixed-use housing (Hartford model)',
+    dataUrl: `${import.meta.env.BASE_URL}data/parking-retrofit.geojson`,
+    type: 'polygon',
+    defaultVisible: false,
+    group: 'retrofit',
+    // Note: choropleth styling handled dynamically in RetrofitLayer
+    popup: {
+      title: 'Parking Lot {APN}',
+      fields: [
+        {
+          label: 'Size',
+          property: 'acres',
+          format: (v) => `${(v as number).toFixed(2)} acres`,
+        },
+        { label: 'Potential Units', property: 'pot_units' },
+        { label: 'Potential Residents', property: 'pot_resid' },
+        {
+          label: 'Forgone Tax Revenue',
+          property: 'forgn_tax',
+          format: (v) => `$${Math.round(v as number).toLocaleString()}`,
+        },
+      ],
+    },
+  },
+  {
+    id: 'vacant-infill',
+    name: 'Vacant Infill',
+    description: 'Develop vacant parcels (South Bend model)',
+    dataUrl: `${import.meta.env.BASE_URL}data/vacant-infill.geojson`,
+    type: 'polygon',
+    defaultVisible: false,
+    group: 'retrofit',
+    // Note: choropleth styling handled dynamically in RetrofitLayer
+    popup: {
+      title: 'Vacant Parcel {APN}',
+      fields: [
+        {
+          label: 'Size',
+          property: 'acres',
+          format: (v) => `${(v as number).toFixed(2)} acres`,
+        },
+        { label: 'Size Category', property: 'size_cat' },
+        { label: 'Zoning', property: 'Zoning' },
+        { label: 'Potential Units', property: 'pot_units' },
+        { label: 'Potential Residents', property: 'pot_resid' },
+        {
+          label: 'Tax Increase',
+          property: 'tax_incr',
+          format: (v) => `+$${Math.round(v as number).toLocaleString()}`,
+        },
+      ],
+    },
+  },
+  {
+    id: 'commercial-retrofit',
+    name: 'Commercial Retrofit',
+    description: 'Retrofit underutilized commercial corridors (Boston model)',
+    dataUrl: `${import.meta.env.BASE_URL}data/commercial-retrofit.geojson`,
+    type: 'polygon',
+    defaultVisible: false,
+    group: 'retrofit',
+    // Note: choropleth styling handled dynamically in RetrofitLayer
+    popup: {
+      title: 'Commercial Parcel {APN}',
+      fields: [
+        {
+          label: 'Size',
+          property: 'acres',
+          format: (v) => `${(v as number).toFixed(2)} acres`,
+        },
+        { label: 'Land Use', property: 'land_use' },
+        { label: 'Priority', property: 'priority' },
+        {
+          label: 'Building Coverage',
+          property: 'bldg_cov',
+          format: (v) => `${(v as number).toFixed(1)}%`,
+        },
+        { label: 'Potential Units', property: 'pot_units' },
+        { label: 'Potential Residents', property: 'pot_resid' },
+        {
+          label: 'Tax Increase',
+          property: 'tax_incr',
+          format: (v) => `+$${Math.round(v as number).toLocaleString()}`,
+        },
+      ],
+    },
+  },
 ]
 
 export function getLayerConfig(layerId: string): LayerConfig | undefined {

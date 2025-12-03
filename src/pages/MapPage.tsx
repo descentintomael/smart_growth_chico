@@ -3,10 +3,12 @@ import { MapContainer } from '@/components/map/MapContainer'
 import { Legend } from '@/components/ui/Legend'
 import { UpzoneLegend } from '@/components/ui/UpzoneLegend'
 import { CommercialViabilityLegend } from '@/components/ui/CommercialViabilityLegend'
+import { RetrofitLegend } from '@/components/ui/RetrofitLegend'
 import { LayerControl } from '@/components/panels/LayerControl'
 import { FilterPanel } from '@/components/panels/FilterPanel'
 import { UpzoneControlPanel } from '@/components/panels/UpzoneControlPanel'
 import { CommercialViabilityControlPanel } from '@/components/panels/CommercialViabilityControlPanel'
+import { RetrofitControlPanel } from '@/components/panels/RetrofitControlPanel'
 import { InfoPanel } from '@/components/panels/InfoPanel'
 
 export function MapPage() {
@@ -51,6 +53,7 @@ export function MapPage() {
         <LayerControl />
         <UpzoneControlPanel />
         <CommercialViabilityControlPanel />
+        <RetrofitControlPanel />
         <FilterPanel />
         <InfoPanel />
       </aside>
@@ -61,6 +64,7 @@ export function MapPage() {
         <Legend />
         <UpzoneLegend />
         <CommercialViabilityLegend />
+        <RetrofitLegend />
       </div>
 
       {/* Mobile overlay when sidebar is open */}

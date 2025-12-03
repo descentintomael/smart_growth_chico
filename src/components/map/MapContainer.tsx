@@ -6,7 +6,15 @@ import { useGeoJSON, prefetchGeoJSON } from '@/hooks/useGeoJSON'
 import { GeoJSONLayer } from './GeoJSONLayer'
 import { UpzoneScenarioLayer } from '@/components/layers/UpzoneScenarioLayer'
 import { CommercialViabilityLayer } from '@/components/layers/CommercialViabilityLayer'
-import type { UpzoneCollection, CommercialViabilitySiteCollection } from '@/types'
+import { RetrofitLayer } from '@/components/layers/RetrofitLayer'
+import type {
+  UpzoneCollection,
+  CommercialViabilitySiteCollection,
+  RetrofitLayerId,
+  ParkingRetrofitCollection,
+  VacantInfillCollection,
+  CommercialRetrofitCollection,
+} from '@/types'
 
 // Chico, CA coordinates
 const CHICO_CENTER: [number, number] = [39.7285, -121.8375]
@@ -42,6 +50,22 @@ function LayerRenderer({ layerId }: { layerId: string }) {
     return (
       <CommercialViabilityLayer
         data={data as CommercialViabilitySiteCollection}
+        opacity={opacity}
+      />
+    )
+  }
+
+  // Use specialized layer component for retrofit scenarios
+  const RETROFIT_LAYERS: RetrofitLayerId[] = [
+    'parking-retrofit',
+    'vacant-infill',
+    'commercial-retrofit',
+  ]
+  if (RETROFIT_LAYERS.includes(layerId as RetrofitLayerId)) {
+    return (
+      <RetrofitLayer
+        layerId={layerId as RetrofitLayerId}
+        data={data as ParkingRetrofitCollection | VacantInfillCollection | CommercialRetrofitCollection}
         opacity={opacity}
       />
     )
