@@ -1,4 +1,4 @@
-import { useRef, useCallback } from 'react'
+import { useRef, useCallback, useMemo } from 'react'
 import { GeoJSON } from 'react-leaflet'
 import type { Layer, LeafletMouseEvent, PathOptions } from 'leaflet'
 import type { Feature, FeatureCollection, Geometry } from 'geojson'
@@ -9,6 +9,7 @@ import {
   getHighlightStyle,
 } from '@/lib/choroplethStyle'
 import { generatePopupContent } from '@/lib/popupContent'
+import { useFilterStore } from '@/stores/filterStore'
 
 interface GeoJSONLayerProps {
   config: LayerConfig
@@ -18,6 +19,33 @@ interface GeoJSONLayerProps {
 
 export function GeoJSONLayer({ config, data, opacity }: GeoJSONLayerProps) {
   const geoJsonRef = useRef<L.GeoJSON | null>(null)
+  const filters = useFilterStore(state => state.filters)
+
+  // Apply filters to GeoJSON data
+  const filteredData = useMemo((): FeatureCollection => {
+    const filter = filters[config.id]
+    if (!filter) {
+      return data
+    }
+
+    const filteredFeatures = data.features.filter(feature => {
+      const props = feature.properties as Record<string, unknown> | null
+      if (!props) return true
+
+      const value = props[filter.property]
+      if (typeof value !== 'number') return true
+
+      if (filter.min !== undefined && value < filter.min) return false
+      if (filter.max !== undefined && value > filter.max) return false
+
+      return true
+    })
+
+    return {
+      ...data,
+      features: filteredFeatures,
+    }
+  }, [data, filters, config.id])
 
   // Create style function based on config
   const styleFn = useCallback(
@@ -75,11 +103,15 @@ export function GeoJSONLayer({ config, data, opacity }: GeoJSONLayerProps) {
     [config.popup]
   )
 
+  // Generate key that includes filter state to force re-render when filters change
+  const filter = filters[config.id]
+  const filterKey = filter ? `${filter.min ?? ''}-${filter.max ?? ''}` : ''
+
   return (
     <GeoJSON
       ref={geoJsonRef}
-      key={`${config.id}-${opacity}`}
-      data={data}
+      key={`${config.id}-${opacity}-${filterKey}`}
+      data={filteredData}
       style={styleFn}
       onEachFeature={onEachFeature}
     />

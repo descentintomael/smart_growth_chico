@@ -1,6 +1,6 @@
+import chroma from 'chroma-js'
 import { useLayerStore } from '@/stores/layerStore'
 import { getLayerConfig } from '@/data/layerConfig'
-import { getLegendStops, createDivergentScale } from '@/lib/colorScales'
 
 /**
  * Map legend showing color scale for the active choropleth layer
@@ -25,34 +25,35 @@ export function Legend() {
 
   const { choropleth } = config
   const domain = choropleth.domain ?? [0, 100]
+  const steps = choropleth.steps ?? 5
+
+  // Use the scale colors directly from config
+  const colors = choropleth.scale ?? ['#ffffb2', '#bd0026']
+  const colorScale = chroma.scale(colors).domain(domain).mode('lab')
 
   // Generate legend stops
-  // For voting data, use divergent scale centered at 50%
-  const isDivergent = domain[0] === 0 && domain[1] === 100
-  let stops: Array<{ value: number; color: string }>
-
-  if (isDivergent) {
-    // Create custom stops for divergent scale
-    const colorFn = createDivergentScale('voting', domain, 50)
-    stops = [0, 25, 50, 75, 100].map(value => ({
-      value,
-      color: colorFn(value),
-    }))
-  } else {
-    stops = getLegendStops('priority', domain, choropleth.steps)
-  }
+  const stepSize = (domain[1] - domain[0]) / (steps - 1)
+  const stops = Array.from({ length: steps }, (_, i) => {
+    const value = domain[0] + stepSize * i
+    return { value, color: colorScale(value).hex() }
+  })
 
   return (
-    <div className="absolute bottom-8 left-4 z-[1000] rounded-lg bg-white p-4 shadow-lg">
-      <h4 className="mb-3 text-sm font-semibold text-gray-900">
+    <aside
+      role="complementary"
+      aria-labelledby="legend-heading"
+      className="map-legend absolute bottom-8 left-4 z-[1000] rounded-lg bg-white p-4 shadow-lg"
+    >
+      <h4 id="legend-heading" className="mb-3 text-sm font-semibold text-gray-900">
         {choropleth.legendTitle}
       </h4>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1" role="list" aria-label="Color scale values">
         {stops.map((stop, index) => (
-          <div key={index} className="flex items-center gap-2">
+          <div key={index} className="flex items-center gap-2" role="listitem">
             <div
               className="h-4 w-6 rounded border border-gray-200"
               style={{ backgroundColor: stop.color }}
+              aria-hidden="true"
             />
             <span className="text-xs text-gray-600">
               {choropleth.formatValue(stop.value)}
@@ -60,6 +61,6 @@ export function Legend() {
           </div>
         ))}
       </div>
-    </div>
+    </aside>
   )
 }

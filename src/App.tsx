@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { MapContainer } from './components/map/MapContainer'
 import { Legend } from './components/ui/Legend'
+import { PrintButton } from './components/ui/PrintButton'
 import { LayerControl } from './components/panels/LayerControl'
+import { FilterPanel } from './components/panels/FilterPanel'
 import { InfoPanel } from './components/panels/InfoPanel'
 
 export default function App() {
@@ -11,9 +13,12 @@ export default function App() {
     <div className="flex h-screen w-screen flex-col">
       {/* Header */}
       <header className="flex h-14 shrink-0 items-center justify-between border-b border-gray-200 bg-white px-4">
-        <div className="flex items-center">
-          <h1 className="text-lg font-semibold text-gray-900">Smart Growth Visualizer</h1>
-          <span className="ml-2 text-sm text-gray-500">Chico, CA</span>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center">
+            <h1 className="text-lg font-semibold text-gray-900">Smart Growth Visualizer</h1>
+            <span className="ml-2 text-sm text-gray-500">Chico, CA</span>
+          </div>
+          <PrintButton className="hidden md:flex" />
         </div>
 
         {/* Sidebar toggle for mobile */}
@@ -44,9 +49,8 @@ export default function App() {
           `}
         >
           <LayerControl />
-          <div className="border-t border-gray-200">
-            <InfoPanel />
-          </div>
+          <FilterPanel />
+          <InfoPanel />
         </aside>
 
         {/* Map container */}

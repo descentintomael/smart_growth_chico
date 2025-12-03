@@ -18,7 +18,7 @@ export type LayerGroup = 'voting' | 'planning' | 'infrastructure' | 'demographic
 
 export interface ChoroplethConfig {
   property: string
-  scale: [string, string]
+  scale: string[]
   domain?: [number, number]
   mode: 'quantile' | 'equidistant' | 'jenks'
   steps: number
