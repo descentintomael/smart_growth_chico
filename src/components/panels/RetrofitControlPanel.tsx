@@ -275,14 +275,8 @@ export function RetrofitControlPanel() {
     setCommercialLoading,
   ])
 
-  // Don't render if no retrofit layer is visible
-  if (!activeLayer) {
-    return null
-  }
-
-  const opacity = layerOpacity[activeLayer] ?? 1
-
   // Get current adoption and summary based on active layer
+  // NOTE: These useMemo hooks must be BEFORE any early return to satisfy React Rules of Hooks
   const adoptionPercent = useMemo(() => {
     if (activeLayer === 'vacant-infill') return vacantAdoption
     if (activeLayer === 'commercial-retrofit') return commercialAdoption
@@ -301,6 +295,13 @@ export function RetrofitControlPanel() {
     if (activeLayer === 'commercial-retrofit') return commercialSummary
     return null
   }, [activeLayer, parkingSummary, vacantSummary, commercialSummary])
+
+  // Don't render if no retrofit layer is visible
+  if (!activeLayer) {
+    return null
+  }
+
+  const opacity = layerOpacity[activeLayer] ?? 1
 
   const hasAdoptionSlider =
     activeLayer === 'vacant-infill' || activeLayer === 'commercial-retrofit'
