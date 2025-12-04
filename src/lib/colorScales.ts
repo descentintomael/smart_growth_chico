@@ -2,8 +2,8 @@ import chroma from 'chroma-js'
 
 // Predefined color scales for different data types
 export const COLOR_SCALES = {
-  // Smart Growth Index: Red (Low) to Green (Excellent) - divergent
-  smartGrowth: ['#a50026', '#d73027', '#f46d43', '#fdae61', '#a6d96a', '#1a9850', '#006837'],
+  // Smart Growth Index: Pale (Low) to Green (Excellent) - sequential teal
+  smartGrowth: ['#e0f3f8', '#b3e0dc', '#8ccdc1', '#66c2a4', '#41ae76', '#238b45', '#006837'],
   // Voting: Red (NO) to Blue (YES) - divergent
   voting: ['#d73027', '#f7f7f7', '#4575b4'],
   // Priority score: Yellow to Red - sequential
