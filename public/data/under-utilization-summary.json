@@ -1,0 +1,138 @@
+{
+  "generated": "2025-12-04T15:00:43.063436",
+  "description": "Under-Utilization Analysis for Chico parcels",
+  "methodology": {
+    "uu_vertical": "Floor area ratio vs. allowed FAR (medium+ density zones only)",
+    "uu_improvement": "Improvement/land value ratio inverted (percentile)",
+    "uu_density": "Zoning headroom - current vs. allowed intensity",
+    "uu_upzone": "Potential units from R1->R2 upzoning (percentile)",
+    "composite_weights": {
+      "vertical": 0.2,
+      "improvement": 0.3,
+      "density": 0.3,
+      "upzone": 0.2
+    }
+  },
+  "tier_thresholds": {
+    "severe": 80,
+    "high": 60,
+    "moderate": 40
+  },
+  "total_parcels_analyzed": 27133,
+  "aggregate_statistics": {
+    "uu_vertical": {
+      "mean": 3.1,
+      "median": 0.0,
+      "severe_count": 504
+    },
+    "uu_improvement": {
+      "mean": 50.0,
+      "median": 50.0,
+      "land_exceeds_improvement_count": 3837
+    },
+    "uu_density": {
+      "mean": 6.1,
+      "median": 0.0,
+      "high_headroom_count": 2306
+    },
+    "uu_upzone": {
+      "eligible_parcels": 11155,
+      "potential_new_units": 31896
+    }
+  },
+  "advocacy_highlights": {
+    "total_underutilized_parcels": 151,
+    "total_underutilized_acres": 76.0,
+    "total_foregone_units": 31896,
+    "potential_annual_tax_increase": 63792000,
+    "top_talking_points": [
+      "151 parcels (76 acres) are significantly underutilized",
+      "31,896 housing units could be built on existing infrastructure",
+      "$63,792,000 in potential annual tax revenue is being foregone",
+      "3,837 parcels have land worth more than their buildings"
+    ]
+  },
+  "summary_by_zone": {
+    "CC": {
+      "parcels": 477,
+      "acres": 299.4,
+      "avg_vert": 41.1,
+      "avg_imp": 55.4,
+      "avg_dens": 33.2,
+      "avg_upz": 0.0,
+      "foregone_units": 0
+    },
+    "CN": {
+      "parcels": 90,
+      "acres": 27.5,
+      "avg_vert": 32.2,
+      "avg_imp": 57.6,
+      "avg_dens": 38.7,
+      "avg_upz": 0.0,
+      "foregone_units": 0
+    },
+    "CR": {
+      "parcels": 143,
+      "acres": 393.3,
+      "avg_vert": 40.5,
+      "avg_imp": 57.4,
+      "avg_dens": 26.8,
+      "avg_upz": 0.0,
+      "foregone_units": 0
+    },
+    "CS": {
+      "parcels": 114,
+      "acres": 130.2,
+      "avg_vert": 49.0,
+      "avg_imp": 52.5,
+      "avg_dens": 28.3,
+      "avg_upz": 0.0,
+      "foregone_units": 0
+    },
+    "Other": {
+      "parcels": 13988,
+      "acres": 6570.6,
+      "avg_vert": 0.0,
+      "avg_imp": 47.9,
+      "avg_dens": 1.7,
+      "avg_upz": 0.0,
+      "foregone_units": 0
+    },
+    "R1": {
+      "parcels": 9696,
+      "acres": 2962.3,
+      "avg_vert": 0.0,
+      "avg_imp": 52.6,
+      "avg_dens": 0.0,
+      "avg_upz": 51.0,
+      "foregone_units": 27810
+    },
+    "R2": {
+      "parcels": 1459,
+      "acres": 403.6,
+      "avg_vert": 0.0,
+      "avg_imp": 53.4,
+      "avg_dens": 48.2,
+      "avg_upz": 43.3,
+      "foregone_units": 4086
+    },
+    "R3": {
+      "parcels": 995,
+      "acres": 421.0,
+      "avg_vert": 44.4,
+      "avg_imp": 44.5,
+      "avg_dens": 38.7,
+      "avg_upz": 0.0,
+      "foregone_units": 0
+    },
+    "RM": {
+      "parcels": 171,
+      "acres": 41.0,
+      "avg_vert": 42.5,
+      "avg_imp": 49.5,
+      "avg_dens": 32.6,
+      "avg_upz": 0.0,
+      "foregone_units": 0
+    }
+  }
+}

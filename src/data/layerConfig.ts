@@ -31,6 +31,29 @@ export const LAYER_CONFIGS: LayerConfig[] = [
     },
   },
   {
+    id: 'under-utilization',
+    name: 'Under-Utilization',
+    description: 'Parcel under-utilization by multiple metrics',
+    dataUrl: `${import.meta.env.BASE_URL}data/under-utilization.geojson`,
+    type: 'polygon',
+    defaultVisible: false,
+    group: 'planning',
+    // Note: choropleth styling is handled dynamically in UnderUtilizationLayer
+    popup: {
+      title: 'Parcel {APN}',
+      fields: [
+        { label: 'Zone', property: 'zoning' },
+        { label: 'Acres', property: 'Lt_Acre', format: (v) => (v as number).toFixed(2) },
+        { label: 'Composite Score', property: 'uu_composite', format: (v) => (v as number).toFixed(1) },
+        { label: 'Composite Tier', property: 'tier_comp' },
+        { label: 'Vertical', property: 'uu_vertical', format: (v) => (v as number).toFixed(1) },
+        { label: 'Improvement', property: 'uu_improvement', format: (v) => (v as number).toFixed(1) },
+        { label: 'Density', property: 'uu_density', format: (v) => (v as number).toFixed(1) },
+        { label: 'Upzone Potential', property: 'uu_upzone', format: (v) => (v as number).toFixed(1) },
+      ],
+    },
+  },
+  {
     id: 'upzone-scenario',
     name: 'Upzone Scenario',
     description: 'What-if scenario for R1 to R2/R3 upzoning',
