@@ -1,5 +1,5 @@
 {
-  "generated": "2025-12-03T15:04:17.355852",
+  "generated": "2025-12-03T19:58:38.603075",
   "description": "Parking lot retrofit analysis for Chico (Hartford model)",
   "case_study_reference": "Hartford, CT - $50M/year forgone tax revenue from parking lots",
   "methodology": {
@@ -10,18 +10,18 @@
     "source": "Hartford parking reform case study"
   },
   "totals": {
-    "parking_parcels": 196,
-    "total_acres": 190.7,
-    "current_tax_revenue": 3021454.0,
-    "potential_tax_revenue": 7700917.0,
-    "forgone_tax_revenue": 4679463.0,
-    "potential_housing_units": 4692,
-    "potential_residents": 10701
+    "parking_parcels": 142,
+    "total_acres": 96.6,
+    "current_tax_revenue": 2367010.0,
+    "potential_tax_revenue": 3899521.0,
+    "forgone_tax_revenue": 1532511.0,
+    "potential_housing_units": 2357,
+    "potential_residents": 5353
   },
   "key_metrics": {
-    "avg_current_tax_per_acre": 15843.0,
-    "avg_forgone_tax_per_acre": 24537.0,
-    "tax_ratio": 2.5
+    "avg_current_tax_per_acre": 24511.0,
+    "avg_forgone_tax_per_acre": 15869.0,
+    "tax_ratio": 1.6
   },
   "parcels": [
     {
@@ -35,30 +35,6 @@
       "forgone_tax": 5091.0,
       "potential_units": 3,
       "potential_residents": 6
-    },
-    {
-      "apn": "002-010-037-000",
-      "address": "None None",
-      "acres": 0.47,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 18979.0,
-      "forgone_tax": 18979.0,
-      "potential_units": 11,
-      "potential_residents": 25
-    },
-    {
-      "apn": "002-110-037-000",
-      "address": "None None",
-      "acres": 1.02,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 41188.0,
-      "forgone_tax": 41188.0,
-      "potential_units": 25,
-      "potential_residents": 57
     },
     {
       "apn": "002-140-014-000",
@@ -131,30 +107,6 @@
       "forgone_tax": 79341.0,
       "potential_units": 62,
       "potential_residents": 142
-    },
-    {
-      "apn": "002-180-151-000",
-      "address": "1775 CONCORD",
-      "acres": 4.28,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 172827.0,
-      "forgone_tax": 172827.0,
-      "potential_units": 107,
-      "potential_residents": 246
-    },
-    {
-      "apn": "002-180-197-000",
-      "address": "1601 CONCORD",
-      "acres": 7.08,
-      "current_tax": 428006.0,
-      "current_tax_acre": 60453.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 285892.0,
-      "forgone_tax": -142114.0,
-      "potential_units": 177,
-      "potential_residents": 407
     },
     {
       "apn": "002-180-211-000",
@@ -493,18 +445,6 @@
       "potential_residents": 372
     },
     {
-      "apn": "002-450-048-000",
-      "address": "None None",
-      "acres": 0.13,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 5249.0,
-      "forgone_tax": 5249.0,
-      "potential_units": 3,
-      "potential_residents": 6
-    },
-    {
       "apn": "002-450-050-000",
       "address": "None None",
       "acres": 1.42,
@@ -527,42 +467,6 @@
       "forgone_tax": 130066.0,
       "potential_units": 154,
       "potential_residents": 354
-    },
-    {
-      "apn": "002-450-052-000",
-      "address": "None None",
-      "acres": 0.0,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 0.0,
-      "forgone_tax": 0.0,
-      "potential_units": 0,
-      "potential_residents": 0
-    },
-    {
-      "apn": "002-450-053-000",
-      "address": "None None",
-      "acres": 0.0,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 0.0,
-      "forgone_tax": 0.0,
-      "potential_units": 0,
-      "potential_residents": 0
-    },
-    {
-      "apn": "002-450-054-000",
-      "address": "None None",
-      "acres": 0.0,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 0.0,
-      "forgone_tax": 0.0,
-      "potential_units": 0,
-      "potential_residents": 0
     },
     {
       "apn": "002-660-009-000",
@@ -733,18 +637,6 @@
       "potential_residents": 16
     },
     {
-      "apn": "003-021-029-000",
-      "address": "1625 MAGNOLIA",
-      "acres": 0.33,
-      "current_tax": 27.0,
-      "current_tax_acre": 82.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 13325.0,
-      "forgone_tax": 13299.0,
-      "potential_units": 8,
-      "potential_residents": 18
-    },
-    {
       "apn": "003-022-002-000",
       "address": "1665 ESPLANADE",
       "acres": 0.25,
@@ -769,126 +661,6 @@
       "potential_residents": 6
     },
     {
-      "apn": "003-022-015-000",
-      "address": "130 6TH",
-      "acres": 1.58,
-      "current_tax": 16.0,
-      "current_tax_acre": 10.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 63801.0,
-      "forgone_tax": 63785.0,
-      "potential_units": 39,
-      "potential_residents": 89
-    },
-    {
-      "apn": "003-022-016-000",
-      "address": "0 7TH",
-      "acres": 0.04,
-      "current_tax": 16.0,
-      "current_tax_acre": 399.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 1615.0,
-      "forgone_tax": 1599.0,
-      "potential_units": 1,
-      "potential_residents": 2
-    },
-    {
-      "apn": "003-022-017-000",
-      "address": "0 7TH",
-      "acres": 0.04,
-      "current_tax": 16.0,
-      "current_tax_acre": 399.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 1615.0,
-      "forgone_tax": 1599.0,
-      "potential_units": 1,
-      "potential_residents": 2
-    },
-    {
-      "apn": "003-023-024-000",
-      "address": "1531 ESPLANADE",
-      "acres": 2.31,
-      "current_tax": 80.0,
-      "current_tax_acre": 35.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 93278.0,
-      "forgone_tax": 93198.0,
-      "potential_units": 57,
-      "potential_residents": 131
-    },
-    {
-      "apn": "003-031-003-000",
-      "address": "227 5TH",
-      "acres": 0.1,
-      "current_tax": 27.0,
-      "current_tax_acre": 269.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 4038.0,
-      "forgone_tax": 4011.0,
-      "potential_units": 2,
-      "potential_residents": 4
-    },
-    {
-      "apn": "003-031-004-000",
-      "address": "225 5TH",
-      "acres": 0.1,
-      "current_tax": 27.0,
-      "current_tax_acre": 269.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 4038.0,
-      "forgone_tax": 4011.0,
-      "potential_units": 2,
-      "potential_residents": 4
-    },
-    {
-      "apn": "003-031-005-000",
-      "address": "0 MAGNOLIA",
-      "acres": 0.2,
-      "current_tax": 19.0,
-      "current_tax_acre": 96.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 8076.0,
-      "forgone_tax": 8057.0,
-      "potential_units": 5,
-      "potential_residents": 11
-    },
-    {
-      "apn": "003-031-006-000",
-      "address": "0 MAGNOLIA",
-      "acres": 0.2,
-      "current_tax": 19.0,
-      "current_tax_acre": 96.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 8076.0,
-      "forgone_tax": 8057.0,
-      "potential_units": 5,
-      "potential_residents": 11
-    },
-    {
-      "apn": "003-120-001-000",
-      "address": "681 SACRAMENTO",
-      "acres": 14.55,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 587533.0,
-      "forgone_tax": 587533.0,
-      "potential_units": 363,
-      "potential_residents": 834
-    },
-    {
-      "apn": "003-120-003-000",
-      "address": "None None",
-      "acres": 0.11,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 4442.0,
-      "forgone_tax": 4442.0,
-      "potential_units": 2,
-      "potential_residents": 4
-    },
-    {
       "apn": "003-120-006-000",
       "address": "917 WARNER",
       "acres": 0.14,
@@ -901,30 +673,6 @@
       "potential_residents": 6
     },
     {
-      "apn": "003-120-007-000",
-      "address": "909 WARNER",
-      "acres": 0.14,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 5653.0,
-      "forgone_tax": 5653.0,
-      "potential_units": 3,
-      "potential_residents": 6
-    },
-    {
-      "apn": "003-120-008-000",
-      "address": "None None",
-      "acres": 0.17,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 6865.0,
-      "forgone_tax": 6865.0,
-      "potential_units": 4,
-      "potential_residents": 9
-    },
-    {
       "apn": "003-120-010-000",
       "address": "623 STADIUM",
       "acres": 0.32,
@@ -935,18 +683,6 @@
       "forgone_tax": 9550.0,
       "potential_units": 8,
       "potential_residents": 18
-    },
-    {
-      "apn": "003-120-020-000",
-      "address": "None None",
-      "acres": 3.11,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 125583.0,
-      "forgone_tax": 125583.0,
-      "potential_units": 77,
-      "potential_residents": 177
     },
     {
       "apn": "003-190-019-000",
@@ -985,42 +721,6 @@
       "potential_residents": 20
     },
     {
-      "apn": "003-190-051-000",
-      "address": "None None",
-      "acres": 3.16,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 127602.0,
-      "forgone_tax": 127602.0,
-      "potential_units": 79,
-      "potential_residents": 181
-    },
-    {
-      "apn": "003-200-999-000",
-      "address": "None None",
-      "acres": 0.0,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 0.0,
-      "forgone_tax": 0.0,
-      "potential_units": 0,
-      "potential_residents": 0
-    },
-    {
-      "apn": "003-220-015-000",
-      "address": "667 1ST",
-      "acres": 1.33,
-      "current_tax": 54.0,
-      "current_tax_acre": 40.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 53706.0,
-      "forgone_tax": 53652.0,
-      "potential_units": 33,
-      "potential_residents": 75
-    },
-    {
       "apn": "003-220-016-000",
       "address": "None None",
       "acres": 0.11,
@@ -1055,18 +755,6 @@
       "forgone_tax": 57936.0,
       "potential_units": 39,
       "potential_residents": 89
-    },
-    {
-      "apn": "003-280-020-000",
-      "address": "550 VALLOMBROSA",
-      "acres": 1.84,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 74300.0,
-      "forgone_tax": 74300.0,
-      "potential_units": 46,
-      "potential_residents": 105
     },
     {
       "apn": "003-280-054-000",
@@ -1117,18 +805,6 @@
       "potential_residents": 0
     },
     {
-      "apn": "003-370-900-000",
-      "address": "None None",
-      "acres": 0.0,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 0.0,
-      "forgone_tax": 0.0,
-      "potential_units": 0,
-      "potential_residents": 0
-    },
-    {
       "apn": "003-391-006-000",
       "address": "174 8TH",
       "acres": 0.14,
@@ -1139,42 +815,6 @@
       "forgone_tax": 5124.0,
       "potential_units": 3,
       "potential_residents": 6
-    },
-    {
-      "apn": "003-401-030-000",
-      "address": "185 7TH",
-      "acres": 0.02,
-      "current_tax": 33.0,
-      "current_tax_acre": 1627.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 808.0,
-      "forgone_tax": 775.0,
-      "potential_units": 0,
-      "potential_residents": 0
-    },
-    {
-      "apn": "003-401-031-000",
-      "address": "185 7TH",
-      "acres": 0.02,
-      "current_tax": 33.0,
-      "current_tax_acre": 1627.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 808.0,
-      "forgone_tax": 775.0,
-      "potential_units": 0,
-      "potential_residents": 0
-    },
-    {
-      "apn": "003-401-032-000",
-      "address": "185 7TH",
-      "acres": 0.02,
-      "current_tax": 33.0,
-      "current_tax_acre": 1627.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 808.0,
-      "forgone_tax": 775.0,
-      "potential_units": 0,
-      "potential_residents": 0
     },
     {
       "apn": "003-492-002-000",
@@ -1261,66 +901,6 @@
       "potential_residents": 11
     },
     {
-      "apn": "004-021-019-000",
-      "address": "912 1ST",
-      "acres": 0.72,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 29074.0,
-      "forgone_tax": 29074.0,
-      "potential_units": 18,
-      "potential_residents": 41
-    },
-    {
-      "apn": "004-033-004-000",
-      "address": "None None",
-      "acres": 0.49,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 19786.0,
-      "forgone_tax": 19786.0,
-      "potential_units": 12,
-      "potential_residents": 27
-    },
-    {
-      "apn": "004-033-005-000",
-      "address": "941 1ST",
-      "acres": 0.47,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 18979.0,
-      "forgone_tax": 18979.0,
-      "potential_units": 11,
-      "potential_residents": 25
-    },
-    {
-      "apn": "004-037-005-000",
-      "address": "250 ORANGE",
-      "acres": 0.63,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 25440.0,
-      "forgone_tax": 25440.0,
-      "potential_units": 15,
-      "potential_residents": 34
-    },
-    {
-      "apn": "004-038-004-000",
-      "address": "None None",
-      "acres": 0.4,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 16152.0,
-      "forgone_tax": 16152.0,
-      "potential_units": 10,
-      "potential_residents": 23
-    },
-    {
       "apn": "004-038-005-000",
       "address": "212 CHERRY",
       "acres": 0.52,
@@ -1331,18 +911,6 @@
       "forgone_tax": 18311.0,
       "potential_units": 13,
       "potential_residents": 29
-    },
-    {
-      "apn": "004-038-006-000",
-      "address": "215 ORANGE",
-      "acres": 0.7,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 28266.0,
-      "forgone_tax": 28266.0,
-      "potential_units": 17,
-      "potential_residents": 39
     },
     {
       "apn": "004-052-002-000",
@@ -1379,30 +947,6 @@
       "forgone_tax": -10290.0,
       "potential_units": 3,
       "potential_residents": 6
-    },
-    {
-      "apn": "004-052-012-000",
-      "address": "None None",
-      "acres": 0.04,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 1615.0,
-      "forgone_tax": 1615.0,
-      "potential_units": 1,
-      "potential_residents": 2
-    },
-    {
-      "apn": "004-061-007-000",
-      "address": "228 SALEM",
-      "acres": 0.27,
-      "current_tax": 2511.0,
-      "current_tax_acre": 9302.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 10903.0,
-      "forgone_tax": 8391.0,
-      "potential_units": 6,
-      "potential_residents": 13
     },
     {
       "apn": "004-062-002-000",
@@ -1489,42 +1033,6 @@
       "potential_residents": 2
     },
     {
-      "apn": "004-092-011-000",
-      "address": "0 2ND",
-      "acres": 1.6,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 64608.0,
-      "forgone_tax": 64608.0,
-      "potential_units": 40,
-      "potential_residents": 92
-    },
-    {
-      "apn": "004-113-008-000",
-      "address": "450 ORANGE",
-      "acres": 0.75,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 30285.0,
-      "forgone_tax": 30285.0,
-      "potential_units": 18,
-      "potential_residents": 41
-    },
-    {
-      "apn": "004-113-011-000",
-      "address": "None None",
-      "acres": 1.14,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 46033.0,
-      "forgone_tax": 46033.0,
-      "potential_units": 28,
-      "potential_residents": 64
-    },
-    {
       "apn": "004-131-003-000",
       "address": "300 SALEM",
       "acres": 0.18,
@@ -1533,30 +1041,6 @@
       "potential_tax_acre": 40380.0,
       "potential_tax": 7268.0,
       "forgone_tax": -7949.0,
-      "potential_units": 4,
-      "potential_residents": 9
-    },
-    {
-      "apn": "004-132-001-000",
-      "address": "None None",
-      "acres": 0.23,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 9287.0,
-      "forgone_tax": 9287.0,
-      "potential_units": 5,
-      "potential_residents": 11
-    },
-    {
-      "apn": "004-132-002-000",
-      "address": "None None",
-      "acres": 0.17,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 6865.0,
-      "forgone_tax": 6865.0,
       "potential_units": 4,
       "potential_residents": 9
     },
@@ -1583,42 +1067,6 @@
       "forgone_tax": -80254.0,
       "potential_units": 4,
       "potential_residents": 9
-    },
-    {
-      "apn": "004-132-007-000",
-      "address": "226 4TH",
-      "acres": 0.13,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 5249.0,
-      "forgone_tax": 5249.0,
-      "potential_units": 3,
-      "potential_residents": 6
-    },
-    {
-      "apn": "004-132-008-000",
-      "address": "None None",
-      "acres": 0.19,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 7672.0,
-      "forgone_tax": 7672.0,
-      "potential_units": 4,
-      "potential_residents": 9
-    },
-    {
-      "apn": "004-132-009-000",
-      "address": "None None",
-      "acres": 0.08,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 3230.0,
-      "forgone_tax": 3230.0,
-      "potential_units": 2,
-      "potential_residents": 4
     },
     {
       "apn": "004-142-006-000",
@@ -1741,18 +1189,6 @@
       "potential_residents": 18
     },
     {
-      "apn": "004-232-001-000",
-      "address": "605 SALEM",
-      "acres": 0.14,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 5653.0,
-      "forgone_tax": 5653.0,
-      "potential_units": 3,
-      "potential_residents": 6
-    },
-    {
       "apn": "004-232-002-000",
       "address": "227 6TH",
       "acres": 0.06,
@@ -1763,18 +1199,6 @@
       "forgone_tax": 707.0,
       "potential_units": 1,
       "potential_residents": 2
-    },
-    {
-      "apn": "004-232-007-000",
-      "address": "None None",
-      "acres": 0.1,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 4038.0,
-      "forgone_tax": 4038.0,
-      "potential_units": 2,
-      "potential_residents": 4
     },
     {
       "apn": "004-241-007-000",
@@ -1847,18 +1271,6 @@
       "forgone_tax": 4318.0,
       "potential_units": 5,
       "potential_residents": 11
-    },
-    {
-      "apn": "004-252-011-000",
-      "address": "628 WALL",
-      "acres": 0.36,
-      "current_tax": 2796.0,
-      "current_tax_acre": 7766.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 14537.0,
-      "forgone_tax": 11741.0,
-      "potential_units": 9,
-      "potential_residents": 20
     },
     {
       "apn": "004-252-013-000",
@@ -1957,18 +1369,6 @@
       "potential_residents": 46
     },
     {
-      "apn": "006-250-015-000",
-      "address": "124 PARMAC",
-      "acres": 1.01,
-      "current_tax": 47.0,
-      "current_tax_acre": 47.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 40784.0,
-      "forgone_tax": 40737.0,
-      "potential_units": 25,
-      "potential_residents": 57
-    },
-    {
       "apn": "006-250-016-000",
       "address": "120 PARMAC",
       "acres": 1.18,
@@ -2017,18 +1417,6 @@
       "potential_residents": 55
     },
     {
-      "apn": "006-260-012-000",
-      "address": "554 RIO LINDO",
-      "acres": 0.46,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 18575.0,
-      "forgone_tax": 18575.0,
-      "potential_units": 11,
-      "potential_residents": 25
-    },
-    {
       "apn": "007-280-048-000",
       "address": "757 EAST",
       "acres": 0.65,
@@ -2039,18 +1427,6 @@
       "forgone_tax": 16783.0,
       "potential_units": 16,
       "potential_residents": 36
-    },
-    {
-      "apn": "007-280-060-000",
-      "address": "801 EAST",
-      "acres": 10.77,
-      "current_tax": 220685.0,
-      "current_tax_acre": 20491.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 434895.0,
-      "forgone_tax": 214210.0,
-      "potential_units": 269,
-      "potential_residents": 618
     },
     {
       "apn": "007-280-064-000",
@@ -2219,30 +1595,6 @@
       "forgone_tax": -4814.0,
       "potential_units": 1,
       "potential_residents": 2
-    },
-    {
-      "apn": "018-240-099-000",
-      "address": "None None",
-      "acres": 30.79,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 1243308.0,
-      "forgone_tax": 1243308.0,
-      "potential_units": 769,
-      "potential_residents": 1768
-    },
-    {
-      "apn": "039-430-011-000",
-      "address": "None None",
-      "acres": 0.15,
-      "current_tax": 0.0,
-      "current_tax_acre": 0.0,
-      "potential_tax_acre": 40380.0,
-      "potential_tax": 6057.0,
-      "forgone_tax": 6057.0,
-      "potential_units": 3,
-      "potential_residents": 6
     },
     {
       "apn": "039-430-012-000",

@@ -1,5 +1,5 @@
 {
-  "generated": "2025-12-03T15:06:03.712311",
+  "generated": "2025-12-03T19:58:41.575753",
   "description": "Vacant parcel infill analysis for Chico (South Bend model)",
   "case_study_reference": "South Bend, IN - Scattered-site infill with 75% cost savings",
   "methodology": {
@@ -12,21 +12,21 @@
   },
   "totals": {
     "vacant_parcels": 362,
-    "buildable_parcels": 280,
+    "buildable_parcels": 267,
     "excluded_parcels": 82,
-    "total_acres": 1250.2,
-    "current_tax_revenue": 2875602.0,
-    "potential_tax_revenue": 50481480.0,
-    "tax_increase": 47605878.0,
-    "potential_housing_units": 31149,
-    "potential_residents": 71511
+    "total_acres": 459.0,
+    "current_tax_revenue": 2731169.0,
+    "potential_tax_revenue": 18535399.0,
+    "tax_increase": 15804230.0,
+    "potential_housing_units": 11375,
+    "potential_residents": 26036
   },
   "by_size_category": {
     "small": {
-      "count": 108,
-      "acres": 18.1,
-      "potential_units": 409,
-      "potential_tax_increase": 404110.0,
+      "count": 105,
+      "acres": 17.5,
+      "potential_units": 396,
+      "potential_tax_increase": 392025.0,
       "label": "Small (<0.25 acre)"
     },
     "medium": {
@@ -37,41 +37,41 @@
       "label": "Medium (0.25-1 acre)"
     },
     "large": {
-      "count": 88,
-      "acres": 1191.0,
-      "potential_units": 29745,
-      "potential_tax_increase": 46136746.0,
+      "count": 78,
+      "acres": 400.5,
+      "potential_units": 9984,
+      "potential_tax_increase": 14347182.0,
       "label": "Large (>1 acre)"
     }
   },
   "adoption_scenarios": {
     "10": {
-      "parcels_developed": 28,
-      "acres_developed": 125.0,
-      "housing_units": 3114,
-      "new_residents": 7151,
-      "tax_increase": 4760588.0
+      "parcels_developed": 26,
+      "acres_developed": 45.9,
+      "housing_units": 1137,
+      "new_residents": 2603,
+      "tax_increase": 1580423.0
     },
     "25": {
-      "parcels_developed": 70,
-      "acres_developed": 312.5,
-      "housing_units": 7787,
-      "new_residents": 17877,
-      "tax_increase": 11901470.0
+      "parcels_developed": 66,
+      "acres_developed": 114.8,
+      "housing_units": 2843,
+      "new_residents": 6509,
+      "tax_increase": 3951057.0
     },
     "50": {
-      "parcels_developed": 140,
-      "acres_developed": 625.1,
-      "housing_units": 15574,
-      "new_residents": 35755,
-      "tax_increase": 23802939.0
+      "parcels_developed": 133,
+      "acres_developed": 229.5,
+      "housing_units": 5687,
+      "new_residents": 13018,
+      "tax_increase": 7902115.0
     },
     "100": {
-      "parcels_developed": 280,
-      "acres_developed": 1250.2,
-      "housing_units": 31149,
-      "new_residents": 71511,
-      "tax_increase": 47605878.0
+      "parcels_developed": 267,
+      "acres_developed": 459.0,
+      "housing_units": 11375,
+      "new_residents": 26036,
+      "tax_increase": 15804230.0
     }
   },
   "parcels": [
@@ -110,18 +110,6 @@
       "tax_increase": 762312.0,
       "potential_units": 507,
       "potential_residents": 1166
-    },
-    {
-      "apn": "002-180-083-000",
-      "address": "2370 HUMBOLDT",
-      "acres": 19.03,
-      "size_category": "large",
-      "zoning": "OR",
-      "current_tax": 1023.0,
-      "potential_tax": 768436.0,
-      "tax_increase": 767414.0,
-      "potential_units": 475,
-      "potential_residents": 1092
     },
     {
       "apn": "002-180-086-000",
@@ -376,30 +364,6 @@
       "potential_residents": 188
     },
     {
-      "apn": "002-190-042-000",
-      "address": "1050 FREMONT",
-      "acres": 50.0,
-      "size_category": "large",
-      "zoning": "R2",
-      "current_tax": 0.0,
-      "potential_tax": 2019012.0,
-      "tax_increase": 2019012.0,
-      "potential_units": 1250,
-      "potential_residents": 2875
-    },
-    {
-      "apn": "002-190-049-000",
-      "address": "None None",
-      "acres": 47.83,
-      "size_category": "large",
-      "zoning": "R2",
-      "current_tax": 7494.0,
-      "potential_tax": 1931387.0,
-      "tax_increase": 1923893.0,
-      "potential_units": 1195,
-      "potential_residents": 2748
-    },
-    {
       "apn": "002-190-050-000",
       "address": "None None",
       "acres": 7.97,
@@ -600,18 +564,6 @@
       "current_tax": 1629.0,
       "potential_tax": 7268.0,
       "tax_increase": 5640.0,
-      "potential_units": 4,
-      "potential_residents": 9
-    },
-    {
-      "apn": "002-250-006-000",
-      "address": "40 PARKHURST",
-      "acres": 0.18,
-      "size_category": "small",
-      "zoning": "CC",
-      "current_tax": 2318.0,
-      "potential_tax": 7268.0,
-      "tax_increase": 4951.0,
       "potential_units": 4,
       "potential_residents": 9
     },
@@ -880,18 +832,6 @@
       "potential_residents": 9
     },
     {
-      "apn": "002-350-030-000",
-      "address": "9 ROBERTO",
-      "acres": 0.19,
-      "size_category": "small",
-      "zoning": "R1",
-      "current_tax": 4153.0,
-      "potential_tax": 7672.0,
-      "tax_increase": 3519.0,
-      "potential_units": 4,
-      "potential_residents": 9
-    },
-    {
       "apn": "002-350-031-000",
       "address": "8 ROBERTO",
       "acres": 0.16,
@@ -902,18 +842,6 @@
       "tax_increase": 4830.0,
       "potential_units": 4,
       "potential_residents": 9
-    },
-    {
-      "apn": "002-350-032-000",
-      "address": "7 ROBERTO",
-      "acres": 0.2,
-      "size_category": "small",
-      "zoning": "PQ",
-      "current_tax": 4461.0,
-      "potential_tax": 8076.0,
-      "tax_increase": 3615.0,
-      "potential_units": 5,
-      "potential_residents": 11
     },
     {
       "apn": "002-350-033-000",
@@ -1912,18 +1840,6 @@
       "potential_residents": 41
     },
     {
-      "apn": "005-100-900-000",
-      "address": "None None",
-      "acres": 1.241,
-      "size_category": "large",
-      "zoning": "RMU",
-      "current_tax": 0.0,
-      "potential_tax": 50126.0,
-      "tax_increase": 50126.0,
-      "potential_units": 31,
-      "potential_residents": 71
-    },
-    {
       "apn": "005-102-017-000",
       "address": "168 11TH",
       "acres": 0.21,
@@ -2584,18 +2500,6 @@
       "potential_residents": 13
     },
     {
-      "apn": "018-390-009-000",
-      "address": "None None",
-      "acres": 117.24,
-      "size_category": "large",
-      "zoning": "R1",
-      "current_tax": 2604.0,
-      "potential_tax": 4734181.0,
-      "tax_increase": 4731577.0,
-      "potential_units": 2931,
-      "potential_residents": 6741
-    },
-    {
       "apn": "018-390-014-000",
       "address": "None None",
       "acres": 10.18,
@@ -2606,18 +2510,6 @@
       "tax_increase": 410825.0,
       "potential_units": 254,
       "potential_residents": 584
-    },
-    {
-      "apn": "018-390-017-000",
-      "address": "None None",
-      "acres": 83.53,
-      "size_category": "large",
-      "zoning": "R1",
-      "current_tax": 1310.0,
-      "potential_tax": 3372962.0,
-      "tax_increase": 3371653.0,
-      "potential_units": 2088,
-      "potential_residents": 4802
     },
     {
       "apn": "018-390-018-000",
@@ -2728,18 +2620,6 @@
       "potential_residents": 75
     },
     {
-      "apn": "018-500-083-000",
-      "address": "None None",
-      "acres": 215.56,
-      "size_category": "large",
-      "zoning": "R1",
-      "current_tax": 5107.0,
-      "potential_tax": 8704367.0,
-      "tax_increase": 8699260.0,
-      "potential_units": 5389,
-      "potential_residents": 12394
-    },
-    {
       "apn": "018-500-163-000",
       "address": "None None",
       "acres": 12.3,
@@ -2764,18 +2644,6 @@
       "potential_residents": 1731
     },
     {
-      "apn": "018-500-166-000",
-      "address": "None None",
-      "acres": 116.32,
-      "size_category": "large",
-      "zoning": "R1",
-      "current_tax": 30518.0,
-      "potential_tax": 4697031.0,
-      "tax_increase": 4666513.0,
-      "potential_units": 2908,
-      "potential_residents": 6688
-    },
-    {
       "apn": "018-500-169-000",
       "address": "None None",
       "acres": 4.66,
@@ -2786,18 +2654,6 @@
       "tax_increase": 188172.0,
       "potential_units": 116,
       "potential_residents": 266
-    },
-    {
-      "apn": "018-500-170-000",
-      "address": "None None",
-      "acres": 35.26,
-      "size_category": "large",
-      "zoning": "R2",
-      "current_tax": 0.0,
-      "potential_tax": 1423808.0,
-      "tax_increase": 1423808.0,
-      "potential_units": 881,
-      "potential_residents": 2026
     },
     {
       "apn": "018-500-178-000",
@@ -2882,18 +2738,6 @@
       "tax_increase": 22722.0,
       "potential_units": 14,
       "potential_residents": 32
-    },
-    {
-      "apn": "039-400-050-000",
-      "address": "None None",
-      "acres": 104.55,
-      "size_category": "large",
-      "zoning": "SPA",
-      "current_tax": 85446.0,
-      "potential_tax": 4221755.0,
-      "tax_increase": 4136309.0,
-      "potential_units": 2613,
-      "potential_residents": 6009
     },
     {
       "apn": "039-400-051-000",
