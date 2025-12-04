@@ -21,7 +21,7 @@ export function createChoroplethStyleFn(
 
     return {
       fillColor: colorScale(numValue).hex(),
-      fillOpacity: opacity * 0.7,
+      fillOpacity: opacity * 0.85,
       color: '#374151', // gray-700
       weight: 1,
       opacity: opacity,
