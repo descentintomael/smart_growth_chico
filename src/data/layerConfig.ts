@@ -11,7 +11,7 @@ export const LAYER_CONFIGS: LayerConfig[] = [
     group: 'planning',
     choropleth: {
       property: 'sg_index',
-      scale: ['#e0f3f8', '#b3e0dc', '#8ccdc1', '#66c2a4', '#41ae76', '#238b45', '#006837'],
+      scale: ['#f7fcf5', '#d4ecd9', '#a1d99b', '#74c476', '#41ab5d', '#238b45', '#00a651'],
       domain: [0, 100],
       mode: 'equidistant',
       steps: 6,
