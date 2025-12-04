@@ -5,10 +5,12 @@ import { LAYER_CONFIGS } from '@/data/layerConfig'
 import { useGeoJSON, prefetchGeoJSON } from '@/hooks/useGeoJSON'
 import { GeoJSONLayer } from './GeoJSONLayer'
 import { UpzoneScenarioLayer } from '@/components/layers/UpzoneScenarioLayer'
+import { UnderUtilizationLayer } from '@/components/layers/UnderUtilizationLayer'
 import { CommercialViabilityLayer } from '@/components/layers/CommercialViabilityLayer'
 import { RetrofitLayer } from '@/components/layers/RetrofitLayer'
 import type {
   UpzoneCollection,
+  UnderUtilizationCollection,
   CommercialViabilitySiteCollection,
   RetrofitLayerId,
   ParkingRetrofitCollection,
@@ -43,6 +45,11 @@ function LayerRenderer({ layerId }: { layerId: string }) {
   // Use specialized layer component for upzone scenario
   if (layerId === 'upzone-scenario') {
     return <UpzoneScenarioLayer data={data as UpzoneCollection} opacity={opacity} />
+  }
+
+  // Use specialized layer component for under-utilization
+  if (layerId === 'under-utilization') {
+    return <UnderUtilizationLayer data={data as UnderUtilizationCollection} opacity={opacity} />
   }
 
   // Use specialized layer component for commercial viability

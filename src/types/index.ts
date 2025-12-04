@@ -403,3 +403,80 @@ export type RetrofitProperties =
 
 // Retrofit layer IDs
 export type RetrofitLayerId = 'parking-retrofit' | 'vacant-infill' | 'commercial-retrofit'
+
+// Under-Utilization properties (GeoJSON)
+export interface UnderUtilizationProperties {
+  APN: string
+  Lt_Acre: number
+  Tax_Amnt: number
+  Land_Vl: number
+  Impr_Vl: number
+  Use_Code: string
+  zoning: string
+  zone_cat: string
+  bldg_cov: number
+  actual_far: number
+  allowed_far: number
+  imp_ratio: number
+  cur_units: number
+  delta_units: number
+  foregone_units: number
+  uu_vertical: number
+  uu_improvement: number
+  uu_density: number
+  uu_upzone: number
+  uu_composite: number
+  tier_vert: 'Low' | 'Moderate' | 'High' | 'Severe'
+  tier_imp: 'Low' | 'Moderate' | 'High' | 'Severe'
+  tier_dens: 'Low' | 'Moderate' | 'High' | 'Severe'
+  tier_upz: 'Low' | 'Moderate' | 'High' | 'Severe'
+  tier_comp: 'Low' | 'Moderate' | 'High' | 'Severe'
+}
+
+export type UnderUtilizationFeature = Feature<Geometry, UnderUtilizationProperties>
+export type UnderUtilizationCollection = FeatureCollection<Geometry, UnderUtilizationProperties>
+
+export type UnderUtilizationMetric = 'composite' | 'vertical' | 'improvement' | 'density' | 'upzone'
+
+export interface UnderUtilizationSummary {
+  generated: string
+  description: string
+  methodology: {
+    uu_vertical: string
+    uu_improvement: string
+    uu_density: string
+    uu_upzone: string
+    composite_weights: Record<string, number>
+  }
+  tier_thresholds: {
+    severe: number
+    high: number
+    moderate: number
+  }
+  total_parcels_analyzed: number
+  aggregate_statistics: {
+    uu_vertical: { mean: number; median: number; severe_count: number }
+    uu_improvement: { mean: number; median: number; land_exceeds_improvement_count: number }
+    uu_density: { mean: number; median: number; high_headroom_count: number }
+    uu_upzone: { eligible_parcels: number; potential_new_units: number }
+  }
+  advocacy_highlights: {
+    total_underutilized_parcels: number
+    total_underutilized_acres: number
+    total_foregone_units: number
+    potential_annual_tax_increase: number
+    top_talking_points: string[]
+  }
+  summary_by_zone: Record<
+    string,
+    {
+      parcels: number
+      acres: number
+      avg_vert: number
+      avg_imp: number
+      avg_dens: number
+      avg_upz: number
+      foregone_units: number
+    }
+  >
+}

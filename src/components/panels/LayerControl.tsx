@@ -5,7 +5,10 @@ import { LAYER_CONFIGS } from '@/data/layerConfig'
 const LAYER_GROUPS = [
   {
     label: 'Current State',
-    options: [{ id: 'smart-growth-index', name: 'Smart Growth Index' }],
+    options: [
+      { id: 'smart-growth-index', name: 'Smart Growth Index' },
+      { id: 'under-utilization', name: 'Under-Utilization' },
+    ],
   },
   {
     label: 'Upzoning Scenarios',
