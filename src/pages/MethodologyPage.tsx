@@ -44,35 +44,14 @@ export function MethodologyPage() {
   }, [activeSection])
 
   return (
-    <main className="flex flex-1 flex-col overflow-hidden bg-gray-50">
-      {/* Tab Navigation */}
-      <div className="border-b border-gray-200 bg-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <nav className="-mb-px flex space-x-1 overflow-x-auto py-2" aria-label="Methodology sections">
-            {METHODOLOGY_SECTIONS.map((methodSection) => (
-              <Link
-                key={methodSection.id}
-                to={`/methodology/${methodSection.id}`}
-                className={`whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === methodSection.id
-                    ? 'bg-primary-100 text-primary-700'
-                    : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
-                }`}
-              >
-                {methodSection.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div>
-
-      {/* Content Area */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-          {/* Back to map link */}
+    <main className="flex flex-1 overflow-hidden bg-gray-50">
+      {/* Sidebar Navigation */}
+      <aside className="flex w-64 flex-shrink-0 flex-col border-r border-gray-200 bg-white">
+        {/* Back to map link */}
+        <div className="border-b border-gray-200 px-4 py-4">
           <Link
             to="/"
-            className="mb-6 inline-flex items-center gap-1 text-sm text-primary-600 hover:text-primary-700"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
@@ -84,7 +63,35 @@ export function MethodologyPage() {
             </svg>
             Back to Map
           </Link>
+        </div>
 
+        {/* Section Navigation */}
+        <nav className="flex-1 overflow-y-auto p-4" aria-label="Methodology sections">
+          <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+            Methodology
+          </h2>
+          <ul className="space-y-1">
+            {METHODOLOGY_SECTIONS.map((methodSection) => (
+              <li key={methodSection.id}>
+                <Link
+                  to={`/methodology/${methodSection.id}`}
+                  className={`block rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                    activeSection === methodSection.id
+                      ? 'bg-primary-100 text-primary-700'
+                      : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                  }`}
+                >
+                  {methodSection.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+
+      {/* Content Area */}
+      <div className="flex-1 overflow-y-auto">
+        <div className="mx-auto max-w-4xl px-8 py-8">
           {loading ? (
             <div className="flex items-center justify-center py-12">
               <div className="text-gray-500">Loading methodology...</div>
@@ -97,21 +104,11 @@ export function MethodologyPage() {
               </Link>
             </div>
           ) : (
-            <>
-              {/* Methodology content */}
-              <article className="rounded-lg bg-white p-6 shadow-sm sm:p-8 lg:p-10">
-                <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-h1:text-3xl prose-h2:text-2xl prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2 prose-h3:text-xl prose-a:text-primary-600 prose-table:text-sm">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
-                </div>
-              </article>
-
-              {/* Footer */}
-              <div className="mt-8 text-center text-sm text-gray-500">
-                <Link to="/" className="text-primary-600 hover:text-primary-700">
-                  Return to Map Visualization
-                </Link>
+            <article className="rounded-lg bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+              <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-h1:text-3xl prose-h2:text-2xl prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2 prose-h3:text-xl prose-a:text-primary-600 prose-table:text-sm">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
               </div>
-            </>
+            </article>
           )}
         </div>
       </div>
