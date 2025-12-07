@@ -15,7 +15,7 @@ createRoot(rootElement).render(
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<MapPage />} />
-          <Route path="methodology" element={<MethodologyPage />} />
+          <Route path="methodology/:section?" element={<MethodologyPage />} />
         </Route>
       </Routes>
     </HashRouter>

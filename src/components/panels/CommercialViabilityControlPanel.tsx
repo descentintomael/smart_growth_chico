@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useCommercialViabilityStore } from '@/stores/commercialViabilityStore'
 import { useLayerStore } from '@/stores/layerStore'
 import type { CommercialViabilitySummary } from '@/types'
@@ -225,10 +226,20 @@ export function CommercialViabilityControlPanel() {
       className="border-t border-gray-200"
     >
       <div className="border-b border-gray-200 px-4 py-3">
-        <h3 id="commercial-viability-control-heading" className="text-base font-semibold text-gray-900">
-          Commercial Viability
-        </h3>
-        <p className="text-xs text-gray-500 mt-0.5">Business viability at opportunity sites</p>
+        <div className="flex items-start justify-between">
+          <div>
+            <h3 id="commercial-viability-control-heading" className="text-base font-semibold text-gray-900">
+              Commercial Viability
+            </h3>
+            <p className="text-xs text-gray-500 mt-0.5">Business viability at opportunity sites</p>
+          </div>
+          <Link
+            to="/methodology/commercial-viability"
+            className="text-xs text-primary-600 hover:text-primary-700 hover:underline whitespace-nowrap"
+          >
+            View Methodology
+          </Link>
+        </div>
       </div>
 
       <div className="space-y-5 p-4">
