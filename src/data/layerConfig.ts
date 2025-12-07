@@ -8,7 +8,7 @@ export const LAYER_CONFIGS: LayerConfig[] = [
     dataUrl: `${import.meta.env.BASE_URL}data/smart-growth-index.geojson`,
     type: 'polygon',
     defaultVisible: true,
-    group: 'planning',
+    group: 'analysis',
     choropleth: {
       property: 'sg_index',
       scale: ['#f7fcf5', '#d4ecd9', '#a1d99b', '#74c476', '#41ab5d', '#238b45', '#00a651'],
@@ -37,7 +37,7 @@ export const LAYER_CONFIGS: LayerConfig[] = [
     dataUrl: `${import.meta.env.BASE_URL}data/under-utilization.geojson`,
     type: 'polygon',
     defaultVisible: false,
-    group: 'planning',
+    group: 'analysis',
     // Note: choropleth styling is handled dynamically in UnderUtilizationLayer
     popup: {
       title: 'Parcel {APN}',
@@ -50,6 +50,31 @@ export const LAYER_CONFIGS: LayerConfig[] = [
         { label: 'Improvement', property: 'uu_improvement', format: (v) => (v as number).toFixed(1) },
         { label: 'Density', property: 'uu_density', format: (v) => (v as number).toFixed(1) },
         { label: 'Upzone Potential', property: 'uu_upzone', format: (v) => (v as number).toFixed(1) },
+      ],
+    },
+  },
+  {
+    id: 'fire-risk-index',
+    name: 'Fire Risk Index',
+    description: 'Parcel-level fire risk based on FHSZ, slope, WUI, and historical fires',
+    dataUrl: `${import.meta.env.BASE_URL}data/fire-risk-index.geojson`,
+    type: 'polygon',
+    defaultVisible: false,
+    group: 'analysis',
+    // Note: choropleth styling is handled dynamically in FireRiskLayer (categorical by tier)
+    popup: {
+      title: 'Parcel {APN}',
+      fields: [
+        { label: 'Fire Risk Score', property: 'fire_risk', format: (v) => (v as number).toFixed(1) },
+        { label: 'Risk Tier', property: 'fire_tier' },
+        { label: 'In WUI', property: 'in_wui', format: (v) => ((v as number) === 1 ? 'Yes' : 'No') },
+        { label: 'FHSZ Class', property: 'fhsz_class', format: (v) => (v as string) || 'None' },
+        { label: 'Nearest Fire', property: 'nearest_fire_nm' },
+        {
+          label: 'Fire Distance',
+          property: 'nearest_fire_mi',
+          format: (v) => `${(v as number).toFixed(1)} mi`,
+        },
       ],
     },
   },

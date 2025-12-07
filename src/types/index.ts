@@ -14,7 +14,7 @@ export interface LayerConfig {
   style?: LayerStyle
 }
 
-export type LayerGroup = 'voting' | 'planning' | 'infrastructure' | 'demographics' | 'retrofit'
+export type LayerGroup = 'voting' | 'planning' | 'infrastructure' | 'demographics' | 'retrofit' | 'analysis'
 
 export interface ChoroplethConfig {
   property: string
@@ -479,4 +479,61 @@ export interface UnderUtilizationSummary {
       foregone_units: number
     }
   >
+}
+
+// Fire Risk Index properties (GeoJSON)
+export type FireRiskTier = 'Low' | 'Moderate' | 'High' | 'Extreme'
+
+export interface FireRiskProperties {
+  APN: string
+  fhsz_class: string | null
+  slope_deg: number
+  wui_class: string
+  wui_raw: string
+  in_wui: number
+  nearest_fire_mi: number
+  nearest_fire_yr: number
+  nearest_fire_nm: string
+  fr_fhsz: number
+  fr_slope: number
+  fr_wui: number
+  fr_hist: number
+  fr_veg: number
+  fire_risk: number
+  fire_tier: FireRiskTier
+  lat: number
+  lon: number
+}
+
+export type FireRiskFeature = Feature<Geometry, FireRiskProperties>
+export type FireRiskCollection = FeatureCollection<Geometry, FireRiskProperties>
+
+export interface FireRiskSummary {
+  generated: string
+  description: string
+  methodology: {
+    fhsz_weight: number
+    slope_weight: number
+    wui_weight: number
+    historical_weight: number
+    vegetation_weight: number
+    source: string
+  }
+  tier_thresholds: {
+    extreme: number
+    high: number
+    moderate: number
+  }
+  total_parcels_analyzed: number
+  tier_distribution: Record<FireRiskTier, { count: number; percent: number }>
+  wui_statistics: {
+    parcels_in_wui: number
+    percent_in_wui: number
+  }
+  score_statistics: {
+    mean: number
+    median: number
+    min: number
+    max: number
+  }
 }
