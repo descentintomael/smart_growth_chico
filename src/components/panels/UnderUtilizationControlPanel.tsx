@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useUnderUtilizationStore } from '@/stores/underUtilizationStore'
 import { useLayerStore } from '@/stores/layerStore'
 import type { UnderUtilizationMetric, UnderUtilizationSummary } from '@/types'
@@ -217,10 +218,20 @@ export function UnderUtilizationControlPanel() {
       className="border-t border-gray-200"
     >
       <div className="border-b border-gray-200 px-4 py-3">
-        <h3 id="under-utilization-control-heading" className="text-base font-semibold text-gray-900">
-          Under-Utilization Analysis
-        </h3>
-        <p className="text-xs text-gray-500 mt-0.5">Identify parcels with development potential</p>
+        <div className="flex items-start justify-between">
+          <div>
+            <h3 id="under-utilization-control-heading" className="text-base font-semibold text-gray-900">
+              Under-Utilization Analysis
+            </h3>
+            <p className="text-xs text-gray-500 mt-0.5">Identify parcels with development potential</p>
+          </div>
+          <Link
+            to="/methodology/under-utilization"
+            className="text-xs text-primary-600 hover:text-primary-700 hover:underline whitespace-nowrap"
+          >
+            View Methodology
+          </Link>
+        </div>
       </div>
 
       <div className="space-y-5 p-4">

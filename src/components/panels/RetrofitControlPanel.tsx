@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { useRetrofitStore } from '@/stores/retrofitStore'
 import { useLayerStore } from '@/stores/layerStore'
 import type {
@@ -313,10 +314,20 @@ export function RetrofitControlPanel() {
       className="border-t border-gray-200"
     >
       <div className="border-b border-gray-200 px-4 py-3">
-        <h3 id="retrofit-control-heading" className="text-base font-semibold text-gray-900">
-          {LAYER_TITLES[activeLayer]}
-        </h3>
-        <p className="mt-0.5 text-xs text-gray-500">{LAYER_DESCRIPTIONS[activeLayer]}</p>
+        <div className="flex items-start justify-between">
+          <div>
+            <h3 id="retrofit-control-heading" className="text-base font-semibold text-gray-900">
+              {LAYER_TITLES[activeLayer]}
+            </h3>
+            <p className="mt-0.5 text-xs text-gray-500">{LAYER_DESCRIPTIONS[activeLayer]}</p>
+          </div>
+          <Link
+            to={`/methodology/${activeLayer}`}
+            className="text-xs text-primary-600 hover:text-primary-700 hover:underline whitespace-nowrap"
+          >
+            View Methodology
+          </Link>
+        </div>
       </div>
 
       <div className="space-y-5 p-4">
