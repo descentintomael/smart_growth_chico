@@ -7,6 +7,7 @@ import { RetrofitLegend } from '@/components/ui/RetrofitLegend'
 import { LayerControl } from '@/components/panels/LayerControl'
 import { FilterPanel } from '@/components/panels/FilterPanel'
 import { UnderUtilizationControlPanel } from '@/components/panels/UnderUtilizationControlPanel'
+import { FireRiskControlPanel } from '@/components/panels/FireRiskControlPanel'
 import { UpzoneControlPanel } from '@/components/panels/UpzoneControlPanel'
 import { CommercialViabilityControlPanel } from '@/components/panels/CommercialViabilityControlPanel'
 import { RetrofitControlPanel } from '@/components/panels/RetrofitControlPanel'
@@ -53,6 +54,7 @@ export function MapPage() {
       >
         <LayerControl />
         <UnderUtilizationControlPanel />
+        <FireRiskControlPanel />
         <UpzoneControlPanel />
         <CommercialViabilityControlPanel />
         <RetrofitControlPanel />

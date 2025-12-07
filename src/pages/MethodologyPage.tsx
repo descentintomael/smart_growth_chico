@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom'
 const METHODOLOGY_SECTIONS = [
   { id: 'smart-growth-index', label: 'Smart Growth Index' },
   { id: 'under-utilization', label: 'Under-Utilization' },
+  { id: 'fire-risk-index', label: 'Fire Risk Index' },
   { id: 'commercial-viability', label: 'Commercial Viability' },
   { id: 'parking-retrofit', label: 'Parking Retrofit' },
   { id: 'vacant-infill', label: 'Vacant Infill' },

@@ -1,0 +1,46 @@
+{
+  "generated": "2025-12-07T23:36:43.201Z",
+  "description": "Fire Risk Index Analysis for Chico parcels",
+  "methodology": {
+    "fhsz_weight": 0.35,
+    "slope_weight": 0.2,
+    "wui_weight": 0.2,
+    "historical_weight": 0.15,
+    "vegetation_weight": 0.1,
+    "source": "CAL FIRE FHSZ, USGS DEM, SILVIS WUI, InciWeb fire history"
+  },
+  "tier_thresholds": {
+    "extreme": 80,
+    "high": 60,
+    "moderate": 40
+  },
+  "total_parcels_analyzed": 29333,
+  "tier_distribution": {
+    "Low": {
+      "count": 16721,
+      "percent": 57
+    },
+    "Moderate": {
+      "count": 12601,
+      "percent": 43
+    },
+    "High": {
+      "count": 1,
+      "percent": 0
+    },
+    "Extreme": {
+      "count": 10,
+      "percent": 0
+    }
+  },
+  "wui_statistics": {
+    "parcels_in_wui": 15567,
+    "percent_in_wui": 53.1
+  },
+  "score_statistics": {
+    "mean": 32.7,
+    "median": 35.5,
+    "min": 8.7,
+    "max": 90.8
+  }
+}

@@ -4,10 +4,11 @@ import { LAYER_CONFIGS } from '@/data/layerConfig'
 // Layer options grouped by category
 const LAYER_GROUPS = [
   {
-    label: 'Current State',
+    label: 'Current Conditions',
     options: [
       { id: 'smart-growth-index', name: 'Smart Growth Index' },
       { id: 'under-utilization', name: 'Under-Utilization' },
+      { id: 'fire-risk-index', name: 'Fire Risk Index' },
     ],
   },
   {
