@@ -40,3 +40,12 @@ lerna-debug.log*
 
 # TypeScript cache
 *.tsbuildinfo
+
+# PersonaSpec test results
+test-results/
+*.observations.json
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
