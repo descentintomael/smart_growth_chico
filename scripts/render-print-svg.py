@@ -111,15 +111,15 @@ COLOR_BG = "#fbfaf6"
 # District boundary — civic navy, not red. Buffered outward a few meters so it
 # clears edge-running roads (Bruce Rd, E 20th, etc.) instead of overlapping them.
 COLOR_BOUNDARY = "#1e3a8a"  # indigo-900; reads as civic / official, not alarming
-BOUNDARY_WIDTH = 2.0
-BOUNDARY_BUFFER_M = 15  # offset boundary 15m outward from the OSM polygon
+BOUNDARY_WIDTH = 4.0          # bumped from 2.0 — needed visual presence
+BOUNDARY_CASING_WIDTH = 7.0
+BOUNDARY_CASING_COLOR = COLOR_BG
+BOUNDARY_BUFFER_M = 15
 
 # World mask — fades everything outside the district. We use the paper color
 # (not pure white) so the mask blends with the page and the fade looks uniform.
-# Opacity is strong enough that outside roads/labels read as obvious context,
-# not as content competing with the district.
 MASK_FILL = COLOR_BG
-MASK_OPACITY = 0.82
+MASK_OPACITY = 0.86  # used for the outermost cap; the fade rings ramp up to this
 
 # Road styles, indexed by OSM highway class. Two-pass render: casings first
 # (drawn for arterials only), then road fills on top.
@@ -178,23 +178,60 @@ WATERWAY_STYLES = {
 
 # Highway shield styling. The shield "kind" is inferred from the ref's network
 # tag if present, otherwise from the ref string itself.
+#
+# `path` is the SVG path centered at (0,0). It defines the silhouette of the
+# shield — US routes use the classic curved-shield silhouette; California state
+# routes use a pentagon ("spade") matching the real signage; interstates use a
+# shield shape similar to US.
 SHIELD_STYLES = {
-    "us":    {"fill": "#ffffff", "stroke": "#111827", "text": "#111827", "width": 36, "height": 30, "rx": 4},
-    "state": {"fill": "#15803d", "stroke": "#0f172a", "text": "#ffffff", "width": 32, "height": 32, "rx": 3},
-    "i":     {"fill": "#1e3a8a", "stroke": "#0f172a", "text": "#ffffff", "width": 36, "height": 30, "rx": 4},
-    "generic": {"fill": "#ffffff", "stroke": "#111827", "text": "#111827", "width": 32, "height": 26, "rx": 3},
+    # US Highway: classic shield with curved top, pointed bottom.
+    "us": {
+        "fill": "#ffffff", "stroke": "#111827", "text": "#111827",
+        "width": 38, "height": 36, "text_dy": 2,
+        "path": "M-19,-12 Q-19,-18 -13,-18 H13 Q19,-18 19,-12 V6 Q19,9 15,12 L0,18 L-15,12 Q-19,9 -19,6 Z",
+    },
+    # Interstate: shield with blue body + red top bar (rendered separately).
+    "i": {
+        "fill": "#1e3a8a", "stroke": "#0f172a", "text": "#ffffff",
+        "width": 38, "height": 36, "text_dy": 4,
+        "path": "M-19,-12 Q-19,-18 -13,-18 H13 Q19,-18 19,-12 V6 Q19,9 15,12 L0,18 L-15,12 Q-19,9 -19,6 Z",
+        "top_band_h": 7, "top_fill": "#b91c1c",
+    },
+    # CA State Route: green pentagon (the "spade" silhouette real signs use).
+    "state": {
+        "fill": "#15803d", "stroke": "#052e16", "text": "#ffffff",
+        "width": 36, "height": 38, "text_dy": 1,
+        "path": "M-18,-14 Q-18,-19 -13,-19 H13 Q18,-19 18,-14 V4 L0,19 L-18,4 Z",
+    },
+    # Unknown route — small rounded card.
+    "generic": {
+        "fill": "#ffffff", "stroke": "#111827", "text": "#111827",
+        "width": 32, "height": 26, "text_dy": 0,
+        "path": "M-16,-13 Q-16,-13 -16,-11 H16 Q16,-13 16,-13 V11 Q16,13 14,13 H-14 Q-16,13 -16,11 Z",
+    },
 }
 
-# Map fade rings — concentric paper-colored annuli that produce a soft gradient
-# from full district color through to the deeply-faded outer page. (Distances in
-# meters from the boundary buffer. Each ring applies an additional fade step.)
-FADE_RINGS = [
-    (40,   0.22),
-    (110,  0.22),
-    (220,  0.22),
-    (380,  0.22),
-    (600,  0.22),
-    (1100, 0.22),
+# Map fade — concentric paper-colored layers that produce a smooth gradient
+# from full district color through to a deeply-faded outer page.
+#
+# Each entry is (distance-from-boundary-meters, per-layer fade-opacity). Each
+# layer is rendered as "everything outside this buffered polygon" so they STACK
+# (a point at 1000m outside the boundary is under every inner layer). Cumulative
+# fade at a point is `1 - product(1 - opacity_i for inner layers covering it)`.
+#
+# Tuned for: ~30% fade at 100m, ~60% at 500m, ~90% at the far edge.
+FADE_LAYERS = [
+    (20,   0.18),
+    (60,   0.18),
+    (120,  0.18),
+    (210,  0.18),
+    (330,  0.18),
+    (480,  0.18),
+    (680,  0.18),
+    (940,  0.18),
+    (1280, 0.18),
+    (1700, 0.22),
+    (2200, 0.25),
 ]
 
 
@@ -706,26 +743,43 @@ def render_north_arrow(cx: float, cy: float, r: float = 20) -> str:
 
 
 def shield_svg(cx: float, cy: float, ref: str, kind: str) -> str:
-    """Render a route shield centered at (cx, cy)."""
+    """Render a route shield centered at (cx, cy) using the kind-specific path."""
     style = SHIELD_STYLES.get(kind, SHIELD_STYLES["generic"])
-    w = style["width"]
-    h = style["height"]
-    x = cx - w / 2
-    y = cy - h / 2
     # Strip the network prefix for display ("CA 32" → "32", "US 99" → "99")
     display = ref
     parts = display.split()
     if len(parts) > 1 and parts[0].upper() in ("US", "CA", "SR", "I"):
         display = parts[-1]
-    return (
-        f'<g class="shield">'
-        f'<rect x="{x:.1f}" y="{y:.1f}" width="{w}" height="{h}" rx="{style["rx"]}" '
-        f'fill="{style["fill"]}" stroke="{style["stroke"]}" stroke-width="1.2"/>'
-        f'<text x="{cx:.1f}" y="{cy:.1f}" font-family="{FONT_SANS}" '
+
+    # The shield path is in local coordinates; translate to (cx, cy).
+    inner = [
+        f'<path d="{style["path"]}" fill="{style["fill"]}" '
+        f'stroke="{style["stroke"]}" stroke-width="1.4" stroke-linejoin="round"/>'
+    ]
+    # Interstate-style top band (red over blue shield)
+    if "top_band_h" in style:
+        band_h = style["top_band_h"]
+        # Approximate the top band as a clipped rect over the upper portion.
+        inner.append(
+            f'<rect x="-19" y="-18" width="38" height="{band_h}" '
+            f'fill="{style["top_fill"]}"/>'
+        )
+        # Re-stroke the outer path so the band edges look clean
+        inner.append(
+            f'<path d="{style["path"]}" fill="none" '
+            f'stroke="{style["stroke"]}" stroke-width="1.4"/>'
+        )
+    text_dy = style.get("text_dy", 0)
+    inner.append(
+        f'<text x="0" y="{text_dy}" font-family="{FONT_SANS}" '
         f'font-size="{LABEL_SHIELD_PT}" font-weight="700" '
         f'text-anchor="middle" dominant-baseline="central" '
         f'fill="{style["text"]}">{xml_escape(display)}</text>'
-        f'</g>'
+    )
+    return (
+        f'<g class="shield" transform="translate({cx:.1f},{cy:.1f})">'
+        + "".join(inner)
+        + '</g>'
     )
 
 
@@ -758,27 +812,75 @@ def place_shields(refs, to_svg, label_collision_bboxes):
     return "\n".join(parts)
 
 
+# Names we never want to label — these are activities inside larger features,
+# not parks worth their own label at poster scale.
+SKIP_NAME_PATTERNS = (
+    "paragliding",
+    "hang gliding",
+    "landing zone",
+    "launch",
+)
+
+
 def place_landuse_labels(landuse_polys, district_utm, to_svg, label_collision_bboxes):
-    """Place park/school/water labels inside their polygon at the visual center."""
+    """Label parks, schools, and water bodies with cluster-aware deduplication.
+
+    Rules:
+      - Sub-features whose representative point falls inside an already-labeled
+        polygon get skipped (this drops the cluster of "Goose Island Cove Park",
+        "Rocky Cove Park", etc. that sit inside Bidwell Park — Bidwell Park gets
+        labeled, the smaller named coves don't).
+      - Names matching SKIP_NAME_PATTERNS (paragliding etc.) are dropped — those
+        aren't parks, they're activity zones inside parks.
+      - Anchors closer than 200 svg-points to another placed park label get
+        skipped (catches the case where two adjacent OSM polygons aren't nested
+        but their labels still pile up).
+    """
     parts = []
-    # Only label features with names that are at least partly inside the district
-    # (we don't want to label a school across town just because OSM includes it).
     interior = district_utm.buffer(50)
 
-    # Sort larger polygons first so they win label collisions
+    # Sort larger polygons first so the umbrella feature (Bidwell Park) wins.
     items = sorted(
         [lu for lu in landuse_polys if lu.get("name")],
         key=lambda lu: -lu["poly"].area,
     )
+
+    placed_polys = []          # already-labeled landuse polygons (for containment)
+    placed_anchors = []        # (cx, cy) of placed labels (for proximity dedupe)
+    MIN_LABEL_SPACING_PT = 220
+
     for lu in items:
         poly = lu["poly"]
-        if not poly.intersects(interior):
-            continue
         cls = lu["class"]
         name = lu["name"]
-        # representative_point() always lands inside the polygon — safer than centroid
+
+        if not poly.intersects(interior):
+            continue
+        if any(p in name.lower() for p in SKIP_NAME_PATTERNS):
+            continue
+        if len(name) > 40:
+            continue
+
+        # Sub-feature filter: skip anything whose anchor sits inside an
+        # already-labeled (larger) feature.
         anchor = poly.representative_point()
+        if any(
+            placed_poly.contains(anchor) or placed_poly.contains(poly.centroid)
+            for placed_poly in placed_polys
+        ):
+            continue
+
         cx, cy = to_svg(anchor.x, anchor.y)
+
+        # Proximity dedupe — even when polygons aren't nested, two coves a few
+        # meters apart shouldn't both label.
+        too_close = any(
+            ((cx - px) ** 2 + (cy - py) ** 2) ** 0.5 < MIN_LABEL_SPACING_PT
+            for (px, py) in placed_anchors
+        )
+        if too_close:
+            continue
+
         if cls in ("park", "grass", "forest", "cemetery", "sports", "playground"):
             color = COLOR_PARK_LABEL
         elif cls == "school":
@@ -786,17 +888,16 @@ def place_landuse_labels(landuse_polys, district_utm, to_svg, label_collision_bb
         elif cls == "water":
             color = COLOR_WATER_LABEL
         else:
-            continue  # don't label retail/industrial/commercial — adds noise
-        # Estimate bbox
-        size = LABEL_PLACE_PT
-        # Shorter names look better; skip extremely long names
-        if len(name) > 40:
             continue
+
+        size = LABEL_PLACE_PT
         label_w = estimate_text_width_pt(name, size)
         label_h = size * 1.2
-        bbox = (cx - label_w / 2, cy - label_h / 2, cx + label_w / 2, cy + label_h / 2)
+        bbox = (cx - label_w / 2, cy - label_h / 2,
+                cx + label_w / 2, cy + label_h / 2)
         if any(rect_overlap(bbox, ob) for ob in label_collision_bboxes):
             continue
+
         parts.append(
             f'<text x="{cx:.1f}" y="{cy:.1f}" '
             f'font-family="{FONT_SERIF}" font-size="{size}" font-style="italic" '
@@ -805,42 +906,31 @@ def place_landuse_labels(landuse_polys, district_utm, to_svg, label_collision_bb
             f'paint-order="stroke" stroke-linejoin="round">{xml_escape(name)}</text>'
         )
         label_collision_bboxes.append(bbox)
+        placed_polys.append(poly)
+        placed_anchors.append((cx, cy))
     return "\n".join(parts)
 
 
 def fade_rings_svg(district_utm, to_svg, buffer_base_m: float) -> str:
-    """Build a stack of concentric paper-colored annuli that fade outward.
+    """Build a stack of overlapping paper-colored "outside" masks that fade
+    cumulatively as you move away from the district.
 
-    Each ring is a polygon with a hole (the previous ring's outer boundary) so
-    it covers only the annular shell. Stacking them produces a smooth fade with
-    no sharp drop-off at the district edge.
+    Each layer is "the map area MINUS this buffered polygon" — i.e. it covers
+    *everything outside* the buffer, extending to the canvas edge. Layers
+    overlap, so cumulative opacity at point P is
+        1 - product(1 - layer_opacity_i for layers whose inner buffer is closer
+                    to the district than P).
+    Near the boundary only the first 1-2 layers cover, so fade is light;
+    far away every layer covers, so fade is deep. Result: smooth gradient.
     """
-    parts = ['<g id="fade-rings">']
-    prev_buf = district_utm.buffer(buffer_base_m)
-    for dist_m, opacity in FADE_RINGS:
-        next_buf = district_utm.buffer(buffer_base_m + dist_m)
-        annulus = next_buf.difference(prev_buf)
-        if annulus.is_empty:
-            prev_buf = next_buf
-            continue
-        polys = (
-            [annulus] if annulus.geom_type == "Polygon"
-            else list(annulus.geoms) if annulus.geom_type == "MultiPolygon"
-            else []
+    parts = ['<g id="fade-mask">']
+    for dist_m, opacity in FADE_LAYERS:
+        buf = district_utm.buffer(buffer_base_m + dist_m)
+        d = world_mask_path_d(buf, to_svg)
+        parts.append(
+            f'<path d="{d}" fill="{MASK_FILL}" fill-opacity="{opacity}" '
+            f'fill-rule="evenodd"/>'
         )
-        for p in polys:
-            d = path_d_from_polygon(p, to_svg)
-            parts.append(
-                f'<path d="{d}" fill="{MASK_FILL}" fill-opacity="{opacity}" '
-                f'fill-rule="evenodd"/>'
-            )
-        prev_buf = next_buf
-
-    # Everything beyond the last ring: full opacity wash from page edge inward
-    final_d = world_mask_path_d(prev_buf, to_svg)
-    parts.append(
-        f'<path d="{final_d}" fill="{MASK_FILL}" fill-opacity="0.86" fill-rule="evenodd"/>'
-    )
     parts.append('</g>')
     return "\n".join(parts)
 
@@ -917,7 +1007,8 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
     boundary_poly = district_utm.buffer(BOUNDARY_BUFFER_M)
     out.append(fade_rings_svg(district_utm, to_svg, BOUNDARY_BUFFER_M))
 
-    # ---- District boundary (thin navy line on the buffered polygon)
+    # ---- District boundary: a soft paper-colored casing under a navy line.
+    # Drawn AFTER the fade so it isn't dimmed by the mask layers near the edge.
     boundary_paths = []
     if boundary_poly.geom_type == "Polygon":
         rings = [list(boundary_poly.exterior.coords)]
@@ -931,6 +1022,11 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         parts.append("Z")
         boundary_paths.append("".join(parts))
     boundary_d = " ".join(boundary_paths)
+    out.append(
+        f'<path id="boundary-casing" d="{boundary_d}" '
+        f'stroke="{BOUNDARY_CASING_COLOR}" stroke-width="{BOUNDARY_CASING_WIDTH}" '
+        f'fill="none" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>'
+    )
     out.append(
         f'<path id="boundary-line" d="{boundary_d}" '
         f'stroke="{COLOR_BOUNDARY}" stroke-width="{BOUNDARY_WIDTH}" '
@@ -1038,9 +1134,15 @@ def render_header(district_n: int) -> str:
 
     # Big district numeral on the right side of the header — gives the poster
     # an immediate "this is District 6" identity element.
-    numeral_x = POSTER_W_PT - PAGE_PADDING_PT - 80
-    numeral_y = (HEADER_HEIGHT_PT + accent_h) / 2 + 16
     numeral_r = 78
+    circle_cy = (HEADER_HEIGHT_PT + accent_h) / 2
+    numeral_x = POSTER_W_PT - PAGE_PADDING_PT - numeral_r - 8
+    numeral_fs = int(numeral_r * 1.25)
+    # When using dominant-baseline=central, Georgia's specific metrics still
+    # render slightly high on most renderers (the "central" anchor is at the
+    # font's central baseline, but the visual center of a numeral sits a bit
+    # below that). A small downward nudge centers it visually.
+    numeral_y_nudge = numeral_fs * 0.06
 
     return (
         f'<g id="header">'
@@ -1060,12 +1162,14 @@ def render_header(district_n: int) -> str:
         f'<text x="{PAGE_PADDING_PT}" y="{tagline_y}" '
         f'font-family="{FONT_SANS}" font-size="{TAGLINE_PT}" font-weight="400" '
         f'fill="{COLOR_TAGLINE}">Streets, parks, schools, and waterways</text>'
-        # Numeral badge — outlined circle with district number
-        f'<circle cx="{numeral_x}" cy="{(HEADER_HEIGHT_PT + accent_h) / 2}" r="{numeral_r}" '
+        # Numeral badge — outlined circle with district number, vertically
+        # centered via dominant-baseline=central plus a small visual nudge.
+        f'<circle cx="{numeral_x}" cy="{circle_cy}" r="{numeral_r}" '
         f'fill="none" stroke="{COLOR_ACCENT}" stroke-width="3"/>'
-        f'<text x="{numeral_x}" y="{numeral_y}" '
-        f'font-family="{FONT_SERIF}" font-size="{numeral_r * 1.4:.0f}" font-weight="700" '
-        f'text-anchor="middle" fill="{COLOR_ACCENT}">{district_n}</text>'
+        f'<text x="{numeral_x}" y="{circle_cy + numeral_y_nudge:.1f}" '
+        f'font-family="{FONT_SERIF}" font-size="{numeral_fs}" font-weight="700" '
+        f'text-anchor="middle" dominant-baseline="central" '
+        f'fill="{COLOR_ACCENT}">{district_n}</text>'
         # Bottom rule
         f'<line x1="0" y1="{rule_y}" x2="{POSTER_W_PT}" y2="{rule_y}" '
         f'stroke="{COLOR_RULE}" stroke-width="0.75"/>'
