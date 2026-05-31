@@ -29,10 +29,17 @@ function useNoIndexMeta() {
   }, [])
 }
 
+// Parse a URL slug like "district-6" into the bare district number "6".
+function parseDistrictFromSlug(slug: string | undefined): string {
+  if (!slug) return '6'
+  const match = slug.match(/^district-(\d+)$/)
+  return match?.[1] ?? '6'
+}
+
 export function CandidateApp() {
   useNoIndexMeta()
-  const { district } = useParams<{ district: string }>()
-  const districtNum = district ?? '6'
+  const { slug } = useParams<{ slug: string }>()
+  const districtNum = parseDistrictFromSlug(slug)
 
   return (
     <div className="flex h-screen w-screen flex-col">

@@ -15,8 +15,10 @@ createRoot(rootElement).render(
     <HashRouter>
       <Routes>
         {/* Candidate map: standalone, outside shared Layout. Sets its own noindex meta. */}
-        {/* Dynamic route — works for any district: /candidate/district-6, /candidate/district-4, etc. */}
-        <Route path="candidate/district-:district" element={<CandidateApp />} />
+        {/* Slug is a whole segment (React Router v6 dynamic params can't be partial),
+            so URL is /candidate/district-6, /candidate/district-4, etc. CandidateApp
+            parses the slug to extract the district number. */}
+        <Route path="candidate/:slug" element={<CandidateApp />} />
 
         <Route element={<Layout />}>
           <Route index element={<MapPage />} />
