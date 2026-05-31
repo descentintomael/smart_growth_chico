@@ -15,12 +15,25 @@ neighborhoods) and carries:
     deterministically per venue (hash of venue id) so the output is stable
     across re-runs but varied across venues.
 
-Polling references throughout are to publicly documented patterns from
-PPIC's Statewide Survey, Pew Research's political typology, AP-NORC's
-issue-importance tracking, ANES "most important problem" series, and
-Gallup's Most Important Problem tracking. We don't fabricate specific
-year-by-year numbers; we lean on the directional regularities those
-sources have shown repeatedly.
+Two-layer grounding:
+  - Demographic-level priorities come from publicly documented polling
+    regularities — PPIC Statewide Survey, Pew political typology, AP-NORC
+    issue-importance tracking, ANES "most important problem" series,
+    Gallup MoMP. We lean on directional patterns, not fabricated numbers.
+  - Local-government items referenced (sewer assessments, Warren v.
+    Chico homelessness litigation, Park & Go downtown parking, low-income
+    sewer rate program, tenant-protections ordinances, e-bike regulation,
+    Greenfield/Hubbard housing approvals, Bidwell Park stewardship) come
+    from a 6-meeting sample of Chico city council agendas pulled from
+    chico-ca.granicus.com (April 2025 – May 2026). What we surface as a
+    "council priority" is what the council has actually recently decided
+    on or scheduled for decision.
+
+Things NOT in council jurisdiction (referenced only as cross-pressures or
+explicitly disclaimed in the prose): K-12 schools (CUSD), recreation
+programming (CARD), mental-health services (Butte County Behavioral
+Health), healthcare access, higher education (CSU/Butte College), federal
+immigration enforcement (sanctuary policy is the local-decision proxy).
 
 Design intent: the generator picks ~2-3 firing cards per catchment, weaves
 their variants together, and produces ~120-180-word paragraphs that don't
@@ -98,9 +111,9 @@ CARDS: list[dict] = [
             "The audience here skews young ({young_share} age 18-34) and heavily renter ({renter_share}), with strong Democratic registration ({d_share_24} D / {r_share_24} R)",
         ],
         "body_variants": [
-            "Issue-salience patterns for young California renters in PPIC tracking weight strongly toward housing cost — the dominant issue for renters under 35 in PPIC's Statewide Survey almost every year since 2018 — followed by cost of living and wages, public safety (framed around homelessness response and policing accountability rather than violent-crime statistics), climate (real revealed-importance for this demographic, unlike most others). Mental health and healthcare access rank high.",
-            "Polling regularities for younger Democratic renters in PPIC and Pew typology research consistently put housing cost and availability at the top, with cost of living and wages, public safety (homelessness and police-community framing), climate (one of the few demographics where climate registers in vote-driving salience, not just stated importance) rounding out the top concerns.",
-            "Top-issue tracking for this demographic across PPIC, AP-NORC, and Pew research consistently surfaces housing cost as singular, with cost of living and wages, climate, and public safety (in homelessness/policing framing) also in the top tier. Healthcare access ranks high.",
+            "Local-government priorities for this demographic typically center on tenant protections and code enforcement on existing rentals, housing supply (downtown infill, Greenfield-style bond issuances), public safety (homelessness response in the Warren v. Chico framing, policing accountability), and active-transportation infrastructure (e-bike regulation, micromobility). Mental-health services sit with Butte County, not council.",
+            "Council-jurisdiction priorities for younger Democratic renters cluster around tenant protections, housing supply (council-approved bond issuances, downtown infill, rezones), public safety framed as homelessness response and policing accountability, downtown vitality (Park & Go, ground-floor uses), and active-transportation infrastructure.",
+            "On items the council actually decides, this audience typically weights tenant protections, housing supply (downtown infill, Greenfield-style affordable-housing bonds), public safety in the homelessness-response framing, active-transportation infrastructure, and sanctuary policy where relevant.",
         ],
         "caveat_variants": [
             "Topics less likely to move this audience: traditional fiscal-conservative framing, anti-density arguments, national-grievance topics, culture-war wedges.",
@@ -129,9 +142,9 @@ CARDS: list[dict] = [
             "Settled affluent professional Democratic audience: {owner_share} own their homes, {high_income_share} earn $125k+, and {college_share} hold a bachelor's or higher",
         ],
         "body_variants": [
-            "Issue-salience patterns for affluent, college-educated Democratic homeowners in PPIC tracking and Pew typology research consistently put government competence, public safety, infrastructure reliability, and — for the parent subset — K-12 schools at the top of concerns. Healthcare rises in salience for the older subset. Climate has higher revealed-importance for college-educated Democrats than for other clusters but typically ranks below the cost-and-services stack in local elections.",
-            "Polling regularities for this demographic — Pew's Establishment Liberal cluster, AP-NORC affluent-suburban tracking — consistently rank government competence and quality of local administration, public safety, infrastructure, and healthcare access in the top concerns; K-12 schools is highly salient for the parent share. Cost of living matters as inflation/quality-of-life pressure rather than as housing affordability.",
-            "Top concerns for affluent owner-Dems track tightly with Pew's Establishment Liberal typology and PPIC's professional-Dem tracking: government competence, public safety, infrastructure reliability, healthcare (rising with the older subset), and schools for parents. Climate has real but typically secondary salience locally.",
+            "Local-government priorities for this demographic typically center on government competence (City Manager / Attorney recruitment, budget rigor, labor MOUs), public safety (Police Department reports, Warren v. Chico framing of homelessness), infrastructure reliability (sewer assessments, street rehabilitation, property acquisitions), and Bidwell Park stewardship. K-12 schools sit with CUSD, not council.",
+            "Council-jurisdiction priorities cluster around government competence and administrative quality, public safety (Police annual reports, homelessness response), infrastructure (sewer enterprise study, street rehab, capital projects), and quality of new development (impact fees, zoning). Healthcare is not council-decided; schools sit with CUSD.",
+            "On items the council actually decides, this audience typically weights government competence, public safety, infrastructure reliability, Bidwell Park stewardship, and quality-of-development decisions (impact fees, zoning). Climate has higher stated importance here than in other affluent clusters but rarely surfaces on council agendas.",
         ],
         "caveat_variants": [
             "Less likely to drive votes here: housing supply arguments (rarely vote-driving for owners), national-grievance framing, anti-tax appeals.",
@@ -157,9 +170,9 @@ CARDS: list[dict] = [
             "Settled, older homeowner audience ({senior_share} age 65+, {owner_share} own)",
         ],
         "body_variants": [
-            "Issue-salience patterns for older, settled homeowners in PPIC tracking and Pew typology research consistently put public safety, property taxes and cost of living, infrastructure reliability, and government competence at the top of concerns; healthcare rises in salience for the 65+ subset.",
-            "Polling regularities for senior owner-occupied California audiences in PPIC's Statewide Survey and AP-NORC senior-voter tracking consistently rank public safety, infrastructure reliability, government competence, property taxes, and healthcare access in the top concerns.",
-            "Top-concern tracking for this demographic across PPIC, Pew, and AP-NORC research consistently weights public safety, cost of living and property taxes, infrastructure, and government competence at the top, with healthcare access rising for the 65+ portion.",
+            "Local-government priorities for this demographic typically center on public safety (Police Department reports, Warren v. Chico framing of homelessness response), infrastructure reliability (sewer assessments, street rehabilitation), property taxes and Prop 218 assessments, and government competence. Healthcare is not council-decided.",
+            "Council-jurisdiction priorities cluster around public safety, infrastructure (sewer enterprise, street rehab, property acquisitions for road projects), government competence (City Manager and Attorney recruitment, budget rigor), and property-tax / assessment-district decisions.",
+            "On items the council actually decides, this audience typically weights public safety, sewer and street infrastructure, property taxes and Prop 218 procedures, government competence, and Bidwell Park stewardship.",
         ],
         "caveat_variants": [
             "Less likely to drive votes here: housing supply framing, climate (high stated importance but historically low vote-driving salience for this cohort).",
@@ -186,9 +199,9 @@ CARDS: list[dict] = [
             "{hispanic_share}-Hispanic working-class audience with {spanish_share} speaking Spanish at home and {low_income_share} of households under $50k",
         ],
         "body_variants": [
-            "Issue-salience patterns for working-class Hispanic California voters in PPIC and Pew Hispanic-voter tracking consistently put cost of living and wages, housing cost, public safety, healthcare access, and sanctuary policy / equitable enforcement at the top of concerns. K-12 education ranks very high for parents. Jobs and economic opportunity rank above climate or environmental framing.",
-            "Polling regularities for Hispanic working-class voters in California across PPIC, Pew, and Equis Research tracking consistently rank cost of living and wages, jobs and economic opportunity, housing cost, public safety, healthcare, and sanctuary policy / equitable enforcement. K-12 schools is highly salient for parents.",
-            "Top-issue tracking for this demographic in PPIC's Statewide Survey and Pew's Hispanic-voter research consistently weights cost of living, wages and jobs, housing cost, public safety, healthcare access, and sanctuary policy / equitable enforcement. Education ranks high for parents.",
+            "Local-government priorities for this demographic typically center on cost of living and utility rates (low-income sewer rate program is a recent council item), tenant protections and code enforcement on existing rentals, public safety in concrete terms (not abstract crime statistics), sanctuary policy / equitable enforcement, and jobs / local-economy decisions. K-12 sits with CUSD, not council, though parents conflate them.",
+            "Council-jurisdiction priorities cluster around utility rates and fees (the low-income sewer rate program addresses this directly), tenant protections, public safety framed concretely, sanctuary-policy decisions, and local business / development climate. Healthcare and federal immigration enforcement are not council-decided.",
+            "On items the council actually decides, this audience typically weights cost of living and utility rates, tenant protections, code enforcement on rentals, public safety, sanctuary policy / equitable enforcement, and jobs / local economic development.",
         ],
         "caveat_variants": [
             "Hispanic working-class voters are not a monolithic Democratic bloc — values-aligned issues (faith, family, immigration framing) can move some voters toward Republicans, but cost-of-living and concrete-policy framing tend to favor Democrats. Spanish-language outreach is operationally important.",
@@ -217,9 +230,9 @@ CARDS: list[dict] = [
             "Working-class renter audience: {renter_share} of housing is rental, {low_income_share} of households earn under $50k",
         ],
         "body_variants": [
-            "Issue-salience patterns for working-class California renters in PPIC and AP-NORC tracking consistently put cost of living and wages, housing cost (this ranks high for renter audiences regardless of partisan lean), public safety, healthcare access, and K-12 education (high for parents) at the top of concerns.",
-            "Polling regularities for working-class renter audiences across PPIC, AP-NORC, and Pew research consistently rank cost of living, housing cost, public safety, jobs and wages, and healthcare access at the top of concerns. K-12 schools is highly salient for parents.",
-            "Top-issue tracking for working-class California renters in PPIC's Statewide Survey consistently weights cost of living and wages, housing cost (a top concern for renters regardless of partisan lean), public safety, healthcare access, and education at the top.",
+            "Local-government priorities for this demographic typically center on cost of living and utility rates (the low-income sewer rate program is a recent council item), tenant protections and code enforcement on existing rentals (recurring council theme), public safety, and jobs / local-economy decisions. K-12 sits with CUSD, not council.",
+            "Council-jurisdiction priorities cluster around tenant protections, code enforcement on existing rentals, utility rates and fees, public safety, and local-economy / development decisions. Healthcare is not council-decided.",
+            "On items the council actually decides, this audience typically weights tenant protections (recurring council attention), code enforcement on rentals, cost of living via utility rates and fees, public safety, and local economic development.",
         ],
         "caveat_variants": [
             "Less likely to move this audience: anti-density framing (renters here live in the housing supply being argued about), abstract fiscal-conservative messaging without specific costs named, climate (low vote-driving salience for working-class voters), national-grievance from either direction, culture-war wedges.",
@@ -247,9 +260,9 @@ CARDS: list[dict] = [
             "Single-family homeowner family-skewed audience: {owner_share} own, {single_family_share} SF housing stock, {kids_share} of residents are under 18",
         ],
         "body_variants": [
-            "Issue-salience patterns for parent-heavy, owner-occupied California audiences in PPIC tracking and Pew typology research consistently put K-12 schools at or near the top of concerns, followed by public safety, cost of living, infrastructure reliability, and government competence. Housing affordability ranks lower than for renter audiences but matters as 'good options for our kids when they grow up' framing.",
-            "Polling regularities for owner-occupied family audiences across PPIC, AP-NORC, and Pew research consistently rank K-12 schools, public safety, cost of living, and infrastructure at the top of concerns, with government competence also weighted heavily.",
-            "Top-concern tracking for this demographic consistently weights schools (especially given school-venue contexts), public safety, cost of living, infrastructure reliability, and government competence at the top.",
+            "Local-government priorities for parent-heavy owners typically center on public safety (Police Department reports, Warren v. Chico framing of homelessness), infrastructure reliability (sewer assessments, street rehab), government competence, and quality of new development (impact fees, zoning). Housing affordability matters as 'options for our kids when they grow up.' K-12 schools sit with CUSD, not council, though parents conflate them.",
+            "Council-jurisdiction priorities cluster around public safety, infrastructure (sewer and street capital projects), quality-of-development decisions (impact fees, zoning), and government competence. Schools sit with CUSD, not council, but salience is high for the parent share.",
+            "On items the council actually decides, this audience typically weights public safety, infrastructure reliability, quality of new development (impact fees), and government competence. Housing affordability frames as 'good options for our kids when they grow up.'",
         ],
     },
 
@@ -270,9 +283,9 @@ CARDS: list[dict] = [
             "Heavily Democratic professional audience: {d_share_24} D registration, {college_share} bachelor+, Harris won {top_d_24} of the 2024 top-of-ticket vote",
         ],
         "body_variants": [
-            "Issue-salience patterns for heavily-Democratic, college-educated California audiences in PPIC tracking and Pew Establishment Liberal typology research consistently put housing cost and availability at or near the top (the dominant issue for renter-Dem audiences statewide since 2018), followed by cost of living, public safety (framed around homelessness response and policing accountability), climate (real revealed-importance for this demographic). Education and healthcare access rank high.",
-            "Polling regularities for college-educated heavily-Democratic California voters in PPIC and Pew research consistently rank housing cost, cost of living, public safety (homelessness and police-community framing), climate, and education at the top of concerns. Healthcare access ranks high.",
-            "Top-concern tracking for this demographic across PPIC, Pew, and AP-NORC research weights housing cost (singular for renters), cost of living, climate (real revealed-importance, unlike most other clusters), public safety, and healthcare access at the top.",
+            "Local-government priorities for this demographic typically center on tenant protections and housing supply (downtown infill, Greenfield-style bonds, Hubbard-style rezones), public safety (homelessness response in the Warren v. Chico framing, policing accountability), downtown vitality (Park & Go, ground-floor uses), active-transportation infrastructure, and sanctuary policy where relevant.",
+            "Council-jurisdiction priorities cluster around tenant protections, housing supply (council-approved bond issuances, downtown infill), public safety framed as homelessness response and policing accountability, downtown vitality, and active-transportation infrastructure. Climate has high stated importance here but rarely surfaces on council agendas.",
+            "On items the council actually decides, this audience typically weights tenant protections, housing supply (infill, council-approved affordable-housing bonds), public safety (Warren v. Chico framing), downtown vitality and ground-floor-use decisions, and active-transportation infrastructure.",
         ],
         "caveat_variants": [
             "This audience is already partisan-aligned with a Democratic candidate; persuasion happens on competence and specificity rather than values. National-grievance and culture-war framing underperform; broad partisan signaling lands in friendly territory but won't differentiate.",
@@ -296,9 +309,9 @@ CARDS: list[dict] = [
             "Predominantly student audience ({young_share} age 18-34, {renter_share} rental housing)",
         ],
         "body_variants": [
-            "Issue-salience for California college students in PPIC tracking and Pew college-attendee research clusters around college affordability and student debt, housing cost, wages and job market, mental health, and climate — this is one of the few demographics where climate ranks in the top 3 for vote-driving salience, not just stated importance. Public safety ranks high but typically framed around mental-health crisis response, sexual assault on campus, and police-student interactions rather than property crime.",
-            "Polling regularities for college students in PPIC, Pew, and Harvard IOP youth-poll tracking consistently rank college affordability and student debt, housing cost, mental health, climate, and wages and job-market access at the top of concerns.",
-            "Top-concern tracking for college students across PPIC, Pew, and Harvard IOP research consistently weights college affordability, student debt, housing cost, mental health, climate (real vote-driving salience here, unlike most demographics) at the top.",
+            "Local-government priorities for college students typically center on off-campus housing supply (council-approved bond issuances like Greenfield, Hubbard-style rezones), tenant protections, downtown vitality and ground-floor uses (Park & Go), active-transportation infrastructure (e-bike regulation, micromobility program), and police-student relations. Tuition and student debt are state/federal, not council. Mental-health services sit with Butte County.",
+            "Council-jurisdiction priorities cluster around off-campus housing (council-approved bonds, infill, rezones), tenant protections, downtown vitality, active-transportation infrastructure, and police practices. College affordability and mental-health services are not council-decided.",
+            "On items the council actually decides, this audience typically weights off-campus housing supply, tenant protections, downtown vitality and parking, active-transportation infrastructure (e-bike, micromobility), and police-student relations.",
         ],
         "caveat_variants": [
             "For pre-aligned student audiences, registration drives and absentee-ballot logistics often carry more electoral impact than persuasion messaging. National-grievance topics and culture-war framing underperform; broad partisan signaling lands in friendly territory but doesn't differentiate.",
@@ -326,9 +339,9 @@ CARDS: list[dict] = [
             "Younger, renter-leaning audience with mixed partisan composition ({renter_share} renter, {young_share} age 18-34, {d_share_24} D / {r_share_24} R)",
         ],
         "body_variants": [
-            "Issue-salience patterns for mixed-income, mixed-partisan California renters in PPIC tracking and AP-NORC research consistently put cost of living and wages, housing cost, public safety (framed around homelessness response and police-community relations), healthcare access, and K-12 education at the top of concerns.",
-            "Polling regularities for mixed-partisan younger renter audiences across PPIC and AP-NORC research consistently rank cost of living, housing cost, public safety, healthcare access, and education in the top tier.",
-            "Top-issue tracking for this demographic in PPIC and AP-NORC research weights cost of living and wages, housing cost, public safety, healthcare access, and K-12 education (especially for parents) at the top.",
+            "Local-government priorities for this demographic typically center on cost of living and utility rates (low-income sewer rate program is a recent council item), tenant protections and code enforcement on existing rentals, public safety (homelessness response, police-community relations), and active-transportation infrastructure. K-12 sits with CUSD, not council.",
+            "Council-jurisdiction priorities cluster around tenant protections, utility rates and fees, public safety framed concretely, and active-transportation infrastructure. Healthcare is not council-decided.",
+            "On items the council actually decides, this audience typically weights tenant protections, cost of living via utility rates and fees, public safety (homelessness response), and active-transportation infrastructure.",
         ],
         "caveat_variants": [
             "Less likely to move this audience: anti-density framing (renters here live in the housing supply), national-grievance topics from either direction, culture-war wedges, climate (high stated importance but historically lower vote-driving salience for mixed-income voters).",
@@ -358,9 +371,9 @@ CARDS: list[dict] = [
             "Mixed-demographic moderate-Democratic audience ({d_share_24} D / {r_share_24} R), neither distinctly young nor senior, neither heavily renter nor owner",
         ],
         "body_variants": [
-            "Issue-salience patterns for mixed-demographic California suburban Democratic audiences in PPIC tracking and AP-NORC research consistently put cost of living and quality of life, public safety (typically framed around homelessness response and equitable enforcement), housing cost (relevant for the renter share), K-12 education (for parents), and healthcare access at the top of concerns. Government competence and local-administration quality rank meaningfully across the board.",
-            "Polling regularities for mixed-suburban California audiences across PPIC, AP-NORC, and Pew research consistently rank cost of living, public safety, housing cost (for renter share), K-12 schools, healthcare access, and government competence at the top.",
-            "Top-issue tracking for mixed-demographic suburban California voters in PPIC's Statewide Survey consistently weights cost of living and wages, public safety, housing cost (more salient for the renter share), K-12 education, and healthcare access at the top. Government competence matters across the spectrum.",
+            "Local-government priorities for this mixed audience typically center on cost of living and utility rates, public safety (Police Department reports, Warren v. Chico framing of homelessness), tenant protections (for the renter share) and infrastructure reliability (for the owner share), and government competence (City Manager / Attorney recruitment, budget rigor). K-12 sits with CUSD, not council.",
+            "Council-jurisdiction priorities cluster around cost of living via fees and utility rates, public safety, tenant protections (renter share) and infrastructure (owner share), and government competence. Healthcare is not council-decided.",
+            "On items the council actually decides, this audience typically weights cost of living and utility rates, public safety, housing-related concerns (tenant protections for renters, infrastructure for owners), and government competence.",
         ],
         "caveat_variants": [
             "Less likely to drive votes here: heavy partisan signaling, national-grievance topics from either direction, anti-density absolutism, culture-war wedges.",
@@ -518,9 +531,9 @@ CARDS: list[dict] = [
         "score": lambda m: m["high_income_share"] + m["low_income_share"],
         "roles": [ROLE_BODY],
         "body_variants": [
-            "Income is meaningfully bimodal ({low_income_share} under $50k, {high_income_share} in $125k+) — two distinct audiences in the same room. The affluent subset weights government competence, infrastructure, and public safety; the lower-income subset weights cost of living, housing cost, and healthcare. Cost of living and public safety bridge both.",
-            "The income distribution here is bimodal ({low_income_share} under $50k vs {high_income_share} in $125k+) — affluent attendees and cost-stressed attendees may weight different issues, but cost of living and public safety are common ground for both.",
-            "Bimodal income mix ({low_income_share} under $50k / {high_income_share} in $125k+) means renter and owner halves bring different top-issue lists. Cost of living, public safety, and schools for parents bridge both subgroups.",
+            "Income is meaningfully bimodal ({low_income_share} under $50k, {high_income_share} in $125k+) — two distinct audiences in the same room. The affluent subset weights government competence and infrastructure; the lower-income subset weights cost of living, utility rates, and tenant protections. Public safety (Chico's homelessness response) bridges both.",
+            "The income distribution here is bimodal ({low_income_share} under $50k vs {high_income_share} in $125k+) — affluent attendees and cost-stressed attendees weight different council items, but public safety (homelessness response) and cost of living are common ground.",
+            "Bimodal income mix ({low_income_share} under $50k / {high_income_share} in $125k+) splits attendees into different top-issue lists, but Chico's homelessness response and cost of living bridge both subgroups.",
         ],
     },
 
@@ -534,9 +547,9 @@ CARDS: list[dict] = [
         "score": lambda m: m["active_share"],
         "roles": [ROLE_BODY],
         "body_variants": [
-            "The {active_share} active-commute share (transit/bike/walk — high for Chico) signals an audience that thinks about transportation infrastructure as a lived issue, not abstract policy.",
-            "Meaningful active-commute share ({active_share} commute by bike/walk/transit) — transportation infrastructure is a lived issue here, not theoretical.",
-            "{active_share} of workers commute actively (bike/walk/transit) — well above Chico norm — implying transportation-infrastructure concerns land as concrete daily friction.",
+            "The {active_share} active-commute share (transit/bike/walk — high for Chico) signals an audience for whom council items like e-bike regulation, the shared-micromobility program, and street-corridor design (South Park Drive, Park Avenue) are lived friction, not abstract policy.",
+            "Meaningful active-commute share ({active_share} commute by bike/walk/transit) — council items like e-bike regulation, the micromobility program, and active-corridor design are lived issues here, not theoretical.",
+            "{active_share} of workers commute actively (bike/walk/transit) — well above Chico norm — so council items on e-bike regulation, micromobility, and street-corridor design carry weight as concrete daily friction.",
         ],
     },
 ]
