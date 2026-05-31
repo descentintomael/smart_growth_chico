@@ -5,6 +5,7 @@ import { Layout } from './components/layout/Layout'
 import { MapPage } from './pages/MapPage'
 import { MethodologyPage } from './pages/MethodologyPage'
 import { CandidateApp } from './candidate/CandidateApp'
+import { ForumApp } from './candidate/ForumApp'
 import './styles/globals.css'
 
 const rootElement = document.getElementById('root')
@@ -14,10 +15,11 @@ createRoot(rootElement).render(
   <StrictMode>
     <HashRouter>
       <Routes>
-        {/* Candidate map: standalone, outside shared Layout. Sets its own noindex meta. */}
-        {/* Slug is a whole segment (React Router v6 dynamic params can't be partial),
-            so URL is /candidate/district-6, /candidate/district-4, etc. CandidateApp
-            parses the slug to extract the district number. */}
+        {/* Forum map: multi-district view. URL is /candidate/forum/4-6 (hyphen-separated
+            district numbers). Must appear before the single-district route. */}
+        <Route path="candidate/forum/:slug" element={<ForumApp />} />
+
+        {/* Single-district candidate map. URL is /candidate/district-6, etc. */}
         <Route path="candidate/:slug" element={<CandidateApp />} />
 
         <Route element={<Layout />}>
