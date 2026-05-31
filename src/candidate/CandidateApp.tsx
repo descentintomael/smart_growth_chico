@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { CandidateMap } from './CandidateMap'
 import { CandidateSidebar } from './CandidateSidebar'
+import { DistrictMultiSelect } from './DistrictMultiSelect'
 
 const SIDEBAR_COLLAPSED_KEY = 'candidate-sidebar-collapsed'
 
@@ -64,10 +65,9 @@ export function CandidateApp() {
 
   return (
     <div className="flex h-screen w-screen flex-col">
-      <header className="flex h-12 shrink-0 items-center border-b border-gray-200 bg-gray-50 px-4">
-        <span className="text-sm font-medium text-gray-700">
-          Candidate venue map · District {districtNum}
-        </span>
+      <header className="flex h-14 shrink-0 items-center justify-between border-b border-gray-200 bg-gray-50 px-4">
+        <span className="text-sm font-medium text-gray-700">Venue map</span>
+        <DistrictMultiSelect selectedDistricts={[districtNum]} />
       </header>
       <div className="flex flex-1 overflow-hidden">
         <CandidateSidebar
