@@ -76,6 +76,19 @@ function InvalidateOnResize() {
   return null
 }
 
+/** Reports the current zoom level back to the parent so we can scale
+ *  low-priority markers down at low zooms. */
+function ZoomTracker({ onChange }: { onChange: (zoom: number) => void }) {
+  const map = useMap()
+  useEffect(() => {
+    const handler = () => onChange(map.getZoom())
+    handler()
+    map.on('zoomend', handler)
+    return () => { map.off('zoomend', handler) }
+  }, [map, onChange])
+  return null
+}
+
 function dataUrls(district: string) {
   const base = `${import.meta.env.BASE_URL}data/candidate-district-${district}`
   return {
@@ -98,16 +111,24 @@ const BOUNDARY_STYLE: PathOptions = {
   dashArray: '6 4',
 }
 
+/** Returns a 0-1 zoom-scale factor used to de-emphasize low-priority markers
+ *  at low zooms. Below zoom 12 → 0 (barely visible); at zoom 15+ → 1 (full size). */
+function zoomScale(zoom: number): number {
+  return Math.max(0, Math.min(1, (zoom - 12) / 3))
+}
+
 /** Marker size scales with priority tier so the strongest forum hosts are
- *  visually dominant. Excluded venues are deliberately tiny. */
-function venueRadius(feature: VenueFeature): number {
+ *  visually dominant. Low-priority markers shrink at low zoom so they don't
+ *  clutter the overview map. */
+function venueRadius(feature: VenueFeature, zoom: number): number {
   const status = feature.properties.hosting_status
   const tier = feature.properties.priority_tier
   if (status === 'excluded') return 4
   if (tier === 'top') return 13
   if (tier === 'high') return 10
-  if (tier === 'medium') return 7
-  if (tier === 'low') return 5
+  const scale = zoomScale(zoom)
+  if (tier === 'medium') return Math.max(2, Math.round(7 * (0.4 + 0.6 * scale)))
+  if (tier === 'low')    return Math.max(1, Math.round(5 * (0.15 + 0.85 * scale)))
   // Venue hasn't been scored — fall back to a confidence-based size.
   if (status === 'confirmed') return 10
   if (status === 'likely') return 8
@@ -185,6 +206,7 @@ export function CandidateMap({ district }: { district: string }) {
   const [venues, setVenues] = useState<VenueCollection | null>(null)
   const [catchments, setCatchments] = useState<CatchmentCollection | null>(null)
   const [catchmentDemo, setCatchmentDemo] = useState<CatchmentDemographics | null>(null)
+  const [zoom, setZoom] = useState(DEFAULT_ZOOM)
   const selectedVenueId = useCandidateSelection(s => s.selectedVenueId)
   const setSelectedVenueId = useCandidateSelection(s => s.setSelectedVenueId)
   const [bounds, setBounds] = useState<LatLngBoundsExpression | null>(null)
@@ -302,6 +324,7 @@ export function CandidateMap({ district }: { district: string }) {
       >
         <FitToBounds bounds={bounds} />
         <InvalidateOnResize />
+        <ZoomTracker onChange={setZoom} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
@@ -463,7 +486,7 @@ export function CandidateMap({ district }: { district: string }) {
             <CircleMarker
               key={f.properties.osm_id}
               center={[lat, lon]}
-              radius={isSelected ? venueRadius(f) + 3 : venueRadius(f)}
+              radius={isSelected ? venueRadius(f, zoom) + 3 : venueRadius(f, zoom)}
               pathOptions={{
                 color: isSelected ? '#111827' : style.color,
                 weight: isSelected ? 3 : venueBorderWeight(f),

@@ -54,6 +54,21 @@ function InvalidateOnResize() {
   return null
 }
 
+function ZoomTracker({ onChange }: { onChange: (zoom: number) => void }) {
+  const map = useMap()
+  useEffect(() => {
+    const handler = () => onChange(map.getZoom())
+    handler()
+    map.on('zoomend', handler)
+    return () => { map.off('zoomend', handler) }
+  }, [map, onChange])
+  return null
+}
+
+function zoomScale(zoom: number): number {
+  return Math.max(0, Math.min(1, (zoom - 12) / 3))
+}
+
 const CATCHMENT_LAYER_STYLE: Record<CatchmentProfile, PathOptions> = {
   walk_10:      { color: '#1e3a8a', weight: 1.5, fillColor: '#2563eb', fillOpacity: 0.55 },
   walk_15_only: { color: '#2563eb', weight: 1,   fillColor: '#60a5fa', fillOpacity: 0.45 },
@@ -67,14 +82,15 @@ const CATCHMENT_RENDER_ORDER: CatchmentProfile[] = [
   'bike_15_only', 'bike_10_only', 'walk_15_only', 'walk_10',
 ]
 
-function venueRadius(feature: VenueFeature): number {
+function venueRadius(feature: VenueFeature, zoom: number): number {
   const status = feature.properties.hosting_status
   const tier = feature.properties.priority_tier
   if (status === 'excluded') return 4
   if (tier === 'top') return 13
   if (tier === 'high') return 10
-  if (tier === 'medium') return 7
-  if (tier === 'low') return 5
+  const scale = zoomScale(zoom)
+  if (tier === 'medium') return Math.max(2, Math.round(7 * (0.4 + 0.6 * scale)))
+  if (tier === 'low')    return Math.max(1, Math.round(5 * (0.15 + 0.85 * scale)))
   return 7
 }
 
@@ -108,6 +124,7 @@ export function ForumMap({ districts }: { districts: string[] }) {
   >(null)
   const [bounds, setBounds] = useState<LatLngBoundsExpression | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
+  const [zoom, setZoom] = useState(DEFAULT_ZOOM)
   const selectedVenueId = useCandidateSelection(s => s.selectedVenueId)
   const setSelectedVenueId = useCandidateSelection(s => s.setSelectedVenueId)
 
@@ -228,6 +245,7 @@ export function ForumMap({ districts }: { districts: string[] }) {
       >
         <FitToBounds bounds={bounds} />
         <InvalidateOnResize />
+        <ZoomTracker onChange={setZoom} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
@@ -303,7 +321,7 @@ export function ForumMap({ districts }: { districts: string[] }) {
             <CircleMarker
               key={f.properties.osm_id}
               center={[lat, lon]}
-              radius={isSelected ? venueRadius(f) + 3 : venueRadius(f)}
+              radius={isSelected ? venueRadius(f, zoom) + 3 : venueRadius(f, zoom)}
               pathOptions={{
                 color: isSelected ? '#111827' : style.color,
                 weight: isSelected ? 3 : (f.properties.priority_tier === 'top' ? 3 : 1.5),
