@@ -32,7 +32,7 @@ export function ForumSidebar({ districts, collapsed, onToggle }: SidebarProps) {
           results.map(r => [r.district, { venues: r.venues, demo: r.demo }])
         )
         const merged = mergeForumData(input)
-        const rescored = rescoreVenuesForForum(merged)
+        const rescored = rescoreVenuesForForum(merged, districts)
         setTopVenues(rescored.slice(0, 10))
       })
       .catch(() => {})
@@ -98,10 +98,12 @@ export function ForumSidebar({ districts, collapsed, onToggle }: SidebarProps) {
       {topVenues && topVenues.length > 0 && (
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-            Top 10 forum venues (union)
+            Top 10 forum venues
           </h3>
           <p className="mt-1 text-[10px] leading-snug text-gray-500">
-            Ranked by combined audience reach across the selected districts.
+            Ranked by <strong>balanced</strong> reach (geometric mean of
+            per-district CVAPs). Venues that don't reach ALL selected districts
+            score low even if their total audience is large.
           </p>
           <ol className="mt-2 space-y-1">
             {topVenues.map(v => {

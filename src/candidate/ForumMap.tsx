@@ -158,8 +158,8 @@ export function ForumMap({ districts }: { districts: string[] }) {
 
   const venues = useMemo<VenueFeature[]>(() => {
     if (!merged) return []
-    return rescoreVenuesForForum(merged)
-  }, [merged])
+    return rescoreVenuesForForum(merged, districts)
+  }, [merged, districts])
 
   // Combined catchments for the currently selected venue, pulled from
   // whichever district's catchment file happens to contain it.

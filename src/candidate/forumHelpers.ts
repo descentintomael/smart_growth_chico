@@ -107,20 +107,45 @@ function audienceScore(cvap: number): number {
 }
 
 /**
- * Re-score every venue using the UNION audience (sum of in-district CVAPs across
- * selected districts). Returns the rescored venue features, sorted by score desc.
+ * Re-score every venue for a forum view. The audience component uses the
+ * GEOMETRIC MEAN of per-district CVAPs (not the sum), because a venue that
+ * reaches 0 voters in one district is a poor forum host even if its total
+ * audience is large — the candidate from that district gains nothing.
+ *
+ * Geomean has the property that any zero collapses it to zero, and balanced
+ * distributions score higher than skewed distributions with the same sum.
+ *   [0, 1341]  → geomean 0  → low audience score
+ *   [600, 800] → geomean ~693 → much higher audience score
+ *
+ * The union sum is still recorded in priority_components.in_district_walk_15_cvap
+ * for display, so the user sees total reach + the score reflects balance.
  */
 export function rescoreVenuesForForum(
-  merged: Map<string, VenueForumStats>
+  merged: Map<string, VenueForumStats>,
+  selectedDistricts: string[],
 ): VenueFeature[] {
   const rescored: VenueFeature[] = []
   for (const stats of merged.values()) {
     const venue = stats.venue
-    const unionCvap = stats.unionInDistrict.walk_15?.citizen_voting_age_population ?? 0
-    const totalPop15 = stats.unionInDistrict.walk_15?.total_population ?? 0
     const components = venue.properties.priority_components
     if (!components) continue
-    const newAudience = audienceScore(unionCvap)
+
+    // Per-district walk-15 CVAPs across ALL selected districts. A district missing
+    // from stats.perDistrict means the venue's data wasn't in that district's
+    // catchment file, so its reach there is effectively 0.
+    const perDistrictCvaps = selectedDistricts.map(d =>
+      stats.perDistrict[d]?.walk_15?.in_district?.citizen_voting_age_population ?? 0
+    )
+
+    const product = perDistrictCvaps.reduce((p, v) => p * Math.max(v, 0), 1)
+    const geomean = perDistrictCvaps.length > 0
+      ? Math.pow(product, 1 / perDistrictCvaps.length)
+      : 0
+
+    const unionCvap = perDistrictCvaps.reduce((a, b) => a + b, 0)
+    const totalPop15 = stats.unionInDistrict.walk_15?.total_population ?? 0
+
+    const newAudience = audienceScore(geomean)
     let composite =
       WEIGHT_AUDIENCE * newAudience
       + WEIGHT_CONFIDENCE * components.confidence
@@ -128,7 +153,7 @@ export function rescoreVenuesForForum(
       + WEIGHT_LEGITIMACY * components.legitimacy
     composite = Math.min(composite + components.public_facility_bonus, 1.0)
     if (totalPop15 === 0) composite *= 0.3
-    // Build a new feature with updated priority fields
+
     const newVenue: VenueFeature = {
       ...venue,
       properties: {
