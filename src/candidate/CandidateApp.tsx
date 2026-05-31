@@ -68,9 +68,6 @@ export function CandidateApp() {
         <span className="text-sm font-medium text-gray-700">
           Candidate venue map · District {districtNum}
         </span>
-        <span className="ml-3 rounded bg-amber-100 px-2 py-0.5 text-[10px] uppercase tracking-wide text-amber-800">
-          Private preview
-        </span>
       </header>
       <div className="flex flex-1 overflow-hidden">
         <CandidateSidebar

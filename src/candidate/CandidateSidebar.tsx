@@ -139,13 +139,6 @@ export function CandidateSidebar({ district, collapsed, onToggle }: SidebarProps
         </p>
       </div>
 
-      <div className="mt-auto rounded bg-amber-50 p-3 text-xs text-amber-900">
-        <strong>Preview build.</strong> Venues sourced from OpenStreetMap, filtered
-        for chains/gyms/fast-food, enriched by Google Places attributes and website
-        assessments where available. Voter weighting currently uses estimated CVAP
-        (citizen voting-age population) as a proxy; real precinct-level registered-
-        voter counts can be substituted later without changing the UI.
-      </div>
     </aside>
   )
 }
