@@ -847,7 +847,7 @@ def fade_rings_svg(district_utm, to_svg, buffer_base_m: float) -> str:
 
 # ====================== SVG assembly ======================
 
-def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_lines, by_name, refs, allowlist):
+def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_lines, by_name, refs, allowlist, stats=None):
     to_svg, scale_pt_per_m = make_utm_to_svg(district_utm)
 
     out = []
@@ -1003,6 +1003,20 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
     out.append(render_north_arrow(POSTER_W_PT - PAGE_PADDING_PT - 24,
                                    MAP_TOP + 50, r=22))
 
+    # ---- Stats panel ("By the Numbers") in the right-side negative space
+    if stats:
+        # Count parks/open-space polygons that intersect the district interior
+        parks_classes = {"park", "sports", "playground", "grass", "forest"}
+        parks_count = sum(
+            1 for lu in landuse_polys
+            if lu["class"] in parks_classes and lu.get("name")
+            and lu["poly"].intersects(district_utm)
+        )
+        panel_w = 460
+        panel_x = POSTER_W_PT - PAGE_PADDING_PT - panel_w
+        panel_y = MAP_TOP + 110
+        out.append(render_stats_panel(stats, parks_count, panel_x, panel_y, panel_w))
+
     # ---- Header — civic poster title block
     out.append(render_header(district_n))
 
@@ -1057,6 +1071,147 @@ def render_header(district_n: int) -> str:
         f'stroke="{COLOR_RULE}" stroke-width="0.75"/>'
         f'</g>'
     )
+
+
+def render_stats_panel(stats: dict, parks_count: int, x_left: float, y_top: float,
+                        width: float) -> str:
+    """A "By the Numbers" panel for the right-side negative space.
+
+    Three sections, in order: District overview, Local businesses, Community
+    infrastructure. Uses serif heading + caps-eyebrow label + right-aligned
+    figure style for that civic-document feel.
+    """
+    demo = stats.get("demographics") or {}
+    biz = (stats.get("businesses") or {}).get("by_bucket", {})
+
+    population = demo.get("population", 0)
+    households = demo.get("households", 0)
+    land_area = demo.get("land_area_sq_mi", 0)
+    age = demo.get("age") or {}
+    tenure_owner = demo.get("owner_occupied", 0)
+    tenure_renter = demo.get("renter_occupied", 0)
+    edu = demo.get("education_25plus") or {}
+    edu_total = sum(edu.values()) or 1
+    pct_bachelors = round(100 * (edu.get("bachelors", 0) + edu.get("graduate", 0)) / edu_total)
+
+    # Layout constants
+    padding = 24
+    title_pt = 24
+    section_pt = 13
+    label_pt = 11
+    figure_pt = 18
+    line_h_section = section_pt * 1.4
+    line_h_row = 26
+    line_h_section_gap = 18
+    rule_w = 0.75
+
+    # Build content rows. Each row: (LABEL CAPS, value text)
+    overview = [
+        ("Population", f"{population:,}"),
+        ("Households", f"{households:,}"),
+        ("Land area", f"{land_area} sq mi"),
+        ("Owner / renter", f"{tenure_owner:,} / {tenure_renter:,}"),
+        ("College degree (25+)", f"{pct_bachelors}%"),
+    ]
+    businesses = [
+        ("Restaurants & cafés",   biz.get("food_and_drink", 0)),
+        ("Retail shops",          biz.get("retail", 0)),
+        ("Grocery & markets",     biz.get("grocery", 0)),
+        ("Medical offices",       biz.get("medical", 0)),
+        ("Hospitality",           biz.get("hospitality", 0)),
+        ("Cultural & arts",       biz.get("cultural", 0)),
+    ]
+    # Drop categories with 0 count to keep the panel honest
+    businesses = [b for b in businesses if b[1] > 0]
+    businesses = [(label, f"{count}") for label, count in businesses]
+    community = [
+        ("Public schools",        biz.get("schools", 0)),
+        ("Civic facilities",      biz.get("civic", 0)),
+        ("Parks & open space",    parks_count),
+    ]
+    community = [(label, f"{count}") for label, count in community if count > 0]
+
+    sections = [
+        ("Overview",          overview),
+        ("Local businesses",  businesses),
+        ("Community",         community),
+    ]
+
+    # Compute total panel height
+    body_h = padding * 2  # top + bottom padding
+    body_h += title_pt + 8  # title block
+    body_h += rule_w + line_h_section_gap
+    for section_name, rows in sections:
+        body_h += line_h_section + 4
+        body_h += rule_w + 6
+        body_h += line_h_row * len(rows)
+        body_h += line_h_section_gap
+
+    panel_x = x_left
+    panel_y = y_top
+    panel_w = width
+    panel_h = body_h
+
+    parts = ['<g id="stats-panel">']
+    # Background — subtle paper card with thin navy stroke
+    parts.append(
+        f'<rect x="{panel_x}" y="{panel_y}" width="{panel_w}" height="{panel_h}" '
+        f'rx="6" ry="6" fill="{COLOR_BG}" stroke="{COLOR_ACCENT}" '
+        f'stroke-opacity="0.45" stroke-width="0.8"/>'
+    )
+
+    # Top accent strip
+    parts.append(
+        f'<rect x="{panel_x}" y="{panel_y}" width="{panel_w}" height="4" '
+        f'rx="6" ry="6" fill="{COLOR_ACCENT}"/>'
+    )
+
+    cx = panel_x + padding
+    cy = panel_y + padding + title_pt
+
+    # Title
+    parts.append(
+        f'<text x="{cx}" y="{cy}" font-family="{FONT_SERIF}" '
+        f'font-size="{title_pt}" font-weight="700" fill="{COLOR_TITLE}">'
+        f'By the Numbers</text>'
+    )
+    cy += 8
+
+    # Sections
+    for section_name, rows in sections:
+        cy += line_h_section
+        parts.append(
+            f'<text x="{cx}" y="{cy}" font-family="{FONT_SANS}" '
+            f'font-size="{section_pt}" font-weight="700" '
+            f'fill="{COLOR_ACCENT}" letter-spacing="1.5">'
+            f'{section_name.upper()}</text>'
+        )
+        cy += 4
+        # Thin section underline
+        parts.append(
+            f'<line x1="{cx}" y1="{cy}" x2="{panel_x + panel_w - padding}" '
+            f'y2="{cy}" stroke="{COLOR_ACCENT}" stroke-opacity="0.3" '
+            f'stroke-width="{rule_w}"/>'
+        )
+        cy += 8
+        for label, value in rows:
+            row_y = cy + label_pt
+            parts.append(
+                f'<text x="{cx}" y="{row_y}" font-family="{FONT_SANS}" '
+                f'font-size="{label_pt}" font-weight="400" fill="{COLOR_SUBTITLE}">'
+                f'{xml_escape(label)}</text>'
+            )
+            parts.append(
+                f'<text x="{panel_x + panel_w - padding}" y="{row_y + 1}" '
+                f'font-family="{FONT_SERIF}" font-size="{figure_pt}" '
+                f'font-weight="600" text-anchor="end" fill="{COLOR_TITLE}">'
+                f'{xml_escape(value)}</text>'
+            )
+            cy += line_h_row
+        cy += line_h_section_gap - line_h_row + 4
+
+    parts.append('</g>')
+    return "\n".join(parts)
 
 
 def render_footer() -> str:
@@ -1124,8 +1279,20 @@ def main():
     labels_data = json.loads(labels_path.read_text())
     allowlist = labels_data.get("allowlist", [])
 
+    # Optional stats panel — present if aggregate-district-stats.py has been run.
+    stats_path = base / "print-district-stats.json"
+    stats = None
+    if stats_path.exists():
+        stats = json.loads(stats_path.read_text())
+        print(f"[district {args.district}] stats panel: enabled (population "
+              f"≈ {stats['demographics']['population']:,})", file=sys.stderr)
+    else:
+        print(f"[district {args.district}] stats panel: skipped "
+              f"(no {stats_path.name} — run aggregate-district-stats.py)",
+              file=sys.stderr)
+
     svg = render_svg(args.district, district_utm, highway_ways, landuse_polys,
-                     waterway_lines, by_name, refs, allowlist)
+                     waterway_lines, by_name, refs, allowlist, stats=stats)
     out_path.write_text(svg)
 
     size_kb = out_path.stat().st_size / 1024

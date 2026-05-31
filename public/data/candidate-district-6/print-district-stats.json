@@ -1,0 +1,95 @@
+{
+  "generated": "2026-05-31T23:30:04.833893+00:00",
+  "district": 6,
+  "demographics": {
+    "block_groups_included": 15,
+    "population": 11142,
+    "households": 4517,
+    "land_area_sq_mi": 13.54,
+    "age": {
+      "under_18": 2398,
+      "age_18_34": 2314,
+      "age_35_54": 3100,
+      "age_55_64": 989,
+      "age_65_plus": 2341
+    },
+    "owner_occupied": 2551,
+    "renter_occupied": 1967,
+    "commute": {
+      "total_workers": 5291,
+      "drove_alone": 3915,
+      "carpooled": 446,
+      "public_transit": 48,
+      "bicycle": 50,
+      "walked": 75,
+      "work_from_home": 715
+    },
+    "education_25plus": {
+      "less_than_hs": 514,
+      "high_school": 1237,
+      "some_college": 2730,
+      "bachelors": 1940,
+      "graduate": 1238
+    },
+    "language_at_home": {
+      "english_only": 9502,
+      "spanish": 1088,
+      "other_indo_european": 5,
+      "asian_pacific_islander": 12,
+      "other": 27
+    }
+  },
+  "businesses": {
+    "by_bucket": {
+      "schools": 3,
+      "retail": 50,
+      "medical": 4,
+      "food_and_drink": 29,
+      "grocery": 6,
+      "hospitality": 3
+    },
+    "detailed": {
+      "amenity:school": 1,
+      "shop:hardware": 1,
+      "amenity:veterinary": 1,
+      "shop:sports": 2,
+      "shop:department_store": 6,
+      "shop:clothes": 3,
+      "shop:vacant": 4,
+      "amenity:cafe": 2,
+      "shop:supermarket": 2,
+      "shop:convenience": 4,
+      "shop:craft": 1,
+      "amenity:restaurant": 12,
+      "shop:party": 1,
+      "shop:hairdresser_supply": 1,
+      "shop:shoes": 2,
+      "amenity:dentist": 3,
+      "amenity:fast_food": 15,
+      "shop:mobile_phone": 1,
+      "shop:confectionery": 1,
+      "shop:cosmetics": 1,
+      "shop:pet": 1,
+      "shop:stationery": 1,
+      "shop:florist": 1,
+      "shop:optician": 1,
+      "shop:tobacco": 1,
+      "shop:variety_store": 2,
+      "tourism:hotel": 3,
+      "shop:bed": 2,
+      "shop:money_lender": 1,
+      "shop:beauty": 2,
+      "shop:dry_cleaning": 1,
+      "shop:electronics": 2,
+      "shop:car_parts": 1,
+      "shop:outpost": 1,
+      "shop:mall": 1,
+      "shop:tyres": 2,
+      "shop:doityourself": 2,
+      "amenity:college": 2,
+      "shop:alcohol": 1,
+      "shop:garden_centre": 1,
+      "shop:storage_rental": 2
+    }
+  }
+}
