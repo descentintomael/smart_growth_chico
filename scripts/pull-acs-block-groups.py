@@ -89,10 +89,14 @@ TENURE_VARS = {
 }
 # Citizen Voting-Age Population — used as a proxy when no precinct-voter data is
 # available. Sums native-born + naturalized over voting age.
+# Denominator-side variables (008, 019) are direct "18 and over" subtotals;
+# we use them to compute the CVAP rate, then apply that rate to BG adult pop.
 CVAP_VARS = {
-    "B05003_001E": "pop_total_for_cvap",  # total pop reference
+    "B05003_001E": "pop_total_for_cvap",
+    "B05003_008E": "male_18plus_total",
     "B05003_009E": "male_native_18plus",
     "B05003_011E": "male_naturalized_18plus",
+    "B05003_019E": "female_18plus_total",
     "B05003_020E": "female_native_18plus",
     "B05003_022E": "female_naturalized_18plus",
 }
@@ -104,8 +108,11 @@ ALL_VARS = (
     + list(EDUCATION_VARS)
     + list(INCOME_VARS)
     + list(TENURE_VARS)
-    + list(CVAP_VARS)
+    # CVAP (B05003) intentionally NOT requested at BG level — Census Disclosure
+    # Avoidance suppresses it there. Pulled separately at tract level and
+    # proportioned to BGs below.
 )
+TRACT_LEVEL_VARS = ["B05003_001E"] + list(CVAP_VARS)
 
 # Map cohort indexes -> age bucket (matching the existing district-demographics
 # profile script for consistency).
@@ -139,6 +146,35 @@ def chico_tracts() -> set[str]:
     )
     data = json.loads(lookup_path.read_text())
     return set(data["chico"]["census_tracts"])
+
+
+def fetch_tract_cvap(year: int, api_key: str | None, refresh: bool) -> dict[str, dict]:
+    """Pull B05003 at tract level. Returns {tract_id: {var: value}}."""
+    cache_path = CACHE_DIR / f"butte-tract-cvap-{year}.json"
+    if cache_path.exists() and not refresh:
+        return json.loads(cache_path.read_text())
+
+    url = f"https://api.census.gov/data/{year}/acs/acs5"
+    params = {
+        "get": ",".join(TRACT_LEVEL_VARS),
+        "for": "tract:*",
+        "in": f"state:{STATE_FIPS} county:{COUNTY_FIPS}",
+    }
+    if api_key:
+        params["key"] = api_key
+    r = requests.get(url, params=params, timeout=60)
+    if not r.ok:
+        print(f"tract CVAP fetch FAILED: HTTP {r.status_code}", file=sys.stderr)
+        return {}
+    rows = r.json()
+    headers, data_rows = rows[0], rows[1:]
+    by_tract: dict[str, dict] = {}
+    for row in data_rows:
+        rd = dict(zip(headers, row))
+        by_tract[rd["tract"]] = {v: rd[v] for v in TRACT_LEVEL_VARS}
+    cache_path.write_text(json.dumps(by_tract))
+    print(f"  Cached tract-level CVAP for {len(by_tract)} tracts")
+    return by_tract
 
 
 def fetch_acs(year: int, api_key: str | None, refresh: bool) -> list[list]:
@@ -206,8 +242,12 @@ def to_int(s) -> int:
         return 0
 
 
-def aggregate_row(raw: dict, geoid: str) -> dict:
-    """Aggregate raw cohort vars into the buckets the UI panel will display."""
+def aggregate_row(raw: dict, geoid: str, tract_cvap_rate: float, adult_pop: int) -> dict:
+    """Aggregate raw cohort vars into the buckets the UI panel will display.
+
+    `tract_cvap_rate` is the parent tract's (CVAP / 18+ population) ratio; we use
+    it to estimate this BG's CVAP since B05003 is suppressed at BG level.
+    """
     age_buckets = {
         bucket: sum(to_int(raw.get(f"B01001_{i:03d}E", 0)) for i in idxs)
         for bucket, idxs in AGE_BUCKETS.items()
@@ -227,16 +267,17 @@ def aggregate_row(raw: dict, geoid: str) -> dict:
     income_upper_mid = sum(to_int(raw.get(f"B19001_{i:03d}E", 0)) for i in (13, 14))   # 75–125k
     income_high = sum(to_int(raw.get(f"B19001_{i:03d}E", 0)) for i in (15, 16, 17))    # 125k+
 
-    cvap = sum(to_int(raw.get(v, 0)) for v in (
-        "B05003_009E", "B05003_011E", "B05003_020E", "B05003_022E",
-    ))
+    # B05003 is suppressed at BG level; estimate from tract rate × this BG's adult pop.
+    cvap_estimated = round(adult_pop * tract_cvap_rate)
 
     return {
         "geoid": geoid,
         "tract": geoid[5:11],
         "block_group": geoid[11:],
         "total_population": to_int(raw.get("B01001_001E", 0)),
-        "citizen_voting_age_population": cvap,
+        "adult_population_18plus": adult_pop,
+        "citizen_voting_age_population": cvap_estimated,
+        "cvap_method": "estimated_from_tract_rate",
         "age": age_buckets,
         "race_ethnicity": {
             "white_nh": to_int(raw.get("B03002_003E", 0)),
@@ -286,6 +327,23 @@ def main() -> int:
         print("No CENSUS_API_KEY found — running anonymous (500 req/day limit). "
               "Sign up at https://api.census.gov/data/key_signup.html for unlimited.")
 
+    print("Fetching tract-level CVAP (B05003 is suppressed at BG level)...")
+    tract_cvap = fetch_tract_cvap(args.year, api_key, args.refresh)
+    # Per-tract CVAP rate = (Native 18+ + Naturalized 18+) / Total 18+
+    tract_cvap_rate: dict[str, float] = {}
+    for tract_id, vars_ in tract_cvap.items():
+        total_18plus = (
+            to_int(vars_.get("B05003_008E"))   # Male 18+ total
+            + to_int(vars_.get("B05003_019E"))  # Female 18+ total
+        )
+        cvap = (
+            to_int(vars_.get("B05003_009E"))   # Male 18+ Native
+            + to_int(vars_.get("B05003_011E"))  # Male 18+ Naturalized
+            + to_int(vars_.get("B05003_020E"))  # Female 18+ Native
+            + to_int(vars_.get("B05003_022E"))  # Female 18+ Naturalized
+        )
+        tract_cvap_rate[tract_id] = (cvap / total_18plus) if total_18plus else 0.0
+
     rows = fetch_acs(args.year, api_key, args.refresh)
     if not rows:
         return 1
@@ -304,7 +362,16 @@ def main() -> int:
             continue
         bg = raw["block group"]
         geoid = f"{raw['state']}{raw['county']}{tract}{bg}"
-        processed[geoid] = aggregate_row(raw, geoid)
+        # Compute adult population for this BG from cohorts
+        adult_pop = sum(
+            to_int(raw.get(f"B01001_{i:03d}E", 0))
+            for i in AGE_BUCKETS["age_18_34"]
+                  + AGE_BUCKETS["age_35_54"]
+                  + AGE_BUCKETS["age_55_64"]
+                  + AGE_BUCKETS["age_65_plus"]
+        )
+        rate = tract_cvap_rate.get(tract, 0.0)
+        processed[geoid] = aggregate_row(raw, geoid, rate, adult_pop)
 
     print(f"Kept {len(processed)} Chico block groups")
 
