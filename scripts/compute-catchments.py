@@ -74,6 +74,9 @@ def cache_dir() -> Path:
 def load_or_download_network(north, south, east, west, district: int):
     """Cache the OSM graph per-district so re-runs don't re-download."""
     cached_path = cache_dir() / f"network-d{district}.graphml"
+    # Pin OSMnx's own cache to the same .cache/ tree so we don't spawn a
+    # stray ./cache/ directory at the project root.
+    ox.settings.cache_folder = str(cache_dir() / "osmnx-cache")
     if cached_path.exists():
         print(f"Loading cached OSM network from {cached_path}")
         return ox.load_graphml(str(cached_path))

@@ -28,6 +28,8 @@ Thumbs.db
 
 # Local API response cache (Google Places etc.) — keep out of git
 .cache/
+# OSMnx default cache (in case the script's setting isn't applied early enough)
+cache/
 
 # Testing
 coverage/
