@@ -20,6 +20,18 @@ export interface VenueProperties {
   hosting_status: 'confirmed' | 'likely' | 'needs_verification' | 'excluded'
   assessment_confidence?: 'high' | 'medium' | 'low' | 'unknown'
   notes: string | null
+  // Priority scoring (added by scripts/score-venue-priority.py)
+  priority_score?: number
+  priority_tier?: 'top' | 'high' | 'medium' | 'low'
+  priority_rank?: number
+  priority_components?: {
+    audience: number
+    confidence: number
+    fit: number
+    legitimacy: number
+    public_facility_bonus: number
+    in_district_walk_15_cvap: number
+  }
   /** True when the venue point is inside the district polygon; false if in the adjacency buffer. */
   in_district: boolean
   // Google Places enrichment (optional — venue may not have been enriched yet)

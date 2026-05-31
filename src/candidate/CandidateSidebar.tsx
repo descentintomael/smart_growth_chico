@@ -1,4 +1,5 @@
 import { allCategoryStyles } from './categoryStyle'
+import { TopVenuesPanel } from './TopVenuesPanel'
 
 interface SidebarProps {
   district: string
@@ -45,6 +46,8 @@ export function CandidateSidebar({ district, collapsed, onToggle }: SidebarProps
           </svg>
         </button>
       </div>
+
+      <TopVenuesPanel district={district} />
 
       <div>
         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500">

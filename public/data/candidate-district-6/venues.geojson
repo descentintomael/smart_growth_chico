@@ -42,7 +42,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 73,
         "google_editorial_summary": null,
-        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA"
+        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA",
+        "priority_score": 0.1785,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 1.0,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 35
       }
     },
     {
@@ -89,7 +100,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 781,
         "google_editorial_summary": "Breakfast cafe offering cooked & cold options served alongside a range of espresso-based drinks.",
-        "google_formatted_address": "1387 E 8th St, Chico, CA 95928, USA"
+        "google_formatted_address": "1387 E 8th St, Chico, CA 95928, USA",
+        "priority_score": 0.4801,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.325,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 10
+        },
+        "priority_rank": 29
       }
     },
     {
@@ -135,7 +157,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 526,
         "google_editorial_summary": null,
-        "google_formatted_address": "1141 Forest Ave UNIT 10, Chico, CA 95928, USA"
+        "google_formatted_address": "1141 Forest Ave UNIT 10, Chico, CA 95928, USA",
+        "priority_score": 0.6184,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.671,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 473
+        },
+        "priority_rank": 16
       }
     },
     {
@@ -181,7 +214,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 378,
         "google_editorial_summary": null,
-        "google_formatted_address": "3221 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "3221 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.6219,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.742,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 921
+        },
+        "priority_rank": 14
       }
     },
     {
@@ -227,7 +271,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 17,
         "google_editorial_summary": null,
-        "google_formatted_address": "132 Meyers St STE 120, Chico, CA 95928, USA"
+        "google_formatted_address": "132 Meyers St STE 120, Chico, CA 95928, USA",
+        "priority_score": 0.1035,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.7,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 47
       }
     },
     {
@@ -277,7 +332,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 1483,
         "google_editorial_summary": null,
-        "google_formatted_address": "1075 E 20th St, Chico, CA 95928, USA"
+        "google_formatted_address": "1075 E 20th St, Chico, CA 95928, USA",
+        "priority_score": 0.6752,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.626,
+          "confidence": 0.7,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 308
+        },
+        "priority_rank": 10
       }
     },
     {
@@ -332,7 +398,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 265,
         "google_editorial_summary": null,
-        "google_formatted_address": "175 E 20th St Ste 100, Chico, CA 95928, USA"
+        "google_formatted_address": "175 E 20th St Ste 100, Chico, CA 95928, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 46
       }
     },
     {
@@ -385,7 +462,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 1090,
         "google_editorial_summary": "Traditional Mongolian barbecue offered in a down-to-setting with a warm atmosphere.",
-        "google_formatted_address": "E 20th St, Target Center, CA 95928, USA"
+        "google_formatted_address": "E 20th St, Target Center, CA 95928, USA",
+        "priority_score": 0.6529,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.757,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1060
+        },
+        "priority_rank": 11
       }
     },
     {
@@ -430,7 +518,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 142,
         "google_editorial_summary": null,
-        "google_formatted_address": "1354 East Ave Suite U, Chico, CA 95926, USA"
+        "google_formatted_address": "1354 East Ave Suite U, Chico, CA 95926, USA",
+        "priority_score": 0.4962,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.366,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 19
+        },
+        "priority_rank": 25
       }
     },
     {
@@ -477,7 +576,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 448,
         "google_editorial_summary": null,
-        "google_formatted_address": "2010 Park Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "2010 Park Ave, Chico, CA 95928, USA",
+        "priority_score": 0.1013,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 48
       }
     },
     {
@@ -523,7 +633,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 480,
         "google_editorial_summary": "Casual spot in a strip mall making traditional Thai dishes with varying spice levels in quaint digs.",
-        "google_formatted_address": "2485 Notre Dame Blvd #250, Chico, CA 95928, USA"
+        "google_formatted_address": "2485 Notre Dame Blvd #250, Chico, CA 95928, USA",
+        "priority_score": 0.6517,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.754,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1029
+        },
+        "priority_rank": 12
       }
     },
     {
@@ -570,7 +691,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 978,
         "google_editorial_summary": null,
-        "google_formatted_address": "1354 East Ave P, Chico, CA 95926, USA"
+        "google_formatted_address": "1354 East Ave P, Chico, CA 95926, USA",
+        "priority_score": 0.4704,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.301,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 6
+        },
+        "priority_rank": 30
       }
     },
     {
@@ -615,7 +747,18 @@
         "google_rating": 3.9,
         "google_user_ratings_count": 475,
         "google_editorial_summary": null,
-        "google_formatted_address": "659 Palmetto Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "659 Palmetto Ave, Chico, CA 95926, USA",
+        "priority_score": 0.096,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 49
       }
     },
     {
@@ -663,7 +806,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 874,
         "google_editorial_summary": null,
-        "google_formatted_address": "555 Flying V St #1, Chico, CA 95928, USA"
+        "google_formatted_address": "555 Flying V St #1, Chico, CA 95928, USA",
+        "priority_score": 0.7205,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.739,
+          "confidence": 0.7,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 891
+        },
+        "priority_rank": 6
       }
     },
     {
@@ -716,7 +870,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 333,
         "google_editorial_summary": null,
-        "google_formatted_address": "1705 Manzanita Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1705 Manzanita Ave, Chico, CA 95926, USA",
+        "priority_score": 0.7633,
+        "priority_tier": "top",
+        "priority_components": {
+          "audience": 0.721,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 753
+        },
+        "priority_rank": 2
       }
     },
     {
@@ -761,7 +926,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 316,
         "google_editorial_summary": "Unassuming, laid-back venue for classic spiced-to-order Thai curries, soups & stir-fries.",
-        "google_formatted_address": "1196 E Lassen Ave Suite 110, Chico, CA 95973, USA"
+        "google_formatted_address": "1196 E Lassen Ave Suite 110, Chico, CA 95973, USA",
+        "priority_score": 0.5604,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.526,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 117
+        },
+        "priority_rank": 22
       }
     },
     {
@@ -805,7 +981,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 50,
         "google_editorial_summary": null,
-        "google_formatted_address": "3211 Cohasset Rd, Chico, CA 95973, USA"
+        "google_formatted_address": "3211 Cohasset Rd, Chico, CA 95973, USA",
+        "priority_score": 0.5615,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.604,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 250
+        },
+        "priority_rank": 21
       }
     },
     {
@@ -852,7 +1039,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 819,
         "google_editorial_summary": "Burger joint offering charbroiled patties with self-serve toppings, plus hot dogs, fries & shakes.",
-        "google_formatted_address": "3211 Cohasset Rd, Chico, CA 95973, USA"
+        "google_formatted_address": "3211 Cohasset Rd, Chico, CA 95973, USA",
+        "priority_score": 0.5915,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.604,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 250
+        },
+        "priority_rank": 18
       }
     },
     {
@@ -897,7 +1095,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1350 E Lassen Ave, Chico, CA 95973, USA"
+        "google_formatted_address": "1350 E Lassen Ave, Chico, CA 95973, USA",
+        "priority_score": 0.6207,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.552,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 151
+        },
+        "priority_rank": 15
       }
     },
     {
@@ -941,7 +1150,18 @@
         "google_rating": 3.9,
         "google_user_ratings_count": 20,
         "google_editorial_summary": null,
-        "google_formatted_address": "1351 E Lassen Ave, Chico, CA 95973, USA"
+        "google_formatted_address": "1351 E Lassen Ave, Chico, CA 95973, USA",
+        "priority_score": 0.4907,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.552,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 151
+        },
+        "priority_rank": 27
       }
     },
     {
@@ -985,7 +1205,18 @@
         "google_rating": 4,
         "google_user_ratings_count": 61,
         "google_editorial_summary": null,
-        "google_formatted_address": "1377 E Lassen Ave, Chico, CA 95973, USA"
+        "google_formatted_address": "1377 E Lassen Ave, Chico, CA 95973, USA",
+        "priority_score": 0.4858,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.54,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 134
+        },
+        "priority_rank": 28
       }
     },
     {
@@ -1029,7 +1260,18 @@
         "google_rating": 3.4,
         "google_user_ratings_count": 14,
         "google_editorial_summary": null,
-        "google_formatted_address": "966 Kovak Ct, Chico, CA 95973, USA"
+        "google_formatted_address": "966 Kovak Ct, Chico, CA 95973, USA",
+        "priority_score": 0.3755,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.314,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 8
+        },
+        "priority_rank": 34
       }
     },
     {
@@ -1072,7 +1314,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 52,
         "google_editorial_summary": null,
-        "google_formatted_address": "1199 Diablo Ave, Chico, CA 95973, USA"
+        "google_formatted_address": "1199 Diablo Ave, Chico, CA 95973, USA",
+        "priority_score": 0.4915,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.554,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 154
+        },
+        "priority_rank": 26
       }
     },
     {
@@ -1116,7 +1369,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 94,
         "google_editorial_summary": null,
-        "google_formatted_address": "3010 Floral Ave Ste 125, Chico, CA 95973, USA"
+        "google_formatted_address": "3010 Floral Ave Ste 125, Chico, CA 95973, USA",
+        "priority_score": 0.5536,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.584,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 207
+        },
+        "priority_rank": 23
       }
     },
     {
@@ -1161,7 +1425,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1475 East Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1475 East Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6182,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.545,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 142
+        },
+        "priority_rank": 17
       }
     },
     {
@@ -1206,7 +1481,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "2446 Marigold Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "2446 Marigold Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6814,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.703,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 641
+        },
+        "priority_rank": 9
       }
     },
     {
@@ -1254,7 +1540,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1859 Hooker Oak Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1859 Hooker Oak Ave, Chico, CA 95926, USA",
+        "priority_score": 0.5301,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.325,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 10
+        },
+        "priority_rank": 24
       }
     },
     {
@@ -1299,7 +1596,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "988 East Ave #988, Chico, CA 95926, USA"
+        "google_formatted_address": "988 East Ave #988, Chico, CA 95926, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 42
       }
     },
     {
@@ -1344,7 +1652,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1770 E 8th St, Chico, CA 95928, USA"
+        "google_formatted_address": "1770 E 8th St, Chico, CA 95928, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 43
       }
     },
     {
@@ -1389,7 +1708,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 80,
         "google_editorial_summary": null,
-        "google_formatted_address": "2320 Forest Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "2320 Forest Ave, Chico, CA 95928, USA",
+        "priority_score": 0.7134,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.733,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 849
+        },
+        "priority_rank": 7
       }
     },
     {
@@ -1434,7 +1764,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1071 16th St, Chico, CA 95928, USA"
+        "google_formatted_address": "1071 16th St, Chico, CA 95928, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 44
       }
     },
     {
@@ -1482,7 +1823,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 64,
         "google_editorial_summary": null,
-        "google_formatted_address": "1 Longest Dr, Chico, CA 95928, USA"
+        "google_formatted_address": "1 Longest Dr, Chico, CA 95928, USA",
+        "priority_score": 0.4654,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.27,
+          "confidence": 0.4,
+          "fit": 0.75,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2
+        },
+        "priority_rank": 31
       }
     },
     {
@@ -1527,7 +1879,18 @@
         "google_rating": 3.4,
         "google_user_ratings_count": 276,
         "google_editorial_summary": null,
-        "google_formatted_address": "2021 Dr Martin Luther King Jr Pkwy, Chico, CA 95928, USA"
+        "google_formatted_address": "2021 Dr Martin Luther King Jr Pkwy, Chico, CA 95928, USA",
+        "priority_score": 0.403,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.633,
+          "confidence": 0.0,
+          "fit": 0.6,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 329
+        },
+        "priority_rank": 33
       }
     },
     {
@@ -1573,7 +1936,18 @@
         "google_rating": 4.1,
         "google_user_ratings_count": 215,
         "google_editorial_summary": null,
-        "google_formatted_address": "2040 Business Ln, Chico, CA 95928, USA"
+        "google_formatted_address": "2040 Business Ln, Chico, CA 95928, USA",
+        "priority_score": 0.6436,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.734,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 853
+        },
+        "priority_rank": 13
       }
     },
     {
@@ -1617,7 +1991,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "2253 Humboldt Rd, Chico, CA 95928, USA"
+        "google_formatted_address": "2253 Humboldt Rd, Chico, CA 95928, USA",
+        "priority_score": 0.5763,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.441,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 48
+        },
+        "priority_rank": 19
       }
     },
     {
@@ -1662,7 +2047,18 @@
         "google_rating": 3.7,
         "google_user_ratings_count": 117,
         "google_editorial_summary": null,
-        "google_formatted_address": "101 Silver Dollar Way, Chico, CA 95928, USA"
+        "google_formatted_address": "101 Silver Dollar Way, Chico, CA 95928, USA",
+        "priority_score": 0.081,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 51
       }
     },
     {
@@ -1706,7 +2102,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 73,
         "google_editorial_summary": null,
-        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA"
+        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA",
+        "priority_score": 0.1785,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 1.0,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 36
       }
     },
     {
@@ -1757,7 +2164,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 223,
         "google_editorial_summary": null,
-        "google_formatted_address": "3199 Golf Course Rd, Chico, CA 95973, USA"
+        "google_formatted_address": "3199 Golf Course Rd, Chico, CA 95973, USA",
+        "priority_score": 0.5739,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.278,
+          "confidence": 0.7,
+          "fit": 0.75,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 3
+        },
+        "priority_rank": 20
       }
     },
     {
@@ -1802,7 +2220,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1598 Hooker Oak Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1598 Hooker Oak Ave, Chico, CA 95926, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 45
       }
     },
     {
@@ -1846,7 +2275,18 @@
         "google_rating": 5,
         "google_user_ratings_count": 3,
         "google_editorial_summary": null,
-        "google_formatted_address": "2565 California Park Dr, Chico, CA 95928, USA"
+        "google_formatted_address": "2565 California Park Dr, Chico, CA 95928, USA",
+        "priority_score": 0.8831,
+        "priority_tier": "top",
+        "priority_components": {
+          "audience": 0.783,
+          "confidence": 1.0,
+          "fit": 1.0,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1341
+        },
+        "priority_rank": 1
       }
     },
     {
@@ -1890,7 +2330,18 @@
         "google_rating": 2.9,
         "google_user_ratings_count": 264,
         "google_editorial_summary": "Low-rise hotel featuring straightforward rooms & a guest laundry, as well as free parking & Wi-Fi.",
-        "google_formatted_address": "2212 Park Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "2212 Park Ave, Chico, CA 95928, USA",
+        "priority_score": 0.0885,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 50
       }
     },
     {
@@ -1934,7 +2385,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 343,
         "google_editorial_summary": null,
-        "google_formatted_address": "2412 Park Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "2412 Park Ave, Chico, CA 95928, USA",
+        "priority_score": 0.1463,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 1.0,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 40
       }
     },
     {
@@ -1979,7 +2441,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 7,
         "google_editorial_summary": null,
-        "google_formatted_address": "1456 Upper Park Rd, Chico, CA 95973, USA"
+        "google_formatted_address": "1456 Upper Park Rd, Chico, CA 95973, USA",
+        "priority_score": 0.4189,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.278,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 3
+        },
+        "priority_rank": 32
       }
     },
     {
@@ -2024,7 +2497,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "2090 Amanda Way, Chico, CA 95928, USA"
+        "google_formatted_address": "2090 Amanda Way, Chico, CA 95928, USA",
+        "priority_score": 0.6903,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.726,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 789
+        },
+        "priority_rank": 8
       }
     },
     {
@@ -2068,7 +2552,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 73,
         "google_editorial_summary": null,
-        "google_formatted_address": "2040 Park Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "2040 Park Ave, Chico, CA 95928, USA",
+        "priority_score": 0.171,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 1.0,
+          "fit": 1.0,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 38
       }
     },
     {
@@ -2112,7 +2607,18 @@
         "google_rating": 3.6,
         "google_user_ratings_count": 12,
         "google_editorial_summary": null,
-        "google_formatted_address": "2280 Dr Martin Luther King Jr Pkwy, Chico, CA 95928, USA"
+        "google_formatted_address": "2280 Dr Martin Luther King Jr Pkwy, Chico, CA 95928, USA",
+        "priority_score": 0.081,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 52
       }
     },
     {
@@ -2157,7 +2663,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 100,
         "google_editorial_summary": null,
-        "google_formatted_address": "1930 Baney Ln, Chico, CA 95928, USA"
+        "google_formatted_address": "1930 Baney Ln, Chico, CA 95928, USA",
+        "priority_score": 0.7295,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.73,
+          "confidence": 0.7,
+          "fit": 0.65,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 821
+        },
+        "priority_rank": 4
       }
     },
     {
@@ -2203,7 +2720,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 12,
         "google_editorial_summary": null,
-        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA",
+        "priority_score": 0.1785,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 1.0,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 37
       }
     },
     {
@@ -2247,7 +2775,18 @@
         "google_rating": 4.9,
         "google_user_ratings_count": 19,
         "google_editorial_summary": null,
-        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA",
+        "priority_score": 0.171,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 1.0,
+          "fit": 1.0,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 39
       }
     },
     {
@@ -2292,7 +2831,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 43,
         "google_editorial_summary": null,
-        "google_formatted_address": "567 E 16th St, Chico, CA 95928, USA"
+        "google_formatted_address": "567 E 16th St, Chico, CA 95928, USA",
+        "priority_score": 0.1335,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 41
       }
     },
     {
@@ -2336,7 +2886,18 @@
         "google_rating": 4,
         "google_user_ratings_count": 4,
         "google_editorial_summary": null,
-        "google_formatted_address": "2480 Notre Dame Blvd, Chico, CA 95928, USA"
+        "google_formatted_address": "2480 Notre Dame Blvd, Chico, CA 95928, USA",
+        "priority_score": 0.7229,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.757,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 1058
+        },
+        "priority_rank": 5
       }
     },
     {
@@ -2390,7 +2951,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 143,
         "google_editorial_summary": null,
-        "google_formatted_address": "999 Yosemite Dr, Chico, CA 95928, USA"
+        "google_formatted_address": "999 Yosemite Dr, Chico, CA 95928, USA",
+        "priority_score": 0.7412,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.509,
+          "confidence": 1.0,
+          "fit": 0.75,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 99
+        },
+        "priority_rank": 3
       }
     }
   ]

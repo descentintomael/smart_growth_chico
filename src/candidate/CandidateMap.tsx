@@ -5,6 +5,7 @@ import {
   GeoJSON,
   CircleMarker,
   Popup,
+  Tooltip,
   ZoomControl,
   useMap,
 } from 'react-leaflet'
@@ -20,6 +21,7 @@ import type {
 } from './types'
 import { CatchmentDemographicsPanel } from './CatchmentDemographicsPanel'
 import { styleForVenue } from './categoryStyle'
+import { useCandidateSelection } from './selectionStore'
 
 // Shell-based rendering: each band is a geometrically distinct ring (or innermost
 // disk) with no overlap, so a single solid fill per band reads clearly. The four
@@ -95,9 +97,17 @@ const BOUNDARY_STYLE: PathOptions = {
   dashArray: '6 4',
 }
 
+/** Marker size scales with priority tier so the strongest forum hosts are
+ *  visually dominant. Excluded venues are deliberately tiny. */
 function venueRadius(feature: VenueFeature): number {
   const status = feature.properties.hosting_status
+  const tier = feature.properties.priority_tier
   if (status === 'excluded') return 4
+  if (tier === 'top') return 13
+  if (tier === 'high') return 10
+  if (tier === 'medium') return 7
+  if (tier === 'low') return 5
+  // Venue hasn't been scored — fall back to a confidence-based size.
   if (status === 'confirmed') return 10
   if (status === 'likely') return 8
   return 7
@@ -119,6 +129,21 @@ function venueBorderWeight(feature: VenueFeature): number {
 
 function venueBorderOpacity(feature: VenueFeature): number {
   return feature.properties.hosting_status === 'excluded' ? 0.4 : 0.95
+}
+
+function priorityBreakdownBar(label: string, value: number, color: string) {
+  return (
+    <div key={label} className="grid grid-cols-[5rem_minmax(0,1fr)_2.5rem] items-center gap-1.5 text-[10px]">
+      <span className="text-gray-600">{label}</span>
+      <div className="h-1.5 rounded-sm bg-gray-100">
+        <div
+          className="h-full rounded-sm"
+          style={{ width: `${Math.min(value * 100, 100)}%`, backgroundColor: color }}
+        />
+      </div>
+      <span className="text-right tabular-nums text-gray-700">{value.toFixed(2)}</span>
+    </div>
+  )
 }
 
 function statusBadge(status: VenueFeature['properties']['hosting_status']): {
@@ -144,7 +169,8 @@ export function CandidateMap({ district }: { district: string }) {
   const [venues, setVenues] = useState<VenueCollection | null>(null)
   const [catchments, setCatchments] = useState<CatchmentCollection | null>(null)
   const [catchmentDemo, setCatchmentDemo] = useState<CatchmentDemographics | null>(null)
-  const [selectedVenueId, setSelectedVenueId] = useState<string | null>(null)
+  const selectedVenueId = useCandidateSelection(s => s.selectedVenueId)
+  const setSelectedVenueId = useCandidateSelection(s => s.setSelectedVenueId)
   const [bounds, setBounds] = useState<LatLngBoundsExpression | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
 
@@ -319,6 +345,16 @@ export function CandidateMap({ district }: { district: string }) {
                 click: () => setSelectedVenueId(f.properties.osm_id),
               }}
             >
+              {f.properties.priority_rank != null && f.properties.priority_rank <= 10 && (
+                <Tooltip
+                  permanent
+                  direction="top"
+                  offset={[0, -venueRadius(f) - 2]}
+                  className="venue-rank-tooltip"
+                >
+                  {f.properties.priority_rank}
+                </Tooltip>
+              )}
               <Popup maxWidth={340}>
                 <div className="text-sm">
                   <div className="flex items-baseline justify-between gap-2">
@@ -368,6 +404,25 @@ export function CandidateMap({ district }: { district: string }) {
                   {f.properties.google_editorial_summary && (
                     <div className="mt-2 rounded bg-gray-50 px-2 py-1.5 text-xs italic text-gray-700">
                       “{f.properties.google_editorial_summary}”
+                    </div>
+                  )}
+                  {f.properties.priority_score != null && (
+                    <div className="mt-2 rounded border border-gray-200 bg-gray-50 px-2 py-1.5">
+                      <div className="flex items-center justify-between text-[10px]">
+                        <span className="uppercase tracking-wide text-gray-500">Forum priority</span>
+                        <span className="font-semibold tabular-nums text-gray-900">
+                          #{f.properties.priority_rank} · {f.properties.priority_score.toFixed(2)}
+                          <span className="ml-1 font-normal text-gray-500">({f.properties.priority_tier})</span>
+                        </span>
+                      </div>
+                      {f.properties.priority_components && (
+                        <div className="mt-1 space-y-0.5">
+                          {priorityBreakdownBar('Audience', f.properties.priority_components.audience, '#3b82f6')}
+                          {priorityBreakdownBar('Confidence', f.properties.priority_components.confidence, '#10b981')}
+                          {priorityBreakdownBar('Forum fit', f.properties.priority_components.fit, '#f59e0b')}
+                          {priorityBreakdownBar('Legitimacy', f.properties.priority_components.legitimacy, '#8b5cf6')}
+                        </div>
+                      )}
                     </div>
                   )}
                   <div className="mt-2 flex flex-wrap items-center gap-1.5">

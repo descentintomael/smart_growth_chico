@@ -41,7 +41,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 73,
         "google_editorial_summary": null,
-        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA"
+        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA",
+        "priority_score": 0.5792,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.336,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 12
+        },
+        "priority_rank": 110
       }
     },
     {
@@ -86,7 +97,18 @@
         "google_rating": 2.6,
         "google_user_ratings_count": 19,
         "google_editorial_summary": null,
-        "google_formatted_address": "411 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "411 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.7023,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.693,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 583
+        },
+        "priority_rank": 19
       }
     },
     {
@@ -137,7 +159,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 153,
         "google_editorial_summary": null,
-        "google_formatted_address": "995 Nord Ave #100, Chico, CA 95926, USA"
+        "google_formatted_address": "995 Nord Ave #100, Chico, CA 95926, USA",
+        "priority_score": 0.6513,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.816,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1823
+        },
+        "priority_rank": 51
       }
     },
     {
@@ -182,7 +215,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 619,
         "google_editorial_summary": null,
-        "google_formatted_address": "208 Cedar St, Chico, CA 95928, USA"
+        "google_formatted_address": "208 Cedar St, Chico, CA 95928, USA",
+        "priority_score": 0.6763,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.816,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1823
+        },
+        "priority_rank": 33
       }
     },
     {
@@ -228,7 +272,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 503,
         "google_editorial_summary": "No-frills spot with counter service dishing out Philadelphia-style cheesesteaks & hoagies.",
-        "google_formatted_address": "995 Nord Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "995 Nord Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6763,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.816,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1823
+        },
+        "priority_rank": 34
       }
     },
     {
@@ -271,7 +326,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 264,
         "google_editorial_summary": null,
-        "google_formatted_address": "2582 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "2582 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.6297,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.73,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 825
+        },
+        "priority_rank": 74
       }
     },
     {
@@ -316,7 +382,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 176,
         "google_editorial_summary": "Collegial fixture serving lots of alcoholic teas along with specialty burgers, plus a Sunday brunch.",
-        "google_formatted_address": "177 E 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "177 E 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.5297,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.73,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 825
+        },
+        "priority_rank": 119
       }
     },
     {
@@ -360,7 +437,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 393,
         "google_editorial_summary": null,
-        "google_formatted_address": "229 Broadway St, Chico, CA 95928, USA"
+        "google_formatted_address": "229 Broadway St, Chico, CA 95928, USA",
+        "priority_score": 0.6197,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.705,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 653
+        },
+        "priority_rank": 86
       }
     },
     {
@@ -405,7 +493,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 442,
         "google_editorial_summary": "Modern Italian restaurant with farm-fresh dishes, charcuterie & wood-fired pizzas, plus beer & wine.",
-        "google_formatted_address": "198 E 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "198 E 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.642,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.73,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 821
+        },
+        "priority_rank": 61
       }
     },
     {
@@ -452,7 +551,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 781,
         "google_editorial_summary": "Breakfast cafe offering cooked & cold options served alongside a range of espresso-based drinks.",
-        "google_formatted_address": "1387 E 8th St, Chico, CA 95928, USA"
+        "google_formatted_address": "1387 E 8th St, Chico, CA 95928, USA",
+        "priority_score": 0.6011,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.628,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 314
+        },
+        "priority_rank": 103
       }
     },
     {
@@ -500,7 +610,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 613,
         "google_editorial_summary": null,
-        "google_formatted_address": "817 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "817 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.606,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.64,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 353
+        },
+        "priority_rank": 101
       }
     },
     {
@@ -548,7 +669,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 181,
         "google_editorial_summary": null,
-        "google_formatted_address": "300 Broadway St a1, Chico, CA 95928, USA"
+        "google_formatted_address": "300 Broadway St a1, Chico, CA 95928, USA",
+        "priority_score": 0.6267,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.692,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 575
+        },
+        "priority_rank": 80
       }
     },
     {
@@ -594,7 +726,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 526,
         "google_editorial_summary": null,
-        "google_formatted_address": "1141 Forest Ave UNIT 10, Chico, CA 95928, USA"
+        "google_formatted_address": "1141 Forest Ave UNIT 10, Chico, CA 95928, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 140
       }
     },
     {
@@ -639,7 +782,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 378,
         "google_editorial_summary": null,
-        "google_formatted_address": "3221 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "3221 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.0975,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 152
       }
     },
     {
@@ -688,7 +842,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 1483,
         "google_editorial_summary": null,
-        "google_formatted_address": "1075 E 20th St, Chico, CA 95928, USA"
+        "google_formatted_address": "1075 E 20th St, Chico, CA 95928, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 141
       }
     },
     {
@@ -733,7 +898,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 194,
         "google_editorial_summary": null,
-        "google_formatted_address": "1008 W Sacramento Ave #1a, Chico, CA 95926, USA"
+        "google_formatted_address": "1008 W Sacramento Ave #1a, Chico, CA 95926, USA",
+        "priority_score": 0.6805,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.826,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2010
+        },
+        "priority_rank": 28
       }
     },
     {
@@ -779,7 +955,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 226,
         "google_editorial_summary": null,
-        "google_formatted_address": "671 Walnut St # 1, Chico, CA 95928, USA"
+        "google_formatted_address": "671 Walnut St # 1, Chico, CA 95928, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 142
       }
     },
     {
@@ -826,7 +1013,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 1392,
         "google_editorial_summary": "Old-fashioned mainstay for Japanese & Chinese classics served in serene environs with a sushi bar.",
-        "google_formatted_address": "2804 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "2804 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.6403,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.726,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 789
+        },
+        "priority_rank": 62
       }
     },
     {
@@ -870,7 +1068,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 374,
         "google_editorial_summary": null,
-        "google_formatted_address": "2601 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "2601 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.6517,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.754,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1030
+        },
+        "priority_rank": 49
       }
     },
     {
@@ -924,7 +1133,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 265,
         "google_editorial_summary": null,
-        "google_formatted_address": "175 E 20th St Ste 100, Chico, CA 95928, USA"
+        "google_formatted_address": "175 E 20th St Ste 100, Chico, CA 95928, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 143
       }
     },
     {
@@ -976,7 +1196,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 614,
         "google_editorial_summary": null,
-        "google_formatted_address": "2359 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "2359 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.6792,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.823,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1949
+        },
+        "priority_rank": 31
       }
     },
     {
@@ -1020,7 +1251,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 81,
         "google_editorial_summary": null,
-        "google_formatted_address": "1725 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "1725 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.6517,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.892,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 3676
+        },
+        "priority_rank": 50
       }
     },
     {
@@ -1072,7 +1314,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 357,
         "google_editorial_summary": null,
-        "google_formatted_address": "140 Broadway St #142, Chico, CA 95928, USA"
+        "google_formatted_address": "140 Broadway St #142, Chico, CA 95928, USA",
+        "priority_score": 0.631,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.703,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 636
+        },
+        "priority_rank": 72
       }
     },
     {
@@ -1118,7 +1371,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 511,
         "google_editorial_summary": "Vibrant sushi house providing a range of rolls, Pan-Asian dishes & sakes in a warm, modern space.",
-        "google_formatted_address": "346 Broadway St, Chico, CA 95928, USA"
+        "google_formatted_address": "346 Broadway St, Chico, CA 95928, USA",
+        "priority_score": 0.6196,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.674,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 487
+        },
+        "priority_rank": 87
       }
     },
     {
@@ -1165,7 +1429,18 @@
         "google_rating": 3.8,
         "google_user_ratings_count": 5,
         "google_editorial_summary": null,
-        "google_formatted_address": "521 Legion Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "521 Legion Ave, Chico, CA 95926, USA",
+        "priority_score": 0.609,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.785,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1369
+        },
+        "priority_rank": 99
       }
     },
     {
@@ -1210,7 +1485,18 @@
         "google_rating": 4.9,
         "google_user_ratings_count": 7,
         "google_editorial_summary": null,
-        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA"
+        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA",
+        "priority_score": 0.4974,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.569,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 178
+        },
+        "priority_rank": 127
       }
     },
     {
@@ -1255,7 +1541,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 193,
         "google_editorial_summary": null,
-        "google_formatted_address": "221 Normal Ave B, Chico, CA 95928, USA"
+        "google_formatted_address": "221 Normal Ave B, Chico, CA 95928, USA",
+        "priority_score": 0.595,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.613,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 272
+        },
+        "priority_rank": 107
       }
     },
     {
@@ -1299,7 +1596,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 13,
         "google_editorial_summary": "University museum exhibiting a former professor's collection of prints by renowned global artists.",
-        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA"
+        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA",
+        "priority_score": 0.6471,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.599,
+          "confidence": 0.4,
+          "fit": 0.75,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 239
+        },
+        "priority_rank": 52
       }
     },
     {
@@ -1344,7 +1652,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 67,
         "google_editorial_summary": null,
-        "google_formatted_address": "450 Orange St STE 6, Chico, CA 95928, USA"
+        "google_formatted_address": "450 Orange St STE 6, Chico, CA 95928, USA",
+        "priority_score": 0.126,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 1.0,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 132
       }
     },
     {
@@ -1391,7 +1710,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 156,
         "google_editorial_summary": null,
-        "google_formatted_address": "900 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "900 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.7189,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.829,
+          "confidence": 0.4,
+          "fit": 0.75,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2051
+        },
+        "priority_rank": 13
       }
     },
     {
@@ -1435,7 +1765,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 236,
         "google_editorial_summary": "Museum dedicated to the namesake toy with memorabilia displays & a working, 256-pound wooden yo-yo.",
-        "google_formatted_address": "320 Broadway St, Chico, CA 95928, USA"
+        "google_formatted_address": "320 Broadway St, Chico, CA 95928, USA",
+        "priority_score": 0.6606,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.683,
+          "confidence": 0.4,
+          "fit": 0.75,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 528
+        },
+        "priority_rank": 44
       }
     },
     {
@@ -1481,7 +1822,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 192,
         "google_editorial_summary": null,
-        "google_formatted_address": "407 Walnut St, Chico, CA 95928, USA"
+        "google_formatted_address": "407 Walnut St, Chico, CA 95928, USA",
+        "priority_score": 0.0713,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 157
       }
     },
     {
@@ -1526,7 +1878,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 164,
         "google_editorial_summary": null,
-        "google_formatted_address": "409 Nord Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "409 Nord Ave, Chico, CA 95926, USA",
+        "priority_score": 0.5952,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.613,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 273
+        },
+        "priority_rank": 106
       }
     },
     {
@@ -1573,7 +1936,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 220,
         "google_editorial_summary": null,
-        "google_formatted_address": "236 W East Ave #B, Chico, CA 95926, USA"
+        "google_formatted_address": "236 W East Ave #B, Chico, CA 95926, USA",
+        "priority_score": 0.6444,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.736,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 869
+        },
+        "priority_rank": 57
       }
     },
     {
@@ -1617,7 +1991,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 72,
         "google_editorial_summary": null,
-        "google_formatted_address": "950 Mangrove Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "950 Mangrove Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6432,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.839,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2266
+        },
+        "priority_rank": 59
       }
     },
     {
@@ -1661,7 +2046,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 409,
         "google_editorial_summary": "Wines & a seasonal American & Mediterranean menu in a garden bistro with weekly live music.",
-        "google_formatted_address": "1250 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "1250 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.7097,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.899,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 3945
+        },
+        "priority_rank": 15
       }
     },
     {
@@ -1710,7 +2106,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 143,
         "google_editorial_summary": null,
-        "google_formatted_address": "Bell Mem Union, 101 Hazel St, Chico, CA 95928, USA"
+        "google_formatted_address": "Bell Mem Union, 101 Hazel St, Chico, CA 95928, USA",
+        "priority_score": 0.5568,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.548,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 146
+        },
+        "priority_rank": 114
       }
     },
     {
@@ -1756,7 +2163,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 7,
         "google_editorial_summary": null,
-        "google_formatted_address": "2201 Pillsbury Rd UNIT 170, Chico, CA 95926, USA"
+        "google_formatted_address": "2201 Pillsbury Rd UNIT 170, Chico, CA 95926, USA",
+        "priority_score": 0.6769,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.642,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 361
+        },
+        "priority_rank": 32
       }
     },
     {
@@ -1800,7 +2218,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 13,
         "google_editorial_summary": "University museum exhibiting a former professor's collection of prints by renowned global artists.",
-        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA"
+        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA",
+        "priority_score": 0.6699,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.656,
+          "confidence": 0.4,
+          "fit": 0.75,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 411
+        },
+        "priority_rank": 39
       }
     },
     {
@@ -1846,7 +2275,18 @@
         "google_rating": 4,
         "google_user_ratings_count": 665,
         "google_editorial_summary": null,
-        "google_formatted_address": "499 Castro St, San Francisco, CA 94114, USA"
+        "google_formatted_address": "499 Castro St, San Francisco, CA 94114, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 144
       }
     },
     {
@@ -1891,7 +2331,18 @@
         "google_rating": 3.6,
         "google_user_ratings_count": 38,
         "google_editorial_summary": null,
-        "google_formatted_address": "645 W 5th St, Chico, CA 95928, USA"
+        "google_formatted_address": "645 W 5th St, Chico, CA 95928, USA",
+        "priority_score": 0.5033,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.458,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 58
+        },
+        "priority_rank": 126
       }
     },
     {
@@ -1934,7 +2385,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 312,
         "google_editorial_summary": "Low-key joint serving hearty hot & cold sandwiches, plus smoked ribs & other BBQ specialties.",
-        "google_formatted_address": "1369 East Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1369 East Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6336,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.709,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 676
+        },
+        "priority_rank": 66
       }
     },
     {
@@ -1978,7 +2440,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 287,
         "google_editorial_summary": null,
-        "google_formatted_address": "1851 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "1851 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.6016,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.879,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 3272
+        },
+        "priority_rank": 102
       }
     },
     {
@@ -2023,7 +2496,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 231,
         "google_editorial_summary": null,
-        "google_formatted_address": "163 E 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "163 E 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.6441,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.735,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 862
+        },
+        "priority_rank": 58
       }
     },
     {
@@ -2068,7 +2552,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 619,
         "google_editorial_summary": null,
-        "google_formatted_address": "208 Cedar St, Chico, CA 95928, USA"
+        "google_formatted_address": "208 Cedar St, Chico, CA 95928, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 145
       }
     },
     {
@@ -2112,7 +2607,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 180,
         "google_editorial_summary": null,
-        "google_formatted_address": "230 W 3rd St, Chico, CA 95928, USA"
+        "google_formatted_address": "230 W 3rd St, Chico, CA 95928, USA",
+        "priority_score": 0.6325,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.706,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 658
+        },
+        "priority_rank": 68
       }
     },
     {
@@ -2154,7 +2660,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 42,
         "google_editorial_summary": null,
-        "google_formatted_address": "146 W 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "146 W 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.5336,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.709,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 676
+        },
+        "priority_rank": 118
       }
     },
     {
@@ -2200,7 +2717,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 563,
         "google_editorial_summary": "Rustic-chic locale with a spacious patio offering New American grub, a full bar & weekend brunch.",
-        "google_formatted_address": "117 Broadway St, Chico, CA 95928, USA"
+        "google_formatted_address": "117 Broadway St, Chico, CA 95928, USA",
+        "priority_score": 0.6287,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.728,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 806
+        },
+        "priority_rank": 78
       }
     },
     {
@@ -2247,7 +2775,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 398,
         "google_editorial_summary": "A menu featuring traditional Mexican dishes & drinks in a casual space with neon signs & sports TV.",
-        "google_formatted_address": "133 Broadway St, Chico, CA 95928, USA"
+        "google_formatted_address": "133 Broadway St, Chico, CA 95928, USA",
+        "priority_score": 0.6336,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.709,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 676
+        },
+        "priority_rank": 67
       }
     },
     {
@@ -2291,7 +2830,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "642 W 5th St, Chico, CA 95928, USA"
+        "google_formatted_address": "642 W 5th St, Chico, CA 95928, USA",
+        "priority_score": 0.5094,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.586,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 211
+        },
+        "priority_rank": 125
       }
     },
     {
@@ -2336,7 +2886,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 280,
         "google_editorial_summary": null,
-        "google_formatted_address": "1002 W 5th St, Chico, CA 95928, USA"
+        "google_formatted_address": "1002 W 5th St, Chico, CA 95928, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 146
       }
     },
     {
@@ -2381,7 +2942,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 534,
         "google_editorial_summary": "Casual, family-owned chain offering enchiladas, carne asada & other Mexican favorites.",
-        "google_formatted_address": "216C W East Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "216C W East Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6467,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.742,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 917
+        },
+        "priority_rank": 54
       }
     },
     {
@@ -2426,7 +2998,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 551,
         "google_editorial_summary": null,
-        "google_formatted_address": "429 Ivy St, Chico, CA 95928, USA"
+        "google_formatted_address": "429 Ivy St, Chico, CA 95928, USA",
+        "priority_score": 0.5256,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.439,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 47
+        },
+        "priority_rank": 120
       }
     },
     {
@@ -2472,7 +3055,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 448,
         "google_editorial_summary": null,
-        "google_formatted_address": "2010 Park Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "2010 Park Ave, Chico, CA 95928, USA",
+        "priority_score": 0.1013,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 149
       }
     },
     {
@@ -2519,7 +3113,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 191,
         "google_editorial_summary": null,
-        "google_formatted_address": "365 E 6th St, Chico, CA 95928, USA"
+        "google_formatted_address": "365 E 6th St, Chico, CA 95928, USA",
+        "priority_score": 0.6115,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.716,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 723
+        },
+        "priority_rank": 95
       }
     },
     {
@@ -2566,7 +3171,18 @@
         "google_rating": 5,
         "google_user_ratings_count": 21,
         "google_editorial_summary": null,
-        "google_formatted_address": "230 W 1st St, Chico, CA 95928, USA"
+        "google_formatted_address": "230 W 1st St, Chico, CA 95928, USA",
+        "priority_score": 0.5238,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.572,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 184
+        },
+        "priority_rank": 121
       }
     },
     {
@@ -2609,7 +3225,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 94,
         "google_editorial_summary": null,
-        "google_formatted_address": "1008 W Sacramento Ave suite h, Chico, CA 95926, USA"
+        "google_formatted_address": "1008 W Sacramento Ave suite h, Chico, CA 95926, USA",
+        "priority_score": 0.6256,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.826,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2011
+        },
+        "priority_rank": 82
       }
     },
     {
@@ -2654,7 +3281,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 569,
         "google_editorial_summary": null,
-        "google_formatted_address": "118 W East Ave, Chico, CA 95973, USA"
+        "google_formatted_address": "118 W East Ave, Chico, CA 95973, USA",
+        "priority_score": 0.6572,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.768,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1171
+        },
+        "priority_rank": 46
       }
     },
     {
@@ -2701,7 +3339,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 59,
         "google_editorial_summary": null,
-        "google_formatted_address": "107 Parmac Rd, Chico, CA 95926, USA"
+        "google_formatted_address": "107 Parmac Rd, Chico, CA 95926, USA",
+        "priority_score": 0.5546,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.824,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1969
+        },
+        "priority_rank": 115
       }
     },
     {
@@ -2750,7 +3399,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 165,
         "google_editorial_summary": null,
-        "google_formatted_address": "1008 W Sacramento Ave #2a, Chico, CA 95926, USA"
+        "google_formatted_address": "1008 W Sacramento Ave #2a, Chico, CA 95926, USA",
+        "priority_score": 0.6805,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.826,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2010
+        },
+        "priority_rank": 29
       }
     },
     {
@@ -2795,7 +3455,18 @@
         "google_rating": 3.9,
         "google_user_ratings_count": 475,
         "google_editorial_summary": null,
-        "google_formatted_address": "659 Palmetto Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "659 Palmetto Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6546,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.836,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2208
+        },
+        "priority_rank": 47
       }
     },
     {
@@ -2839,7 +3510,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 55,
         "google_editorial_summary": null,
-        "google_formatted_address": "2995 Esplanade #104, Chico, CA 95973, USA"
+        "google_formatted_address": "2995 Esplanade #104, Chico, CA 95973, USA",
+        "priority_score": 0.512,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.655,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 407
+        },
+        "priority_rank": 123
       }
     },
     {
@@ -2884,7 +3566,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 766,
         "google_editorial_summary": "Relaxed Indian restaurant offering a lunch buffet & a traditional menu, plus beer & wine.",
-        "google_formatted_address": "2574 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "2574 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.6585,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.771,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1206
+        },
+        "priority_rank": 45
       }
     },
     {
@@ -2929,7 +3622,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 251,
         "google_editorial_summary": "Many craft brews on tap & elevated pub fare offered in a hip, relaxed space with brick-lined walls.",
-        "google_formatted_address": "824 Oroville Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "824 Oroville Ave, Chico, CA 95928, USA",
+        "priority_score": 0.4821,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.611,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 269
+        },
+        "priority_rank": 129
       }
     },
     {
@@ -2977,7 +3681,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 477,
         "google_editorial_summary": null,
-        "google_formatted_address": "664 E 1st Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "664 E 1st Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6735,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.871,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 3044
+        },
+        "priority_rank": 36
       }
     },
     {
@@ -3021,7 +3736,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "230 Salem St, Chico, CA 95928, USA"
+        "google_formatted_address": "230 Salem St, Chico, CA 95928, USA",
+        "priority_score": 0.5455,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.645,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 370
+        },
+        "priority_rank": 117
       }
     },
     {
@@ -3066,7 +3792,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1350 Citrus Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1350 Citrus Ave, Chico, CA 95926, USA",
+        "priority_score": 0.7625,
+        "priority_tier": "top",
+        "priority_components": {
+          "audience": 0.906,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 4207
+        },
+        "priority_rank": 4
       }
     },
     {
@@ -3110,7 +3847,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 238,
         "google_editorial_summary": null,
-        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA"
+        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA",
+        "priority_score": 0.7642,
+        "priority_tier": "top",
+        "priority_components": {
+          "audience": 0.785,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 1376
+        },
+        "priority_rank": 3
       }
     },
     {
@@ -3155,7 +3903,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 268,
         "google_editorial_summary": null,
-        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA"
+        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA",
+        "priority_score": 0.685,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.588,
+          "confidence": 0.4,
+          "fit": 1.0,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 214
+        },
+        "priority_rank": 26
       }
     },
     {
@@ -3203,7 +3962,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 482,
         "google_editorial_summary": "Refined property featuring complimentary breakfast, plus a polished restaurant/bar.",
-        "google_formatted_address": "220 W 4th St, Chico, CA 95928, USA"
+        "google_formatted_address": "220 W 4th St, Chico, CA 95928, USA",
+        "priority_score": 0.6295,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.668,
+          "confidence": 0.4,
+          "fit": 0.65,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 458
+        },
+        "priority_rank": 76
       }
     },
     {
@@ -3249,7 +4019,18 @@
         "google_rating": 4.1,
         "google_user_ratings_count": 1374,
         "google_editorial_summary": "Modern Mexican eats, inventive margaritas & tequilas are offered at this lively restaurant.",
-        "google_formatted_address": "100 Broadway St, Chico, CA 95928, USA"
+        "google_formatted_address": "100 Broadway St, Chico, CA 95928, USA",
+        "priority_score": 0.6325,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.706,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 658
+        },
+        "priority_rank": 69
       }
     },
     {
@@ -3294,7 +4075,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "290 East Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "290 East Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6992,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.748,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 972
+        },
+        "priority_rank": 20
       }
     },
     {
@@ -3339,7 +4131,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "988 East Ave #988, Chico, CA 95926, USA"
+        "google_formatted_address": "988 East Ave #988, Chico, CA 95926, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 134
       }
     },
     {
@@ -3384,7 +4187,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1770 E 8th St, Chico, CA 95928, USA"
+        "google_formatted_address": "1770 E 8th St, Chico, CA 95928, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 135
       }
     },
     {
@@ -3429,7 +4243,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "100 Oak St, Chico, CA 95928, USA"
+        "google_formatted_address": "100 Oak St, Chico, CA 95928, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 136
       }
     },
     {
@@ -3474,7 +4299,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1071 16th St, Chico, CA 95928, USA"
+        "google_formatted_address": "1071 16th St, Chico, CA 95928, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 137
       }
     },
     {
@@ -3518,7 +4354,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "2376 North Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "2376 North Ave, Chico, CA 95926, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 138
       }
     },
     {
@@ -3563,7 +4410,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "901 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "901 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.698,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.745,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 946
+        },
+        "priority_rank": 21
       }
     },
     {
@@ -3608,7 +4466,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1238 Arbutus Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1238 Arbutus Ave, Chico, CA 95926, USA",
+        "priority_score": 0.7318,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.83,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 2071
+        },
+        "priority_rank": 8
       }
     },
     {
@@ -3653,7 +4522,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1420 Neal Dow Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1420 Neal Dow Ave, Chico, CA 95926, USA",
+        "priority_score": 0.7148,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.787,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 1395
+        },
+        "priority_rank": 14
       }
     },
     {
@@ -3696,7 +4576,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 264,
         "google_editorial_summary": null,
-        "google_formatted_address": "2582 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "2582 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.6297,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.73,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 825
+        },
+        "priority_rank": 75
       }
     },
     {
@@ -3740,7 +4631,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 269,
         "google_editorial_summary": null,
-        "google_formatted_address": "118 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "118 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.6292,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.729,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 816
+        },
+        "priority_rank": 77
       }
     },
     {
@@ -3789,7 +4691,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 825,
         "google_editorial_summary": null,
-        "google_formatted_address": "130 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "130 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.6173,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.731,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 827
+        },
+        "priority_rank": 90
       }
     },
     {
@@ -3834,7 +4747,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 271,
         "google_editorial_summary": null,
-        "google_formatted_address": "965 Nord Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "965 Nord Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6423,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.731,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 827
+        },
+        "priority_rank": 60
       }
     },
     {
@@ -3883,7 +4807,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 437,
         "google_editorial_summary": "Hip, art-lined haunt with brick walls & lounge chairs, espresso drinks & fair trade tea.",
-        "google_formatted_address": "118 W 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "118 W 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.6097,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.712,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 693
+        },
+        "priority_rank": 98
       }
     },
     {
@@ -3930,7 +4865,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 1248,
         "google_editorial_summary": "Dark-wood bar with English flair, build-your-own burgers & pub fare served along with sports on TV.",
-        "google_formatted_address": "134 W 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "134 W 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.6347,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.712,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 693
+        },
+        "priority_rank": 65
       }
     },
     {
@@ -3975,7 +4921,18 @@
         "google_rating": 3.4,
         "google_user_ratings_count": 276,
         "google_editorial_summary": null,
-        "google_formatted_address": "2021 Dr Martin Luther King Jr Pkwy, Chico, CA 95928, USA"
+        "google_formatted_address": "2021 Dr Martin Luther King Jr Pkwy, Chico, CA 95928, USA",
+        "priority_score": 0.075,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 156
       }
     },
     {
@@ -4021,7 +4978,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 1613,
         "google_editorial_summary": "Folksy venue with a bar & patio whipping up homestyle American meals & unique breakfasts.",
-        "google_formatted_address": "209 Salem St, Chico, CA 95928, USA"
+        "google_formatted_address": "209 Salem St, Chico, CA 95928, USA",
+        "priority_score": 0.6111,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.653,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 398
+        },
+        "priority_rank": 96
       }
     },
     {
@@ -4066,7 +5034,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 532,
         "google_editorial_summary": "Locally-owned joint offering pizza & Italian mains such as pasta & chicken piccata, plus cocktails.",
-        "google_formatted_address": "506 Ivy St, Chico, CA 95928, USA"
+        "google_formatted_address": "506 Ivy St, Chico, CA 95928, USA",
+        "priority_score": 0.4842,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.336,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 12
+        },
+        "priority_rank": 128
       }
     },
     {
@@ -4112,7 +5091,18 @@
         "google_rating": 3.9,
         "google_user_ratings_count": 269,
         "google_editorial_summary": "Longtime sports-centric haunt with a collegial vibe & happy hours, plus finger foods & a pool table.",
-        "google_formatted_address": "702 W 5th St, Chico, CA 95928, USA"
+        "google_formatted_address": "702 W 5th St, Chico, CA 95928, USA",
+        "priority_score": 0.4473,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.349,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 15
+        },
+        "priority_rank": 130
       }
     },
     {
@@ -4157,7 +5147,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "435 Hazel St, Chico, CA 95928, USA"
+        "google_formatted_address": "435 Hazel St, Chico, CA 95928, USA",
+        "priority_score": 0.6068,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.517,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 107
+        },
+        "priority_rank": 100
       }
     },
     {
@@ -4204,7 +5205,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 232,
         "google_editorial_summary": null,
-        "google_formatted_address": "230 Salem St, Chico, CA 95928, USA"
+        "google_formatted_address": "230 Salem St, Chico, CA 95928, USA",
+        "priority_score": 0.6131,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.658,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 418
+        },
+        "priority_rank": 94
       }
     },
     {
@@ -4250,7 +5262,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 902,
         "google_editorial_summary": null,
-        "google_formatted_address": "2396 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "2396 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.6759,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.815,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1805
+        },
+        "priority_rank": 35
       }
     },
     {
@@ -4295,7 +5318,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 873,
         "google_editorial_summary": null,
-        "google_formatted_address": "2290 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "2290 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.6821,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.83,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2083
+        },
+        "priority_rank": 27
       }
     },
     {
@@ -4345,7 +5379,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 1549,
         "google_editorial_summary": "Established in 1965, this family-owned trattoria dispenses Italian comfort food & breakfast fare.",
-        "google_formatted_address": "2234 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "2234 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.6881,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.845,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2395
+        },
+        "priority_rank": 22
       }
     },
     {
@@ -4389,7 +5434,18 @@
         "google_rating": 5,
         "google_user_ratings_count": 6,
         "google_editorial_summary": null,
-        "google_formatted_address": "853 Manzanita Ct, Chico, CA 95926, USA"
+        "google_formatted_address": "853 Manzanita Ct, Chico, CA 95926, USA",
+        "priority_score": 0.5903,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.801,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1587
+        },
+        "priority_rank": 108
       }
     },
     {
@@ -4434,7 +5490,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 1777,
         "google_editorial_summary": "Straightforward venue for down-home American comfort food like chicken-fried steak & burgers.",
-        "google_formatted_address": "1695 Mangrove Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1695 Mangrove Ave, Chico, CA 95926, USA",
+        "priority_score": 0.7025,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.881,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 3338
+        },
+        "priority_rank": 18
       }
     },
     {
@@ -4481,7 +5548,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 1112,
         "google_editorial_summary": "Unfussy outlet serving Mexican basics in a relaxed, shopping center setting.",
-        "google_formatted_address": "954 Mangrove Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "954 Mangrove Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6857,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.839,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2266
+        },
+        "priority_rank": 25
       }
     },
     {
@@ -4525,7 +5603,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "280 Memorial Way, Chico, CA 95926, USA"
+        "google_formatted_address": "280 Memorial Way, Chico, CA 95926, USA",
+        "priority_score": 0.7249,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.812,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 1765
+        },
+        "priority_rank": 9
       }
     },
     {
@@ -4572,7 +5661,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 1058,
         "google_editorial_summary": "Relaxed family-owned eatery serving sizable plates of breakfast & lunch fare in a comfy space.",
-        "google_formatted_address": "352 Vallombrosa Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "352 Vallombrosa Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6657,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.789,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1426
+        },
+        "priority_rank": 42
       }
     },
     {
@@ -4618,7 +5718,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 193,
         "google_editorial_summary": "Art deco theater hosting film screenings & midsize concerts of national bands amid vibrant murals.",
-        "google_formatted_address": "230 W 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "230 W 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.6244,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.686,
+          "confidence": 0.4,
+          "fit": 1.0,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 545
+        },
+        "priority_rank": 83
       }
     },
     {
@@ -4661,7 +5772,18 @@
         "google_rating": 5,
         "google_user_ratings_count": 1,
         "google_editorial_summary": null,
-        "google_formatted_address": "421 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "421 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.7229,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.695,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 591
+        },
+        "priority_rank": 11
       }
     },
     {
@@ -4706,7 +5828,18 @@
         "google_rating": 2.6,
         "google_user_ratings_count": 19,
         "google_editorial_summary": null,
-        "google_formatted_address": "411 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "411 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.7062,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.703,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 639
+        },
+        "priority_rank": 17
       }
     },
     {
@@ -4750,7 +5883,18 @@
         "google_rating": 4,
         "google_user_ratings_count": 317,
         "google_editorial_summary": null,
-        "google_formatted_address": "517 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "517 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.7244,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.686,
+          "confidence": 0.4,
+          "fit": 1.0,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 544
+        },
+        "priority_rank": 10
       }
     },
     {
@@ -4796,7 +5940,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 838,
         "google_editorial_summary": "Fast-food chain serving standard American eats such as burgers, fries & milkshakes.",
-        "google_formatted_address": "540 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "540 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.6199,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.675,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 490
+        },
+        "priority_rank": 85
       }
     },
     {
@@ -4840,7 +5995,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 163,
         "google_editorial_summary": null,
-        "google_formatted_address": "1108 Sherman Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1108 Sherman Ave, Chico, CA 95926, USA",
+        "priority_score": 0.8085,
+        "priority_tier": "top",
+        "priority_components": {
+          "audience": 0.834,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 2154
+        },
+        "priority_rank": 1
       }
     },
     {
@@ -4884,7 +6050,18 @@
         "google_rating": 2.2,
         "google_user_ratings_count": 223,
         "google_editorial_summary": "Standard rooms with coffeemakers, cable TVs, a/c & free WiFi, outdoor pool & free parking.",
-        "google_formatted_address": "2231 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "2231 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.632,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.842,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2332
+        },
+        "priority_rank": 71
       }
     },
     {
@@ -4939,7 +6116,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 1481,
         "google_editorial_summary": "Creative pizzas, salads & sandwiches, plus pitchers of beer, turned out in easygoing surrounds.",
-        "google_formatted_address": "240 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "240 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.637,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.718,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 732
+        },
+        "priority_rank": 64
       }
     },
     {
@@ -4987,7 +6175,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 1903,
         "google_editorial_summary": "Sleek local brewpub chain featuring craft beers on tap & a menu of burgers & sandwiches.",
-        "google_formatted_address": "301 Broadway St, Chico, CA 95928, USA"
+        "google_formatted_address": "301 Broadway St, Chico, CA 95928, USA",
+        "priority_score": 0.628,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.695,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 592
+        },
+        "priority_rank": 79
       }
     },
     {
@@ -5037,7 +6236,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 810,
         "google_editorial_summary": "Contemporary restaurant with Italian cuisine & brick-oven pizzas, plus a lounge & sizable wine list.",
-        "google_formatted_address": "201 Broadway St #200, Chico, CA 95928, USA"
+        "google_formatted_address": "201 Broadway St #200, Chico, CA 95928, USA",
+        "priority_score": 0.6323,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.706,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 655
+        },
+        "priority_rank": 70
       }
     },
     {
@@ -5081,7 +6291,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 375,
         "google_editorial_summary": null,
-        "google_formatted_address": "337 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "337 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.6302,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.701,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 624
+        },
+        "priority_rank": 73
       }
     },
     {
@@ -5124,7 +6345,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 73,
         "google_editorial_summary": null,
-        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA"
+        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA",
+        "priority_score": 0.5792,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.336,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 12
+        },
+        "priority_rank": 111
       }
     },
     {
@@ -5170,7 +6402,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 2341,
         "google_editorial_summary": "Enduring sports bar & eatery offering hefty burgers & sides in a playful atmosphere.",
-        "google_formatted_address": "316 W 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "316 W 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.6002,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.657,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 414
+        },
+        "priority_rank": 104
       }
     },
     {
@@ -5215,7 +6458,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1530 W 8th Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1530 W 8th Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6543,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.636,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 339
+        },
+        "priority_rank": 48
       }
     },
     {
@@ -5258,7 +6512,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 184,
         "google_editorial_summary": null,
-        "google_formatted_address": "325 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "325 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.6655,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.695,
+          "confidence": 0.4,
+          "fit": 0.75,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 593
+        },
+        "priority_rank": 43
       }
     },
     {
@@ -5305,7 +6570,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 275,
         "google_editorial_summary": "Easygoing game-day spot offering burgers, wings & other pub fare, plus a full bar with beer on tap.",
-        "google_formatted_address": "231 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "231 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.6267,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.723,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 769
+        },
+        "priority_rank": 81
       }
     },
     {
@@ -5351,7 +6627,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 901,
         "google_editorial_summary": "Relaxed pizzeria offering specialty thin-crust pies & slices along with pasta, salads, beer & wine.",
-        "google_formatted_address": "101 Salem St #100, Chico, CA 95928, USA"
+        "google_formatted_address": "101 Salem St #100, Chico, CA 95928, USA",
+        "priority_score": 0.6139,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.66,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 426
+        },
+        "priority_rank": 93
       }
     },
     {
@@ -5396,7 +6683,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 76,
         "google_editorial_summary": "Small museum featuring ever-changing exhibits on Chico, ranging from its history to its agriculture.",
-        "google_formatted_address": "141 Salem St, Chico, CA 95928, USA"
+        "google_formatted_address": "141 Salem St, Chico, CA 95928, USA",
+        "priority_score": 0.6191,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.654,
+          "confidence": 0.4,
+          "fit": 0.75,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 403
+        },
+        "priority_rank": 88
       }
     },
     {
@@ -5440,7 +6738,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 163,
         "google_editorial_summary": "Part of CSU Chico, a small, kid-oriented museum with hands-on science activities & exhibitions.",
-        "google_formatted_address": "625 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "625 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.7483,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.777,
+          "confidence": 0.4,
+          "fit": 0.75,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 1271
+        },
+        "priority_rank": 6
       }
     },
     {
@@ -5484,7 +6793,18 @@
         "google_rating": 3.2,
         "google_user_ratings_count": 442,
         "google_editorial_summary": "Modest rooms & suites in a no-nonsense hotel, plus an outdoor pool & free continental breakfast.",
-        "google_formatted_address": "725 Broadway St, Chico, CA 95928, USA"
+        "google_formatted_address": "725 Broadway St, Chico, CA 95928, USA",
+        "priority_score": 0.5516,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.641,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 358
+        },
+        "priority_rank": 116
       }
     },
     {
@@ -5530,7 +6850,18 @@
         "google_rating": 2.8,
         "google_user_ratings_count": 457,
         "google_editorial_summary": null,
-        "google_formatted_address": "630 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "630 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.5985,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.665,
+          "confidence": 0.4,
+          "fit": 0.65,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 447
+        },
+        "priority_rank": 105
       }
     },
     {
@@ -5575,7 +6906,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1598 Hooker Oak Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1598 Hooker Oak Ave, Chico, CA 95926, USA",
+        "priority_score": 0.12,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 139
       }
     },
     {
@@ -5623,7 +6965,18 @@
         "google_rating": 4.2,
         "google_user_ratings_count": 912,
         "google_editorial_summary": "Longtime haunt serving Michoacan-style tacos, salads & other Mexican fare with signature margaritas.",
-        "google_formatted_address": "2635 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "2635 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.6468,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.742,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 918
+        },
+        "priority_rank": 53
       }
     },
     {
@@ -5668,7 +7021,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 56,
         "google_editorial_summary": null,
-        "google_formatted_address": "243 W 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "243 W 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.5111,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.653,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 398
+        },
+        "priority_rank": 124
       }
     },
     {
@@ -5712,7 +7076,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 341,
         "google_editorial_summary": null,
-        "google_formatted_address": "212 W 2nd St, Chico, CA 95928, USA"
+        "google_formatted_address": "212 W 2nd St, Chico, CA 95928, USA",
+        "priority_score": 0.6152,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.694,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 589
+        },
+        "priority_rank": 92
       }
     },
     {
@@ -5759,7 +7134,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 275,
         "google_editorial_summary": "Easygoing game-day spot offering burgers, wings & other pub fare, plus a full bar with beer on tap.",
-        "google_formatted_address": "231 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "231 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.6185,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.703,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 636
+        },
+        "priority_rank": 89
       }
     },
     {
@@ -5803,7 +7189,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 13,
         "google_editorial_summary": null,
-        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA"
+        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA",
+        "priority_score": 0.6379,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.545,
+          "confidence": 0.4,
+          "fit": 1.0,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 141
+        },
+        "priority_rank": 63
       }
     },
     {
@@ -5846,7 +7243,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 56,
         "google_editorial_summary": null,
-        "google_formatted_address": "1144 W 1st St, Chico, CA 95928, USA"
+        "google_formatted_address": "1144 W 1st St, Chico, CA 95928, USA",
+        "priority_score": 0.0848,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.45,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 155
       }
     },
     {
@@ -5892,7 +7300,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 363,
         "google_editorial_summary": null,
-        "google_formatted_address": "244 Walnut St, Chico, CA 95928, USA"
+        "google_formatted_address": "244 Walnut St, Chico, CA 95928, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 147
       }
     },
     {
@@ -5936,7 +7355,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "Mansion Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "Mansion Ave, Chico, CA 95926, USA",
+        "priority_score": 0.672,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.68,
+          "confidence": 0.4,
+          "fit": 1.0,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 515
+        },
+        "priority_rank": 37
       }
     },
     {
@@ -5980,7 +7410,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 10,
         "google_editorial_summary": null,
-        "google_formatted_address": "1436 Nord Ave # D, Chico, CA 95926, USA"
+        "google_formatted_address": "1436 Nord Ave # D, Chico, CA 95926, USA",
+        "priority_score": 0.5186,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.621,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 296
+        },
+        "priority_rank": 122
       }
     },
     {
@@ -6025,7 +7466,18 @@
         "google_rating": 4,
         "google_user_ratings_count": 27,
         "google_editorial_summary": null,
-        "google_formatted_address": "628 W Sacramento Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "628 W Sacramento Ave, Chico, CA 95926, USA",
+        "priority_score": 0.6706,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.876,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 3195
+        },
+        "priority_rank": 38
       }
     },
     {
@@ -6071,7 +7523,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 8,
         "google_editorial_summary": null,
-        "google_formatted_address": "601 Wall St, Chico, CA 95928, USA"
+        "google_formatted_address": "601 Wall St, Chico, CA 95928, USA",
+        "priority_score": 0.72,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.687,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 552
+        },
+        "priority_rank": 12
       }
     },
     {
@@ -6118,7 +7581,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 285,
         "google_editorial_summary": null,
-        "google_formatted_address": "1288 E 1st Ave #120, Chico, CA 95926, USA"
+        "google_formatted_address": "1288 E 1st Ave #120, Chico, CA 95926, USA",
+        "priority_score": 0.5604,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.589,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 216
+        },
+        "priority_rank": 113
       }
     },
     {
@@ -6163,7 +7637,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 378,
         "google_editorial_summary": null,
-        "google_formatted_address": "3221 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "3221 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.105,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 148
       }
     },
     {
@@ -6207,7 +7692,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 19,
         "google_editorial_summary": "Refined B&B in a circa-1906 home featuring antiques-filled rooms, gourmet breakfast & free Wi-Fi.",
-        "google_formatted_address": "1362 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "1362 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.6866,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.885,
+          "confidence": 0.4,
+          "fit": 0.65,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 3467
+        },
+        "priority_rank": 24
       }
     },
     {
@@ -6251,7 +7747,18 @@
         "google_rating": 4.6,
         "google_user_ratings_count": 44,
         "google_editorial_summary": "Boutique hotel featuring streamlined guestrooms & suites with Wi-Fi, plus a wine bar/restaurant.",
-        "google_formatted_address": "10 Lost Dutchman Dr, Chico, CA 95973, USA"
+        "google_formatted_address": "10 Lost Dutchman Dr, Chico, CA 95973, USA",
+        "priority_score": 0.0998,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.65,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 151
       }
     },
     {
@@ -6304,7 +7811,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 658,
         "google_editorial_summary": null,
-        "google_formatted_address": "905 Wall St, Chico, CA 95928, USA"
+        "google_formatted_address": "905 Wall St, Chico, CA 95928, USA",
+        "priority_score": 0.6103,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.651,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 391
+        },
+        "priority_rank": 97
       }
     },
     {
@@ -6347,7 +7865,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 193,
         "google_editorial_summary": null,
-        "google_formatted_address": "25 Lost Dutchman Dr, Chico, CA 95973, USA"
+        "google_formatted_address": "25 Lost Dutchman Dr, Chico, CA 95973, USA",
+        "priority_score": 0.1013,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.55,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 150
       }
     },
     {
@@ -6402,7 +7931,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 264,
         "google_editorial_summary": null,
-        "google_formatted_address": "2365 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "2365 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.6794,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.824,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1958
+        },
+        "priority_rank": 30
       }
     },
     {
@@ -6446,7 +7986,18 @@
         "google_rating": 2.9,
         "google_user_ratings_count": 83,
         "google_editorial_summary": null,
-        "google_formatted_address": "2566 Esplanade, Chico, CA 95973, USA"
+        "google_formatted_address": "2566 Esplanade, Chico, CA 95973, USA",
+        "priority_score": 0.6466,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.785,
+          "confidence": 0.4,
+          "fit": 0.65,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1373
+        },
+        "priority_rank": 55
       }
     },
     {
@@ -6490,7 +8041,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 28,
         "google_editorial_summary": "1883 Victorian home of a local doctor, with guided tours of its period rooms offered on Sat & Sun.",
-        "google_formatted_address": "307 W 5th St #5505, Chico, CA 95928, USA"
+        "google_formatted_address": "307 W 5th St #5505, Chico, CA 95928, USA",
+        "priority_score": 0.6201,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.657,
+          "confidence": 0.4,
+          "fit": 0.75,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 413
+        },
+        "priority_rank": 84
       }
     },
     {
@@ -6533,7 +8095,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 180,
         "google_editorial_summary": "Revered independent movie theater screening art-house films in intimate surrounds.",
-        "google_formatted_address": "351 E 6th St, Chico, CA 95928, USA"
+        "google_formatted_address": "351 E 6th St, Chico, CA 95928, USA",
+        "priority_score": 0.7066,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.704,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 644
+        },
+        "priority_rank": 16
       }
     },
     {
@@ -6580,7 +8153,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 741,
         "google_editorial_summary": "No-frills eatery specializing in traditional Cajun seafood boils, served hands-on style.",
-        "google_formatted_address": "701 Main St, Chico, CA 95928, USA"
+        "google_formatted_address": "701 Main St, Chico, CA 95928, USA",
+        "priority_score": 0.6159,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.665,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 1.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 446
+        },
+        "priority_rank": 91
       }
     },
     {
@@ -6623,7 +8207,18 @@
         "google_rating": 4.3,
         "google_user_ratings_count": 73,
         "google_editorial_summary": null,
-        "google_formatted_address": "2040 Park Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "2040 Park Ave, Chico, CA 95928, USA",
+        "priority_score": 0.126,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 1.0,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 133
       }
     },
     {
@@ -6667,7 +8262,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 82,
         "google_editorial_summary": null,
-        "google_formatted_address": "809 Oroville Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "809 Oroville Ave, Chico, CA 95928, USA",
+        "priority_score": 0.576,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.64,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 353
+        },
+        "priority_rank": 112
       }
     },
     {
@@ -6713,7 +8319,18 @@
         "google_rating": 4.1,
         "google_user_ratings_count": 525,
         "google_editorial_summary": null,
-        "google_formatted_address": "2190 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "2190 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.5893,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.848,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.0,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 2460
+        },
+        "priority_rank": 109
       }
     },
     {
@@ -6755,7 +8372,18 @@
         "google_rating": null,
         "google_user_ratings_count": null,
         "google_editorial_summary": null,
-        "google_formatted_address": "1200 Park Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "1200 Park Ave, Chico, CA 95928, USA",
+        "priority_score": 0.4454,
+        "priority_tier": "medium",
+        "priority_components": {
+          "audience": 0.489,
+          "confidence": 0.4,
+          "fit": 0.4,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 80
+        },
+        "priority_rank": 131
       }
     },
     {
@@ -6800,7 +8428,18 @@
         "google_rating": 4.8,
         "google_user_ratings_count": 12,
         "google_editorial_summary": null,
-        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA",
+        "priority_score": 0.76,
+        "priority_tier": "top",
+        "priority_components": {
+          "audience": 0.788,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 1404
+        },
+        "priority_rank": 5
       }
     },
     {
@@ -6843,7 +8482,18 @@
         "google_rating": 4.9,
         "google_user_ratings_count": 19,
         "google_editorial_summary": null,
-        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA",
+        "priority_score": 0.735,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.788,
+          "confidence": 0.4,
+          "fit": 1.0,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1404
+        },
+        "priority_rank": 7
       }
     },
     {
@@ -6888,7 +8538,18 @@
         "google_rating": 2.9,
         "google_user_ratings_count": 264,
         "google_editorial_summary": "Straightforward property offering unpretentious rooms, some with kitchenettes, plus an outdoor pool.",
-        "google_formatted_address": "2352 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "2352 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.6456,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.783,
+          "confidence": 0.4,
+          "fit": 0.65,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 1342
+        },
+        "priority_rank": 56
       }
     },
     {
@@ -6934,7 +8595,18 @@
         "google_rating": 4.5,
         "google_user_ratings_count": 64,
         "google_editorial_summary": null,
-        "google_formatted_address": "1110 W East Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1110 W East Ave, Chico, CA 95926, USA",
+        "priority_score": 0.096,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.6,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 153
       }
     },
     {
@@ -6979,7 +8651,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 43,
         "google_editorial_summary": null,
-        "google_formatted_address": "567 E 16th St, Chico, CA 95928, USA"
+        "google_formatted_address": "567 E 16th St, Chico, CA 95928, USA",
+        "priority_score": 0.6698,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.562,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 167
+        },
+        "priority_rank": 40
       }
     },
     {
@@ -7023,7 +8706,18 @@
         "google_rating": 2.9,
         "google_user_ratings_count": 264,
         "google_editorial_summary": "Low-rise hotel featuring straightforward rooms & a guest laundry, as well as free parking & Wi-Fi.",
-        "google_formatted_address": "2212 Park Ave, Chico, CA 95928, USA"
+        "google_formatted_address": "2212 Park Ave, Chico, CA 95928, USA",
+        "priority_score": 0.0885,
+        "priority_tier": "low",
+        "priority_components": {
+          "audience": 0.0,
+          "confidence": 0.4,
+          "fit": 0.5,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 0
+        },
+        "priority_rank": 154
       }
     },
     {
@@ -7067,7 +8761,18 @@
         "google_rating": 4.4,
         "google_user_ratings_count": 40,
         "google_editorial_summary": null,
-        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA"
+        "google_formatted_address": "400 W 1st St, Chico, CA 95929, USA",
+        "priority_score": 0.6873,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.606,
+          "confidence": 0.4,
+          "fit": 0.9,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 255
+        },
+        "priority_rank": 23
       }
     },
     {
@@ -7111,7 +8816,18 @@
         "google_rating": 3.4,
         "google_user_ratings_count": 8,
         "google_editorial_summary": null,
-        "google_formatted_address": "1206 W Sacramento Ave, Chico, CA 95926, USA"
+        "google_formatted_address": "1206 W Sacramento Ave, Chico, CA 95926, USA",
+        "priority_score": 0.668,
+        "priority_tier": "high",
+        "priority_components": {
+          "audience": 0.67,
+          "confidence": 0.4,
+          "fit": 0.8,
+          "legitimacy": 0.5,
+          "public_facility_bonus": 0.05,
+          "in_district_walk_15_cvap": 469
+        },
+        "priority_rank": 41
       }
     },
     {
@@ -7154,7 +8870,18 @@
         "google_rating": 4.7,
         "google_user_ratings_count": 47,
         "google_editorial_summary": null,
-        "google_formatted_address": "1528 Esplanade, Chico, CA 95926, USA"
+        "google_formatted_address": "1528 Esplanade, Chico, CA 95926, USA",
+        "priority_score": 0.7811,
+        "priority_tier": "top",
+        "priority_components": {
+          "audience": 0.903,
+          "confidence": 0.4,
+          "fit": 1.0,
+          "legitimacy": 0.7,
+          "public_facility_bonus": 0.0,
+          "in_district_walk_15_cvap": 4077
+        },
+        "priority_rank": 2
       }
     }
   ]
