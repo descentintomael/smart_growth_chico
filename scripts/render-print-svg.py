@@ -92,14 +92,18 @@ COLOR_RULE = "#d4d4d4"
 # not screen-bright. Subtle enough that pastels still pop.
 COLOR_BG = "#fbfaf6"
 
-# District boundary — single thin red line, no casing. The mask handles the
-# in/out separation; this is just an indicator, not the dominant visual.
-COLOR_BOUNDARY = "#b91c1c"
-BOUNDARY_WIDTH = 1.5
+# District boundary — civic navy, not red. Buffered outward a few meters so it
+# clears edge-running roads (Bruce Rd, E 20th, etc.) instead of overlapping them.
+COLOR_BOUNDARY = "#1e3a8a"  # indigo-900; reads as civic / official, not alarming
+BOUNDARY_WIDTH = 2.0
+BOUNDARY_BUFFER_M = 15  # offset boundary 15m outward from the OSM polygon
 
-# World mask — dims everything outside the district polygon.
-MASK_FILL = "#ffffff"
-MASK_OPACITY = 0.55
+# World mask — fades everything outside the district. We use the paper color
+# (not pure white) so the mask blends with the page and the fade looks uniform.
+# Opacity is strong enough that outside roads/labels read as obvious context,
+# not as content competing with the district.
+MASK_FILL = COLOR_BG
+MASK_OPACITY = 0.82
 
 # Road styles, indexed by OSM highway class. Two-pass render: casings first
 # (drawn for arterials only), then road fills on top.
@@ -616,19 +620,24 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         )
     out.append('</g>')
 
-    # ---- World mask: dim everything outside the district (over color, under boundary)
-    mask_d = world_mask_path_d(district_utm, to_svg)
+    # The mask + boundary both trace a slightly-outset version of the district
+    # polygon so the boundary line sits clear of any road that runs right along
+    # the edge (Bruce Rd, E 20th St on the south side of D6, etc.).
+    boundary_poly = district_utm.buffer(BOUNDARY_BUFFER_M)
+
+    # ---- World mask: fade everything outside the (buffered) district.
+    mask_d = world_mask_path_d(boundary_poly, to_svg)
     out.append(
         f'<path id="world-mask" d="{mask_d}" fill="{MASK_FILL}" '
         f'fill-opacity="{MASK_OPACITY}" fill-rule="evenodd"/>'
     )
 
-    # ---- District boundary (thin solid red, no casing — just an indicator)
+    # ---- District boundary (thin navy line on the buffered polygon)
     boundary_paths = []
-    if district_utm.geom_type == "Polygon":
-        rings = [list(district_utm.exterior.coords)]
+    if boundary_poly.geom_type == "Polygon":
+        rings = [list(boundary_poly.exterior.coords)]
     else:
-        rings = [list(p.exterior.coords) for p in district_utm.geoms]
+        rings = [list(p.exterior.coords) for p in boundary_poly.geoms]
     for ring in rings:
         svg_pts = [to_svg(x, y) for x, y in ring]
         parts = [f"M{svg_pts[0][0]:.1f},{svg_pts[0][1]:.1f}"]
