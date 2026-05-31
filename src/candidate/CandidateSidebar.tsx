@@ -91,9 +91,12 @@ export function CandidateSidebar({ district, collapsed, onToggle }: SidebarProps
           </li>
           <li className="flex items-center gap-2">
             <span className="inline-flex w-5 items-center justify-center">
-              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full font-bold text-white" style={{ backgroundColor: '#dc2626', fontSize: 10 }}>✕</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <line x1="3.5" y1="3.5" x2="12.5" y2="12.5" stroke="#9ca3af" strokeWidth="2.5" strokeLinecap="round" />
+                <line x1="12.5" y1="3.5" x2="3.5" y2="12.5" stroke="#9ca3af" strokeWidth="2.5" strokeLinecap="round" />
+              </svg>
             </span>
-            <span>✕ = won't work (closed, excluded)</span>
+            <span>Gray ✕ = won't work (closed, excluded)</span>
           </li>
         </ul>
       </div>

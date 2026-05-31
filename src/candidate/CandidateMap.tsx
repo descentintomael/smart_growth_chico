@@ -4,11 +4,12 @@ import {
   TileLayer,
   GeoJSON,
   CircleMarker,
+  Marker,
   Popup,
-  Tooltip,
   ZoomControl,
   useMap,
 } from 'react-leaflet'
+import L from 'leaflet'
 import type { LatLngBoundsExpression, PathOptions } from 'leaflet'
 import type { GeoJsonObject } from 'geojson'
 import type {
@@ -123,20 +124,27 @@ function venueFillOpacity(feature: VenueFeature): number {
 }
 
 function venueBorderWeight(feature: VenueFeature): number {
-  if (feature.properties.hosting_status === 'excluded') return 2
   if (feature.properties.priority_tier === 'top') return 3
   return feature.properties.in_district ? 1.5 : 2.5
 }
 
-function venueBorderOpacity(feature: VenueFeature): number {
-  if (feature.properties.hosting_status === 'excluded') return 0.85
+function venueBorderOpacity(_feature: VenueFeature): number {
   return 0.95
 }
 
-function venueBorderColor(feature: VenueFeature, fallback: string, isSelected: boolean): string {
-  if (feature.properties.hosting_status === 'excluded') return '#dc2626'
-  if (isSelected) return '#111827'
-  return fallback
+/** SVG ✕ marker used in place of a circle for venues that won't work. */
+function excludedIcon(isSelected: boolean): L.DivIcon {
+  const color = isSelected ? '#111827' : '#9ca3af'
+  const size = 16
+  return L.divIcon({
+    className: 'venue-excluded-x',
+    html: `<svg viewBox="0 0 16 16" width="${size}" height="${size}" aria-label="venue excluded">
+      <line x1="3.5" y1="3.5" x2="12.5" y2="12.5" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="12.5" y1="3.5" x2="3.5" y2="12.5" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  })
 }
 
 function priorityBreakdownBar(label: string, value: number, color: string) {
@@ -337,33 +345,8 @@ export function CandidateMap({ district }: { district: string }) {
           const [lon, lat] = f.geometry.coordinates as [number, number]
           const badge = statusBadge(f.properties.hosting_status)
           const isSelected = selectedVenueId === f.properties.osm_id
-          return (
-            <CircleMarker
-              key={f.properties.osm_id}
-              center={[lat, lon]}
-              radius={isSelected ? venueRadius(f) + 3 : venueRadius(f)}
-              pathOptions={{
-                color: venueBorderColor(f, style.color, isSelected),
-                weight: isSelected ? 3 : venueBorderWeight(f),
-                fillColor: style.color,
-                fillOpacity: venueFillOpacity(f),
-                opacity: venueBorderOpacity(f),
-              }}
-              eventHandlers={{
-                click: () => setSelectedVenueId(f.properties.osm_id),
-              }}
-            >
-              {f.properties.hosting_status === 'excluded' && (
-                <Tooltip
-                  permanent
-                  direction="top"
-                  offset={[0, -venueRadius(f) - 2]}
-                  className="venue-excluded-tooltip"
-                >
-                  ✕
-                </Tooltip>
-              )}
-              <Popup maxWidth={340}>
+          const popup = (
+            <Popup maxWidth={340}>
                 <div className="text-sm">
                   <div className="flex items-baseline justify-between gap-2">
                     <span className="font-semibold">{f.properties.name}</span>
@@ -459,6 +442,40 @@ export function CandidateMap({ district }: { district: string }) {
                   )}
                 </div>
               </Popup>
+          )
+
+          if (f.properties.hosting_status === 'excluded') {
+            return (
+              <Marker
+                key={f.properties.osm_id}
+                position={[lat, lon]}
+                icon={excludedIcon(isSelected)}
+                eventHandlers={{
+                  click: () => setSelectedVenueId(f.properties.osm_id),
+                }}
+              >
+                {popup}
+              </Marker>
+            )
+          }
+
+          return (
+            <CircleMarker
+              key={f.properties.osm_id}
+              center={[lat, lon]}
+              radius={isSelected ? venueRadius(f) + 3 : venueRadius(f)}
+              pathOptions={{
+                color: isSelected ? '#111827' : style.color,
+                weight: isSelected ? 3 : venueBorderWeight(f),
+                fillColor: style.color,
+                fillOpacity: venueFillOpacity(f),
+                opacity: venueBorderOpacity(f),
+              }}
+              eventHandlers={{
+                click: () => setSelectedVenueId(f.properties.osm_id),
+              }}
+            >
+              {popup}
             </CircleMarker>
           )
         })}
