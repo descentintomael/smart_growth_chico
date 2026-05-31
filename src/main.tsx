@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import { Layout } from './components/layout/Layout'
 import { MapPage } from './pages/MapPage'
 import { MethodologyPage } from './pages/MethodologyPage'
+import { CandidateApp } from './candidate/CandidateApp'
 import './styles/globals.css'
 
 const rootElement = document.getElementById('root')
@@ -13,6 +14,9 @@ createRoot(rootElement).render(
   <StrictMode>
     <HashRouter>
       <Routes>
+        {/* Candidate map: standalone, outside shared Layout. Sets its own noindex meta. */}
+        <Route path="candidate/district-6" element={<CandidateApp />} />
+
         <Route element={<Layout />}>
           <Route index element={<MapPage />} />
           <Route path="methodology/:section?" element={<MethodologyPage />} />

@@ -1,0 +1,785 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8068716,
+          39.7331695
+        ]
+      },
+      "properties": {
+        "osm_id": "node/1706392710",
+        "name": "Super Luper Kids Preschool and Day Care",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1450 Springfield Drive",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8070997,
+          39.7292736
+        ]
+      },
+      "properties": {
+        "osm_id": "node/6479745429",
+        "name": "Planet Fitness",
+        "category": "fitness_centre",
+        "amenity": null,
+        "leisure": "fitness_centre",
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8067317,
+          39.7291755
+        ]
+      },
+      "properties": {
+        "osm_id": "node/6479745434",
+        "name": "J&J Cafe",
+        "category": "cafe",
+        "amenity": "cafe",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.804392,
+          39.7255226
+        ]
+      },
+      "properties": {
+        "osm_id": "node/11685885140",
+        "name": "Hula's Chinese Bar-B-Q",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1937 East 20th Street Chico",
+        "website": "https://hulasbbq.com/",
+        "phone": "+1-530-715-7614",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7935897,
+          39.7175085
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12669215136",
+        "name": "Cocodine Thai Cuisine",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://cocodinethai.com",
+        "phone": "+1-530-891-1800",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7937401,
+          39.715279
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13011048305",
+        "name": "Burrito Bandito",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "excluded",
+        "notes": "Auto-excluded: national chain unlikely to host political events"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8092287,
+          39.7301394
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13049041417",
+        "name": "Hampton Inn & Suites",
+        "category": "tourism_hotel",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "hotel",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8006987,
+          39.7187801
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13137263368",
+        "name": "Tbar",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7948978,
+          39.7153346
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13176053286",
+        "name": "Starbucks",
+        "category": "cafe",
+        "amenity": "cafe",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "excluded",
+        "notes": "Auto-excluded: national chain unlikely to host political events"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8075219,
+          39.7274202
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85226704",
+        "name": "Panera Bread",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "excluded",
+        "notes": "Auto-excluded: national chain unlikely to host political events"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8019488,
+          39.7275666
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85226720",
+        "name": "Black Bear Diner",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "excluded",
+        "notes": "Auto-excluded: national chain unlikely to host political events"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.805356,
+          39.7247912
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85240649",
+        "name": "Oxford Suites Chico",
+        "category": "tourism_hotel",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "hotel",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8066566,
+          39.7262479
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85240650",
+        "name": "Red Lobster",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "excluded",
+        "notes": "Auto-excluded: national chain unlikely to host political events"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8066279,
+          39.725539
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85240652",
+        "name": "Olive Garden",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2020 Business Lane",
+        "website": "https://www.olivegarden.com/",
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "excluded",
+        "notes": "Auto-excluded: national chain unlikely to host political events"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8007248,
+          39.717647
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85465037",
+        "name": "Butte College",
+        "category": "college",
+        "amenity": "college",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8064939,
+          39.7242761
+        ]
+      },
+      "properties": {
+        "osm_id": "way/298977546",
+        "name": "Sake",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8065194,
+          39.7247839
+        ]
+      },
+      "properties": {
+        "osm_id": "way/298977547",
+        "name": "Applebee's",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://restaurants.applebees.com/en-us/ca/chico/2030-business-lane-91039",
+        "phone": "+1 530-343-6888",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "excluded",
+        "notes": "Auto-excluded: national chain unlikely to host political events"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8086645,
+          39.728126
+        ]
+      },
+      "properties": {
+        "osm_id": "way/301852375",
+        "name": "Chili's",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "excluded",
+        "notes": "Auto-excluded: national chain unlikely to host political events"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8103938,
+          39.7288271
+        ]
+      },
+      "properties": {
+        "osm_id": "way/301852376",
+        "name": "Logans",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.803553,
+          39.7255195
+        ]
+      },
+      "properties": {
+        "osm_id": "way/301857602",
+        "name": "BevMo!",
+        "category": "shop_alcohol",
+        "amenity": null,
+        "leisure": null,
+        "tourism": null,
+        "shop": "alcohol",
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7837841,
+          39.7686943
+        ]
+      },
+      "properties": {
+        "osm_id": "way/568020232",
+        "name": "Bidwell Park Golf Course",
+        "category": "golf_course",
+        "amenity": null,
+        "leisure": "golf_course",
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7920601,
+          39.7498887
+        ]
+      },
+      "properties": {
+        "osm_id": "way/868413772",
+        "name": "Lakeside Pavilion",
+        "category": "events_venue",
+        "amenity": "events_venue",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.780586,
+          39.7715984
+        ]
+      },
+      "properties": {
+        "osm_id": "way/880417134",
+        "name": "Chico Rod & Gun Club",
+        "category": "club_sport",
+        "amenity": null,
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": "sport",
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8042083,
+          39.7247346
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1391306494",
+        "name": "Hotel K\u00e1terina",
+        "category": "tourism_hotel",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "hotel",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1930 Baney Lane Chico",
+        "website": "https://www.oxfordcollection.com/hotels/hotel-katerina",
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7961533,
+          39.7156547
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1486726820",
+        "name": "Butte College Skyway Center",
+        "category": "college",
+        "amenity": "college",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://www.butte.edu/currentstudents/references/campuses/about-skyway-center.html",
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7700622,
+          39.7598957
+        ]
+      },
+      "properties": {
+        "osm_id": "relation/19628096",
+        "name": "Canyon Oaks Country Club",
+        "category": "golf_course",
+        "amenity": null,
+        "leisure": "golf_course",
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://www.canyonoakscc.com/",
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null
+      }
+    }
+  ]
+}

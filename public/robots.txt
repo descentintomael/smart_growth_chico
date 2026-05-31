@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /candidate/
+
+# Note: this app uses HashRouter, so the candidate route is served at
+# /#/candidate/district-6 and the URL path crawlers see is just `/`.
+# robots.txt cannot block hash fragments. The candidate page sets a
+# <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+# tag at runtime as the actual enforcement mechanism. This Disallow line
+# is documentation of intent and protection against future path-based
+# routing changes.
