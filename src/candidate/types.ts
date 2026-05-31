@@ -22,6 +22,15 @@ export interface VenueProperties {
   notes: string | null
   /** True when the venue point is inside the district polygon; false if in the adjacency buffer. */
   in_district: boolean
+  // Google Places enrichment (optional — venue may not have been enriched yet)
+  google_place_id?: string | null
+  google_types?: string[]
+  google_primary_type?: string | null
+  google_business_status?: 'OPERATIONAL' | 'CLOSED_TEMPORARILY' | 'CLOSED_PERMANENTLY' | null
+  google_rating?: number | null
+  google_user_ratings_count?: number | null
+  google_editorial_summary?: string | null
+  google_formatted_address?: string | null
 }
 
 export type VenueFeature = Feature<Point, VenueProperties>

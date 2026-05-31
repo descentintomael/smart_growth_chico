@@ -22,15 +22,27 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "https://www.chicorec.gov/dorothy-f-johnson-center",
+        "phone": "(530) 895-4711",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "confirmed",
         "notes": "CARD-operated, in Chapman Neighborhood (775 E 16th St). 6,375 sq ft: gym, meeting rooms, kitchen, toddler classrooms. 'Business meetings, trainings, classes, weddings, memorials.' Book: (530) 895-4711.",
         "in_district": false,
-        "assessment_confidence": "high"
+        "assessment_confidence": "high",
+        "google_place_id": "ChIJtVw1TS0mg4ARuitOrt1u0g4",
+        "google_types": [
+          "sports_activity_location",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "sports_activity_location",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 73,
+        "google_editorial_summary": null,
+        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA"
       }
     },
     {
@@ -54,14 +66,30 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://chicobeatniks.com/",
+        "phone": "(530) 894-2800",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJzfruwNong4AR-c3jTtlvyBE",
+        "google_types": [
+          "cafe",
+          "breakfast_restaurant",
+          "meal_takeaway",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "cafe",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 781,
+        "google_editorial_summary": "Breakfast cafe offering cooked & cold options served alongside a range of espresso-based drinks.",
+        "google_formatted_address": "1387 E 8th St, Chico, CA 95928, USA"
       }
     },
     {
@@ -86,13 +114,28 @@
         "club": null,
         "address": null,
         "website": null,
-        "phone": null,
+        "phone": "(530) 342-3627",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJ40d7PHoog4ARz2qTp_1C8wo",
+        "google_types": [
+          "mexican_restaurant",
+          "seafood_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "mexican_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.2,
+        "google_user_ratings_count": 526,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1141 Forest Ave UNIT 10, Chico, CA 95928, USA"
       }
     },
     {
@@ -116,15 +159,29 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "https://m.facebook.com/profile.php?id=100069458241902",
+        "phone": "(530) 287-5660",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Small independent cafe. No website found to assess.",
         "in_district": true,
-        "assessment_confidence": "low"
+        "assessment_confidence": "low",
+        "google_place_id": "ChIJvwZYGmvZgoARflZWKTbAmts",
+        "google_types": [
+          "breakfast_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "breakfast_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 378,
+        "google_editorial_summary": null,
+        "google_formatted_address": "3221 Esplanade, Chico, CA 95973, USA"
       }
     },
     {
@@ -148,14 +205,29 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "https://www.paradisebrewwerks.com/",
+        "phone": "(530) 487-8151",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJ68TUkIXVnIAR6_CzoULrSpE",
+        "google_types": [
+          "brewery",
+          "manufacturer",
+          "point_of_interest",
+          "food",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "brewery",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.8,
+        "google_user_ratings_count": 17,
+        "google_editorial_summary": null,
+        "google_formatted_address": "132 Meyers St STE 120, Chico, CA 95928, USA"
       }
     },
     {
@@ -180,14 +252,32 @@
         "club": null,
         "address": null,
         "website": "https://sierranevada.com/",
-        "phone": null,
+        "phone": "(530) 345-2739",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "likely",
         "notes": "Iconic Chico venue with multiple event spaces (taproom, biergarten, banquet hall). Hosts public and private events regularly. Confirm political-event policy and meeting-room rental rates direct: sierranevada.com (contact via Visit page).",
         "in_district": false,
-        "assessment_confidence": "medium"
+        "assessment_confidence": "medium",
+        "google_place_id": "ChIJh_tJgysmg4ARL50w6kBBJkA",
+        "google_types": [
+          "brewery",
+          "liquor_store",
+          "restaurant",
+          "point_of_interest",
+          "service",
+          "food",
+          "manufacturer",
+          "store",
+          "establishment"
+        ],
+        "google_primary_type": "brewery",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 1483,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1075 E 20th St, Chico, CA 95928, USA"
       }
     },
     {
@@ -211,15 +301,38 @@
         "office": null,
         "club": null,
         "address": "175 East 20th Street",
-        "website": null,
-        "phone": null,
+        "website": "http://www.mulberrymusicstation.com/",
+        "phone": "(530) 630-3047",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Local restaurant. Check directly for private-room availability.",
         "in_district": false,
-        "assessment_confidence": "low"
+        "assessment_confidence": "low",
+        "google_place_id": "ChIJM9nbZ2gng4ARlhFt0YLwfkc",
+        "google_types": [
+          "brewery",
+          "brewpub",
+          "pub",
+          "pizza_restaurant",
+          "brunch_restaurant",
+          "bar",
+          "live_music_venue",
+          "event_venue",
+          "restaurant",
+          "point_of_interest",
+          "service",
+          "food",
+          "manufacturer",
+          "establishment"
+        ],
+        "google_primary_type": "brewery",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.8,
+        "google_user_ratings_count": 265,
+        "google_editorial_summary": null,
+        "google_formatted_address": "175 E 20th St Ste 100, Chico, CA 95928, USA"
       }
     },
     {
@@ -251,7 +364,28 @@
         "hosting_status": "needs_verification",
         "notes": "Independent, owner-operated by Jeff & Leasa Hill. No event info on website. Direct inquiry: (530) 715-7614.",
         "in_district": true,
-        "assessment_confidence": "low"
+        "assessment_confidence": "low",
+        "google_place_id": "ChIJRQhtOYQog4ARvjuT5gFGqE0",
+        "google_types": [
+          "restaurant",
+          "chinese_noodle_restaurant",
+          "mongolian_barbecue_restaurant",
+          "asian_restaurant",
+          "fast_food_restaurant",
+          "soup_restaurant",
+          "buffet_restaurant",
+          "chinese_restaurant",
+          "meal_takeaway",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.4,
+        "google_user_ratings_count": 1090,
+        "google_editorial_summary": "Traditional Mongolian barbecue offered in a down-to-setting with a warm atmosphere.",
+        "google_formatted_address": "E 20th St, Target Center, CA 95928, USA"
       }
     },
     {
@@ -275,14 +409,28 @@
         "office": null,
         "club": null,
         "address": "1354 East Avenue",
-        "website": null,
-        "phone": null,
+        "website": "http://redwoodsandwichco.com/",
+        "phone": "(530) 965-5293",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJaQp8f9bZgoAR1IAjQXtCsGk",
+        "google_types": [
+          "sandwich_shop",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "sandwich_shop",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 142,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1354 East Ave Suite U, Chico, CA 95926, USA"
       }
     },
     {
@@ -307,14 +455,29 @@
         "club": null,
         "address": null,
         "website": null,
-        "phone": null,
+        "phone": "(530) 893-3500",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Local pub. Check directly for private-event hosting.",
         "in_district": false,
-        "assessment_confidence": "low"
+        "assessment_confidence": "low",
+        "google_place_id": "ChIJ6eSIwTEmg4AR9DWprktoqIQ",
+        "google_types": [
+          "bar_and_grill",
+          "bar",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "bar_and_grill",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 448,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2010 Park Ave, Chico, CA 95928, USA"
       }
     },
     {
@@ -346,7 +509,21 @@
         "hosting_status": "needs_verification",
         "notes": "Independent local restaurant. No event-rental info on website.",
         "in_district": true,
-        "assessment_confidence": "low"
+        "assessment_confidence": "low",
+        "google_place_id": "ChIJTd-bQZYog4AR9WYiJ-fh3cI",
+        "google_types": [
+          "thai_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "thai_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 480,
+        "google_editorial_summary": "Casual spot in a strip mall making traditional Thai dishes with varying spice levels in quaint digs.",
+        "google_formatted_address": "2485 Notre Dame Blvd #250, Chico, CA 95928, USA"
       }
     },
     {
@@ -377,7 +554,23 @@
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJ9V1DIAjYgoAR1cpZF5FgnPY",
+        "google_types": [
+          "hawaiian_restaurant",
+          "barbecue_restaurant",
+          "american_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "hawaiian_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 978,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1354 East Ave P, Chico, CA 95926, USA"
       }
     },
     {
@@ -401,14 +594,28 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "https://restoer.com/egg-roll-king",
+        "phone": "(530) 893-1838",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJw3vTkL8ng4ARVqR1_Z9HwEs",
+        "google_types": [
+          "chinese_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "chinese_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 3.9,
+        "google_user_ratings_count": 475,
+        "google_editorial_summary": null,
+        "google_formatted_address": "659 Palmetto Ave, Chico, CA 95926, USA"
       }
     },
     {
@@ -432,15 +639,31 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://www.ilovetbar.com/",
+        "phone": "(530) 809-1545",
         "capacity": null,
         "wheelchair": "yes",
         "operator": null,
         "hosting_status": "likely",
         "notes": "Tea Bar & Fusion Cafe \u2014 small regional chain (4 locations, 2 in Chico). EXPLICITLY event-friendly: monthly Tea Talks, Tuesday Family Night, Wednesday Trivia, Thursday Take Over Night (fundraising). Confirm WHICH Chico location is this OSM point (Vallombrosa downtown is in D5; second location may be in D6).",
         "in_district": true,
-        "assessment_confidence": "medium"
+        "assessment_confidence": "medium",
+        "google_place_id": "ChIJuQ9jFJoog4ARYJSxuBCDuCE",
+        "google_types": [
+          "restaurant",
+          "salad_shop",
+          "tea_house",
+          "cafe",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 874,
+        "google_editorial_summary": null,
+        "google_formatted_address": "555 Flying V St #1, Chico, CA 95928, USA"
       }
     },
     {
@@ -464,15 +687,36 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://www.chicoelks.com/",
+        "phone": "(530) 343-1431",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Fraternal order (BPOE). Local lodges typically rent their hall to members and the broader community for events. Confirm rental policy and any political-event restrictions direct.",
         "in_district": false,
-        "assessment_confidence": "medium"
+        "assessment_confidence": "medium",
+        "google_place_id": "ChIJIeL08QYog4ARFzEfPmx3rCQ",
+        "google_types": [
+          "wedding_venue",
+          "dance_hall",
+          "catering_service",
+          "convention_center",
+          "food_delivery",
+          "event_venue",
+          "point_of_interest",
+          "service",
+          "food",
+          "non_profit_organization",
+          "association_or_organization",
+          "establishment"
+        ],
+        "google_primary_type": "association_or_organization",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 333,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1705 Manzanita Ave, Chico, CA 95926, USA"
       }
     },
     {
@@ -496,14 +740,28 @@
         "office": null,
         "club": null,
         "address": "1196 East Lassen Avenue Chico",
-        "website": null,
+        "website": "http://www.chicothaifood.com/",
         "phone": "+1-530-636-4620",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJK5OCAmjYgoAR0MLR6xHng2U",
+        "google_types": [
+          "thai_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "thai_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.4,
+        "google_user_ratings_count": 316,
+        "google_editorial_summary": "Unassuming, laid-back venue for classic spiced-to-order Thai curries, soups & stir-fries.",
+        "google_formatted_address": "1196 E Lassen Ave Suite 110, Chico, CA 95973, USA"
       }
     },
     {
@@ -534,7 +792,20 @@
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJw2chsULYgoARicpcMStO8bc",
+        "google_types": [
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 50,
+        "google_editorial_summary": null,
+        "google_formatted_address": "3211 Cohasset Rd, Chico, CA 95973, USA"
       }
     },
     {
@@ -565,7 +836,23 @@
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJEzfTqELYgoARWk3q0CRPC5A",
+        "google_types": [
+          "hamburger_restaurant",
+          "fast_food_restaurant",
+          "american_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "hamburger_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 819,
+        "google_editorial_summary": "Burger joint offering charbroiled patties with self-serve toppings, plus hot dogs, fries & shakes.",
+        "google_formatted_address": "3211 Cohasset Rd, Chico, CA 95973, USA"
       }
     },
     {
@@ -596,7 +883,21 @@
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJ5W188ELZgoARoOOLgDMwBPk",
+        "google_types": [
+          "secondary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "secondary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1350 E Lassen Ave, Chico, CA 95973, USA"
       }
     },
     {
@@ -627,7 +928,20 @@
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJ0aucSGjYgoARuAgWvcGQKu4",
+        "google_types": [
+          "health",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "health",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 3.9,
+        "google_user_ratings_count": 20,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1351 E Lassen Ave, Chico, CA 95973, USA"
       }
     },
     {
@@ -651,14 +965,27 @@
         "office": null,
         "club": null,
         "address": "1377 East Lassen Avenue Chico",
-        "website": null,
+        "website": "http://www.farnorthernrc.org/",
         "phone": "+1-530-895-8633",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJydeGbmnYgoAR3Jk6O8P804A",
+        "google_types": [
+          "point_of_interest",
+          "association_or_organization",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "association_or_organization",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4,
+        "google_user_ratings_count": 61,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1377 E Lassen Ave, Chico, CA 95973, USA"
       }
     },
     {
@@ -689,7 +1016,20 @@
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJ0TXF32jYgoARaTLjcSGU_5Y",
+        "google_types": [
+          "health",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "health",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 3.4,
+        "google_user_ratings_count": 14,
+        "google_editorial_summary": null,
+        "google_formatted_address": "966 Kovak Ct, Chico, CA 95973, USA"
       }
     },
     {
@@ -720,7 +1060,19 @@
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJs3VnY2zYgoARAXPk5npvtZI",
+        "google_types": [
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "service",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 52,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1199 Diablo Ave, Chico, CA 95973, USA"
       }
     },
     {
@@ -744,14 +1096,27 @@
         "office": null,
         "club": null,
         "address": "3010 Floral Ave Chico",
-        "website": null,
+        "website": "https://www.facebook.com/profile.php?id=100083552231416",
         "phone": "+1-530-487-8677",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJ2QMrblzZgoARUWe4wUEjUF0",
+        "google_types": [
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.2,
+        "google_user_ratings_count": 94,
+        "google_editorial_summary": null,
+        "google_formatted_address": "3010 Floral Ave Ste 125, Chico, CA 95973, USA"
       }
     },
     {
@@ -775,14 +1140,28 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://pvhs.chicousd.org/",
+        "phone": "(530) 891-3050",
         "capacity": null,
         "wheelchair": null,
         "operator": "Chico Unified School District",
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJQesNC3Ez4ocROBIDdcFBAqA",
+        "google_types": [
+          "secondary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "secondary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1475 East Ave, Chico, CA 95926, USA"
       }
     },
     {
@@ -806,14 +1185,28 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://www.chicousd.org/",
+        "phone": "(530) 891-3121",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJiyZaJvwng4ARJXCuPZOH9pE",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2446 Marigold Ave, Chico, CA 95926, USA"
       }
     },
     {
@@ -837,14 +1230,31 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://www.chicooaks.org/",
+        "phone": "(530) 342-5043",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJNyAH0Q4og4ARtR-hBs6KOuQ",
+        "google_types": [
+          "primary_school",
+          "preschool",
+          "child_care_agency",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1859 Hooker Oak Ave, Chico, CA 95926, USA"
       }
     },
     {
@@ -868,14 +1278,28 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://mcmanus.chicousd.org/",
+        "phone": "(530) 891-3128",
         "capacity": null,
         "wheelchair": null,
         "operator": "Chico Unified School District",
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJ0yhRt3bYgoARRVwzfdg99qI",
+        "google_types": [
+          "primary_school",
+          "point_of_interest",
+          "school",
+          "educational_institution",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "988 East Ave #988, Chico, CA 95926, USA"
       }
     },
     {
@@ -899,14 +1323,28 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://parkview.chicousd.org/",
+        "phone": "(530) 891-3114",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJeRRoKN8ng4ARYP47SlUZq_8",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1770 E 8th St, Chico, CA 95928, USA"
       }
     },
     {
@@ -930,15 +1368,28 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "https://www.butte.edu/",
+        "phone": "(530) 895-1352",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Public community college with multiple rentable rooms (auditoria, meeting rooms). Route through Butte College Conference Services.",
         "in_district": true,
-        "assessment_confidence": "low"
+        "assessment_confidence": "low",
+        "google_place_id": "ChIJs8oOKZoog4AREIhJFCLAKIk",
+        "google_types": [
+          "university",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "university",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 80,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2320 Forest Ave, Chico, CA 95928, USA"
       }
     },
     {
@@ -962,14 +1413,28 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://chapman.chicousd.org/",
+        "phone": "(530) 891-3100",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJfULDQismg4ARDPwJSTbXnq4",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1071 16th St, Chico, CA 95928, USA"
       }
     },
     {
@@ -1000,7 +1465,24 @@
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJHSy6MNAog4ARPnzipeXDPxQ",
+        "google_types": [
+          "golf_course",
+          "athletic_field",
+          "sports_coaching",
+          "sports_school",
+          "sports_activity_location",
+          "point_of_interest",
+          "health",
+          "establishment"
+        ],
+        "google_primary_type": "golf_course",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 64,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1 Longest Dr, Chico, CA 95928, USA"
       }
     },
     {
@@ -1024,14 +1506,28 @@
         "office": null,
         "club": null,
         "address": "2021 Doctor Martin Luther King Junior Parkway Chico",
-        "website": null,
-        "phone": null,
+        "website": "http://hibachigrillbuffetchico.com/",
+        "phone": "(530) 891-1144",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
-        "hosting_status": "needs_verification",
-        "notes": null,
-        "in_district": false
+        "hosting_status": "excluded",
+        "notes": "Google reports CLOSED_PERMANENTLY \u2014 venue is no longer in business.",
+        "in_district": false,
+        "google_place_id": "ChIJpW8xDyomg4ARyDYhOeHI32M",
+        "google_types": [
+          "buffet_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "buffet_restaurant",
+        "google_business_status": "CLOSED_PERMANENTLY",
+        "google_rating": 3.4,
+        "google_user_ratings_count": 276,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2021 Dr Martin Luther King Jr Pkwy, Chico, CA 95928, USA"
       }
     },
     {
@@ -1055,15 +1551,29 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "https://www.sakechico.com/",
+        "phone": "(530) 965-5777",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Local restaurant. No website found in OSM to assess.",
         "in_district": true,
-        "assessment_confidence": "low"
+        "assessment_confidence": "low",
+        "google_place_id": "ChIJCyJNMwApg4AR_nj8kSeEJxg",
+        "google_types": [
+          "japanese_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "japanese_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.1,
+        "google_user_ratings_count": 215,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2040 Business Ln, Chico, CA 95928, USA"
       }
     },
     {
@@ -1087,14 +1597,27 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://mjhs.chicousd.org/",
+        "phone": "(530) 895-4110",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJxxLniGQog4ARA-9t7RH0KPA",
+        "google_types": [
+          "point_of_interest",
+          "school",
+          "educational_institution",
+          "establishment"
+        ],
+        "google_primary_type": "school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2253 Humboldt Rd, Chico, CA 95928, USA"
       }
     },
     {
@@ -1125,7 +1648,21 @@
         "operator": "True North Housing Alliance",
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJL4nqyYIog4ARDS36kgGmF0o",
+        "google_types": [
+          "point_of_interest",
+          "service",
+          "non_profit_organization",
+          "association_or_organization",
+          "establishment"
+        ],
+        "google_primary_type": "service",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 3.7,
+        "google_user_ratings_count": 117,
+        "google_editorial_summary": null,
+        "google_formatted_address": "101 Silver Dollar Way, Chico, CA 95928, USA"
       }
     },
     {
@@ -1149,15 +1686,27 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "https://www.chicorec.gov/dorothy-f-johnson-center",
+        "phone": "(530) 895-4711",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "confirmed",
         "notes": "CARD-operated, in Chapman Neighborhood (775 E 16th St). 6,375 sq ft: gym, meeting rooms, kitchen, toddler classrooms. 'Business meetings, trainings, classes, weddings, memorials.' Book: (530) 895-4711.",
         "in_district": false,
-        "assessment_confidence": "high"
+        "assessment_confidence": "high",
+        "google_place_id": "ChIJtVw1TS0mg4ARuitOrt1u0g4",
+        "google_types": [
+          "sports_activity_location",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "sports_activity_location",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 73,
+        "google_editorial_summary": null,
+        "google_formatted_address": "775 E 16th St, Chico, CA 95928, USA"
       }
     },
     {
@@ -1181,15 +1730,34 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "https://www.golfbidwellpark.com/",
+        "phone": "(530) 891-8417",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "likely",
         "notes": "Has clubhouse with Bidwell Bar & Grill and active events/tournaments program. Confirm capacity and rates: (530) 891-8417.",
         "in_district": true,
-        "assessment_confidence": "medium"
+        "assessment_confidence": "medium",
+        "google_place_id": "ChIJg5vqrSUog4ARDz_UPzMd_F8",
+        "google_types": [
+          "golf_course",
+          "american_restaurant",
+          "athletic_field",
+          "sports_activity_location",
+          "sporting_goods_store",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "store",
+          "establishment"
+        ],
+        "google_primary_type": "golf_course",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.2,
+        "google_user_ratings_count": 223,
+        "google_editorial_summary": null,
+        "google_formatted_address": "3199 Golf Course Rd, Chico, CA 95973, USA"
       }
     },
     {
@@ -1213,14 +1781,28 @@
         "office": null,
         "club": null,
         "address": "1598 Hooker Oak Avenue Chico",
-        "website": null,
-        "phone": null,
+        "website": "http://sierraview.chicousd.org/",
+        "phone": "(530) 891-3117",
         "capacity": null,
         "wheelchair": null,
         "operator": "Chico Unified Schools",
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJnfmH4OEng4ARPkM5BCLxQC4",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1598 Hooker Oak Ave, Chico, CA 95926, USA"
       }
     },
     {
@@ -1252,7 +1834,19 @@
         "hosting_status": "confirmed",
         "notes": "Operated by Chico Area Recreation & Park District (CARD). 6,000 sq ft, capacity 275. Caterer's kitchen, PA system, wood dance floor, lake views. Suitable for business meetings through weddings. Book: (530) 895-4711, rentals@chicorec.gov.",
         "in_district": true,
-        "assessment_confidence": "high"
+        "assessment_confidence": "high",
+        "google_place_id": "ChIJv4cxDgApg4AR6XvpXgvzssM",
+        "google_types": [
+          "park",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "park",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 5,
+        "google_user_ratings_count": 3,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2565 California Park Dr, Chico, CA 95928, USA"
       }
     },
     {
@@ -1276,14 +1870,27 @@
         "office": null,
         "club": null,
         "address": "2212 Park Avenue Chico",
-        "website": null,
-        "phone": null,
+        "website": "http://www.haveninnofchico.us/",
+        "phone": "(530) 342-5704",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Hotel meeting rooms vary widely in price and political-event policy \u2014 confirm with sales team.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJw0L06i8mg4ARlTE_7oUuj_E",
+        "google_types": [
+          "inn",
+          "lodging",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "inn",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 2.9,
+        "google_user_ratings_count": 264,
+        "google_editorial_summary": "Low-rise hotel featuring straightforward rooms & a guest laundry, as well as free parking & Wi-Fi.",
+        "google_formatted_address": "2212 Park Ave, Chico, CA 95928, USA"
       }
     },
     {
@@ -1307,15 +1914,27 @@
         "office": null,
         "club": null,
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "https://thecommonschico.com/",
+        "phone": "(530) 774-2999",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "confirmed",
         "notes": "Taproom + outdoor music venue (2412 Park Ave). 28 rotating taps, on-site pizzeria. Offers private party rentals via thecommonschico.com/private-parties. Worth a direct inquiry: (530) 774-2999.",
         "in_district": false,
-        "assessment_confidence": "high"
+        "assessment_confidence": "high",
+        "google_place_id": "ChIJQ5S3myYmg4ARTJSCRjrVR3I",
+        "google_types": [
+          "bar",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "bar",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 343,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2412 Park Ave, Chico, CA 95928, USA"
       }
     },
     {
@@ -1339,15 +1958,28 @@
         "office": null,
         "club": "sport",
         "address": null,
-        "website": null,
-        "phone": null,
+        "website": "http://www.chicogunclub.org/",
+        "phone": "(530) 715-0145",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Membership-driven shooting facility (1456 Upper Park Rd). Active internal social calendar but no clear external rental policy on website. Worth a call: (530) 715-0145, chicogunclub@gmail.com.",
         "in_district": true,
-        "assessment_confidence": "medium"
+        "assessment_confidence": "medium",
+        "google_place_id": "ChIJVz7apgApg4ARZZZVNLZIEF0",
+        "google_types": [
+          "sports_complex",
+          "sports_activity_location",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "sports_complex",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.4,
+        "google_user_ratings_count": 7,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1456 Upper Park Rd, Chico, CA 95973, USA"
       }
     },
     {
@@ -1371,14 +2003,28 @@
         "office": null,
         "club": null,
         "address": "2090 Amanda Way Chico",
-        "website": null,
-        "phone": null,
+        "website": "http://littlechicocreek.chicousd.org/",
+        "phone": "(530) 891-3285",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJyd9Hi3wog4ARjLaSXVffXsc",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2090 Amanda Way, Chico, CA 95928, USA"
       }
     },
     {
@@ -1403,14 +2049,26 @@
         "club": null,
         "address": "2040 Park Avenue Chico",
         "website": "https://arcbutte.org/arc-pavilion/",
-        "phone": null,
+        "phone": "(530) 891-5865",
         "capacity": null,
         "wheelchair": null,
         "operator": "The Arc of Butte County",
         "hosting_status": "confirmed",
         "notes": "3,600 sq ft; seats 160 at tables / 240 lecture-style. Restaurant-style kitchen, business-class internet. Available weekday eves (not Tues) and Sat/Sun. Operated by The Arc of Butte County (501c3); pavilion rentals are a fundraising vehicle and accept commercial bookings. ~$850 + deposit. Book: (530) 891-5865.",
         "in_district": false,
-        "assessment_confidence": "high"
+        "assessment_confidence": "high",
+        "google_place_id": "ChIJKcl01zEmg4ARCBCNkX4vQvk",
+        "google_types": [
+          "event_venue",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "event_venue",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 73,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2040 Park Ave, Chico, CA 95928, USA"
       }
     },
     {
@@ -1434,14 +2092,27 @@
         "office": null,
         "club": null,
         "address": "2280 Doctor Martin Luther King Junior Parkway Chico",
-        "website": null,
-        "phone": null,
+        "website": "https://chico.ca.us/City-Services/Housing--Homelessness/Shelter-Bed-Availability/index.html",
+        "phone": "(530) 897-5890",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJrdhmybkpg4ARvdLNVU6SV2w",
+        "google_types": [
+          "point_of_interest",
+          "association_or_organization",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "association_or_organization",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 3.6,
+        "google_user_ratings_count": 12,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2280 Dr Martin Luther King Jr Pkwy, Chico, CA 95928, USA"
       }
     },
     {
@@ -1466,14 +2137,27 @@
         "club": null,
         "address": "1930 Baney Lane Chico",
         "website": "https://www.oxfordcollection.com/hotels/hotel-katerina",
-        "phone": null,
+        "phone": "(530) 571-9060",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "likely",
         "notes": "3,900 sq ft of event space confirmed on website. Part of the Oxford Collection regional chain (CA/ID/OR/WA). Confirm political-event policy and capacity layouts: (530) 571-9060.",
         "in_district": true,
-        "assessment_confidence": "medium"
+        "assessment_confidence": "medium",
+        "google_place_id": "ChIJydDAktEpg4ARQLGMYcLrtEE",
+        "google_types": [
+          "hotel",
+          "lodging",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "hotel",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 100,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1930 Baney Ln, Chico, CA 95928, USA"
       }
     },
     {
@@ -1497,15 +2181,29 @@
         "office": null,
         "club": null,
         "address": "545 Vallombrosa Avenue Chico",
-        "website": null,
-        "phone": null,
+        "website": "http://www.chicorec.com/",
+        "phone": "(530) 895-4711",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "confirmed",
         "notes": "Same operator and booking line as Creekside Rose Garden \u2014 they share a campus. CARD facility, rentable for civic events. Book: (530) 895-4711, rentals@chicorec.gov.",
         "in_district": false,
-        "assessment_confidence": "high"
+        "assessment_confidence": "high",
+        "google_place_id": "ChIJG_PmW8cng4ARoFlOapYaKco",
+        "google_types": [
+          "community_center",
+          "event_venue",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "community_center",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.8,
+        "google_user_ratings_count": 12,
+        "google_editorial_summary": null,
+        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA"
       }
     },
     {
@@ -1530,14 +2228,26 @@
         "club": null,
         "address": null,
         "website": "https://www.creeksiderosegarden.com/",
-        "phone": null,
+        "phone": "(530) 895-4711",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "confirmed",
         "notes": "CARD-operated. Indoor reception (cap ~200) + outdoor terrace with 200+ roses. Caterer's kitchen, PA, tables/chairs included. Adjacent to Bidwell Park. Book: (530) 895-4711, rentals@chicorec.gov.",
         "in_district": false,
-        "assessment_confidence": "high"
+        "assessment_confidence": "high",
+        "google_place_id": "ChIJyfAbY8cng4ARkUpcVHUt__A",
+        "google_types": [
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "service",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.9,
+        "google_user_ratings_count": 19,
+        "google_editorial_summary": null,
+        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA"
       }
     },
     {
@@ -1562,13 +2272,27 @@
         "club": null,
         "address": null,
         "website": "https://migration.salvationarmy.org/chico/",
-        "phone": null,
+        "phone": "(530) 776-1009",
         "capacity": null,
         "wheelchair": null,
         "operator": "The Salvation Army",
         "hosting_status": "needs_verification",
         "notes": null,
-        "in_district": false
+        "in_district": false,
+        "google_place_id": "ChIJcQ3ctTImg4ARigLrdnIsfsY",
+        "google_types": [
+          "church",
+          "place_of_worship",
+          "point_of_interest",
+          "association_or_organization",
+          "establishment"
+        ],
+        "google_primary_type": "church",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.4,
+        "google_user_ratings_count": 43,
+        "google_editorial_summary": null,
+        "google_formatted_address": "567 E 16th St, Chico, CA 95928, USA"
       }
     },
     {
@@ -1593,14 +2317,26 @@
         "club": null,
         "address": null,
         "website": "https://www.butte.edu/currentstudents/references/campuses/about-skyway-center.html",
-        "phone": null,
+        "phone": "(530) 895-2511",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
         "notes": "Workforce development / training center (automotive tech, Small Business Dev Center, Health Workforce Initiative). Public rental policy not stated on facility page. Contact Butte College Conference Services or main line (530) 895-2511.",
         "in_district": true,
-        "assessment_confidence": "low"
+        "assessment_confidence": "low",
+        "google_place_id": "ChIJpZ98NpYog4ARQx8zkVczvo0",
+        "google_types": [
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "educational_institution",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4,
+        "google_user_ratings_count": 4,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2480 Notre Dame Blvd, Chico, CA 95928, USA"
       }
     },
     {
@@ -1625,14 +2361,36 @@
         "club": null,
         "address": null,
         "website": "https://www.canyonoakscc.com/",
-        "phone": null,
+        "phone": "(530) 343-2582",
         "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "confirmed",
         "notes": "Private country club; access available through resident contact. Hosts weddings and customizable events per club website. Book via clubhouse: canyonoakscc.com.",
         "in_district": true,
-        "assessment_confidence": "high"
+        "assessment_confidence": "high",
+        "google_place_id": "ChIJV1RnHTkog4AR98vJ9RCgwMU",
+        "google_types": [
+          "golf_course",
+          "wedding_venue",
+          "athletic_field",
+          "sports_coaching",
+          "sports_school",
+          "event_venue",
+          "sports_activity_location",
+          "point_of_interest",
+          "sports_club",
+          "health",
+          "association_or_organization",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "association_or_organization",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 143,
+        "google_editorial_summary": null,
+        "google_formatted_address": "999 Yosemite Dr, Chico, CA 95928, USA"
       }
     }
   ]

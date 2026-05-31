@@ -33,20 +33,28 @@ const BOUNDARY_STYLE: PathOptions = {
 
 function venueRadius(feature: VenueFeature): number {
   const status = feature.properties.hosting_status
+  if (status === 'excluded') return 4
   if (status === 'confirmed') return 10
   if (status === 'likely') return 8
   return 7
 }
 
 function venueFillOpacity(feature: VenueFeature): number {
+  if (feature.properties.hosting_status === 'excluded') {
+    return feature.properties.in_district ? 0.25 : 0
+  }
   // In-district = solid fill. Adjacency = ring only (no fill) so they read as secondary.
   if (!feature.properties.in_district) return 0
-  if (feature.properties.hosting_status === 'excluded') return 0.3
   return 0.85
 }
 
 function venueBorderWeight(feature: VenueFeature): number {
+  if (feature.properties.hosting_status === 'excluded') return 1
   return feature.properties.in_district ? 1.5 : 2.5
+}
+
+function venueBorderOpacity(feature: VenueFeature): number {
+  return feature.properties.hosting_status === 'excluded' ? 0.4 : 0.95
 }
 
 function statusBadge(status: VenueFeature['properties']['hosting_status']): {
@@ -162,30 +170,59 @@ export function CandidateMap() {
                 weight: venueBorderWeight(f),
                 fillColor: style.color,
                 fillOpacity: venueFillOpacity(f),
-                opacity: 0.95,
+                opacity: venueBorderOpacity(f),
               }}
             >
-              <Popup maxWidth={320}>
+              <Popup maxWidth={340}>
                 <div className="text-sm">
-                  <div className="font-semibold">{f.properties.name}</div>
+                  <div className="flex items-baseline justify-between gap-2">
+                    <span className="font-semibold">{f.properties.name}</span>
+                    {f.properties.google_rating != null && (
+                      <span className="shrink-0 text-xs text-gray-600">
+                        {f.properties.google_rating.toFixed(1)}★
+                        {f.properties.google_user_ratings_count != null && (
+                          <span className="text-gray-400"> · {f.properties.google_user_ratings_count.toLocaleString()}</span>
+                        )}
+                      </span>
+                    )}
+                  </div>
                   <div className="text-xs text-gray-600">
                     {style.label}
                     {!f.properties.in_district && (
                       <span className="ml-1 text-gray-400">· adjacency</span>
                     )}
                   </div>
-                  {f.properties.address && (
-                    <div className="mt-1 text-xs">{f.properties.address}</div>
+                  {(f.properties.google_formatted_address || f.properties.address) && (
+                    <div className="mt-1 text-xs text-gray-700">
+                      {f.properties.google_formatted_address ?? f.properties.address}
+                    </div>
                   )}
-                  {f.properties.website && (
-                    <a
-                      href={f.properties.website}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="mt-1 block text-xs text-blue-600 hover:underline"
-                    >
-                      Website
-                    </a>
+                  {(f.properties.website || f.properties.phone) && (
+                    <div className="mt-1 flex flex-wrap gap-3 text-xs">
+                      {f.properties.website && (
+                        <a
+                          href={f.properties.website}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="text-blue-600 hover:underline"
+                        >
+                          Website
+                        </a>
+                      )}
+                      {f.properties.phone && (
+                        <a
+                          href={`tel:${f.properties.phone.replace(/\s/g, '')}`}
+                          className="text-blue-600 hover:underline"
+                        >
+                          {f.properties.phone}
+                        </a>
+                      )}
+                    </div>
+                  )}
+                  {f.properties.google_editorial_summary && (
+                    <div className="mt-2 rounded bg-gray-50 px-2 py-1.5 text-xs italic text-gray-700">
+                      “{f.properties.google_editorial_summary}”
+                    </div>
                   )}
                   <div className="mt-2 flex flex-wrap items-center gap-1.5">
                     <span
@@ -194,6 +231,12 @@ export function CandidateMap() {
                     >
                       {badge.label}
                     </span>
+                    {f.properties.google_business_status &&
+                      f.properties.google_business_status !== 'OPERATIONAL' && (
+                        <span className="inline-block rounded bg-red-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-red-700">
+                          {f.properties.google_business_status.replace('_', ' ').toLowerCase()}
+                        </span>
+                      )}
                     {f.properties.assessment_confidence && (
                       <span className="text-[10px] uppercase tracking-wide text-gray-400">
                         conf: {f.properties.assessment_confidence}
