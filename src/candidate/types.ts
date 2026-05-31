@@ -32,6 +32,10 @@ export interface VenueProperties {
     public_facility_bonus: number
     in_district_walk_15_cvap: number
   }
+  /** Forum view only: how many of the selected districts have positive reach. */
+  forum_coverage_ratio?: number
+  forum_districts_with_reach?: number
+  forum_districts_total?: number
   /** True when the venue point is inside the district polygon; false if in the adjacency buffer. */
   in_district: boolean
   // Google Places enrichment (optional — venue may not have been enriched yet)

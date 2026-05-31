@@ -145,6 +145,15 @@ export function rescoreVenuesForForum(
     const unionCvap = perDistrictCvaps.reduce((a, b) => a + b, 0)
     const totalPop15 = stats.unionInDistrict.walk_15?.total_population ?? 0
 
+    // Coverage ratio = fraction of selected districts where the venue actually
+    // reaches voters. A 1-of-2 venue (like Lakeside in D4+D6) is half-useful
+    // for a shared forum no matter how good its other characteristics are.
+    // Any positive reach counts — the geomean already penalizes very low reach.
+    const districtsWithReach = perDistrictCvaps.filter(v => v > 0).length
+    const coverageRatio = selectedDistricts.length > 0
+      ? districtsWithReach / selectedDistricts.length
+      : 1.0
+
     const newAudience = audienceScore(geomean)
     let composite =
       WEIGHT_AUDIENCE * newAudience
@@ -152,6 +161,10 @@ export function rescoreVenuesForForum(
       + WEIGHT_FIT * components.fit
       + WEIGHT_LEGITIMACY * components.legitimacy
     composite = Math.min(composite + components.public_facility_bonus, 1.0)
+    // Multiplicative coverage penalty: 1.0 for full coverage, 0.5 for 1-of-2,
+    // 0.33 for 1-of-3, etc. Floored at 0.15 so non-reach venues remain visible
+    // (just clearly de-prioritized).
+    composite *= Math.max(coverageRatio, 0.15)
     if (totalPop15 === 0) composite *= 0.3
 
     const newVenue: VenueFeature = {
@@ -165,6 +178,9 @@ export function rescoreVenuesForForum(
           audience: Math.round(newAudience * 1000) / 1000,
           in_district_walk_15_cvap: unionCvap,
         },
+        forum_coverage_ratio: coverageRatio,
+        forum_districts_with_reach: districtsWithReach,
+        forum_districts_total: selectedDistricts.length,
       },
     }
     rescored.push(newVenue)

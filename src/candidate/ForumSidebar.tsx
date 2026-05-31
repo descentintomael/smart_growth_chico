@@ -131,10 +131,23 @@ export function ForumSidebar({ districts, collapsed, onToggle }: SidebarProps) {
                         {(p.priority_components?.in_district_walk_15_cvap ?? 0).toLocaleString()} CVAP in union
                       </span>
                     </span>
-                    <span className={`shrink-0 text-[10px] tabular-nums font-semibold ${
-                      isSelected ? 'text-white' : 'text-gray-700'
-                    }`}>
-                      {p.priority_score?.toFixed(2) ?? '–'}
+                    <span className="flex shrink-0 flex-col items-end">
+                      <span className={`text-[10px] tabular-nums font-semibold ${
+                        isSelected ? 'text-white' : 'text-gray-700'
+                      }`}>
+                        {p.priority_score?.toFixed(2) ?? '–'}
+                      </span>
+                      {p.forum_districts_with_reach != null && p.forum_districts_total != null && (
+                        <span
+                          className={`text-[9px] tabular-nums ${
+                            p.forum_districts_with_reach === p.forum_districts_total
+                              ? (isSelected ? 'text-green-300' : 'text-green-700')
+                              : (isSelected ? 'text-amber-200' : 'text-amber-700')
+                          }`}
+                        >
+                          {p.forum_districts_with_reach}/{p.forum_districts_total}
+                        </span>
+                      )}
                     </span>
                   </button>
                 </li>
