@@ -6,6 +6,11 @@ export interface VenueProperties {
   category: string
   amenity: string | null
   leisure: string | null
+  tourism?: string | null
+  shop?: string | null
+  craft?: string | null
+  office?: string | null
+  club?: string | null
   address: string | null
   website: string | null
   phone: string | null
@@ -13,7 +18,10 @@ export interface VenueProperties {
   wheelchair: string | null
   operator: string | null
   hosting_status: 'confirmed' | 'likely' | 'needs_verification' | 'excluded'
+  assessment_confidence?: 'high' | 'medium' | 'low' | 'unknown'
   notes: string | null
+  /** True when the venue point is inside the district polygon; false if in the adjacency buffer. */
+  in_district: boolean
 }
 
 export type VenueFeature = Feature<Point, VenueProperties>

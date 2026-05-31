@@ -6,29 +6,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8068716,
-          39.7331695
+          -121.8207522,
+          39.7252859
         ]
       },
       "properties": {
-        "osm_id": "node/1706392710",
-        "name": "Super Luper Kids Preschool and Day Care",
-        "category": "school",
-        "amenity": "school",
+        "osm_id": "node/368166578",
+        "name": "Dorothy F. Johnson Center",
+        "category": "community_centre",
+        "amenity": "community_centre",
         "leisure": null,
         "tourism": null,
         "shop": null,
         "craft": null,
         "office": null,
         "club": null,
-        "address": "1450 Springfield Drive",
+        "address": null,
         "website": null,
         "phone": null,
         "capacity": null,
         "wheelchair": null,
         "operator": null,
-        "hosting_status": "needs_verification",
-        "notes": null
+        "hosting_status": "confirmed",
+        "notes": "CARD-operated, in Chapman Neighborhood (775 E 16th St). 6,375 sq ft: gym, meeting rooms, kitchen, toddler classrooms. 'Business meetings, trainings, classes, weddings, memorials.' Book: (530) 895-4711.",
+        "in_district": false,
+        "assessment_confidence": "high"
       }
     },
     {
@@ -36,16 +38,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8070997,
-          39.7292736
+          -121.8208287,
+          39.7357211
         ]
       },
       "properties": {
-        "osm_id": "node/6479745429",
-        "name": "Planet Fitness",
-        "category": "fitness_centre",
-        "amenity": null,
-        "leisure": "fitness_centre",
+        "osm_id": "node/3667613103",
+        "name": "Beatniks Coffee and Breakfast",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
         "tourism": null,
         "shop": null,
         "craft": null,
@@ -58,7 +60,39 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8041754,
+          39.7386805
+        ]
+      },
+      "properties": {
+        "osm_id": "node/5359988061",
+        "name": "Mariscos La Costa",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
       }
     },
     {
@@ -88,7 +122,104 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Small independent cafe. No website found to assess.",
+        "in_district": true,
+        "assessment_confidence": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.81757,
+          39.7146852
+        ]
+      },
+      "properties": {
+        "osm_id": "node/6502607458",
+        "name": "Paradise Brew Werks",
+        "category": "craft_brewery",
+        "amenity": "pub",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": "brewery",
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8149663,
+          39.7245076
+        ]
+      },
+      "properties": {
+        "osm_id": "node/9796268718",
+        "name": "Sierra Nevada Brewing Company Taproom",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://sierranevada.com/",
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "likely",
+        "notes": "Iconic Chico venue with multiple event spaces (taproom, biergarten, banquet hall). Hosts public and private events regularly. Confirm political-event policy and meeting-room rental rates direct: sierranevada.com (contact via Visit page).",
+        "in_district": false,
+        "assessment_confidence": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8222209,
+          39.7197925
+        ]
+      },
+      "properties": {
+        "osm_id": "node/11060934205",
+        "name": "Mulberry Station",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "175 East 20th Street",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Local restaurant. Check directly for private-room availability.",
+        "in_district": false,
+        "assessment_confidence": "low"
       }
     },
     {
@@ -118,7 +249,72 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Independent, owner-operated by Jeff & Leasa Hill. No event info on website. Direct inquiry: (530) 715-7614.",
+        "in_district": true,
+        "assessment_confidence": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8232891,
+          39.7620463
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12133103701",
+        "name": "The Redwood Sandwich Co.",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1354 East Avenue",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8231539,
+          39.7189349
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12528251921",
+        "name": "Park Avenue Pub",
+        "category": "pub",
+        "amenity": "pub",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Local pub. Check directly for private-event hosting.",
+        "in_district": false,
+        "assessment_confidence": "low"
       }
     },
     {
@@ -148,7 +344,9 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Independent local restaurant. No event-rental info on website.",
+        "in_district": true,
+        "assessment_confidence": "low"
       }
     },
     {
@@ -156,13 +354,44 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.7937401,
-          39.715279
+          -121.8236347,
+          39.7619508
         ]
       },
       "properties": {
-        "osm_id": "node/13011048305",
-        "name": "Burrito Bandito",
+        "osm_id": "node/12695707292",
+        "name": "Halo Hawaiian BBQ",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1354 East Avenue Chico",
+        "website": "https://www.halochico.com/",
+        "phone": "+1-530-592-3898",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8344401,
+          39.7384484
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13057181313",
+        "name": "Egg Roll King",
         "category": "restaurant",
         "amenity": "restaurant",
         "leisure": null,
@@ -175,40 +404,11 @@
         "website": null,
         "phone": null,
         "capacity": null,
-        "wheelchair": "yes",
-        "operator": null,
-        "hosting_status": "excluded",
-        "notes": "Auto-excluded: national chain unlikely to host political events"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8092287,
-          39.7301394
-        ]
-      },
-      "properties": {
-        "osm_id": "node/13049041417",
-        "name": "Hampton Inn & Suites",
-        "category": "tourism_hotel",
-        "amenity": null,
-        "leisure": null,
-        "tourism": "hotel",
-        "shop": null,
-        "craft": null,
-        "office": null,
-        "club": null,
-        "address": null,
-        "website": null,
-        "phone": null,
-        "capacity": null,
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": null,
+        "in_district": false
       }
     },
     {
@@ -237,8 +437,10 @@
         "capacity": null,
         "wheelchair": "yes",
         "operator": null,
-        "hosting_status": "needs_verification",
-        "notes": null
+        "hosting_status": "likely",
+        "notes": "Tea Bar & Fusion Cafe \u2014 small regional chain (4 locations, 2 in Chico). EXPLICITLY event-friendly: monthly Tea Talks, Tuesday Family Night, Wednesday Trivia, Thursday Take Over Night (fundraising). Confirm WHICH Chico location is this OSM point (Vallombrosa downtown is in D5; second location may be in D6).",
+        "in_district": true,
+        "assessment_confidence": "medium"
       }
     },
     {
@@ -246,107 +448,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.7948978,
-          39.7153346
+          -121.807008,
+          39.760455
         ]
       },
       "properties": {
-        "osm_id": "node/13176053286",
-        "name": "Starbucks",
-        "category": "cafe",
-        "amenity": "cafe",
+        "osm_id": "node/13565778876",
+        "name": "Chico's Elks Lodge 423",
+        "category": "social_centre",
+        "amenity": "social_centre",
         "leisure": null,
         "tourism": null,
-        "shop": null,
-        "craft": null,
-        "office": null,
-        "club": null,
-        "address": null,
-        "website": null,
-        "phone": null,
-        "capacity": null,
-        "wheelchair": null,
-        "operator": null,
-        "hosting_status": "excluded",
-        "notes": "Auto-excluded: national chain unlikely to host political events"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8075219,
-          39.7274202
-        ]
-      },
-      "properties": {
-        "osm_id": "way/85226704",
-        "name": "Panera Bread",
-        "category": "restaurant",
-        "amenity": "restaurant",
-        "leisure": null,
-        "tourism": null,
-        "shop": null,
-        "craft": null,
-        "office": null,
-        "club": null,
-        "address": null,
-        "website": null,
-        "phone": null,
-        "capacity": null,
-        "wheelchair": null,
-        "operator": null,
-        "hosting_status": "excluded",
-        "notes": "Auto-excluded: national chain unlikely to host political events"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8019488,
-          39.7275666
-        ]
-      },
-      "properties": {
-        "osm_id": "way/85226720",
-        "name": "Black Bear Diner",
-        "category": "restaurant",
-        "amenity": "restaurant",
-        "leisure": null,
-        "tourism": null,
-        "shop": null,
-        "craft": null,
-        "office": null,
-        "club": null,
-        "address": null,
-        "website": null,
-        "phone": null,
-        "capacity": null,
-        "wheelchair": null,
-        "operator": null,
-        "hosting_status": "excluded",
-        "notes": "Auto-excluded: national chain unlikely to host political events"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.805356,
-          39.7247912
-        ]
-      },
-      "properties": {
-        "osm_id": "way/85240649",
-        "name": "Oxford Suites Chico",
-        "category": "tourism_hotel",
-        "amenity": null,
-        "leisure": null,
-        "tourism": "hotel",
         "shop": null,
         "craft": null,
         "office": null,
@@ -358,7 +470,9 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Fraternal order (BPOE). Local lodges typically rent their hall to members and the broader community for events. Confirm rental policy and any political-event restrictions direct.",
+        "in_district": false,
+        "assessment_confidence": "medium"
       }
     },
     {
@@ -366,15 +480,325 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8066566,
-          39.7262479
+          -121.8442379,
+          39.7740214
         ]
       },
       "properties": {
-        "osm_id": "way/85240650",
-        "name": "Red Lobster",
+        "osm_id": "node/13608269857",
+        "name": "Mekkala Thai Cuisine",
         "category": "restaurant",
         "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1196 East Lassen Avenue Chico",
+        "website": null,
+        "phone": "+1-530-636-4620",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8441596,
+          39.7742831
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13608269858",
+        "name": "La Dolce Piazza",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "3211 Cohasset Road Chico",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8440128,
+          39.774317
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13608269859",
+        "name": "Burger Hut",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "3211 Cohasset Road Chico",
+        "website": "https://www.burgerhut.com/",
+        "phone": "+1-530-342-4555",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8430397,
+          39.7743612
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13608269862",
+        "name": "Oak Bridge Academy",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1350 East Lassen Avenue Chico",
+        "website": "https://oakbridge.chicousd.org/",
+        "phone": "+1-530-897-8877",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8432451,
+          39.7733032
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871910",
+        "name": "Marbella Chico",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "13551 East Lassen Avenue Chico",
+        "website": "https://marbellachico.com/",
+        "phone": "+1-530-899-0814",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8402164,
+          39.7723533
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871913",
+        "name": "Far Northern Regional Center",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1377 East Lassen Avenue Chico",
+        "website": null,
+        "phone": "+1-530-895-8633",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8417694,
+          39.7713159
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871914",
+        "name": "The Country Village",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "966 Kovak Court Chico",
+        "website": "https://www.countryvillagecare.com/",
+        "phone": "+1-530-342-7002",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8371809,
+          39.7713043
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871917",
+        "name": "Sycamore Glen Active Senior Community",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1199 Diablo Avenue Chico",
+        "website": "https://www.sycamoreglen.com/",
+        "phone": "+1-530-894-0384",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8290281,
+          39.7702939
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871920",
+        "name": "The Alibi Pub & Grill",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "3010 Floral Ave Chico",
+        "website": null,
+        "phone": "+1-530-487-8677",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8175113,
+          39.7590041
+        ]
+      },
+      "properties": {
+        "osm_id": "way/84969018",
+        "name": "Pleasant Valley Senior High School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Chico Unified School District",
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8137306,
+          39.7600944
+        ]
+      },
+      "properties": {
+        "osm_id": "way/84969479",
+        "name": "Marigold Elementary School",
+        "category": "school",
+        "amenity": "school",
         "leisure": null,
         "tourism": null,
         "shop": null,
@@ -387,8 +811,9 @@
         "capacity": null,
         "wheelchair": null,
         "operator": null,
-        "hosting_status": "excluded",
-        "notes": "Auto-excluded: national chain unlikely to host political events"
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
       }
     },
     {
@@ -396,29 +821,92 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8066279,
-          39.725539
+          -121.8049655,
+          39.7542685
         ]
       },
       "properties": {
-        "osm_id": "way/85240652",
-        "name": "Olive Garden",
-        "category": "restaurant",
-        "amenity": "restaurant",
+        "osm_id": "way/85064987",
+        "name": "Chico Oaks Adventist School",
+        "category": "school",
+        "amenity": "school",
         "leisure": null,
         "tourism": null,
         "shop": null,
         "craft": null,
         "office": null,
         "club": null,
-        "address": "2020 Business Lane",
-        "website": "https://www.olivegarden.com/",
+        "address": null,
+        "website": null,
         "phone": null,
         "capacity": null,
         "wheelchair": null,
         "operator": null,
-        "hosting_status": "excluded",
-        "notes": "Auto-excluded: national chain unlikely to host political events"
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.839938,
+          39.7618645
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85087700",
+        "name": "John A. McManus Elementary School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Chico Unified School District",
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.813417,
+          39.7422998
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85243499",
+        "name": "Parkview Elementary School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
       }
     },
     {
@@ -448,7 +936,102 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Public community college with multiple rentable rooms (auditoria, meeting rooms). Route through Butte College Conference Services.",
+        "in_district": true,
+        "assessment_confidence": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8142395,
+          39.7266713
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85465948",
+        "name": "Chapman Elementary School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7752686,
+          39.708831
+        ]
+      },
+      "properties": {
+        "osm_id": "way/142484994",
+        "name": "Skyway Golf Park",
+        "category": "golf_course",
+        "amenity": null,
+        "leisure": "golf_course",
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://www.skywaygolfpark.com/",
+        "phone": "+1-530-899-8108",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8110505,
+          39.7246294
+        ]
+      },
+      "properties": {
+        "osm_id": "way/298977105",
+        "name": "Hibachi Grill Buffet",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2021 Doctor Martin Luther King Junior Parkway Chico",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
       }
     },
     {
@@ -478,7 +1061,9 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Local restaurant. No website found in OSM to assess.",
+        "in_district": true,
+        "assessment_confidence": "low"
       }
     },
     {
@@ -486,75 +1071,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8065194,
-          39.7247839
+          -121.7974093,
+          39.7380294
         ]
       },
       "properties": {
-        "osm_id": "way/298977547",
-        "name": "Applebee's",
-        "category": "restaurant",
-        "amenity": "restaurant",
-        "leisure": null,
-        "tourism": null,
-        "shop": null,
-        "craft": null,
-        "office": null,
-        "club": null,
-        "address": null,
-        "website": "https://restaurants.applebees.com/en-us/ca/chico/2030-business-lane-91039",
-        "phone": "+1 530-343-6888",
-        "capacity": null,
-        "wheelchair": null,
-        "operator": null,
-        "hosting_status": "excluded",
-        "notes": "Auto-excluded: national chain unlikely to host political events"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8086645,
-          39.728126
-        ]
-      },
-      "properties": {
-        "osm_id": "way/301852375",
-        "name": "Chili's",
-        "category": "restaurant",
-        "amenity": "restaurant",
-        "leisure": null,
-        "tourism": null,
-        "shop": null,
-        "craft": null,
-        "office": null,
-        "club": null,
-        "address": null,
-        "website": null,
-        "phone": null,
-        "capacity": null,
-        "wheelchair": null,
-        "operator": null,
-        "hosting_status": "excluded",
-        "notes": "Auto-excluded: national chain unlikely to host political events"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8103938,
-          39.7288271
-        ]
-      },
-      "properties": {
-        "osm_id": "way/301852376",
-        "name": "Logans",
-        "category": "restaurant",
-        "amenity": "restaurant",
+        "osm_id": "way/301850353",
+        "name": "Marsh Middle School",
+        "category": "school",
+        "amenity": "school",
         "leisure": null,
         "tourism": null,
         "shop": null,
@@ -568,7 +1093,8 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
       }
     },
     {
@@ -576,18 +1102,49 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.803553,
-          39.7255195
+          -121.8102799,
+          39.7197841
         ]
       },
       "properties": {
-        "osm_id": "way/301857602",
-        "name": "BevMo!",
-        "category": "shop_alcohol",
-        "amenity": null,
+        "osm_id": "way/461041053",
+        "name": "Torres Community Shelter",
+        "category": "social_facility",
+        "amenity": "social_facility",
         "leisure": null,
         "tourism": null,
-        "shop": "alcohol",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "101 Silver Dollar Way Chico",
+        "website": "https://truenorthbutte.org/emergency-shelter",
+        "phone": "+1-530-891-9048",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "True North Housing Alliance",
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8207443,
+          39.725262
+        ]
+      },
+      "properties": {
+        "osm_id": "way/539691268",
+        "name": "Dorothy F. Johnson Center",
+        "category": "community_centre",
+        "amenity": "community_centre",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
         "craft": null,
         "office": null,
         "club": null,
@@ -597,8 +1154,10 @@
         "capacity": null,
         "wheelchair": null,
         "operator": null,
-        "hosting_status": "needs_verification",
-        "notes": null
+        "hosting_status": "confirmed",
+        "notes": "CARD-operated, in Chapman Neighborhood (775 E 16th St). 6,375 sq ft: gym, meeting rooms, kitchen, toddler classrooms. 'Business meetings, trainings, classes, weddings, memorials.' Book: (530) 895-4711.",
+        "in_district": false,
+        "assessment_confidence": "high"
       }
     },
     {
@@ -627,8 +1186,41 @@
         "capacity": null,
         "wheelchair": null,
         "operator": null,
+        "hosting_status": "likely",
+        "notes": "Has clubhouse with Bidwell Bar & Grill and active events/tournaments program. Confirm capacity and rates: (530) 891-8417.",
+        "in_district": true,
+        "assessment_confidence": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8127912,
+          39.7509189
+        ]
+      },
+      "properties": {
+        "osm_id": "way/640343883",
+        "name": "Sierra View Elementary",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1598 Hooker Oak Avenue Chico",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Chico Unified Schools",
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
       }
     },
     {
@@ -657,8 +1249,73 @@
         "capacity": null,
         "wheelchair": null,
         "operator": null,
+        "hosting_status": "confirmed",
+        "notes": "Operated by Chico Area Recreation & Park District (CARD). 6,000 sq ft, capacity 275. Caterer's kitchen, PA system, wood dance floor, lake views. Suitable for business meetings through weddings. Book: (530) 895-4711, rentals@chicorec.gov.",
+        "in_district": true,
+        "assessment_confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8208135,
+          39.717395
+        ]
+      },
+      "properties": {
+        "osm_id": "way/876317145",
+        "name": "Haven Inn of Chico",
+        "category": "tourism_motel",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "motel",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2212 Park Avenue Chico",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Hotel meeting rooms vary widely in price and political-event policy \u2014 confirm with sales team.",
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8158115,
+          39.714761
+        ]
+      },
+      "properties": {
+        "osm_id": "way/876317897",
+        "name": "The Commons Social Empourium",
+        "category": "bar",
+        "amenity": "bar",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "confirmed",
+        "notes": "Taproom + outdoor music venue (2412 Park Ave). 28 rotating taps, on-site pizzeria. Offers private party rentals via thecommonschico.com/private-parties. Worth a direct inquiry: (530) 774-2999.",
+        "in_district": false,
+        "assessment_confidence": "high"
       }
     },
     {
@@ -688,7 +1345,103 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Membership-driven shooting facility (1456 Upper Park Rd). Active internal social calendar but no clear external rental policy on website. Worth a call: (530) 715-0145, chicogunclub@gmail.com.",
+        "in_district": true,
+        "assessment_confidence": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7981079,
+          39.7344595
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1104515170",
+        "name": "Little Chico Creek Elementary School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2090 Amanda Way Chico",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8223909,
+          39.7184613
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1286961257",
+        "name": "Arc Pavilion",
+        "category": "events_venue",
+        "amenity": "events_venue",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2040 Park Avenue Chico",
+        "website": "https://arcbutte.org/arc-pavilion/",
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "The Arc of Butte County",
+        "hosting_status": "confirmed",
+        "notes": "3,600 sq ft; seats 160 at tables / 240 lecture-style. Restaurant-style kitchen, business-class internet. Available weekday eves (not Tues) and Sat/Sun. Operated by The Arc of Butte County (501c3); pavilion rentals are a fundraising vehicle and accept commercial bookings. ~$850 + deposit. Book: (530) 891-5865.",
+        "in_district": false,
+        "assessment_confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8098106,
+          39.7188421
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1328526836",
+        "name": "Pallet Shelter",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2280 Doctor Martin Luther King Junior Parkway Chico",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false
       }
     },
     {
@@ -717,8 +1470,105 @@
         "capacity": null,
         "wheelchair": null,
         "operator": null,
+        "hosting_status": "likely",
+        "notes": "3,900 sq ft of event space confirmed on website. Part of the Oxford Collection regional chain (CA/ID/OR/WA). Confirm political-event policy and capacity layouts: (530) 571-9060.",
+        "in_district": true,
+        "assessment_confidence": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.833301,
+          39.7340607
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1392880190",
+        "name": "CARD Community Center",
+        "category": "community_centre",
+        "amenity": "community_centre",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "545 Vallombrosa Avenue Chico",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "confirmed",
+        "notes": "Same operator and booking line as Creekside Rose Garden \u2014 they share a campus. CARD facility, rentable for civic events. Book: (530) 895-4711, rentals@chicorec.gov.",
+        "in_district": false,
+        "assessment_confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8335453,
+          39.7338387
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1416654666",
+        "name": "Creekside Rose Garden",
+        "category": "events_venue",
+        "amenity": "events_venue",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://www.creeksiderosegarden.com/",
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "confirmed",
+        "notes": "CARD-operated. Indoor reception (cap ~200) + outdoor terrace with 200+ roses. Caterer's kitchen, PA, tables/chairs included. Adjacent to Bidwell Park. Book: (530) 895-4711, rentals@chicorec.gov.",
+        "in_district": false,
+        "assessment_confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8234198,
+          39.7249115
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1472157351",
+        "name": "Salvation Army Chico Corps Community Center",
+        "category": "community_centre",
+        "amenity": "community_centre",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://migration.salvationarmy.org/chico/",
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "The Salvation Army",
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": null,
+        "in_district": false
       }
     },
     {
@@ -748,7 +1598,9 @@
         "wheelchair": null,
         "operator": null,
         "hosting_status": "needs_verification",
-        "notes": null
+        "notes": "Workforce development / training center (automotive tech, Small Business Dev Center, Health Workforce Initiative). Public rental policy not stated on facility page. Contact Butte College Conference Services or main line (530) 895-2511.",
+        "in_district": true,
+        "assessment_confidence": "low"
       }
     },
     {
@@ -777,8 +1629,10 @@
         "capacity": null,
         "wheelchair": null,
         "operator": null,
-        "hosting_status": "needs_verification",
-        "notes": null
+        "hosting_status": "confirmed",
+        "notes": "Private country club; access available through resident contact. Hosts weddings and customizable events per club website. Book via clubhouse: canyonoakscc.com.",
+        "in_district": true,
+        "assessment_confidence": "high"
       }
     }
   ]

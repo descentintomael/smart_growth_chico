@@ -32,12 +32,39 @@ const BOUNDARY_STYLE: PathOptions = {
 }
 
 function venueRadius(feature: VenueFeature): number {
-  const excluded = feature.properties.hosting_status === 'excluded'
-  return excluded ? 5 : 8
+  const status = feature.properties.hosting_status
+  if (status === 'confirmed') return 10
+  if (status === 'likely') return 8
+  return 7
 }
 
-function venueOpacity(feature: VenueFeature): number {
-  return feature.properties.hosting_status === 'excluded' ? 0.4 : 0.9
+function venueFillOpacity(feature: VenueFeature): number {
+  // In-district = solid fill. Adjacency = ring only (no fill) so they read as secondary.
+  if (!feature.properties.in_district) return 0
+  if (feature.properties.hosting_status === 'excluded') return 0.3
+  return 0.85
+}
+
+function venueBorderWeight(feature: VenueFeature): number {
+  return feature.properties.in_district ? 1.5 : 2.5
+}
+
+function statusBadge(status: VenueFeature['properties']['hosting_status']): {
+  label: string
+  bg: string
+  fg: string
+} {
+  switch (status) {
+    case 'confirmed':
+      return { label: 'confirmed', bg: '#dcfce7', fg: '#166534' }
+    case 'likely':
+      return { label: 'likely', bg: '#fef9c3', fg: '#854d0e' }
+    case 'excluded':
+      return { label: 'excluded', bg: '#fee2e2', fg: '#991b1b' }
+    case 'needs_verification':
+    default:
+      return { label: 'needs verification', bg: '#e5e7eb', fg: '#374151' }
+  }
 }
 
 export function CandidateMap() {
@@ -124,6 +151,7 @@ export function CandidateMap() {
         {venues?.features.map(f => {
           const style = styleForVenue(f.properties)
           const [lon, lat] = f.geometry.coordinates as [number, number]
+          const badge = statusBadge(f.properties.hosting_status)
           return (
             <CircleMarker
               key={f.properties.osm_id}
@@ -131,15 +159,21 @@ export function CandidateMap() {
               radius={venueRadius(f)}
               pathOptions={{
                 color: style.color,
-                weight: 1,
+                weight: venueBorderWeight(f),
                 fillColor: style.color,
-                fillOpacity: venueOpacity(f),
+                fillOpacity: venueFillOpacity(f),
+                opacity: 0.95,
               }}
             >
-              <Popup>
+              <Popup maxWidth={320}>
                 <div className="text-sm">
                   <div className="font-semibold">{f.properties.name}</div>
-                  <div className="text-xs text-gray-600">{style.label}</div>
+                  <div className="text-xs text-gray-600">
+                    {style.label}
+                    {!f.properties.in_district && (
+                      <span className="ml-1 text-gray-400">· adjacency</span>
+                    )}
+                  </div>
                   {f.properties.address && (
                     <div className="mt-1 text-xs">{f.properties.address}</div>
                   )}
@@ -153,11 +187,21 @@ export function CandidateMap() {
                       Website
                     </a>
                   )}
-                  <div className="mt-2 inline-block rounded bg-gray-100 px-2 py-0.5 text-[10px] uppercase tracking-wide text-gray-700">
-                    {f.properties.hosting_status.replace(/_/g, ' ')}
+                  <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                    <span
+                      className="inline-block rounded px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
+                      style={{ backgroundColor: badge.bg, color: badge.fg }}
+                    >
+                      {badge.label}
+                    </span>
+                    {f.properties.assessment_confidence && (
+                      <span className="text-[10px] uppercase tracking-wide text-gray-400">
+                        conf: {f.properties.assessment_confidence}
+                      </span>
+                    )}
                   </div>
                   {f.properties.notes && (
-                    <div className="mt-1 text-xs italic text-gray-500">
+                    <div className="mt-2 whitespace-pre-line text-xs text-gray-700">
                       {f.properties.notes}
                     </div>
                   )}

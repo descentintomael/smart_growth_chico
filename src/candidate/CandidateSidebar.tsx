@@ -27,25 +27,58 @@ export function CandidateSidebar() {
 
       <div>
         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-          Status legend
+          Marker shape
+        </h3>
+        <ul className="mt-2 space-y-1.5 text-xs">
+          <li className="flex items-center gap-2">
+            <span
+              className="inline-block h-3 w-3 rounded-full"
+              style={{ backgroundColor: '#374151' }}
+            />
+            <span>Filled = inside District 6</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span
+              className="inline-block h-3 w-3 rounded-full border-2"
+              style={{ borderColor: '#374151' }}
+            />
+            <span>Ring = adjacency zone (≤1 mi from D6 — walking catchment may reach D6 residents)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+          Hosting status
         </h3>
         <ul className="mt-2 space-y-1 text-xs">
           <li className="flex items-center gap-2">
-            <span className="inline-block h-2.5 w-2.5 rounded-full bg-gray-400" />
-            <span>Solid = candidate worth pursuing</span>
+            <span className="inline-block rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide" style={{ backgroundColor: '#dcfce7', color: '#166534' }}>
+              confirmed
+            </span>
+            <span className="text-gray-600">Evidence of rentability + access</span>
           </li>
           <li className="flex items-center gap-2">
-            <span className="inline-block h-2.5 w-2.5 rounded-full bg-gray-400 opacity-40" />
-            <span>Faded = auto-excluded</span>
+            <span className="inline-block rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide" style={{ backgroundColor: '#fef9c3', color: '#854d0e' }}>
+              likely
+            </span>
+            <span className="text-gray-600">Strong signals but a call needed</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-block rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide" style={{ backgroundColor: '#e5e7eb', color: '#374151' }}>
+              needs verification
+            </span>
+            <span className="text-gray-600">No public info; phone call required</span>
           </li>
         </ul>
       </div>
 
       <div className="mt-auto rounded bg-amber-50 p-3 text-xs text-amber-900">
-        <strong>Preview build.</strong> Venues are an initial OSM dump filtered to
-        District 6, with national chains auto-excluded. Capacity, accessibility,
-        and political-event policy still need confirmation per venue. Walk/bike
-        catchments and demographics are not yet wired in.
+        <strong>Preview build.</strong> Venues sourced from OpenStreetMap, filtered for
+        chains/gyms/fast-food, enriched by website assessments where available.
+        OSM coverage in east Chico is incomplete — additions from the candidate's
+        local knowledge are welcome. Walk/bike catchments and demographic overlays
+        are not yet wired in.
       </div>
     </aside>
   )
