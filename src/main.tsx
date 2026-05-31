@@ -6,6 +6,7 @@ import { MapPage } from './pages/MapPage'
 import { MethodologyPage } from './pages/MethodologyPage'
 import { CandidateApp } from './candidate/CandidateApp'
 import { ForumApp } from './candidate/ForumApp'
+import { PrintApp } from './print/PrintApp'
 import './styles/globals.css'
 
 const rootElement = document.getElementById('root')
@@ -21,6 +22,9 @@ createRoot(rootElement).render(
 
         {/* Single-district candidate map. URL is /candidate/district-6, etc. */}
         <Route path="candidate/:slug" element={<CandidateApp />} />
+
+        {/* Print/poster map for district-6 — chrome-free layout intended for export. */}
+        <Route path="print/district-6" element={<PrintApp />} />
 
         <Route element={<Layout />}>
           <Route index element={<MapPage />} />
