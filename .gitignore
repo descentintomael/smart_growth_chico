@@ -26,6 +26,9 @@ Thumbs.db
 .env.local
 .env.*.local
 
+# Local API response cache (Google Places etc.) — keep out of git
+.cache/
+
 # Testing
 coverage/
 
