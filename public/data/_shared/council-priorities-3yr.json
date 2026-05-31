@@ -1,0 +1,874 @@
+{
+  "generated": "2026-05-31 16:21:01.357890",
+  "source": "Chico City Council meeting transcripts + LLM-extracted advocacy_intel",
+  "source_db": "/Users/seantodd/Projects/council-meeting-analyzer/data/meetings.db",
+  "date_range": {
+    "from": "2023-01-01",
+    "to_inclusive": "2025-12-02"
+  },
+  "total_agenda_items": 1079,
+  "topic_totals_3yr": {
+    "ceremonial_admin": 269,
+    "budget_finance": 127,
+    "downtown_parking_vitality": 123,
+    "housing_supply_zoning": 100,
+    "parks_bidwell": 81,
+    "active_transportation": 81,
+    "homelessness": 77,
+    "elections_governance": 71,
+    "infrastructure_streets_roads": 64,
+    "public_safety_police": 59,
+    "labor_personnel": 55,
+    "tenant_protections_code_enforce": 39,
+    "litigation_closed_session": 38,
+    "infrastructure_sewer_water": 33,
+    "fire_emergency": 30,
+    "cannabis_alcohol_business": 28,
+    "climate_sustainability": 19,
+    "sanctuary_immigration": 7
+  },
+  "topic_counts_by_year": {
+    "ceremonial_admin": {
+      "2025": 89,
+      "2024": 90,
+      "2023": 90
+    },
+    "tenant_protections_code_enforce": {
+      "2025": 11,
+      "2024": 15,
+      "2023": 13
+    },
+    "parks_bidwell": {
+      "2025": 62,
+      "2024": 10,
+      "2023": 9
+    },
+    "labor_personnel": {
+      "2025": 14,
+      "2024": 18,
+      "2023": 23
+    },
+    "housing_supply_zoning": {
+      "2025": 30,
+      "2024": 32,
+      "2023": 38
+    },
+    "active_transportation": {
+      "2025": 46,
+      "2024": 13,
+      "2023": 22
+    },
+    "homelessness": {
+      "2025": 24,
+      "2024": 21,
+      "2023": 32
+    },
+    "downtown_parking_vitality": {
+      "2025": 51,
+      "2024": 40,
+      "2023": 32
+    },
+    "elections_governance": {
+      "2025": 21,
+      "2024": 21,
+      "2023": 29
+    },
+    "cannabis_alcohol_business": {
+      "2025": 6,
+      "2024": 16,
+      "2023": 6
+    },
+    "budget_finance": {
+      "2025": 46,
+      "2024": 24,
+      "2023": 57
+    },
+    "infrastructure_sewer_water": {
+      "2025": 8,
+      "2024": 11,
+      "2023": 14
+    },
+    "infrastructure_streets_roads": {
+      "2025": 29,
+      "2024": 15,
+      "2023": 20
+    },
+    "public_safety_police": {
+      "2025": 22,
+      "2024": 14,
+      "2023": 23
+    },
+    "fire_emergency": {
+      "2025": 24,
+      "2024": 5,
+      "2023": 1
+    },
+    "sanctuary_immigration": {
+      "2025": 5,
+      "2023": 2
+    },
+    "climate_sustainability": {
+      "2025": 6,
+      "2024": 3,
+      "2023": 10
+    },
+    "litigation_closed_session": {
+      "2025": 16,
+      "2024": 10,
+      "2023": 12
+    }
+  },
+  "examples_per_topic": {
+    "ceremonial_admin": [
+      {
+        "date": "2025-12-02",
+        "item": "1.2",
+        "title": "1.2. Invocation -\u00a0 Pastor Heath Jarrett, Living Hope Fellowship"
+      },
+      {
+        "date": "2025-12-02",
+        "item": "1.3",
+        "title": "1.3. Pledge of Allegiance to the Flag"
+      },
+      {
+        "date": "2025-12-02",
+        "item": "1.4",
+        "title": "1.4. Roll Call"
+      },
+      {
+        "date": "2025-12-02",
+        "item": "1.5",
+        "title": "1.5. Moment of Silence in honor of\u00a0 Maureen Kirk - Former Bidwell Park and Playground Commissioner, Councilmember, Vice "
+      },
+      {
+        "date": "2025-12-02",
+        "item": "1.6",
+        "title": "1.6. Proclamation - Arbor Day"
+      },
+      {
+        "date": "2025-12-02",
+        "item": "1.7",
+        "title": "1.7. December 02, 2025, Closed Session Announcement - City\u00a0Manager Mark SorensenCity Manager Mark Sorensen announced tha"
+      },
+      {
+        "date": "2025-11-18",
+        "item": "1.3",
+        "title": "1.3. Pledge of Allegiance to the Flag"
+      },
+      {
+        "date": "2025-11-18",
+        "item": "1.4",
+        "title": "1.4. Roll Call"
+      }
+    ],
+    "tenant_protections_code_enforce": [
+      {
+        "date": "2025-12-02",
+        "item": "1.5",
+        "title": "1.5. Moment of Silence in honor of\u00a0 Maureen Kirk - Former Bidwell Park and Playground Commissioner, Councilmember, Vice "
+      },
+      {
+        "date": "2025-09-16",
+        "item": "4.2",
+        "title": "4.2. PUBLIC HEARING OF THE 2024-2025 CONSOLIDATED ANNUAL PERFORMANCE AND EVALUATION REPORT (CAPER) FOR THE FEDERAL COMMU"
+      },
+      {
+        "date": "2025-05-20",
+        "item": "6",
+        "title": "6. Community Development Department"
+      },
+      {
+        "date": "2025-05-06",
+        "item": "4.1",
+        "title": "4.1. HEARING ON RESOLUTION DECLARING WEEDS, RUBBISH, REFUSE, AND DEBRIS TO BE A PUBLIC NUISANCE - ORDERING ABATEMENT AND"
+      },
+      {
+        "date": "2025-04-15",
+        "item": "5.3",
+        "title": "5.3. COUNCILMEMBER HAWLEY REQUEST - CODE ENFORCEMENT PENALTIES At its meeting of 3/18/25, the Council voted to agendize "
+      },
+      {
+        "date": "2025-04-01",
+        "item": "2",
+        "title": "2. CONSENT AGENDA"
+      },
+      {
+        "date": "2025-04-01",
+        "item": "2.1",
+        "title": "2.1. ORDINANCE NO. 2609 - ORDINANCE OF THE CITY OF CHICO AMENDING CHAPTER 1.14 TO THE CITY OF CHICO MUNICIPAL CODE ADDIN"
+      },
+      {
+        "date": "2025-04-01",
+        "item": "5.4",
+        "title": "5.4. INTERNAL AFFAIRS COMMITTEE RECOMMENDATION - TENANT PROTECTIONS At its meeting of 3/3/25 the Committee received an u"
+      }
+    ],
+    "parks_bidwell": [
+      {
+        "date": "2025-12-02",
+        "item": "1.5",
+        "title": "1.5. Moment of Silence in honor of\u00a0 Maureen Kirk - Former Bidwell Park and Playground Commissioner, Councilmember, Vice "
+      },
+      {
+        "date": "2025-12-02",
+        "item": "6.4",
+        "title": "6.4. COUNCILMEMBER REQUESTS - Pursuant to AP&P 10-10, Councilmembers may verbally request an\u00a0 item to be agendized at a "
+      },
+      {
+        "date": "2025-10-27",
+        "item": "3",
+        "title": "3. PUBLIC COMMENTS \u2013 Members of the public may address the BPPC at this time on any matter not already listed on the age"
+      },
+      {
+        "date": "2025-10-27",
+        "item": "5.1",
+        "title": "5.1. REQUEST TO PLACE INTERPRETIVE PLAQUES ON PILLARS AT 1 MILE ENTRANCES \n\nThe Chico Heritage Association would like to"
+      },
+      {
+        "date": "2025-10-27",
+        "item": "5.2",
+        "title": "5.2. PERMIT TO HOLD SPRING AND LATE SUMMER CONCERTS AT CHILDREN'S PARK. \n \nRyan Sanders (Applicant) would like to host s"
+      },
+      {
+        "date": "2025-10-27",
+        "item": "5.3",
+        "title": "5.3. BIDWELL PARK MASTER MANAGEMENT PLAN AND DEVELOPMENT OF FUTURE PROJECT LIST \n\nAt the 8/25/25 BPPC meeting, the P&NRM"
+      },
+      {
+        "date": "2025-10-27",
+        "item": "6",
+        "title": "6. REPORTS AND COMMUNICATIONS   Items provided for the Commission\u2019s information only. No action can be taken on any of t"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.3",
+        "title": "5.3.\tSOUTH PARK DRIVE - ACCESS TO CAPER ACRES CLARIFICATION \n\nStaff requests Council direction on whether to retain the "
+      }
+    ],
+    "labor_personnel": [
+      {
+        "date": "2025-12-02",
+        "item": "1.7",
+        "title": "1.7. December 02, 2025, Closed Session Announcement - City\u00a0Manager Mark SorensenCity Manager Mark Sorensen announced tha"
+      },
+      {
+        "date": "2025-11-18",
+        "item": "5.4",
+        "title": "5.4. CONFIRMATION OF ASSISTANT CITY MANAGER Section 605 of the City Charter states that the appointment of department he"
+      },
+      {
+        "date": "2025-10-21",
+        "item": "1.5",
+        "title": "1.5.October 21, 2025, Closed Session Announcement - City Attorney John LamCity Attorney Lam announced that Council met i"
+      },
+      {
+        "date": "2025-10-21",
+        "item": "5.3",
+        "title": "5.3.\tCONSIDERATION OF 9-17-25 FINANCE COMMITTEE REPORT AND RECOMMENDATIONS"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "1.5",
+        "title": "1.5. October 7, 2025, Closed Session Announcement - City Attorney John LamCity Attorney Lam announced that Council met i"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.4",
+        "title": "5.4. CONFIRMATION OF APPOINTMENT OF INTERIM FIRE CHIEF \n\nSection 605 of the City Charter states that the appointment of "
+      },
+      {
+        "date": "2025-10-07",
+        "item": "6.2",
+        "title": "6.2. SUNSHINING OF DRAFT MOU - CHICO PUBLIC SAFETY ASSOCIATION (CPSA) - Information only \n\nPursuant to the \"Sunshine and"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "6.3",
+        "title": "6.3. COUNCILMEMBER REQUESTS - Pursuant to AP&P 10-10, Councilmembers may verbally request an  item to be agendized at a "
+      }
+    ],
+    "housing_supply_zoning": [
+      {
+        "date": "2025-12-02",
+        "item": "3",
+        "title": "3. PUBLIC COMMENTS -\u00a0Members of the public addressed the Council at this time on matters not already listed on the agend"
+      },
+      {
+        "date": "2025-12-02",
+        "item": "5.1",
+        "title": "5.1. INTRODUCTION OF AN ORDINANCE ADOPTING THE 2025 EDITION OF THE CALIFORNIA BUILDING STANDARDS CODE AND LOCAL AMENDMEN"
+      },
+      {
+        "date": "2025-10-21",
+        "item": "4.1",
+        "title": "4.1. HEARING ORDERING FORMATION OF CHICO MAINTENANCE DISTRICT A55 - AUTUMN LEAF ESTATES SUBDIVISION A condition of appro"
+      },
+      {
+        "date": "2025-10-21",
+        "item": "5.1",
+        "title": "5.1.\tENHANCEMENTS TO THE ALTERNATE CAMPING SITE - Verbal report \n\nAt its meeting of 10/7/25, the Council directed staff "
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.1",
+        "title": "5.1.\tPRESENTATION ON ALTERNATE CAMPING SITES by Erik Gustafson, Public Works Operations & Maintenance Director \n\nAt its "
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.2",
+        "title": "5.2.\tGROWTH AND COMMUNITY DEVELOPMENT AD HOC COMMITTEE UPDATE\n \nThe Committee will review its recommendations and staff "
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.5",
+        "title": "5.5. \tMAYOR REYNOLDS REQUEST - TINY HOMES PLACED ON CHURCH LOTS \n\nAt its meeting of 9/2/25, the Council voted to agendiz"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "4.2",
+        "title": "4.2. PUBLIC HEARING OF THE 2024-2025 CONSOLIDATED ANNUAL PERFORMANCE AND EVALUATION REPORT (CAPER) FOR THE FEDERAL COMMU"
+      }
+    ],
+    "active_transportation": [
+      {
+        "date": "2025-12-02",
+        "item": "3",
+        "title": "3. PUBLIC COMMENTS -\u00a0Members of the public addressed the Council at this time on matters not already listed on the agend"
+      },
+      {
+        "date": "2025-12-02",
+        "item": "5.1",
+        "title": "5.1. INTRODUCTION OF AN ORDINANCE ADOPTING THE 2025 EDITION OF THE CALIFORNIA BUILDING STANDARDS CODE AND LOCAL AMENDMEN"
+      },
+      {
+        "date": "2025-12-02",
+        "item": "6.4",
+        "title": "6.4. COUNCILMEMBER REQUESTS - Pursuant to AP&P 10-10, Councilmembers may verbally request an\u00a0 item to be agendized at a "
+      },
+      {
+        "date": "2025-11-18",
+        "item": "5.2",
+        "title": "5.2. CONSIDERATION OF A MEDIAN AND ROUNDABOUT SAFETY ORDINANCE Staff recommends introducing an ordinance that specifical"
+      },
+      {
+        "date": "2025-10-27",
+        "item": "5.1",
+        "title": "5.1. REQUEST TO PLACE INTERPRETIVE PLAQUES ON PILLARS AT 1 MILE ENTRANCES \n\nThe Chico Heritage Association would like to"
+      },
+      {
+        "date": "2025-10-27",
+        "item": "6.1",
+        "title": "6.1. Parks Division Report \u2013 Verbal Report, Shane Romain, Park and Natural Resources Manager."
+      },
+      {
+        "date": "2025-10-21",
+        "item": "5.6",
+        "title": "5.6.\u00a0 COUNCILMEMBER WINSLOW REQUEST - BIKE AND SCOOTER SHARING PROGRAM At its meeting of 9/16/25, the Council voted to a"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.3",
+        "title": "5.3.\tSOUTH PARK DRIVE - ACCESS TO CAPER ACRES CLARIFICATION \n\nStaff requests Council direction on whether to retain the "
+      }
+    ],
+    "homelessness": [
+      {
+        "date": "2025-12-02",
+        "item": "3",
+        "title": "3. PUBLIC COMMENTS -\u00a0Members of the public addressed the Council at this time on matters not already listed on the agend"
+      },
+      {
+        "date": "2025-12-02",
+        "item": "5.1",
+        "title": "5.1. INTRODUCTION OF AN ORDINANCE ADOPTING THE 2025 EDITION OF THE CALIFORNIA BUILDING STANDARDS CODE AND LOCAL AMENDMEN"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.1",
+        "title": "5.1.\tPRESENTATION ON ALTERNATE CAMPING SITES by Erik Gustafson, Public Works Operations & Maintenance Director \n\nAt its "
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.5",
+        "title": "5.5. \tMAYOR REYNOLDS REQUEST - TINY HOMES PLACED ON CHURCH LOTS \n\nAt its meeting of 9/2/25, the Council voted to agendiz"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "4.2",
+        "title": "4.2. PUBLIC HEARING OF THE 2024-2025 CONSOLIDATED ANNUAL PERFORMANCE AND EVALUATION REPORT (CAPER) FOR THE FEDERAL COMMU"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "5.5",
+        "title": "5.5.\tCOUNCILMEMBER O'BRIEN REQUEST - ALTERNATE SITE \n\nAt its meeting of 9/2/25, the Council voted to agendize a discussi"
+      },
+      {
+        "date": "2025-08-25",
+        "item": "5.2",
+        "title": "5.2. PERMIT TO HOLD FOREST DAY PROGRAMS AT FIVE MILE EAST PICNIC AREA FROM SEPTEMBER 10, 2025 TO APRIL 29, 2026.  \nBetha"
+      },
+      {
+        "date": "2025-08-25",
+        "item": "6.1",
+        "title": "6.1. Parks Division Report \u2013 Verbal Report, Shane Romain, Park and Natural Resources Manager."
+      }
+    ],
+    "downtown_parking_vitality": [
+      {
+        "date": "2025-12-02",
+        "item": "5.1",
+        "title": "5.1. INTRODUCTION OF AN ORDINANCE ADOPTING THE 2025 EDITION OF THE CALIFORNIA BUILDING STANDARDS CODE AND LOCAL AMENDMEN"
+      },
+      {
+        "date": "2025-11-18",
+        "item": "2",
+        "title": "2. CONSENT AGENDA - Item 2.5 was removed from the agenda for further discussion by Council."
+      },
+      {
+        "date": "2025-11-18",
+        "item": "2.5",
+        "title": "2.5. ANNUAL HOLIDAY PARKING METER FORGIVENESS PROGRAM The City Council is being requested to permanently authorize the a"
+      },
+      {
+        "date": "2025-11-18",
+        "item": "5.1",
+        "title": "5.1. MID-YEAR FINANCIAL UPDATE  The Administrative Services Director will provide a presentation discussing the City of "
+      },
+      {
+        "date": "2025-11-18",
+        "item": null,
+        "title": "B. PARKLET ANALYSIS AND DISCUSSION The Committee met and discussed the status of parklets downtown."
+      },
+      {
+        "date": "2025-11-18",
+        "item": null,
+        "title": "B. PARKLET ANALYSIS AND DISCUSSIONCouncilmember van Overbeek recused himself from this item."
+      },
+      {
+        "date": "2025-10-27",
+        "item": "5.2",
+        "title": "5.2. PERMIT TO HOLD SPRING AND LATE SUMMER CONCERTS AT CHILDREN'S PARK. \n \nRyan Sanders (Applicant) would like to host s"
+      },
+      {
+        "date": "2025-10-21",
+        "item": "5.6",
+        "title": "5.6.\u00a0 COUNCILMEMBER WINSLOW REQUEST - BIKE AND SCOOTER SHARING PROGRAM At its meeting of 9/16/25, the Council voted to a"
+      }
+    ],
+    "elections_governance": [
+      {
+        "date": "2025-12-02",
+        "item": "6.4",
+        "title": "6.4. COUNCILMEMBER REQUESTS - Pursuant to AP&P 10-10, Councilmembers may verbally request an\u00a0 item to be agendized at a "
+      },
+      {
+        "date": "2025-11-18",
+        "item": "5.4",
+        "title": "5.4. CONFIRMATION OF ASSISTANT CITY MANAGER Section 605 of the City Charter states that the appointment of department he"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.4",
+        "title": "5.4. CONFIRMATION OF APPOINTMENT OF INTERIM FIRE CHIEF \n\nSection 605 of the City Charter states that the appointment of "
+      },
+      {
+        "date": "2025-10-07",
+        "item": "6.3",
+        "title": "6.3. COUNCILMEMBER REQUESTS - Pursuant to AP&P 10-10, Councilmembers may verbally request an  item to be agendized at a "
+      },
+      {
+        "date": "2025-09-16",
+        "item": "6.3",
+        "title": "6.3. COUNCILMEMBER REQUESTS - Pursuant to AP&P 10-10, Councilmembers may verbally request an  item to be agendized at a "
+      },
+      {
+        "date": "2025-08-19",
+        "item": "6.2",
+        "title": "6.2. COUNCILMEMBER REQUESTS - Pursuant to AP&P 10-10, Councilmembers may verbally request an\u00a0 item to be agendized at a "
+      },
+      {
+        "date": "2025-07-08",
+        "item": "6.3",
+        "title": "6.3. COUNCILMEMBER REQUESTS - Pursuant to AP&P 10-10, Councilmembers may verbally request an  item to be agendized at a "
+      },
+      {
+        "date": "2025-06-17",
+        "item": "4.1",
+        "title": "4.1. APPEAL HEARING OF AIRPORT COMMISSION APPROVAL OF MINUTE ORDER 01-25 FOR LEASE\u00a0 OF REAL PROPERTY AT 100 LOCKHEED (SP"
+      }
+    ],
+    "cannabis_alcohol_business": [
+      {
+        "date": "2025-11-18",
+        "item": "2",
+        "title": "2. CONSENT AGENDA - Item 2.5 was removed from the agenda for further discussion by Council."
+      },
+      {
+        "date": "2025-10-21",
+        "item": "5.4",
+        "title": "5.4.\tCONSIDERATION OF 10-06-25 INTERNAL AFFAIRS COMMITTEE REPORT AND RECOMMENDATION"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "2",
+        "title": "2) CHICO MUNICIPAL CODE CHAPTER 5.44 AMENDMENTS - MASSAGE ORDINANCE (WAIVERS)  \n\nThe Committee discussed the proposed ch"
+      },
+      {
+        "date": "2025-08-19",
+        "item": "4.2",
+        "title": "4.2. INTRODUCTION OF AN ORDINANCE REGULATING MASSAGE ESTABLISHMENTS (CMC CHAPTER 5.44) At its November 19, 2024 meeting,"
+      },
+      {
+        "date": "2025-03-18",
+        "item": "5.2",
+        "title": "5.2. DOWNTOWN CHICO PROPERTY BUSINESS IMPROVEMENT ASSESSMENT INCREASE The Downtown Chico Property Business Improvement D"
+      },
+      {
+        "date": "2025-03-04",
+        "item": "5.1",
+        "title": "5.1. CONSIDERATION OF AN ORDINANCE AMENDING CHAPTER 9.29 RELATED TO SYRINGE EXCHANGE PROGRAMS The proposed ordinance ame"
+      },
+      {
+        "date": "2024-11-19",
+        "item": "1.5",
+        "title": "1.5. November 19, 2024, Closed Session Announcement - City Attorney John LamThe City Attorney announced that Council met"
+      },
+      {
+        "date": "2024-11-19",
+        "item": "5.3",
+        "title": "5.3. INTERNAL AFFAIRS COMMITTEE RECOMMENDATION - MASSAGE ESTABLISHMENTS At its meeting of 11-04-24, the Committee consid"
+      }
+    ],
+    "budget_finance": [
+      {
+        "date": "2025-11-18",
+        "item": "5.1",
+        "title": "5.1. MID-YEAR FINANCIAL UPDATE  The Administrative Services Director will provide a presentation discussing the City of "
+      },
+      {
+        "date": "2025-10-21",
+        "item": "5.3",
+        "title": "5.3.\tCONSIDERATION OF 9-17-25 FINANCE COMMITTEE REPORT AND RECOMMENDATIONS"
+      },
+      {
+        "date": "2025-10-21",
+        "item": "6.3",
+        "title": "6.3. COUNCILMEMBER REQUESTS -\u00a0None."
+      },
+      {
+        "date": "2025-09-16",
+        "item": "3",
+        "title": "3) 2027 ROAD REHABILITATION PROJECT - FLORAL AVENUE - PARKING RESTRICTION\t\t  \n\nThe Committee discussed the proposed proj"
+      },
+      {
+        "date": "2025-08-19",
+        "item": "1.6",
+        "title": "1.6.\tSales Tax Presentation by HdL Companies \u2013 Ken Nordhoff, Principal"
+      },
+      {
+        "date": "2025-08-19",
+        "item": "4.1",
+        "title": "4.1. TEFRA HEARING FOR CONDUIT FINANCING FOR THE GREENFIELD FAMILY APARTMENTS PROJECT (135 GREENFIELD DR.)\u00a0 Conducted a "
+      },
+      {
+        "date": "2025-08-19",
+        "item": "5.3",
+        "title": "5.3. INFORMATIONAL UPDATE - DISCUSSIONS WITH CARD REGARDING LEASE, OPERATION AND MANAGEMENT OF SELECT CITY PARKS At its "
+      },
+      {
+        "date": "2025-07-08",
+        "item": "5.1",
+        "title": "5.1. CONSIDERATION OF A RESOLUTION TO RESCIND RESOLUTION NO. 07-25, APPROVE REVISED PBID BUDGET, APPROVE REVISED ASSESSM"
+      }
+    ],
+    "infrastructure_sewer_water": [
+      {
+        "date": "2025-11-18",
+        "item": "5.1",
+        "title": "5.1. MID-YEAR FINANCIAL UPDATE  The Administrative Services Director will provide a presentation discussing the City of "
+      },
+      {
+        "date": "2025-11-18",
+        "item": null,
+        "title": "A. CHICO MUNICIPAL CODE TITLE 18R AMENDMENTS\u00a0 The Committee met and discussed CMC amendments that were referred to the I"
+      },
+      {
+        "date": "2025-10-21",
+        "item": "5.2",
+        "title": "5.2.\tCONSIDERATION OF INTRODUCTION OF ORDINANCES AND RESOLUTIONS AMENDING CHICO MUNICIPAL CODE (CMC) TITLES 10, 14, 16, "
+      },
+      {
+        "date": "2025-09-16",
+        "item": "4.1",
+        "title": "4.1. HEARING ON AN APPEAL OF PROTEST DENIAL - PRIMARY CLARIFIERS REHABILITATION PROJECT \n\nThis is an appeal by Lorang Br"
+      },
+      {
+        "date": "2025-05-20",
+        "item": "7",
+        "title": "7. Public Works \u2013 Operations & Maintenance"
+      },
+      {
+        "date": "2025-05-20",
+        "item": "8",
+        "title": "8. Public Works \u2013 Engineering"
+      },
+      {
+        "date": "2025-04-15",
+        "item": "5.2",
+        "title": "5.2. 2025 SANITARY SEWER MASTER PLAN UPDATE The 2025 Sanitary Sewer Master Plan Update (SSMP) was updated to provide a c"
+      },
+      {
+        "date": "2025-01-28",
+        "item": "5.4",
+        "title": "5.4. STORM WATER MASTER PLAN The Storm Water Master Plan (SWMP) has been updated to provide a comprehensive report of th"
+      }
+    ],
+    "infrastructure_streets_roads": [
+      {
+        "date": "2025-11-18",
+        "item": "5.2",
+        "title": "5.2. CONSIDERATION OF A MEDIAN AND ROUNDABOUT SAFETY ORDINANCE Staff recommends introducing an ordinance that specifical"
+      },
+      {
+        "date": "2025-10-21",
+        "item": "5.6",
+        "title": "5.6.\u00a0 COUNCILMEMBER WINSLOW REQUEST - BIKE AND SCOOTER SHARING PROGRAM At its meeting of 9/16/25, the Council voted to a"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "3",
+        "title": "3. PUBLIC COMMENTS - Members of the public may address the Council at this time on any matter not already listed on the "
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.3",
+        "title": "5.3.\tSOUTH PARK DRIVE - ACCESS TO CAPER ACRES CLARIFICATION \n\nStaff requests Council direction on whether to retain the "
+      },
+      {
+        "date": "2025-09-16",
+        "item": "4.2",
+        "title": "4.2. PUBLIC HEARING OF THE 2024-2025 CONSOLIDATED ANNUAL PERFORMANCE AND EVALUATION REPORT (CAPER) FOR THE FEDERAL COMMU"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "3",
+        "title": "3) 2027 ROAD REHABILITATION PROJECT - FLORAL AVENUE - PARKING RESTRICTION\t\t  \n\nThe Committee discussed the proposed proj"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "4",
+        "title": "4) LOWERING THE SPEED LIMITS IN SPECIFIED CORRIDORS (Information Only)  \n\nDirector Ottoboni reported that there was no l"
+      },
+      {
+        "date": "2025-08-25",
+        "item": "6.2",
+        "title": "6.2. Street Tree Division Report \u2013 Verbal Report, Richie Bamlet, Urban Forest Manager."
+      }
+    ],
+    "public_safety_police": [
+      {
+        "date": "2025-11-18",
+        "item": "5.2",
+        "title": "5.2. CONSIDERATION OF A MEDIAN AND ROUNDABOUT SAFETY ORDINANCE Staff recommends introducing an ordinance that specifical"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "1.2",
+        "title": "1.2. Invocation - Police Chaplain Michael Boyle"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "5.5",
+        "title": "5.5.\tCOUNCILMEMBER O'BRIEN REQUEST - ALTERNATE SITE \n\nAt its meeting of 9/2/25, the Council voted to agendize a discussi"
+      },
+      {
+        "date": "2025-07-28",
+        "item": "6.2",
+        "title": "6.2. Street Tree Division Report \u2013 Verbal Report, Richie Bamlet, Urban Forest Manager."
+      },
+      {
+        "date": "2025-07-08",
+        "item": "1.2",
+        "title": "1.2. Invocation - Chaplain MaryAnn Hawkins"
+      },
+      {
+        "date": "2025-07-08",
+        "item": "2",
+        "title": "2. CONSENT AGENDA"
+      },
+      {
+        "date": "2025-07-08",
+        "item": "3",
+        "title": "3. PUBLIC COMMENTS - Members of the public addressed the Council on any matters not already listed on the agenda and wit"
+      },
+      {
+        "date": "2025-07-08",
+        "item": "5.2",
+        "title": "5.2.\tINTERNAL AFFAIRS COMMITTEE REPORT APPROVAL AND ACTION \n\nAt its meeting of 06/02/2025 the Internal Affairs Committee"
+      }
+    ],
+    "fire_emergency": [
+      {
+        "date": "2025-10-27",
+        "item": "5.3",
+        "title": "5.3. BIDWELL PARK MASTER MANAGEMENT PLAN AND DEVELOPMENT OF FUTURE PROJECT LIST \n\nAt the 8/25/25 BPPC meeting, the P&NRM"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.4",
+        "title": "5.4. CONFIRMATION OF APPOINTMENT OF INTERIM FIRE CHIEF \n\nSection 605 of the City Charter states that the appointment of "
+      },
+      {
+        "date": "2025-07-28",
+        "item": "5.2",
+        "title": "5.2. PRESENTATION ON SIERRA NEVADA CONSERVANCY (SNC) WILDFIRE AND FOREST RESILIENCE GRANT PROGRAM.\n\nEli Goodsell will pr"
+      },
+      {
+        "date": "2025-06-03",
+        "item": "5.4",
+        "title": "5.4. COUNCILMEMBER O'BRIEN REQUEST - CANCER SCREENING At its meeting of 5/20/25, the Council voted to waive its rules, a"
+      },
+      {
+        "date": "2025-05-20",
+        "item": "4",
+        "title": "4. Fire & Rescue Department"
+      },
+      {
+        "date": "2025-05-20",
+        "item": "6",
+        "title": "6. Community Development Department"
+      },
+      {
+        "date": "2025-05-20",
+        "item": null,
+        "title": "B. RESOLUTION TO ADOPT THE FY2025-26 PROPOSED ANNUAL BUDGET The 2025-26 Proposed Budget\u00a0was presented and discussed by t"
+      },
+      {
+        "date": "2025-05-20",
+        "item": "5.1",
+        "title": "5.1. CONSIDERATION OF A RESOLUTION AMENDING THE CHICO MUNICIPAL CODE CHAPTER 11R.32 ADDING SECTION 11R.32.140 ENTITLED M"
+      }
+    ],
+    "sanctuary_immigration": [
+      {
+        "date": "2025-10-21",
+        "item": "3",
+        "title": "3. PUBLIC COMMENTS - Members of the public addressed the Council on any matter not already listed on the agenda and with"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "3",
+        "title": "3. PUBLIC COMMENTS - Members of the public may address the Council at this time on any matter not already listed on the "
+      },
+      {
+        "date": "2025-08-19",
+        "item": "3",
+        "title": "3. PUBLIC COMMENTS - Members of the public addressed the Council on matters not already listed on the agenda and were wi"
+      },
+      {
+        "date": "2025-05-20",
+        "item": "2",
+        "title": "2. CONSENT AGENDAAddressing the Council on the Consent Agenda were Allison Boyer, Greg Scott, Loree Monroe, and Bruce Mc"
+      },
+      {
+        "date": "2025-05-20",
+        "item": "2.5",
+        "title": "2.5. DOWNTOWN CHICO ICE RINK - 3-YEAR CONTRACT CONSIDERATION - At the request of Councilmember Winslow, this item was re"
+      },
+      {
+        "date": "2023-08-01",
+        "item": "5.3",
+        "title": "5.3. 2023 DOWNTOWN CHICO ICE RINK IN THE PLAZA CONSIDERATION The 'Chico Ice Rink in the Plaza' program first started in "
+      },
+      {
+        "date": "2023-03-07",
+        "item": "3",
+        "title": "3. BUSINESS FROM THE FLOOR - Members of the public may address the Council at this time on any matter not already listed"
+      }
+    ],
+    "climate_sustainability": [
+      {
+        "date": "2025-10-21",
+        "item": "5.2",
+        "title": "5.2.\tCONSIDERATION OF INTRODUCTION OF ORDINANCES AND RESOLUTIONS AMENDING CHICO MUNICIPAL CODE (CMC) TITLES 10, 14, 16, "
+      },
+      {
+        "date": "2025-06-03",
+        "item": "4.2",
+        "title": "4.2. HEARING TO REVIEW AND APPROVE THE 2025-2029 CONSOLIDATED PLAN AND 2025-2026 ANNUAL ACTION PLAN, INCLUDING THE ANALY"
+      },
+      {
+        "date": "2025-05-20",
+        "item": "6",
+        "title": "6. Community Development Department"
+      },
+      {
+        "date": "2025-05-19",
+        "item": "6",
+        "title": "6. REPORTS AND COMMUNICATIONS   Items provided for the Commission\u2019s information only. No action can be taken on any of t"
+      },
+      {
+        "date": "2025-04-15",
+        "item": "4.2",
+        "title": "4.2. RESIDENTIAL READINESS AMENDMENTS PHASE TWO - CODE AMENDMENT 25-01\u00a0 Planning staff and the Planning Commission recom"
+      },
+      {
+        "date": "2025-01-28",
+        "item": "5.3",
+        "title": "5.3. CONSIDERATION OF AN ORDINANCE TO JOIN PIONEER ENERGY CCA In 2024 representatives from Pioneer Community Energy enga"
+      },
+      {
+        "date": "2024-04-16",
+        "item": "1.7",
+        "title": "1.7.\tPresentation - Genesis Two-Year Status Report by Amber Abney-Bass, Executive Director of the Jesus Center"
+      },
+      {
+        "date": "2024-03-05",
+        "item": "5.1",
+        "title": "5.1. CONSIDERATION OF APPROVAL OF THE DOWNTOWN CHICO COMPLETE STREETS IMPROVEMENTS PROJECT The Public Works Director-Eng"
+      }
+    ],
+    "litigation_closed_session": [
+      {
+        "date": "2025-10-07",
+        "item": "1.5",
+        "title": "1.5. October 7, 2025, Closed Session Announcement - City Attorney John LamCity Attorney Lam announced that Council met i"
+      },
+      {
+        "date": "2025-10-07",
+        "item": "5.1",
+        "title": "5.1.\tPRESENTATION ON ALTERNATE CAMPING SITES by Erik Gustafson, Public Works Operations & Maintenance Director \n\nAt its "
+      },
+      {
+        "date": "2025-09-16",
+        "item": "1.5",
+        "title": "1.5. September 16, 2025, Closed Session Announcement - City Attorney John LamCity Attorney Lam announced that Council me"
+      },
+      {
+        "date": "2025-09-16",
+        "item": "5.5",
+        "title": "5.5.\tCOUNCILMEMBER O'BRIEN REQUEST - ALTERNATE SITE \n\nAt its meeting of 9/2/25, the Council voted to agendize a discussi"
+      },
+      {
+        "date": "2025-08-19",
+        "item": "1.5",
+        "title": "1.5. August 19, 2025, Closed Session Announcement - City Attorney John Lam"
+      },
+      {
+        "date": "2025-08-19",
+        "item": "2",
+        "title": "2. CONSENT AGENDA - Item 2.1. and 2.2. were removed from the agenda for further discussion by Council."
+      },
+      {
+        "date": "2025-06-17",
+        "item": "1.5",
+        "title": "1.5.\tJune 17, 2025, Closed Session Announcement - City Attorney John Lam"
+      },
+      {
+        "date": "2025-06-03",
+        "item": "1.5",
+        "title": "1.5. June 3, 2025, Closed Session Announcement - City\u00a0Clerk Deborah PressonCity Clerk Presson announced that Council met"
+      }
+    ]
+  }
+}

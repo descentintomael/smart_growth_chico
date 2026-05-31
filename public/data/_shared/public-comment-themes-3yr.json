@@ -1,0 +1,197 @@
+{
+  "generated": "2026-05-31 16:21:01.359042",
+  "source": "Chico City Council public-comment periods (transcripts + LLM advocacy_intel extraction)",
+  "date_range": {
+    "from": "2023-01-01"
+  },
+  "quotes_per_topic": {
+    "sanctuary_immigration": [
+      {
+        "date": "2025-10-21",
+        "quote": "I'm basically just here again to ask the Republicans on the council in particular to just reconsider having a conversation about making the city a sanctuary city."
+      },
+      {
+        "date": "2025-09-16",
+        "quote": "it seems that from what I understand all the Republicans on the council voted against even having a conversation with the council about the Sanctuary city"
+      },
+      {
+        "date": "2025-08-19",
+        "quote": "I highly implore you that you use to do everything in your power to prevent any, any ICE harassment here of like the immigrants and migrants here in Chico."
+      },
+      {
+        "date": "2025-08-19",
+        "quote": "On that legal ground, every ICE officer is a human trafficker, clearly violating the laws of this community and this state."
+      }
+    ],
+    "downtown_parking_vitality": [
+      {
+        "date": "2025-09-16",
+        "quote": "downtown revitalization"
+      },
+      {
+        "date": "2024-09-17",
+        "quote": "A vibrant and safe downtown is vital for our success."
+      },
+      {
+        "date": "2024-09-17",
+        "quote": "When I talk with students, when I talk with families, when they talk about what brings them to Chico, it is this partnership, it's this environment, it is the downtown."
+      },
+      {
+        "date": "2024-03-19",
+        "quote": "Parking is already negatively impacting your business."
+      },
+      {
+        "date": "2024-03-19",
+        "quote": "Not everyone wants to ride a bike downtown, but not everyone wants to drive there either."
+      },
+      {
+        "date": "2023-11-07",
+        "quote": "Downtown Chico needs some help."
+      },
+      {
+        "date": "2023-02-07",
+        "quote": "Staff is supportive of the one space parking reduction request due to the fact the property has substandard area and access constraints, is in a mixed-use area served by public transit, and that the parking reduction is not likely to overburden public parking supplies in the vicinity."
+      }
+    ],
+    "homelessness": [
+      {
+        "date": "2025-07-08",
+        "quote": "While all of this money and energy is poured into managing this encampment the simplest request from residents go ignored."
+      },
+      {
+        "date": "2025-05-06",
+        "quote": "I think of providing housing and shelter for those in need!"
+      },
+      {
+        "date": "2024-08-20",
+        "quote": "This is a big problem. This is an international problem. There are very few countries that don't have the problem of homelessness."
+      },
+      {
+        "date": "2024-08-20",
+        "quote": "This was well thought out. I mean, people got to stay in hotels while the camp was cleared. Animal control was there to take charge of animals so that people didn't worry about their animals getting loose."
+      },
+      {
+        "date": "2024-05-07",
+        "quote": "cleaning out the endless homeless encampments and the hundreds by now thousands of tons of garbage and awful public health hazards"
+      },
+      {
+        "date": "2024-05-07",
+        "quote": "I have watched as you again and again go after the most vulnerable people in our society, even attempting to criminalize homelessness for up to a year."
+      },
+      {
+        "date": "2023-12-19",
+        "quote": "We've got a crisis here. Let's not. Why not? Let's address the blemish on Chico of the chaos at the city camp at Eaton Cohasset."
+      },
+      {
+        "date": "2023-11-07",
+        "quote": "We haven't ended homelessness yet, but we will continue our work until we get to the end of the year."
+      }
+    ],
+    "budget_finance": [
+      {
+        "date": "2025-06-17",
+        "quote": "We do spend an inordinate amount of our general fund on other things that come into our community serving a population that hovers around one thousand people."
+      },
+      {
+        "date": "2025-06-03",
+        "quote": "how many times we have to allocate such a large portion of our budget to something that has been proven time and time again to not solve the problems facing chico."
+      },
+      {
+        "date": "2025-03-18",
+        "quote": "we're super thankful for the 1 % of the tot tax that has brought us the granting program that we're able to provide funding to our amazing community arts organizations."
+      }
+    ],
+    "public_safety_police": [
+      {
+        "date": "2025-06-03",
+        "quote": "how many weapons and police do we need until it resolves the problems facing the city?"
+      },
+      {
+        "date": "2025-06-03",
+        "quote": "crime is repeatedly brought in here. substance abuse. rising cost of living and living wage pressures, best put."
+      },
+      {
+        "date": "2023-11-21",
+        "quote": "Police think this is acceptable. Got a big laugh out of a cop that was standing over here last meeting. Thought it was funny. I didn't think it was funny when I turned red-faced at him and stuck my face in his face."
+      }
+    ],
+    "infrastructure_streets_roads": [
+      {
+        "date": "2025-05-06",
+        "quote": "And we did a plan for the Ring Transportation Corridor, which went down Park Avenue Esplanade and then looped over to Mangrove and circled back to... Well, actually, they took it over by Costco and then East Park Avenue."
+      },
+      {
+        "date": "2025-01-28",
+        "quote": "You're building a bike park. You've got a beautiful sidewalk that passes by that bike park that these people can use to walk on, to use their wheelchairs on, their walkers on, and I've seen those, canes, okay?"
+      },
+      {
+        "date": "2024-06-04",
+        "quote": "I'm going to respectfully request the city take enforcement in lindow channel from esplanade down to the railroad tracks and do so in a continuous and consistent matter."
+      }
+    ],
+    "active_transportation": [
+      {
+        "date": "2025-05-06",
+        "quote": "And along that would be a special treatment that is... Would be mixed-use housing. In other words, SmartGro. And it had transit along it as well."
+      },
+      {
+        "date": "2025-05-06",
+        "quote": "And then some of the other places in the United States, Celebration Florida, and also Santa Barbara. And they have transit, little electric buses. Yes. And wide sidewalks, pedestrian-friendly with tree canopies."
+      },
+      {
+        "date": "2025-03-31",
+        "quote": "I walk the bike and ride the bike. I am a bike lover."
+      },
+      {
+        "date": "2025-01-28",
+        "quote": "You're building a bike park. You've got a beautiful sidewalk that passes by that bike park that these people can use to walk on, to use their wheelchairs on, their walkers on, and I've seen those, canes, okay?"
+      },
+      {
+        "date": "2024-03-19",
+        "quote": "Not everyone wants to ride a bike downtown, but not everyone wants to drive there either."
+      },
+      {
+        "date": "2023-02-07",
+        "quote": "Staff is supportive of the one space parking reduction request due to the fact the property has substandard area and access constraints, is in a mixed-use area served by public transit, and that the parking reduction is not likely to overburden public parking supplies in the vicinity."
+      }
+    ],
+    "litigation_closed_session": [
+      {
+        "date": "2025-03-18",
+        "quote": "without these standards the construction force is systematically abused through wage theft, 1099 where workers have no workers comp when injured on the job and the litany of safety violations."
+      }
+    ],
+    "fire_emergency": [
+      {
+        "date": "2024-12-17",
+        "quote": "The fire department's salaries are 30% less than what they are for the next 15 cities of comparable size in the state."
+      }
+    ],
+    "housing_supply_zoning": [
+      {
+        "date": "2024-11-19",
+        "quote": "The zoning issue, is for four houses in my immediate area on either side of me and the one behind me. The one straight across the street from me is zoned residential, as all the rest of the houses, to my knowledge, are also zoned residential."
+      },
+      {
+        "date": "2023-08-01",
+        "quote": "If we'd had this here, the housing infill at Paradise would have been easy. It could have gone straight through the process."
+      },
+      {
+        "date": "2023-02-07",
+        "quote": "The project site under discussion today is located at 279 East 2nd Avenue on a parcel zone R3, that is our medium high density residential zoning district."
+      }
+    ]
+  },
+  "quote_count_per_topic": {
+    "sanctuary_immigration": 4,
+    "downtown_parking_vitality": 7,
+    "homelessness": 8,
+    "budget_finance": 3,
+    "public_safety_police": 3,
+    "infrastructure_streets_roads": 3,
+    "active_transportation": 6,
+    "litigation_closed_session": 1,
+    "fire_emergency": 1,
+    "housing_supply_zoning": 3
+  }
+}

@@ -48,7 +48,7 @@ export const VENUE_BRIEFINGS: Record<string, VenueBriefing> = {
   "way/868413772": {
     brief: "",
     leadWith:
-      "Bimodal audience — older homeowners (34% age 65+, 52% own) and cost-stressed renters (48% renter, 53% rent-burdened) in the same room. The homeowner half tends to weight public safety, sewer assessments and street maintenance, property taxes, and government competence (recent council items: Police Department annual report, sewer enterprise study, Warren v. Chico litigation). The renter half weights housing cost, tenant protections and code enforcement on existing rentals, and cost of living. Chico's homelessness response is the rare topic that bridges both halves. Less likely to move votes: anti-density absolutism, culture-war framing. 85% turnout — engaged, policy-detail audience.",
+      "Bimodal audience — older homeowners (34% age 65+, 52% own) and cost-stressed renters (48% renter, 53% rent-burdened) in the same room. The homeowner half tends to weight public safety, infrastructure (Bell-Muir Sewer Lift Station, street rehab), property taxes, and government competence; the renter half weights housing cost, tenant protections, and utility rates. The homelessness response — Alternate Camping Site, Tiny Homes on Church Lots, Warren v. Chico litigation — bridges both halves, though they bring opposite frames to it (public commenters in the 3-year record range from 'address the blemish' to 'go after the most vulnerable'). Less likely to move votes: anti-density absolutism, culture-war framing. 85% turnout — engaged, policy-detail audience.",
   },
 
   // 2. Chico's Elks Lodge 423
@@ -122,21 +122,21 @@ export const VENUE_BRIEFINGS: Record<string, VenueBriefing> = {
   "way/461041054": {
     brief: "",
     leadWith:
-      "Heavily Democratic-leaning audience (51 D / 22 R / 19 NPP, Harris took 69%) with high college attainment (55% bachelor+), majority-renter housing (59% renter, 58% rent-burdened), and 23% Hispanic / 7% Spanish-at-home share. Local-government priorities for college-educated Democratic audiences in this profile typically center on housing cost (tenant protections, code enforcement on rentals, downtown infill), public safety (homelessness response in the Warren v. Chico framing, policing accountability), downtown vitality (Park & Go, ground-floor uses), active-transportation infrastructure, and sanctuary policy. Already partisan-aligned: persuasion happens on competence and specifics, not values.",
+      "Heavily Democratic-leaning audience (51 D / 22 R / 19 NPP, Harris took 69%) with high college attainment (55% bachelor+), majority-renter housing (59% renter, 58% rent-burdened), and 23% Hispanic / 7% Spanish-at-home share. Local-government priorities typically center on tenant protections, housing supply (Greenfield Family Apartments TEFRA bond is a recent example), homelessness response (Alternate Camping Site, Tiny Homes on Church Lots, Warren v. Chico framing), downtown vitality (Park & Go, Parklet Analysis, Holiday Parking Meter Forgiveness), and active-transportation infrastructure. Sanctuary policy is salient with the Spanish-speaking subset (public commenters bring it more than the council acts on it). Already partisan-aligned: persuasion happens on competence and specifics.",
   },
 
   // 12. Enloe Conference Center
   "relation/18020131": {
     brief: "",
     leadWith:
-      "Young (44% age 18-34), heavily renter (68%), Democratic-leaning audience (49 D / 20 R / 21 NPP, Harris took 68%) with severe rent burden (64% of renters at 30%+ of income). Local-government priorities for this demographic center on tenant protections and code enforcement on rentals (recurring council items), housing supply (Greenfield-style bond issuances, downtown infill), public safety (Warren v. Chico framing of homelessness response, policing accountability), and active-transportation infrastructure. Mental-health services are highly salient but sit with Butte County, not council. 76% turnout — already mobilized. National-grievance topics underperform.",
+      "Young (44% age 18-34), heavily renter (68%), Democratic-leaning audience (49 D / 20 R / 21 NPP, Harris took 68%) with severe rent burden (64% of renters at 30%+ of income). Local-government priorities center on tenant protections and code enforcement, housing supply (Greenfield Family Apartments TEFRA bond, downtown infill rezones), homelessness response (Alternate Camping Site, Tiny Homes on Church Lots, Warren v. Chico framing), and active-transportation infrastructure (e-bike regulation, micromobility program). Mental-health services are highly salient but sit with Butte County, not council. 76% turnout — already mobilized. National-grievance topics underperform.",
   },
 
   // 13. California State University, Chico
   "way/28551484": {
     brief: "",
     leadWith:
-      "Overwhelmingly student audience (76% age 18-34, 93% renter, 74% under $50k, 74% rent-burdened) with Democratic-leaning registration (48 D / 17 R / 23 NPP) and 70% turnout. Local-government priorities for college students typically center on off-campus housing supply (Greenfield bonds, Hubbard-style rezones), tenant protections, downtown vitality and ground-floor uses (Park & Go), active-transportation infrastructure (e-bike regulation, micromobility), and police-student relations. Tuition and student-debt are state/federal, not council. For a pre-aligned student audience, mobilization — registration drives, ballot logistics — typically beats persuasion.",
+      "Overwhelmingly student audience (76% age 18-34, 93% renter, 74% under $50k, 74% rent-burdened) with Democratic-leaning registration (48 D / 17 R / 23 NPP) and 70% turnout. Local-government priorities for college students typically center on off-campus housing supply (Greenfield Family Apartments TEFRA bond is a recent example), tenant protections, downtown vitality (recent items: Parklet Analysis, Park & Go, Holiday Parking Meter Forgiveness — public commenters have framed downtown as 'vital for our success' partly on student retention grounds), active-transportation infrastructure (e-bike regulation, micromobility program), and police-student relations. Tuition and student debt are state/federal, not council. For a pre-aligned student audience, mobilization — registration drives, ballot logistics — typically beats persuasion.",
   },
 
   // 14. Citrus Avenue Elementary School

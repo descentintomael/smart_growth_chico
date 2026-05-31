@@ -20,14 +20,31 @@ Two-layer grounding:
     regularities — PPIC Statewide Survey, Pew political typology, AP-NORC
     issue-importance tracking, ANES "most important problem" series,
     Gallup MoMP. We lean on directional patterns, not fabricated numbers.
-  - Local-government items referenced (sewer assessments, Warren v.
-    Chico homelessness litigation, Park & Go downtown parking, low-income
-    sewer rate program, tenant-protections ordinances, e-bike regulation,
-    Greenfield/Hubbard housing approvals, Bidwell Park stewardship) come
-    from a 6-meeting sample of Chico city council agendas pulled from
-    chico-ca.granicus.com (April 2025 – May 2026). What we surface as a
-    "council priority" is what the council has actually recently decided
-    on or scheduled for decision.
+  - Local-government items referenced come from a 3-year topical analysis
+    of City of Chico council meeting transcripts (146 City Council
+    meetings, ~1,079 agenda items, January 2023 – December 2025) pulled
+    from the council-meeting-analyzer pipeline. The frequency table
+    (see public/data/_shared/council-priorities-3yr.json) ranks
+    topics by agenda volume — budget & finance (127), downtown / parking
+    / vitality (123), housing supply & zoning (100), parks &
+    Bidwell-related (81, with a 62-item 2025 spike), active transportation
+    (81), homelessness (77), elections & governance (71), streets & roads
+    (64), public safety / police (59), labor & personnel (55), tenant
+    protections & code enforcement (39), sewer & water (33), fire &
+    emergency (30, spiked from 1 → 24 across 2023→2025), and climate /
+    sustainability (only 19 — explicitly under-emphasized as a
+    vote-driver because the council rarely acts on it). Real Chico
+    items referenced in the prose include: Alternate Camping Site /
+    Tiny Homes on Church Lots (homelessness response), Warren v. Chico
+    and Believe in Chico v. City of Chico (ongoing litigation framing
+    homelessness policy), Greenfield Family Apartments TEFRA bond
+    (housing-supply council action), Bidwell Park Master Management
+    Plan, Parklet Analysis + Holiday Parking Meter Forgiveness +
+    Park & Go (downtown vitality items), Bell-Muir Sewer Lift Station
+    + sewer enterprise study, Median and Roundabout Safety Ordinance,
+    Pioneer Energy CCA (the lone climate item with traction),
+    Low-income sewer rate program, E-bike regulation, Sales tax / HdL
+    Companies analysis.
 
 Things NOT in council jurisdiction (referenced only as cross-pressures or
 explicitly disclaimed in the prose): K-12 schools (CUSD), recreation
@@ -111,9 +128,9 @@ CARDS: list[dict] = [
             "The audience here skews young ({young_share} age 18-34) and heavily renter ({renter_share}), with strong Democratic registration ({d_share_24} D / {r_share_24} R)",
         ],
         "body_variants": [
-            "Local-government priorities for this demographic typically center on tenant protections and code enforcement on existing rentals, housing supply (downtown infill, Greenfield-style bond issuances), public safety (homelessness response in the Warren v. Chico framing, policing accountability), and active-transportation infrastructure (e-bike regulation, micromobility). Mental-health services sit with Butte County, not council.",
-            "Council-jurisdiction priorities for younger Democratic renters cluster around tenant protections, housing supply (council-approved bond issuances, downtown infill, rezones), public safety framed as homelessness response and policing accountability, downtown vitality (Park & Go, ground-floor uses), and active-transportation infrastructure.",
-            "On items the council actually decides, this audience typically weights tenant protections, housing supply (downtown infill, Greenfield-style affordable-housing bonds), public safety in the homelessness-response framing, active-transportation infrastructure, and sanctuary policy where relevant.",
+            "Local-government priorities for this demographic typically center on tenant protections and code enforcement on existing rentals, housing supply (recent council actions: Greenfield Family Apartments TEFRA bond, downtown infill rezones), homelessness response (Alternate Camping Site, Tiny Homes on Church Lots, Warren v. Chico litigation framing), and active-transportation infrastructure (e-bike regulation, micromobility program). Mental-health services sit with Butte County, not council.",
+            "Council-jurisdiction priorities for younger Democratic renters cluster around tenant protections, housing supply (council-approved bond issuances, downtown infill), homelessness response (Alternate Camping Site discussions, Tiny Homes on Church Lots), downtown vitality (Park & Go, Parklet Analysis, Holiday Parking Meter Forgiveness), and active-transportation infrastructure.",
+            "On items the council actually decides, this audience typically weights tenant protections, housing supply (the Greenfield TEFRA bond is a recent example), homelessness response (Alternate Camping Site, Warren v. Chico), active-transportation infrastructure, and downtown vitality.",
         ],
         "caveat_variants": [
             "Topics less likely to move this audience: traditional fiscal-conservative framing, anti-density arguments, national-grievance topics, culture-war wedges.",
@@ -142,9 +159,9 @@ CARDS: list[dict] = [
             "Settled affluent professional Democratic audience: {owner_share} own their homes, {high_income_share} earn $125k+, and {college_share} hold a bachelor's or higher",
         ],
         "body_variants": [
-            "Local-government priorities for this demographic typically center on government competence (City Manager / Attorney recruitment, budget rigor, labor MOUs), public safety (Police Department reports, Warren v. Chico framing of homelessness), infrastructure reliability (sewer assessments, street rehabilitation, property acquisitions), and Bidwell Park stewardship. K-12 schools sit with CUSD, not council.",
-            "Council-jurisdiction priorities cluster around government competence and administrative quality, public safety (Police annual reports, homelessness response), infrastructure (sewer enterprise study, street rehab, capital projects), and quality of new development (impact fees, zoning). Healthcare is not council-decided; schools sit with CUSD.",
-            "On items the council actually decides, this audience typically weights government competence, public safety, infrastructure reliability, Bidwell Park stewardship, and quality-of-development decisions (impact fees, zoning). Climate has higher stated importance here than in other affluent clusters but rarely surfaces on council agendas.",
+            "Local-government priorities for this demographic typically center on government competence (City Manager and Attorney recruitment, budget rigor, sales-tax / HdL Companies analysis), public safety (Police annual reports, Median and Roundabout Safety Ordinance), infrastructure (Bell-Muir Sewer Lift Station, sewer enterprise study, street rehabilitation), and Bidwell Park stewardship (the Bidwell Park Master Management Plan is a major recent council item). K-12 schools sit with CUSD, not council.",
+            "Council-jurisdiction priorities cluster around government competence and administrative quality (recent City Manager recruitment), public safety (Police Department reports, traffic safety ordinances), infrastructure (sewer capital projects, road rehabilitation, property acquisitions), Bidwell Park stewardship (Master Management Plan), and budget rigor. Healthcare is not council-decided; schools sit with CUSD.",
+            "On items the council actually decides, this audience typically weights government competence, public safety, infrastructure reliability, Bidwell Park stewardship (Master Management Plan + concerts permits + heritage items), and quality-of-development decisions. Climate has higher stated importance here than in other affluent clusters but rarely surfaces on council agendas (Pioneer Energy CCA is one of the few items).",
         ],
         "caveat_variants": [
             "Less likely to drive votes here: housing supply arguments (rarely vote-driving for owners), national-grievance framing, anti-tax appeals.",
@@ -170,9 +187,9 @@ CARDS: list[dict] = [
             "Settled, older homeowner audience ({senior_share} age 65+, {owner_share} own)",
         ],
         "body_variants": [
-            "Local-government priorities for this demographic typically center on public safety (Police Department reports, Warren v. Chico framing of homelessness response), infrastructure reliability (sewer assessments, street rehabilitation), property taxes and Prop 218 assessments, and government competence. Healthcare is not council-decided.",
-            "Council-jurisdiction priorities cluster around public safety, infrastructure (sewer enterprise, street rehab, property acquisitions for road projects), government competence (City Manager and Attorney recruitment, budget rigor), and property-tax / assessment-district decisions.",
-            "On items the council actually decides, this audience typically weights public safety, sewer and street infrastructure, property taxes and Prop 218 procedures, government competence, and Bidwell Park stewardship.",
+            "Local-government priorities for this demographic typically center on public safety (Police Department annual reports, Median and Roundabout Safety Ordinance), wildfire / weed-abatement and emergency preparedness (a recent 1→5→24-item agenda spike), infrastructure (Bell-Muir Sewer Lift Station, sewer enterprise study, street rehabilitation), property taxes and Prop 218 assessments, and government competence. Healthcare is not council-decided.",
+            "Council-jurisdiction priorities cluster around public safety, wildfire / weed-abatement (rapidly growing on the agenda), infrastructure (sewer capital projects, road rehabilitation, property acquisitions), government competence (City Manager and Attorney recruitment, budget rigor), and property-tax / assessment-district decisions.",
+            "On items the council actually decides, this audience typically weights public safety, sewer and street infrastructure, wildfire and weed-abatement, property taxes and Prop 218 procedures, government competence, and Bidwell Park stewardship.",
         ],
         "caveat_variants": [
             "Less likely to drive votes here: housing supply framing, climate (high stated importance but historically low vote-driving salience for this cohort).",
@@ -199,9 +216,9 @@ CARDS: list[dict] = [
             "{hispanic_share}-Hispanic working-class audience with {spanish_share} speaking Spanish at home and {low_income_share} of households under $50k",
         ],
         "body_variants": [
-            "Local-government priorities for this demographic typically center on cost of living and utility rates (low-income sewer rate program is a recent council item), tenant protections and code enforcement on existing rentals, public safety in concrete terms (not abstract crime statistics), sanctuary policy / equitable enforcement, and jobs / local-economy decisions. K-12 sits with CUSD, not council, though parents conflate them.",
-            "Council-jurisdiction priorities cluster around utility rates and fees (the low-income sewer rate program addresses this directly), tenant protections, public safety framed concretely, sanctuary-policy decisions, and local business / development climate. Healthcare and federal immigration enforcement are not council-decided.",
-            "On items the council actually decides, this audience typically weights cost of living and utility rates, tenant protections, code enforcement on rentals, public safety, sanctuary policy / equitable enforcement, and jobs / local economic development.",
+            "Local-government priorities for this demographic typically center on cost of living and utility rates (low-income sewer rate program), tenant protections and code enforcement on existing rentals, public safety in concrete terms, and sanctuary policy. (Note: sanctuary appears infrequently on the council agenda — 7 items in 3 years — but Spanish-speaking commenters DO bring it during public comment; the audience cares more than the council acts.) K-12 sits with CUSD, not council, though parents conflate them.",
+            "Council-jurisdiction priorities cluster around utility rates and fees (low-income sewer rate program), tenant protections, public safety framed concretely, and local business / development climate. Sanctuary policy comes up in public comment more often than on the action agenda — the audience may bring it whether or not it's been recently scheduled.",
+            "On items the council actually decides, this audience typically weights cost of living, utility rates, tenant protections, code enforcement on rentals, public safety, and local economic development. Sanctuary policy is salient with this audience even though it appears rarely on the council action agenda.",
         ],
         "caveat_variants": [
             "Hispanic working-class voters are not a monolithic Democratic bloc — values-aligned issues (faith, family, immigration framing) can move some voters toward Republicans, but cost-of-living and concrete-policy framing tend to favor Democrats. Spanish-language outreach is operationally important.",
@@ -230,9 +247,9 @@ CARDS: list[dict] = [
             "Working-class renter audience: {renter_share} of housing is rental, {low_income_share} of households earn under $50k",
         ],
         "body_variants": [
-            "Local-government priorities for this demographic typically center on cost of living and utility rates (the low-income sewer rate program is a recent council item), tenant protections and code enforcement on existing rentals (recurring council theme), public safety, and jobs / local-economy decisions. K-12 sits with CUSD, not council.",
-            "Council-jurisdiction priorities cluster around tenant protections, code enforcement on existing rentals, utility rates and fees, public safety, and local-economy / development decisions. Healthcare is not council-decided.",
-            "On items the council actually decides, this audience typically weights tenant protections (recurring council attention), code enforcement on rentals, cost of living via utility rates and fees, public safety, and local economic development.",
+            "Local-government priorities for this demographic typically center on cost of living and utility rates (low-income sewer rate program), tenant protections and code enforcement on existing rentals (39 agenda items over 3 years), homelessness response (Alternate Camping Site, Tiny Homes on Church Lots), public safety in concrete terms, and jobs / local-economy decisions. K-12 sits with CUSD, not council.",
+            "Council-jurisdiction priorities cluster around tenant protections, code enforcement on existing rentals, utility rates and fees, homelessness response, public safety, and local economy. Healthcare is not council-decided.",
+            "On items the council actually decides, this audience typically weights tenant protections, code enforcement on rentals, utility rates and fees, homelessness response, public safety, and local economic development.",
         ],
         "caveat_variants": [
             "Less likely to move this audience: anti-density framing (renters here live in the housing supply being argued about), abstract fiscal-conservative messaging without specific costs named, climate (low vote-driving salience for working-class voters), national-grievance from either direction, culture-war wedges.",
@@ -260,9 +277,9 @@ CARDS: list[dict] = [
             "Single-family homeowner family-skewed audience: {owner_share} own, {single_family_share} SF housing stock, {kids_share} of residents are under 18",
         ],
         "body_variants": [
-            "Local-government priorities for parent-heavy owners typically center on public safety (Police Department reports, Warren v. Chico framing of homelessness), infrastructure reliability (sewer assessments, street rehab), government competence, and quality of new development (impact fees, zoning). Housing affordability matters as 'options for our kids when they grow up.' K-12 schools sit with CUSD, not council, though parents conflate them.",
-            "Council-jurisdiction priorities cluster around public safety, infrastructure (sewer and street capital projects), quality-of-development decisions (impact fees, zoning), and government competence. Schools sit with CUSD, not council, but salience is high for the parent share.",
-            "On items the council actually decides, this audience typically weights public safety, infrastructure reliability, quality of new development (impact fees), and government competence. Housing affordability frames as 'good options for our kids when they grow up.'",
+            "Local-government priorities for parent-heavy owners typically center on public safety (Police Department reports, Median and Roundabout Safety Ordinance), homelessness response (Alternate Camping Site, Tiny Homes on Church Lots), infrastructure (Bell-Muir Sewer Lift Station, sewer enterprise study, street rehabilitation), Bidwell Park (Master Management Plan), and government competence. Housing affordability frames as 'options for our kids when they grow up.' K-12 sits with CUSD, not council.",
+            "Council-jurisdiction priorities cluster around public safety, homelessness response, infrastructure (sewer and street capital projects), Bidwell Park stewardship, and government competence. Schools sit with CUSD, not council, but salience is high for the parent share.",
+            "On items the council actually decides, this audience typically weights public safety, infrastructure reliability (sewer, streets), Bidwell Park stewardship, quality of new development, and government competence. Housing affordability frames as 'good options for our kids when they grow up.'",
         ],
     },
 
@@ -283,9 +300,9 @@ CARDS: list[dict] = [
             "Heavily Democratic professional audience: {d_share_24} D registration, {college_share} bachelor+, Harris won {top_d_24} of the 2024 top-of-ticket vote",
         ],
         "body_variants": [
-            "Local-government priorities for this demographic typically center on tenant protections and housing supply (downtown infill, Greenfield-style bonds, Hubbard-style rezones), public safety (homelessness response in the Warren v. Chico framing, policing accountability), downtown vitality (Park & Go, ground-floor uses), active-transportation infrastructure, and sanctuary policy where relevant.",
-            "Council-jurisdiction priorities cluster around tenant protections, housing supply (council-approved bond issuances, downtown infill), public safety framed as homelessness response and policing accountability, downtown vitality, and active-transportation infrastructure. Climate has high stated importance here but rarely surfaces on council agendas.",
-            "On items the council actually decides, this audience typically weights tenant protections, housing supply (infill, council-approved affordable-housing bonds), public safety (Warren v. Chico framing), downtown vitality and ground-floor-use decisions, and active-transportation infrastructure.",
+            "Local-government priorities for this demographic typically center on tenant protections, housing supply (Greenfield Family Apartments TEFRA bond, downtown infill), homelessness response (Alternate Camping Site, Tiny Homes on Church Lots, Warren v. Chico framing), downtown vitality (Park & Go, Parklet Analysis, Holiday Parking Meter Forgiveness), active-transportation infrastructure (e-bike regulation, micromobility), and Bidwell Park stewardship.",
+            "Council-jurisdiction priorities cluster around tenant protections, housing supply (the Greenfield TEFRA bond and council-approved bond issuances), homelessness response (Alternate Camping Site, Tiny Homes), downtown vitality, active transportation, and Bidwell Park. Climate has high stated importance for this audience but rarely surfaces on council agendas (Pioneer Energy CCA is one of the few items in 3 years).",
+            "On items the council actually decides, this audience typically weights tenant protections, housing supply (Greenfield-style bonds, downtown infill), homelessness response, downtown vitality (Parklet Analysis, Park & Go), active-transportation infrastructure, and Bidwell Park stewardship.",
         ],
         "caveat_variants": [
             "This audience is already partisan-aligned with a Democratic candidate; persuasion happens on competence and specificity rather than values. National-grievance and culture-war framing underperform; broad partisan signaling lands in friendly territory but won't differentiate.",
@@ -309,9 +326,9 @@ CARDS: list[dict] = [
             "Predominantly student audience ({young_share} age 18-34, {renter_share} rental housing)",
         ],
         "body_variants": [
-            "Local-government priorities for college students typically center on off-campus housing supply (council-approved bond issuances like Greenfield, Hubbard-style rezones), tenant protections, downtown vitality and ground-floor uses (Park & Go), active-transportation infrastructure (e-bike regulation, micromobility program), and police-student relations. Tuition and student debt are state/federal, not council. Mental-health services sit with Butte County.",
-            "Council-jurisdiction priorities cluster around off-campus housing (council-approved bonds, infill, rezones), tenant protections, downtown vitality, active-transportation infrastructure, and police practices. College affordability and mental-health services are not council-decided.",
-            "On items the council actually decides, this audience typically weights off-campus housing supply, tenant protections, downtown vitality and parking, active-transportation infrastructure (e-bike, micromobility), and police-student relations.",
+            "Local-government priorities for college students typically center on off-campus housing supply (the Greenfield Family Apartments TEFRA bond is a recent example), tenant protections, downtown vitality (Park & Go, Parklet Analysis, Holiday Parking Meter Forgiveness — public commenters have framed downtown as 'vital for our success'), active-transportation infrastructure (e-bike regulation, micromobility program), and police-student relations. Tuition and student debt are state/federal, not council. Mental-health services sit with Butte County.",
+            "Council-jurisdiction priorities cluster around off-campus housing (Greenfield-style bonds, infill rezones), tenant protections, downtown vitality (Parklet Analysis, Park & Go), active-transportation infrastructure, and police practices. College affordability and mental-health services are not council-decided.",
+            "On items the council actually decides, this audience typically weights off-campus housing supply, tenant protections, downtown vitality and parking (Holiday Parking Meter Forgiveness, Parklet Analysis), active-transportation infrastructure (e-bike, micromobility), and police-student relations.",
         ],
         "caveat_variants": [
             "For pre-aligned student audiences, registration drives and absentee-ballot logistics often carry more electoral impact than persuasion messaging. National-grievance topics and culture-war framing underperform; broad partisan signaling lands in friendly territory but doesn't differentiate.",
