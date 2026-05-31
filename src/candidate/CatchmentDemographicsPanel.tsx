@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import type { CatchmentAggregate, CatchmentDemographics } from './types'
+import { VENUE_BRIEFINGS } from './narratives'
+import { computeIntelTags, tagClasses } from './intelTags'
 
 type Profile = 'walk_10' | 'walk_15' | 'bike_10' | 'bike_15'
 
@@ -75,6 +77,7 @@ export function CatchmentDemographicsPanel({
   district: string
 }) {
   const [profile, setProfile] = useState<Profile>('walk_15')
+  const [detailsOpen, setDetailsOpen] = useState(false)
 
   if (!data || !venueId) return null
   const venue = data.venues[venueId]
@@ -92,6 +95,13 @@ export function CatchmentDemographicsPanel({
   const c: CatchmentAggregate = bands.in_district
   const t: CatchmentAggregate = bands.total
 
+  // Briefing + intel tags are pinned to walk_15 in-district so the user sees a
+  // consistent "headline" view regardless of which profile they've selected
+  // for the detail dashboard below.
+  const briefing = VENUE_BRIEFINGS[venueId]
+  const walk15InD = venue.catchments.walk_15?.in_district
+  const intelTags = walk15InD ? computeIntelTags(walk15InD) : []
+
   const totalRace =
     c.race_white_nh + c.race_black_nh + c.race_native_nh + c.race_asian_nh +
     c.race_pacific_nh + c.race_other_nh + c.race_two_or_more_nh + c.race_hispanic
@@ -105,7 +115,81 @@ export function CatchmentDemographicsPanel({
   const noInDistrict = c.total_population === 0
 
   return (
-    <div className="mt-3 max-h-[70vh] overflow-y-auto rounded-md bg-white/95 p-3 ring-1 ring-gray-200 backdrop-blur">
+    <div className="mt-3 max-h-[80vh] overflow-y-auto rounded-md bg-white/95 ring-1 ring-gray-200 backdrop-blur">
+      {/* ====== BRIEFING ====== */}
+      {briefing && (
+        <div className="border-b border-gray-100 px-4 pb-3 pt-3">
+          <div className="text-[9px] font-semibold uppercase tracking-[0.12em] text-gray-400">
+            Briefing
+          </div>
+          <p className="mt-1.5 text-[12px] leading-relaxed text-gray-800">
+            {briefing.brief}
+          </p>
+        </div>
+      )}
+
+      {/* ====== LEAD WITH ====== */}
+      {briefing && (
+        <div className="border-b border-gray-100 bg-amber-50/40 px-4 py-3">
+          <div className="flex items-baseline gap-2">
+            <div className="h-3 w-0.5 rounded-full bg-amber-500" />
+            <div className="text-[9px] font-semibold uppercase tracking-[0.12em] text-amber-700">
+              Lead with
+            </div>
+          </div>
+          <p className="mt-1.5 text-[12px] leading-relaxed text-amber-950">
+            {briefing.leadWith}
+          </p>
+        </div>
+      )}
+
+      {/* ====== INTEL TAGS ====== */}
+      {intelTags.length > 0 && (
+        <div className="border-b border-gray-100 px-4 py-3">
+          <div className="text-[9px] font-semibold uppercase tracking-[0.12em] text-gray-400">
+            Intel · what's distinctive
+          </div>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {intelTags.map(tag => {
+              const s = tagClasses(tag)
+              return (
+                <span
+                  key={tag.label}
+                  className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10.5px] font-medium ring-1 ring-inset ${s.wrap}`}
+                >
+                  <span className={`inline-block h-1.5 w-1.5 rounded-full ${s.dot}`} />
+                  {tag.label}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* ====== EXPAND CONTROL ====== */}
+      <button
+        type="button"
+        onClick={() => setDetailsOpen(o => !o)}
+        className="flex w-full items-center justify-between border-b border-gray-100 px-4 py-2 text-[10.5px] font-medium text-gray-600 hover:bg-gray-50"
+        aria-expanded={detailsOpen}
+      >
+        <span className="uppercase tracking-[0.1em]">
+          {detailsOpen ? 'Hide full demographic dashboard' : 'Open full demographic dashboard'}
+        </span>
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          className={`transition-transform duration-150 ${detailsOpen ? 'rotate-180' : ''}`}
+        >
+          <path d="M3 4.5 L6 7.5 L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      </button>
+
+      {/* ====== DETAIL DASHBOARD (collapsible) ====== */}
+      {!detailsOpen ? null : (
+      <div className="p-3">
       <div className="flex items-center justify-between gap-2">
         <span className="text-[10px] uppercase tracking-wide text-gray-500">
           Catchment audience
@@ -444,6 +528,8 @@ export function CatchmentDemographicsPanel({
         Total counts compare against everyone the venue reaches regardless of district.
         Sources: ACS 5-year 2023; SWDB Butte 2022+2024 General; FEC 2024 cycle.
       </div>
+      </div>
+      )}
     </div>
   )
 }
