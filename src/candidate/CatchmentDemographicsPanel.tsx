@@ -95,10 +95,12 @@ export function CatchmentDemographicsPanel({
   const c: CatchmentAggregate = bands.in_district
   const t: CatchmentAggregate = bands.total
 
-  // Briefing + intel tags are pinned to walk_15 in-district so the user sees a
+  // Lead-with + intel tags are pinned to walk_15 in-district so the user sees a
   // consistent "headline" view regardless of which profile they've selected
-  // for the detail dashboard below.
-  const briefing = VENUE_BRIEFINGS[venueId]
+  // for the detail dashboard below. Hand-written entries in narratives.ts take
+  // precedence over the auto-generated ones in catchment-demographics.json.
+  const override = VENUE_BRIEFINGS[venueId]
+  const leadWith = override?.leadWith ?? venue.lead_with ?? null
   const walk15InD = venue.catchments.walk_15?.in_district
   const intelTags = walk15InD ? computeIntelTags(walk15InD) : []
 
@@ -117,7 +119,7 @@ export function CatchmentDemographicsPanel({
   return (
     <div className="mt-3 flex min-h-0 flex-1 flex-col overflow-y-auto rounded-md bg-white/95 ring-1 ring-gray-200 backdrop-blur">
       {/* ====== LEAD WITH ====== */}
-      {briefing && (
+      {leadWith && (
         <div className="border-b border-gray-100 bg-amber-50/40 px-4 py-3">
           <div className="flex items-baseline gap-2">
             <div className="h-3 w-0.5 rounded-full bg-amber-500" />
@@ -126,7 +128,7 @@ export function CatchmentDemographicsPanel({
             </div>
           </div>
           <p className="mt-1.5 text-[12px] leading-relaxed text-amber-950">
-            {briefing.leadWith}
+            {leadWith}
           </p>
         </div>
       )}

@@ -236,6 +236,12 @@ export interface CatchmentDemographics {
   venues: Record<string, {
     venue_name: string
     in_district_venue: boolean
+    /** Auto-generated narrative paragraph from scripts/generate-venue-narratives.py.
+     *  Only present for top-50 venues per district with non-trivial in-district
+     *  walk-15 catchment. Currently not rendered (briefing was cut from the UI). */
+    narrative?: string
+    /** Auto-generated "Lead with" tactical paragraph for the candidate. */
+    lead_with?: string
     catchments: Partial<Record<'walk_10' | 'walk_15' | 'bike_10' | 'bike_15', CatchmentBands>>
   }>
 }

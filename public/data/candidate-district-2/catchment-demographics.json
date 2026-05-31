@@ -2914,7 +2914,9 @@
             "g22_precinct_intersect_count": 14
           }
         }
-      }
+      },
+      "narrative": "Rice Bowl's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,543 residents and 1,221 voting-age citizens within a 15-minute walk. The age skew is unusually young: 38% of residents are 18-34 \u2014 a student/early-career profile. It's renter-majority (51% renter), with 37% single-family stock and 41% multifamily. The workforce is dominated by management, business, science, and arts roles (54%); 77% drive alone to work. There's a meaningful bilingual community \u2014 about 17% of residents speak Spanish at home. Cost stress is a live issue: 48% of renters are rent-burdened (paying 30%+ of income on rent), with 19% severely so. The neighborhood tilts slightly Democratic \u2014 38% D / 32% R / 20% NPP in registration, with 73% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 55% of the vote here in 2024, up 6 points from Newsom's 48% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. About 17% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "node/10783310005": {
       "venue_name": "Aztlan",
@@ -3920,7 +3922,9 @@
             "g22_precinct_intersect_count": 15
           }
         }
-      }
+      },
+      "narrative": "Aztlan's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 811 residents and 633 voting-age citizens within a 15-minute walk. The age skew is unusually young: 37% of residents are 18-34 \u2014 a student/early-career profile. The workforce is dominated by management, business, science, and arts roles (55%); 78% drive alone to work. There's a meaningful bilingual community \u2014 about 17% of residents speak Spanish at home. The neighborhood tilts slightly Democratic \u2014 39% D / 31% R / 21% NPP in registration, with 73% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 56% of the vote here in 2024, up 7 points from Newsom's 49% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. About 17% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "node/11076077080": {
       "venue_name": "Farm Star Pizza",
@@ -4911,7 +4915,9 @@
             "g22_precinct_intersect_count": 15
           }
         }
-      }
+      },
+      "narrative": "Farm Star Pizza's walking catchment is a small, mostly residential pocket in D2 \u2014 roughly 38 residents and 31 voting-age citizens within a 15-minute walk. The workforce is dominated by management, business, science, and arts roles (64%); 76% drive alone to work. There's a meaningful bilingual community \u2014 about 13% of residents speak Spanish at home.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. Democratic-leaning room (+12pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "node/11152747327": {
       "venue_name": "The Great Catsby",
@@ -7854,7 +7860,9 @@
             "g22_precinct_intersect_count": 13
           }
         }
-      }
+      },
+      "narrative": "Teriyaki House's walking catchment is a compact residential pocket in D2 \u2014 roughly 112 residents and 91 voting-age citizens within a 15-minute walk. The age skew is unusually young: 36% of residents are 18-34 \u2014 a student/early-career profile. The workforce is dominated by management, business, science, and arts roles (56%); 77% drive alone to work. There's a meaningful bilingual community \u2014 about 15% of residents speak Spanish at home. The neighborhood leans Democratic \u2014 40% D / 31% R / 21% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 58% of the vote here in 2024, up 8 points from Newsom's 50% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. Democratic-leaning room (+10pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing. About 15% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "node/12117897001": {
       "venue_name": "ABC Books",
@@ -8845,7 +8853,9 @@
             "g22_precinct_intersect_count": 14
           }
         }
-      }
+      },
+      "narrative": "ABC Books's walking catchment is a compact residential pocket in D2 \u2014 roughly 362 residents and 268 voting-age citizens within a 15-minute walk. Income is bimodal: 33% of households earn under $50k while 30% earn $125k+. The workforce is dominated by management, business, science, and arts roles (59%); 18% work from home. The neighborhood leans Democratic \u2014 52% D / 23% R / 18% NPP in registration, with 83% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 69% of the vote here in 2024, up 5 points from Newsom's 64% in 2022.",
+      "lead_with": "Frame smart-growth for both sides of the income split \u2014 property-value protection for the homeowner half, affordability and supply-side relief for the cost-stressed half. Avoid renter-vs-owner framing; both groups are in the same room. Strongly Democratic and high-turnout \u2014 assume the audience is already with you on framing; differentiate yourself on specifics, not values."
     },
     "node/12133103701": {
       "venue_name": "The Redwood Sandwich Co.",
@@ -9836,7 +9846,9 @@
             "g22_precinct_intersect_count": 17
           }
         }
-      }
+      },
+      "narrative": "The Redwood Sandwich Co.'s walking catchment is a small, mostly residential pocket in D2 \u2014 roughly 69 residents and 55 voting-age citizens within a 15-minute walk. The workforce is dominated by management, business, science, and arts roles (56%); 23% work from home.",
+      "lead_with": "Affluent, highly educated audience \u2014 fiscal responsibility, infrastructure return-on-investment, and long-horizon planning land well. Bring data. Democratic-leaning room (+13pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "node/12141569693": {
       "venue_name": "Red Tavern",
@@ -11818,7 +11830,9 @@
             "g22_precinct_intersect_count": 19
           }
         }
-      }
+      },
+      "narrative": "Butte College - Cosmetology & Barbering's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,949 residents and 1,541 voting-age citizens within a 15-minute walk. It's renter-majority (52% renter), with 45% single-family stock and 43% multifamily. The workforce is dominated by management, business, science, and arts roles (58%); 73% drive alone to work. The neighborhood leans Democratic \u2014 42% D / 30% R / 19% NPP in registration, with 77% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 57% of the vote here in 2024, up 4 points from Newsom's 53% in 2022.",
+      "lead_with": "Democratic-leaning room (+13pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "node/12327824560": {
       "venue_name": "JI BEI CHUAN(RICE NOODLES&RAMEN)",
@@ -13785,7 +13799,9 @@
             "g22_precinct_intersect_count": 13
           }
         }
-      }
+      },
+      "narrative": "Casa Ramos's walking catchment is a compact residential pocket in D2 \u2014 roughly 200 residents and 160 voting-age citizens within a 15-minute walk. The age skew is unusually young: 36% of residents are 18-34 \u2014 a student/early-career profile. The workforce is dominated by management, business, science, and arts roles (55%); 78% drive alone to work. There's a meaningful bilingual community \u2014 about 16% of residents speak Spanish at home. The neighborhood leans Democratic \u2014 40% D / 31% R / 22% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 57% of the vote here in 2024, up 7 points from Newsom's 50% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. Democratic-leaning room (+9pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing. About 16% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "node/12535114162": {
       "venue_name": "Tender Loving",
@@ -15752,7 +15768,9 @@
             "g22_precinct_intersect_count": 17
           }
         }
-      }
+      },
+      "narrative": "Halo Hawaiian BBQ's walking catchment is a small, mostly residential pocket in D2 \u2014 roughly 79 residents and 64 voting-age citizens within a 15-minute walk. Income is bimodal: 30% of households earn under $50k while 33% earn $125k+. The workforce is dominated by management, business, science, and arts roles (57%); 24% work from home.",
+      "lead_with": "Frame smart-growth for both sides of the income split \u2014 property-value protection for the homeowner half, affordability and supply-side relief for the cost-stressed half. Avoid renter-vs-owner framing; both groups are in the same room. Democratic-leaning room (+15pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "node/12869562597": {
       "venue_name": "Las Tapatias Mexican Grille",
@@ -16758,7 +16776,9 @@
             "g22_precinct_intersect_count": 14
           }
         }
-      }
+      },
+      "narrative": "Las Tapatias Mexican Grille's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 688 residents and 554 voting-age citizens within a 15-minute walk. The age skew is unusually young: 36% of residents are 18-34 \u2014 a student/early-career profile. The workforce is dominated by management, business, science, and arts roles (56%); 77% drive alone to work. There's a meaningful bilingual community \u2014 about 15% of residents speak Spanish at home. Cost stress is a live issue: 45% of renters are rent-burdened (paying 30%+ of income on rent), with 11% severely so. The neighborhood leans Democratic \u2014 40% D / 31% R / 21% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 57% of the vote here in 2024, up 7 points from Newsom's 50% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Democratic-leaning room (+9pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "node/12884623681": {
       "venue_name": "Chico Creek Coffee",
@@ -17749,7 +17769,9 @@
             "g22_precinct_intersect_count": 18
           }
         }
-      }
+      },
+      "narrative": "Chico Creek Coffee's walking catchment is a compact residential pocket in D2 \u2014 roughly 204 residents and 152 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 51% of households earn under $50k. Housing is heavily rental and multifamily (65% renter, 64% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (58%); 73% drive alone to work. The neighborhood leans Democratic \u2014 43% D / 30% R / 19% NPP in registration, with 75% turnout in 2024.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (65% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure. Democratic-leaning room (+13pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "node/13057181313": {
       "venue_name": "Egg Roll King",
@@ -18740,7 +18762,9 @@
             "g22_precinct_intersect_count": 14
           }
         }
-      }
+      },
+      "narrative": "Egg Roll King's walking catchment is a compact residential pocket in D2 \u2014 roughly 331 residents and 240 voting-age citizens within a 15-minute walk. The workforce is dominated by management, business, science, and arts roles (59%); 18% work from home. The neighborhood leans Democratic \u2014 51% D / 23% R / 17% NPP in registration, with 83% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 69% of the vote here in 2024, up 5 points from Newsom's 64% in 2022.",
+      "lead_with": "Affluent, highly educated audience \u2014 fiscal responsibility, infrastructure return-on-investment, and long-horizon planning land well. Bring data. Strongly Democratic and high-turnout \u2014 assume the audience is already with you on framing; differentiate yourself on specifics, not values."
     },
     "node/13057212458": {
       "venue_name": "Ikkyu Japanese Restaurant",
@@ -19746,7 +19770,9 @@
             "g22_precinct_intersect_count": 15
           }
         }
-      }
+      },
+      "narrative": "Ikkyu Japanese Restaurant's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,175 residents and 847 voting-age citizens within a 15-minute walk. The age skew is unusually young: 38% of residents are 18-34 \u2014 a student/early-career profile. Housing is heavily rental and multifamily (56% renter, 47% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (53%); 80% drive alone to work. There's a meaningful bilingual community \u2014 about 21% of residents speak Spanish at home. Economic stress is visible \u2014 20% of households here receive SNAP. The neighborhood tilts slightly Democratic \u2014 38% D / 31% R / 21% NPP in registration, with 70% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 57% of the vote here in 2024, up 9 points from Newsom's 48% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. About 21% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "node/13179822081": {
       "venue_name": "Prya Indian Cuisine",
@@ -20752,7 +20778,9 @@
             "g22_precinct_intersect_count": 15
           }
         }
-      }
+      },
+      "narrative": "Prya Indian Cuisine's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 911 residents and 728 voting-age citizens within a 15-minute walk. The age skew is unusually young: 36% of residents are 18-34 \u2014 a student/early-career profile. The workforce is dominated by management, business, science, and arts roles (56%); 77% drive alone to work. There's a meaningful bilingual community \u2014 about 16% of residents speak Spanish at home. Cost stress is a live issue: 46% of renters are rent-burdened (paying 30%+ of income on rent), with 13% severely so. The neighborhood leans Democratic \u2014 39% D / 31% R / 21% NPP in registration, with 74% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 56% of the vote here in 2024, up 7 points from Newsom's 49% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Democratic-leaning room (+8pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing. About 16% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "node/13308770421": {
       "venue_name": "Bidwell Perk",
@@ -21758,7 +21786,9 @@
             "g22_precinct_intersect_count": 16
           }
         }
-      }
+      },
+      "narrative": "Bidwell Perk's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 760 residents and 615 voting-age citizens within a 15-minute walk. The age skew is unusually young: 41% of residents are 18-34 \u2014 a student/early-career profile. It's renter-majority (67% renter), with 77% single-family stock and 23% multifamily. The workforce is dominated by management, business, science, and arts roles (59%); 18% work from home. Cost stress is a live issue: 57% of renters are rent-burdened (paying 30%+ of income on rent), with 50% severely so. The neighborhood leans Democratic \u2014 52% D / 23% R / 17% NPP in registration, with 83% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 69% of the vote here in 2024, up 5 points from Newsom's 63% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Strongly Democratic and high-turnout \u2014 assume the audience is already with you on framing; differentiate yourself on specifics, not values."
     },
     "node/13608269857": {
       "venue_name": "Mekkala Thai Cuisine",
@@ -22764,7 +22794,9 @@
             "g22_precinct_intersect_count": 18
           }
         }
-      }
+      },
+      "narrative": "Mekkala Thai Cuisine's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,995 residents and 1,512 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 49% of households earn under $50k. Housing is heavily rental and multifamily (73% renter, 51% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (55%); 74% drive alone to work. The neighborhood tilts slightly Democratic \u2014 39% D / 32% R / 20% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 53% of the vote here in 2024, up 4 points from Newsom's 49% in 2022.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (73% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure."
     },
     "node/13608269858": {
       "venue_name": "La Dolce Piazza",
@@ -23770,7 +23802,9 @@
             "g22_precinct_intersect_count": 18
           }
         }
-      }
+      },
+      "narrative": "La Dolce Piazza's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,952 residents and 1,473 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 49% of households earn under $50k. Housing is heavily rental and multifamily (74% renter, 52% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (55%); 74% drive alone to work. The neighborhood tilts slightly Democratic \u2014 39% D / 32% R / 20% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 53% of the vote here in 2024, up 4 points from Newsom's 49% in 2022.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (74% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure."
     },
     "node/13608269859": {
       "venue_name": "Burger Hut",
@@ -24776,7 +24810,9 @@
             "g22_precinct_intersect_count": 18
           }
         }
-      }
+      },
+      "narrative": "Burger Hut's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,952 residents and 1,473 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 49% of households earn under $50k. Housing is heavily rental and multifamily (74% renter, 52% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (55%); 74% drive alone to work. The neighborhood tilts slightly Democratic \u2014 39% D / 32% R / 20% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 53% of the vote here in 2024, up 4 points from Newsom's 49% in 2022.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (74% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure."
     },
     "node/13608269862": {
       "venue_name": "Oak Bridge Academy",
@@ -25782,7 +25818,9 @@
             "g22_precinct_intersect_count": 18
           }
         }
-      }
+      },
+      "narrative": "Oak Bridge Academy's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,642 residents and 1,228 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 49% of households earn under $50k. Housing is heavily rental and multifamily (75% renter, 52% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (55%); 74% drive alone to work. The neighborhood tilts slightly Democratic \u2014 39% D / 32% R / 20% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 53% of the vote here in 2024, up 4 points from Newsom's 49% in 2022.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (75% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure."
     },
     "node/13609871910": {
       "venue_name": "Marbella Chico",
@@ -26788,7 +26826,9 @@
             "g22_precinct_intersect_count": 18
           }
         }
-      }
+      },
+      "narrative": "Marbella Chico's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,664 residents and 1,244 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 49% of households earn under $50k. Housing is heavily rental and multifamily (75% renter, 52% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (55%); 74% drive alone to work. The neighborhood tilts slightly Democratic \u2014 39% D / 32% R / 20% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 53% of the vote here in 2024, up 4 points from Newsom's 49% in 2022.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (75% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure."
     },
     "node/13609871913": {
       "venue_name": "Far Northern Regional Center",
@@ -27794,7 +27834,9 @@
             "g22_precinct_intersect_count": 18
           }
         }
-      }
+      },
+      "narrative": "Far Northern Regional Center's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,024 residents and 756 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 49% of households earn under $50k. Housing is heavily rental and multifamily (78% renter, 54% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (55%); 74% drive alone to work. The neighborhood tilts slightly Democratic \u2014 39% D / 32% R / 20% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 53% of the vote here in 2024, up 4 points from Newsom's 49% in 2022.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (78% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure."
     },
     "node/13609871914": {
       "venue_name": "The Country Village",
@@ -28800,7 +28842,9 @@
             "g22_precinct_intersect_count": 18
           }
         }
-      }
+      },
+      "narrative": "The Country Village's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,241 residents and 916 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 48% of households earn under $50k. Housing is heavily rental and multifamily (77% renter, 55% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (56%); 74% drive alone to work. The neighborhood leans Democratic \u2014 40% D / 31% R / 20% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 54% of the vote here in 2024, up 5 points from Newsom's 49% in 2022.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (77% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure. Democratic-leaning room (+9pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "node/13609871917": {
       "venue_name": "Sycamore Glen Active Senior Community",
@@ -29806,7 +29850,9 @@
             "g22_precinct_intersect_count": 20
           }
         }
-      }
+      },
+      "narrative": "Sycamore Glen Active Senior Community's walking catchment is a compact residential pocket in D2 \u2014 roughly 386 residents and 285 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 51% of households earn under $50k. Housing is heavily rental and multifamily (78% renter, 56% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (55%); 73% drive alone to work. The neighborhood tilts slightly Democratic \u2014 39% D / 32% R / 20% NPP in registration, with 75% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 53% of the vote here in 2024, up 4 points from Newsom's 49% in 2022.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (78% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure."
     },
     "node/13609871920": {
       "venue_name": "The Alibi Pub & Grill",
@@ -31788,7 +31834,9 @@
             "g22_precinct_intersect_count": 16
           }
         }
-      }
+      },
+      "narrative": "Fairview High School's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,686 residents and 1,403 voting-age citizens within a 15-minute walk. The workforce is dominated by management, business, science, and arts roles (58%); 75% drive alone to work. Cost stress is a live issue: 52% of renters are rent-burdened (paying 30%+ of income on rent), with 12% severely so. The neighborhood leans Democratic \u2014 41% D / 31% R / 20% NPP in registration, with 77% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 56% of the vote here in 2024, up 5 points from Newsom's 51% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Democratic-leaning room (+10pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "way/84969018": {
       "venue_name": "Pleasant Valley Senior High School",
@@ -35722,7 +35770,9 @@
             "g22_precinct_intersect_count": 20
           }
         }
-      }
+      },
+      "narrative": "John A. McManus Elementary School's walking catchment is a dense neighborhood in D2 \u2014 roughly 2,093 residents and 1,626 voting-age citizens within a 15-minute walk. It's renter-majority (52% renter), with 47% single-family stock and 47% multifamily. The workforce is dominated by management, business, science, and arts roles (57%); 71% drive alone to work and 16% work from home. The neighborhood leans Democratic \u2014 43% D / 29% R / 19% NPP in registration, with 76% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 58% of the vote here in 2024, up 4 points from Newsom's 54% in 2022.",
+      "lead_with": "Democratic-leaning room (+13pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "way/85243499": {
       "venue_name": "Parkview Elementary School",
@@ -37674,7 +37724,9 @@
             "g22_precinct_intersect_count": 18
           }
         }
-      }
+      },
+      "narrative": "Bidwell Junior High School's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 609 residents and 486 voting-age citizens within a 15-minute walk. It's an affluent area \u2014 36% of households earn $125k+ and 20% of adults hold a bachelor's or higher. The workforce is dominated by management, business, science, and arts roles (55%); 24% work from home. The neighborhood leans Democratic \u2014 44% D / 29% R / 19% NPP in registration, with 76% turnout in 2024.",
+      "lead_with": "Affluent, highly educated audience \u2014 fiscal responsibility, infrastructure return-on-investment, and long-horizon planning land well. Bring data. Democratic-leaning room (+15pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "way/186727445": {
       "venue_name": "Hooker Oak Elementary School",
@@ -38680,7 +38732,9 @@
             "g22_precinct_intersect_count": 15
           }
         }
-      }
+      },
+      "narrative": "Hooker Oak Elementary School's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 710 residents and 567 voting-age citizens within a 15-minute walk. The age skew is unusually young: 39% of residents are 18-34 \u2014 a student/early-career profile. It's renter-majority (65% renter), with 79% single-family stock and 21% multifamily. The workforce is dominated by management, business, science, and arts roles (59%); 18% work from home. Cost stress is a live issue: 55% of renters are rent-burdened (paying 30%+ of income on rent), with 48% severely so. The neighborhood leans Democratic \u2014 52% D / 23% R / 18% NPP in registration, with 83% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 69% of the vote here in 2024, up 6 points from Newsom's 63% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Strongly Democratic and high-turnout \u2014 assume the audience is already with you on framing; differentiate yourself on specifics, not values."
     },
     "way/186727450": {
       "venue_name": "Neal Dow Elementary School",
@@ -39686,7 +39740,9 @@
             "g22_precinct_intersect_count": 16
           }
         }
-      }
+      },
+      "narrative": "Neal Dow Elementary School's walking catchment is a dense neighborhood in D2 \u2014 roughly 2,479 residents and 2,046 voting-age citizens within a 15-minute walk. The age skew is unusually young: 43% of residents are 18-34 \u2014 a student/early-career profile. It's renter-majority (70% renter), with 75% single-family stock and 25% multifamily. The workforce is dominated by management, business, science, and arts roles (58%); 18% work from home. Cost stress is a live issue: 59% of renters are rent-burdened (paying 30%+ of income on rent), with 52% severely so. The neighborhood leans Democratic \u2014 51% D / 23% R / 18% NPP in registration, with 83% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 69% of the vote here in 2024, up 5 points from Newsom's 63% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Strongly Democratic and high-turnout \u2014 assume the audience is already with you on framing; differentiate yourself on specifics, not values."
     },
     "way/186727461": {
       "venue_name": "Shasta Union School",
@@ -40692,7 +40748,9 @@
             "g22_precinct_intersect_count": 9
           }
         }
-      }
+      },
+      "narrative": "Shasta Union School's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 719 residents and 508 voting-age citizens within a 15-minute walk. The age skew is unusually young: 38% of residents are 18-34 \u2014 a student/early-career profile. Housing is heavily rental and multifamily (57% renter, 48% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (53%); 81% drive alone to work. There's a meaningful bilingual community \u2014 about 22% of residents speak Spanish at home. Economic stress is visible \u2014 21% of households here receive SNAP. The neighborhood tilts slightly Democratic \u2014 38% D / 31% R / 21% NPP in registration, with 70% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 58% of the vote here in 2024, up 10 points from Newsom's 48% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. About 22% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "way/460969400": {
       "venue_name": "Kalico Kitchen",
@@ -41683,7 +41741,9 @@
             "g22_precinct_intersect_count": 15
           }
         }
-      }
+      },
+      "narrative": "Kalico Kitchen's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 428 residents and 367 voting-age citizens within a 15-minute walk. The workforce is dominated by management, business, science, and arts roles (58%); 76% drive alone to work. Cost stress is a live issue: 47% of renters are rent-burdened (paying 30%+ of income on rent), with 9% severely so. The neighborhood leans Democratic \u2014 40% D / 30% R / 21% NPP in registration, with 78% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 56% of the vote here in 2024, up 5 points from Newsom's 51% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. Democratic-leaning room (+10pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "way/460969402": {
       "venue_name": "Sin of Cortez",
@@ -44626,7 +44686,9 @@
             "g22_precinct_intersect_count": 19
           }
         }
-      }
+      },
+      "narrative": "Roses & Ivy Elder Care's walking catchment is a compact residential pocket in D2 \u2014 roughly 351 residents and 265 voting-age citizens within a 15-minute walk. It skews economically modest \u2014 46% of households earn under $50k. Housing is heavily rental and multifamily (60% renter, 59% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (57%); 71% drive alone to work. The neighborhood leans Democratic \u2014 43% D / 29% R / 19% NPP in registration, with 75% turnout in 2024.",
+      "lead_with": "Renter-majority, multifamily-dense neighborhood (60% renter) \u2014 housing supply and renter-protection framing connects; lean into infill, missing-middle, and transit/bike infrastructure. Democratic-leaning room (+14pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "way/460975277": {
       "venue_name": "Cozy Diner",
@@ -45632,7 +45694,9 @@
             "g22_precinct_intersect_count": 17
           }
         }
-      }
+      },
+      "narrative": "Cozy Diner's walking catchment is a compact residential pocket in D2 \u2014 roughly 333 residents and 282 voting-age citizens within a 15-minute walk. The age skew is unusually young: 47% of residents are 18-34 \u2014 a student/early-career profile. Housing is heavily rental and multifamily (76% renter, 36% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (58%); 17% work from home. Cost stress is a live issue: 62% of renters are rent-burdened (paying 30%+ of income on rent), with 53% severely so. The neighborhood leans Democratic \u2014 49% D / 25% R / 18% NPP in registration, with 82% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 67% of the vote here in 2024, up 6 points from Newsom's 61% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Strongly Democratic and high-turnout \u2014 assume the audience is already with you on framing; differentiate yourself on specifics, not values."
     },
     "way/460975281": {
       "venue_name": "La Comida",
@@ -46623,7 +46687,9 @@
             "g22_precinct_intersect_count": 14
           }
         }
-      }
+      },
+      "narrative": "La Comida's walking catchment is a compact residential pocket in D2 \u2014 roughly 362 residents and 268 voting-age citizens within a 15-minute walk. Income is bimodal: 33% of households earn under $50k while 30% earn $125k+. The workforce is dominated by management, business, science, and arts roles (59%); 18% work from home. The neighborhood leans Democratic \u2014 52% D / 23% R / 18% NPP in registration, with 83% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 69% of the vote here in 2024, up 5 points from Newsom's 64% in 2022.",
+      "lead_with": "Frame smart-growth for both sides of the income split \u2014 property-value protection for the homeowner half, affordability and supply-side relief for the cost-stressed half. Avoid renter-vs-owner framing; both groups are in the same room. Strongly Democratic and high-turnout \u2014 assume the audience is already with you on framing; differentiate yourself on specifics, not values."
     },
     "way/460975283": {
       "venue_name": "Chico Junior High School",
@@ -49581,7 +49647,9 @@
             "g22_precinct_intersect_count": 16
           }
         }
-      }
+      },
+      "narrative": "Butte County Library - Chico Branch's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,131 residents and 929 voting-age citizens within a 15-minute walk. The age skew is unusually young: 43% of residents are 18-34 \u2014 a student/early-career profile. It's renter-majority (70% renter), with 76% single-family stock and 24% multifamily. The workforce is dominated by management, business, science, and arts roles (59%); 18% work from home. Cost stress is a live issue: 59% of renters are rent-burdened (paying 30%+ of income on rent), with 52% severely so. The neighborhood leans Democratic \u2014 52% D / 23% R / 18% NPP in registration, with 83% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 69% of the vote here in 2024, up 6 points from Newsom's 63% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Strongly Democratic and high-turnout \u2014 assume the audience is already with you on framing; differentiate yourself on specifics, not values."
     },
     "way/474802431": {
       "venue_name": "Town House Motel",
@@ -52554,7 +52622,9 @@
             "g22_precinct_intersect_count": 15
           }
         }
-      }
+      },
+      "narrative": "La Hacienda's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 710 residents and 539 voting-age citizens within a 15-minute walk. The age skew is unusually young: 38% of residents are 18-34 \u2014 a student/early-career profile. It's renter-majority (51% renter), with 33% single-family stock and 42% multifamily. The workforce is dominated by management, business, science, and arts roles (54%); 79% drive alone to work. There's a meaningful bilingual community \u2014 about 19% of residents speak Spanish at home. The neighborhood tilts slightly Democratic \u2014 38% D / 31% R / 21% NPP in registration, with 72% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 56% of the vote here in 2024, up 8 points from Newsom's 49% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. About 19% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "way/745396754": {
       "venue_name": "Basque Norte",
@@ -53560,7 +53630,9 @@
             "g22_precinct_intersect_count": 10
           }
         }
-      }
+      },
+      "narrative": "Basque Norte's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,021 residents and 727 voting-age citizens within a 15-minute walk. The age skew is unusually young: 38% of residents are 18-34 \u2014 a student/early-career profile. Housing is heavily rental and multifamily (57% renter, 48% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (53%); 80% drive alone to work. There's a meaningful bilingual community \u2014 about 22% of residents speak Spanish at home. Economic stress is visible \u2014 21% of households here receive SNAP. The neighborhood tilts slightly Democratic \u2014 38% D / 31% R / 21% NPP in registration, with 70% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 57% of the vote here in 2024, up 9 points from Newsom's 48% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. About 22% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "way/800854419": {
       "venue_name": "The Grateful Bean",
@@ -54566,7 +54638,9 @@
             "g22_precinct_intersect_count": 10
           }
         }
-      }
+      },
+      "narrative": "The Grateful Bean's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,120 residents and 797 voting-age citizens within a 15-minute walk. The age skew is unusually young: 38% of residents are 18-34 \u2014 a student/early-career profile. Housing is heavily rental and multifamily (57% renter, 48% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (53%); 80% drive alone to work. There's a meaningful bilingual community \u2014 about 22% of residents speak Spanish at home. Economic stress is visible \u2014 21% of households here receive SNAP. The neighborhood tilts slightly Democratic \u2014 38% D / 31% R / 21% NPP in registration, with 70% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 57% of the vote here in 2024, up 10 points from Newsom's 48% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. About 22% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "way/1138554492": {
       "venue_name": "CJ's Last Chance Diner",
@@ -56548,7 +56622,9 @@
             "g22_precinct_intersect_count": 14
           }
         }
-      }
+      },
+      "narrative": "Coffee Ranch's walking catchment is a dense neighborhood in D2 \u2014 roughly 2,350 residents and 1,902 voting-age citizens within a 15-minute walk. The age skew is unusually young: 41% of residents are 18-34 \u2014 a student/early-career profile. It's renter-majority (67% renter), with 78% single-family stock and 22% multifamily. The workforce is dominated by management, business, science, and arts roles (58%); 18% work from home. Cost stress is a live issue: 57% of renters are rent-burdened (paying 30%+ of income on rent), with 50% severely so. The neighborhood leans Democratic \u2014 52% D / 23% R / 18% NPP in registration, with 83% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 69% of the vote here in 2024, up 5 points from Newsom's 64% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Strongly Democratic and high-turnout \u2014 assume the audience is already with you on framing; differentiate yourself on specifics, not values."
     },
     "way/1138556996": {
       "venue_name": "Deja Vu Breakfast Company",
@@ -57554,7 +57630,9 @@
             "g22_precinct_intersect_count": 11
           }
         }
-      }
+      },
+      "narrative": "Deja Vu Breakfast Company's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,165 residents and 829 voting-age citizens within a 15-minute walk. The age skew is unusually young: 38% of residents are 18-34 \u2014 a student/early-career profile. Housing is heavily rental and multifamily (57% renter, 48% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (53%); 80% drive alone to work. There's a meaningful bilingual community \u2014 about 22% of residents speak Spanish at home. Economic stress is visible \u2014 21% of households here receive SNAP. The neighborhood tilts slightly Democratic \u2014 38% D / 31% R / 21% NPP in registration, with 70% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 57% of the vote here in 2024, up 9 points from Newsom's 48% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. About 22% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "way/1138560355": {
       "venue_name": "Goodman House Bed & Breakfast",
@@ -59536,7 +59614,9 @@
             "g22_precinct_intersect_count": 11
           }
         }
-      }
+      },
+      "narrative": "Hotel James's walking catchment is a meaningfully sized neighborhood in D2 \u2014 roughly 1,068 residents and 760 voting-age citizens within a 15-minute walk. The age skew is unusually young: 38% of residents are 18-34 \u2014 a student/early-career profile. Housing is heavily rental and multifamily (57% renter, 48% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (53%); 80% drive alone to work. There's a meaningful bilingual community \u2014 about 22% of residents speak Spanish at home. Economic stress is visible \u2014 21% of households here receive SNAP. The neighborhood tilts slightly Democratic \u2014 38% D / 31% R / 21% NPP in registration, with 70% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 57% of the vote here in 2024, up 9 points from Newsom's 48% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. About 22% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "way/1138567388": {
       "venue_name": "The Lost Dutchman Taproom",
@@ -60542,7 +60622,9 @@
             "g22_precinct_intersect_count": 11
           }
         }
-      }
+      },
+      "narrative": "The Lost Dutchman Taproom's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 996 residents and 710 voting-age citizens within a 15-minute walk. The age skew is unusually young: 38% of residents are 18-34 \u2014 a student/early-career profile. Housing is heavily rental and multifamily (57% renter, 48% multifamily units) \u2014 the typical resident here is a renter, not an owner. The workforce is dominated by management, business, science, and arts roles (53%); 80% drive alone to work. There's a meaningful bilingual community \u2014 about 22% of residents speak Spanish at home. Economic stress is visible \u2014 21% of households here receive SNAP. The neighborhood tilts slightly Democratic \u2014 38% D / 31% R / 21% NPP in registration, with 70% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 57% of the vote here in 2024, up 9 points from Newsom's 48% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. About 22% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "way/1139081099": {
       "venue_name": "Pueblito #2 Mexican Restaurant",
@@ -61533,7 +61615,9 @@
             "g22_precinct_intersect_count": 15
           }
         }
-      }
+      },
+      "narrative": "Pueblito #2 Mexican Restaurant's walking catchment is a small, mostly residential pocket in D2 \u2014 roughly 40 residents and 33 voting-age citizens within a 15-minute walk. The age skew is unusually young: 35% of residents are 18-34 \u2014 a student/early-career profile. The workforce is dominated by management, business, science, and arts roles (64%); 77% drive alone to work. There's a meaningful bilingual community \u2014 about 15% of residents speak Spanish at home.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. Democratic-leaning room (+11pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing. About 15% of residents speak Spanish at home \u2014 at minimum acknowledge bilingual outreach; deliver core lines in both languages if you can."
     },
     "way/1139083879": {
       "venue_name": "Regency Inn",
@@ -62539,7 +62623,9 @@
             "g22_precinct_intersect_count": 14
           }
         }
-      }
+      },
+      "narrative": "Regency Inn's walking catchment is a modest residential neighborhood in D2 \u2014 roughly 958 residents and 781 voting-age citizens within a 15-minute walk. The age skew is unusually young: 36% of residents are 18-34 \u2014 a student/early-career profile. The workforce is dominated by management, business, science, and arts roles (56%); 77% drive alone to work. There's a meaningful bilingual community \u2014 about 14% of residents speak Spanish at home. Cost stress is a live issue: 47% of renters are rent-burdened (paying 30%+ of income on rent), with 12% severely so. The neighborhood leans Democratic \u2014 40% D / 31% R / 21% NPP in registration, with 76% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 56% of the vote here in 2024, up 6 points from Newsom's 50% in 2022.",
+      "lead_with": "Lead with housing affordability framed as supply-side relief \u2014 rent burden is the dominant economic stressor here, so infill, ADU policy, and missing-middle zoning land directly. Democratic-leaning room (+9pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "way/1139185361": {
       "venue_name": "Pageant Theater",
@@ -64521,7 +64607,9 @@
             "g22_precinct_intersect_count": 8
           }
         }
-      }
+      },
+      "narrative": "Chico Air Museum's walking catchment is a small, mostly residential pocket in D2 \u2014 roughly 69 residents and 51 voting-age citizens within a 15-minute walk. It's an affluent area \u2014 42% of households earn $125k+ and 48% of adults hold a bachelor's or higher. Housing is overwhelmingly single-family (93%) and owner-occupied (81%) \u2014 a stable homeowner belt. Commute patterns: 80% drive alone to work. The neighborhood leans Republican \u2014 32% D / 42% R / 17% NPP in registration, with 80% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 43% of the vote here in 2024, up 5 points from Newsom's 39% in 2022.",
+      "lead_with": "Established single-family homeowner belt \u2014 frame smart-growth as long-term property-value protection and neighborhood-character stewardship; specifics matter (ADU rules, parking, traffic) more than vision. Republican-leaning room \u2014 frame fiscal responsibility, local control, and small-business climate; smart-growth as economic vitality rather than environmental."
     },
     "way/1314978354": {
       "venue_name": "Sushi Burrito King",
@@ -68470,7 +68558,9 @@
             "g22_precinct_intersect_count": 14
           }
         }
-      }
+      },
+      "narrative": "Safari Inn - Chico's walking catchment is a compact residential pocket in D2 \u2014 roughly 167 residents and 147 voting-age citizens within a 15-minute walk. The workforce is dominated by management, business, science, and arts roles (57%); 76% drive alone to work. Cost stress is a live issue: 46% of renters are rent-burdened (paying 30%+ of income on rent), with 8% severely so. The neighborhood leans Democratic \u2014 40% D / 31% R / 21% NPP in registration, with 79% turnout in 2024. The top-of-ticket vote shifted Democratic between cycles: Harris took 56% of the vote here in 2024, up 5 points from Newsom's 51% in 2022.",
+      "lead_with": "Younger audience \u2014 lead with housing affordability, transit and bike infrastructure, and climate; expect direct questions on cost-of-living and wages. Democratic-leaning room (+9pt D registration) \u2014 values are aligned; differentiate on competence and specific policy choices, not framing."
     },
     "relation/18020131": {
       "venue_name": "Enloe Conference Center",
