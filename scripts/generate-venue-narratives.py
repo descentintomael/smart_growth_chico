@@ -3,14 +3,16 @@
 
 For each (venue, district) where priority_rank <= 50, synthesizes:
   - A 5-7 sentence narrative paragraph describing the catchment audience
-  - A 2-4 sentence "lead with" tactical block
+    (legacy: kept for completeness but currently not rendered in the UI).
+  - A research-grounded "Lead with" paragraph composed by the card library
+    (scripts/narrative_cards.py), which matches the catchment against
+    documented polling-regularity audience patterns and weaves 2-3 cards
+    into a paragraph describing what topics likely matter to that audience.
 
 Writes them directly into the venue entries of each district's
-catchment-demographics.json so they travel with the data.
-
-The synthesis is rule-based: thresholds over the in-district walk_15
-demographics + political data decide which sentences fire. Same logic
-that powers the Intel chips in the UI, expanded into prose.
+catchment-demographics.json so they travel with the data. Hand-written
+Lead-with overrides for the top-10 venues per district live in
+src/candidate/narratives.ts and take precedence in the UI.
 
 Usage:
     python3 scripts/generate-venue-narratives.py
@@ -19,6 +21,11 @@ Usage:
 import json
 import sys
 from pathlib import Path
+
+# Allow `from narrative_cards import compose_lead_with` even when this script
+# is run from the repo root (Python won't auto-add the script's directory).
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from narrative_cards import compose_lead_with  # noqa: E402
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 TOP_N = 50
@@ -296,132 +303,18 @@ def generate_narrative(venue_name, m, district):
     return " ".join(sentences)
 
 
-def generate_lead_with(m):
-    """Compose a tactical 2-4 sentence Lead-with block.
+def generate_lead_with(m, venue_id: str) -> str:
+    """Compose a research-grounded Lead-with paragraph.
 
-    Prioritizes ONE primary frame, adds at most one secondary issue, and one
-    political-context sentence. Total length capped at ~3 sentences to keep
-    it readable as guidance rather than a checklist.
+    Delegates to the card library in narrative_cards.py, which matches the
+    catchment against documented audience patterns (PPIC, Pew, AP-NORC,
+    ANES regularities) and weaves 2-3 cards into an audience-priorities
+    paragraph. Variant selection is deterministic from venue_id so reruns
+    produce stable output but adjacent venues vary phrasing.
     """
-    parts: list[str] = []
+    return compose_lead_with(m, venue_id)
 
-    lean = m['d_share_24'] - m['r_share_24']  # +0.08 = strong D, -0.08 = strong R
-    shift = (m['top_d_24'] - m['top_d_22']) if (m['top_d_24'] > 0 and m['top_d_22'] > 0) else 0
 
-    # === Step 1 — pick ONE primary frame ===
-    # Pick the strongest signal; the rest may be alluded to but don't get their
-    # own bullet.
-    bimodal = m['high_income_share'] >= 0.25 and m['low_income_share'] >= 0.30
-    rent_burdened = m['rent_burdened_share'] >= 0.45 and m['renter_share'] >= 0.40
-    senior_heavy = m['senior_share'] >= 0.30
-    young_heavy = m['young_share'] >= 0.32
-    affluent = m['high_income_share'] >= 0.30 and not bimodal
-    low_income = m['low_income_share'] >= 0.45 and not bimodal
-    renter_dense = m['renter_share'] >= 0.55 and m['multifamily_share'] >= 0.40
-    owner_dense = m['owner_share'] >= 0.70 and m['single_family_share'] >= 0.85
-
-    if bimodal:
-        parts.append(
-            "Frame smart-growth for both sides of the income split — property-value "
-            "protection for the homeowner half, affordability and supply-side relief for "
-            "the cost-stressed half. Avoid renter-vs-owner framing; both groups are in the "
-            "same room."
-        )
-    elif rent_burdened:
-        parts.append(
-            "Lead with housing affordability framed as supply-side relief — rent burden is "
-            "the dominant economic stressor here, so infill, ADU policy, and missing-middle "
-            "zoning land directly."
-        )
-    elif young_heavy:
-        parts.append(
-            "Younger audience — lead with housing affordability, transit and bike "
-            "infrastructure, and climate; expect direct questions on cost-of-living and "
-            "wages."
-        )
-    elif renter_dense:
-        parts.append(
-            f"Renter-majority, multifamily-dense neighborhood ({pct(m['renter_share'])} "
-            "renter) — housing supply and renter-protection framing connects; lean into "
-            "infill, missing-middle, and transit/bike infrastructure."
-        )
-    elif senior_heavy:
-        parts.append(
-            "Older audience — emphasize property-tax stability, infrastructure reliability, "
-            "and public safety; smart-growth framed as property-value protection rather "
-            "than affordability."
-        )
-    elif owner_dense:
-        parts.append(
-            "Established single-family homeowner belt — frame smart-growth as long-term "
-            "property-value protection and neighborhood-character stewardship; specifics "
-            "matter (ADU rules, parking, traffic) more than vision."
-        )
-    elif affluent:
-        parts.append(
-            "Affluent, highly educated audience — fiscal responsibility, infrastructure "
-            "return-on-investment, and long-horizon planning land well. Bring data."
-        )
-    elif low_income:
-        parts.append(
-            "Economically modest audience — lead with cost-of-living, jobs, public "
-            "services, and policy decisions whose dollar impact you can describe concretely."
-        )
-
-    # === Step 2 — political context (max one sentence) ===
-    # Avoid restating the primary frame.
-    if abs(lean) <= 0.04 and m['reg24'] >= 50 and shift >= 0.04:
-        parts.append(
-            "Politically competitive but trending Democratic at the top of the ticket — "
-            f"Harris over-performed Newsom by {round(shift * 100)} points here. Persuadable "
-            "moderates are in the room."
-        )
-    elif abs(lean) <= 0.04 and m['reg24'] >= 50:
-        parts.append(
-            "Politically competitive — keep partisan signaling minimal and lead on "
-            "local-control, results, and fiscal pragmatism."
-        )
-    elif lean <= -0.08:
-        parts.append(
-            "Republican-leaning room — frame fiscal responsibility, local control, and "
-            "small-business climate; smart-growth as economic vitality rather than "
-            "environmental."
-        )
-    elif lean <= -0.04 and shift >= 0.04:
-        parts.append(
-            "Registration tilts Republican but the top of the ticket shifted "
-            f"{round(shift * 100)} points Democratic between cycles — moderate Rs are "
-            "persuadable, don't write them off."
-        )
-    elif lean >= 0.08 and m['turnout_24'] >= 0.80:
-        parts.append(
-            "Strongly Democratic and high-turnout — assume the audience is already with "
-            "you on framing; differentiate yourself on specifics, not values."
-        )
-    elif lean >= 0.08:
-        parts.append(
-            f"Democratic-leaning room (+{round(lean * 100)}pt D registration) — values "
-            "are aligned; differentiate on competence and specific policy choices, not "
-            "framing."
-        )
-
-    # === Step 3 — at most one bilingual / cultural note ===
-    if m['spanish_share'] >= 0.15:
-        parts.append(
-            f"About {pct(m['spanish_share'])} of residents speak Spanish at home — at "
-            "minimum acknowledge bilingual outreach; deliver core lines in both languages "
-            "if you can."
-        )
-
-    if not parts:
-        parts.append(
-            "No single dominant signal — keep the talk balanced across housing, "
-            "infrastructure, and local economy. Treat this as a feel-out room and adjust "
-            "by question."
-        )
-
-    # Cap at 3 sentences (each bullet is a sentence or two).
-    return " ".join(parts[:3])
 
 
 def process_district(district: int) -> tuple[int, int]:
@@ -452,7 +345,7 @@ def process_district(district: int) -> tuple[int, int]:
         if m["pop"] < 30:
             continue
         narrative = generate_narrative(vinfo["venue_name"], m, district)
-        lead_with = generate_lead_with(m)
+        lead_with = generate_lead_with(m, venue_id)
         if narrative and lead_with:
             vinfo["narrative"] = narrative
             vinfo["lead_with"] = lead_with
