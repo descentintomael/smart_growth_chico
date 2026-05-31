@@ -57,6 +57,20 @@ function FitToBounds({ bounds }: { bounds: LatLngBoundsExpression | null }) {
   return null
 }
 
+/** Leaflet doesn't auto-detect container size changes (sidebar collapse,
+ *  window resize, etc.). Calls invalidateSize() whenever the container
+ *  resizes so tiles fill the new dimensions. */
+function InvalidateOnResize() {
+  const map = useMap()
+  useEffect(() => {
+    const container = map.getContainer()
+    const observer = new ResizeObserver(() => map.invalidateSize())
+    observer.observe(container)
+    return () => observer.disconnect()
+  }, [map])
+  return null
+}
+
 function dataUrls(district: string) {
   const base = `${import.meta.env.BASE_URL}data/candidate-district-${district}`
   return {
@@ -243,6 +257,7 @@ export function CandidateMap({ district }: { district: string }) {
         className="h-full w-full"
       >
         <FitToBounds bounds={bounds} />
+        <InvalidateOnResize />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
