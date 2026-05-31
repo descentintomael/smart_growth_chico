@@ -63,7 +63,7 @@ export function ForumDemographicsPanel({
     union.income_upper_mid_75_125k + union.income_high_125k_plus
 
   return (
-    <div className="mt-3 max-h-[70vh] overflow-y-auto rounded-md bg-white/95 p-3 ring-1 ring-gray-200 backdrop-blur">
+    <div className="mt-3 flex min-h-0 flex-1 flex-col overflow-y-auto rounded-md bg-white/95 p-3 ring-1 ring-gray-200 backdrop-blur">
       <div className="flex items-center justify-between gap-2">
         <span className="text-[10px] uppercase tracking-wide text-gray-500">
           Forum audience

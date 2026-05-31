@@ -198,8 +198,8 @@ export function ForumMap({ districts }: { districts: string[] }) {
   return (
     <div className="relative h-full w-full">
       {selectedVenue && merged && (
-        <div className="absolute left-4 top-4 z-[1000] w-80 max-w-[calc(100vw-2rem)]">
-          <div className="rounded-md bg-white/95 px-3 py-2 text-xs shadow-lg ring-1 ring-gray-200 backdrop-blur">
+        <div className="absolute left-4 top-4 bottom-4 z-[1000] flex w-80 max-w-[calc(100vw-2rem)] flex-col">
+          <div className="shrink-0 rounded-md bg-white/95 px-3 py-2 text-xs shadow-lg ring-1 ring-gray-200 backdrop-blur">
             <div className="flex items-center justify-between gap-2">
               <span className="font-semibold text-gray-900">{selectedVenue.properties.name}</span>
               <button

@@ -115,19 +115,7 @@ export function CatchmentDemographicsPanel({
   const noInDistrict = c.total_population === 0
 
   return (
-    <div className="mt-3 max-h-[80vh] overflow-y-auto rounded-md bg-white/95 ring-1 ring-gray-200 backdrop-blur">
-      {/* ====== BRIEFING ====== */}
-      {briefing && (
-        <div className="border-b border-gray-100 px-4 pb-3 pt-3">
-          <div className="text-[9px] font-semibold uppercase tracking-[0.12em] text-gray-400">
-            Briefing
-          </div>
-          <p className="mt-1.5 text-[12px] leading-relaxed text-gray-800">
-            {briefing.brief}
-          </p>
-        </div>
-      )}
-
+    <div className="mt-3 flex min-h-0 flex-1 flex-col overflow-y-auto rounded-md bg-white/95 ring-1 ring-gray-200 backdrop-blur">
       {/* ====== LEAD WITH ====== */}
       {briefing && (
         <div className="border-b border-gray-100 bg-amber-50/40 px-4 py-3">
