@@ -86,6 +86,46 @@ PLACE_DETAILS_FIELDS = ",".join([
 ])
 
 CACHE_DIR = PROJECT_ROOT / ".cache" / "google-places"
+SPEND_LEDGER = CACHE_DIR / "spend-ledger.json"
+
+
+def load_ledger() -> dict:
+    """Persistent aggregate spend tracker across all script invocations."""
+    if SPEND_LEDGER.exists():
+        try:
+            return json.loads(SPEND_LEDGER.read_text())
+        except json.JSONDecodeError:
+            pass
+    return {
+        "total_requests": 0,
+        "total_cost_accrued_usd": 0.0,
+        "runs": [],
+        "first_run": None,
+        "latest_run": None,
+        "free_tier_per_sku_monthly": 10_000,
+    }
+
+
+def save_ledger(ledger: dict) -> None:
+    SPEND_LEDGER.parent.mkdir(parents=True, exist_ok=True)
+    SPEND_LEDGER.write_text(json.dumps(ledger, indent=2))
+
+
+def record_run(ledger: dict, district: int, requests_made: int, cost: float) -> None:
+    ts = int(time.time())
+    ledger["total_requests"] += requests_made
+    ledger["total_cost_accrued_usd"] = round(
+        ledger["total_cost_accrued_usd"] + cost, 4
+    )
+    ledger["runs"].append({
+        "timestamp": ts,
+        "district": district,
+        "requests": requests_made,
+        "cost_accrued_usd": round(cost, 4),
+    })
+    if ledger["first_run"] is None:
+        ledger["first_run"] = ts
+    ledger["latest_run"] = ts
 
 
 def load_env(path: Path) -> dict[str, str]:
@@ -288,6 +328,7 @@ def main() -> int:
 
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     plan = estimate_plan(venues)
+    ledger = load_ledger()
 
     print(f"Pre-flight plan for District {args.district}:")
     print(f"  Total venues to process:     {plan['total_venues']}")
@@ -299,6 +340,14 @@ def main() -> int:
     print(f"  Estimated cost (upper):      ${plan['estimated_cost_usd']:.4f}")
     print(f"  Hard cost cap:               ${ESTIMATED_COST_CAP_USD:.2f}")
     print(f"  --confirm threshold:         ${CONFIRM_THRESHOLD_USD:.2f}")
+    print(f"\n  AGGREGATE (all runs to date — {len(ledger['runs'])} runs):")
+    print(f"  Total requests so far:       {ledger['total_requests']:,}")
+    print(f"  Total cost accrued (upper):  ${ledger['total_cost_accrued_usd']:.4f}")
+    # Each SKU has a free monthly bucket; we use Pro for text search and
+    # Enterprise for place details. Show how close we are to either bucket.
+    pro_used_pct = (ledger["total_requests"] / 2) / 10_000 * 100  # half are text searches
+    print(f"  Free-tier usage est:         ~{pro_used_pct:.1f}% of monthly SKU bucket "
+          f"({ledger['free_tier_per_sku_monthly']:,}/mo)")
 
     if plan["total_requests_max"] > HARD_MAX_REQUESTS_PER_RUN:
         print(
@@ -375,12 +424,19 @@ def main() -> int:
         # Write whatever we got, even if we aborted mid-loop
         venues_data["features"][: len(venues)] = venues
         venues_path.write_text(json.dumps(venues_data, indent=2))
+        # Record this run in the persistent ledger
+        record_run(ledger, args.district, budget.requests_made, budget.cost_accrued)
+        save_ledger(ledger)
         print(
             f"\nDone. Enriched {enriched} venue(s); "
             f"{no_match} had no Google match; "
             f"{errored} HTTP errors. "
             f"Requests made: {budget.requests_made}, "
             f"accrued cost ≤ ${budget.cost_accrued:.4f}."
+        )
+        print(
+            f"Aggregate to date: {ledger['total_requests']:,} requests, "
+            f"≤ ${ledger['total_cost_accrued_usd']:.4f} across {len(ledger['runs'])} runs."
         )
         print(f"Log: {log_path}")
 

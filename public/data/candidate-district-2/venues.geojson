@@ -1,0 +1,3186 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8208287,
+          39.7357211
+        ]
+      },
+      "properties": {
+        "osm_id": "node/3667613103",
+        "name": "Beatniks Coffee and Breakfast",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://chicobeatniks.com/",
+        "phone": "(530) 894-2800",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJzfruwNong4AR-c3jTtlvyBE",
+        "google_types": [
+          "cafe",
+          "breakfast_restaurant",
+          "meal_takeaway",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "cafe",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 781,
+        "google_editorial_summary": "Breakfast cafe offering cooked & cold options served alongside a range of espresso-based drinks.",
+        "google_formatted_address": "1387 E 8th St, Chico, CA 95928, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8041754,
+          39.7386805
+        ]
+      },
+      "properties": {
+        "osm_id": "node/5359988061",
+        "name": "Mariscos La Costa",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": "(530) 342-3627",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ40d7PHoog4ARz2qTp_1C8wo",
+        "google_types": [
+          "mexican_restaurant",
+          "seafood_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "mexican_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.2,
+        "google_user_ratings_count": 526,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1141 Forest Ave UNIT 10, Chico, CA 95928, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8657025,
+          39.7614452
+        ]
+      },
+      "properties": {
+        "osm_id": "node/10127348060",
+        "name": "Rice Bowl",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2804 Esplanade",
+        "website": "http://www.chicoricebowl.com/",
+        "phone": "+1-530-899-9098",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": true,
+        "google_place_id": "ChIJa9xoQY7YgoARmWuqRo49KY8",
+        "google_types": [
+          "chinese_restaurant",
+          "asian_restaurant",
+          "japanese_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "chinese_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 1392,
+        "google_editorial_summary": "Old-fashioned mainstay for Japanese & Chinese classics served in serene environs with a sushi bar.",
+        "google_formatted_address": "2804 Esplanade, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8632056,
+          39.7579552
+        ]
+      },
+      "properties": {
+        "osm_id": "node/10783310005",
+        "name": "Aztlan",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1645 Park Avenue Chico",
+        "website": null,
+        "phone": "+1-530-487-7062",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJA4aoV7PZgoARAPG29f1lHoY",
+        "google_types": [
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 374,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2601 Esplanade, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8582204,
+          39.7531278
+        ]
+      },
+      "properties": {
+        "osm_id": "node/11076077080",
+        "name": "Farm Star Pizza",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2359 Esplanade",
+        "website": "https://farmstarpizza.com/",
+        "phone": "+1-530-323-2056",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJk1w9W4DYgoAR0Df9MunML7w",
+        "google_types": [
+          "pizza_restaurant",
+          "pizza_delivery",
+          "catering_service",
+          "italian_restaurant",
+          "meal_takeaway",
+          "meal_delivery",
+          "food_delivery",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "pizza_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 614,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2359 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.851053,
+          39.7444998
+        ]
+      },
+      "properties": {
+        "osm_id": "node/11152747327",
+        "name": "The Great Catsby",
+        "category": "cafe",
+        "amenity": "cafe",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1725 Esplanade Chico",
+        "website": "https://thegreatcatsby.com/",
+        "phone": "(530) 855-0542",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJqbqlUT0ng4ARlkzCrGURISk",
+        "google_types": [
+          "pet_care",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "pet_care",
+        "google_business_status": "CLOSED_TEMPORARILY",
+        "google_rating": 4.8,
+        "google_user_ratings_count": 81,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1725 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8443078,
+          39.7366566
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12069469640",
+        "name": "Museum of Northern California Art",
+        "category": "tourism_museum",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "museum",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "900 Esplanade Chico",
+        "website": "https://monca.org/",
+        "phone": "+1-530-487-7272",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ7ZFxTr0ng4ARKKPPaR_Iefo",
+        "google_types": [
+          "art_museum",
+          "tourist_attraction",
+          "museum",
+          "point_of_interest",
+          "non_profit_organization",
+          "association_or_organization",
+          "establishment"
+        ],
+        "google_primary_type": "art_museum",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 156,
+        "google_editorial_summary": null,
+        "google_formatted_address": "900 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8653322,
+          39.7554474
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12111919201",
+        "name": "Teriyaki House",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "236B West East Avenue",
+        "website": "https://topusadetails.com/details/teriyaki-house-east-ave-ChIJ1Re",
+        "phone": "(530) 894-6127",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ1Rew9oTYgoARgwMbaossXKw",
+        "google_types": [
+          "japanese_restaurant",
+          "asian_restaurant",
+          "fast_food_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "japanese_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 220,
+        "google_editorial_summary": null,
+        "google_formatted_address": "236 W East Ave #B, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8355153,
+          39.7397045
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12117897001",
+        "name": "ABC Books",
+        "category": "shop_books",
+        "amenity": null,
+        "leisure": null,
+        "tourism": null,
+        "shop": "books",
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://www.facebook.com/ChicoABCBooks/",
+        "phone": "(530) 893-4342",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJh1Ks2b8ng4ARcFAZZiheB3o",
+        "google_types": [
+          "book_store",
+          "point_of_interest",
+          "store",
+          "establishment"
+        ],
+        "google_primary_type": "book_store",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 72,
+        "google_editorial_summary": null,
+        "google_formatted_address": "950 Mangrove Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8232891,
+          39.7620463
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12133103701",
+        "name": "The Redwood Sandwich Co.",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1354 East Avenue",
+        "website": "http://redwoodsandwichco.com/",
+        "phone": "(530) 965-5293",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJaQp8f9bZgoAR1IAjQXtCsGk",
+        "google_types": [
+          "sandwich_shop",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "sandwich_shop",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 142,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1354 East Ave Suite U, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8464949,
+          39.7396292
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12141569693",
+        "name": "Red Tavern",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1250 Esplanade Chico",
+        "website": "https://www.redtavern.com/",
+        "phone": "+1-530-894-3463",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJh8_VvZkng4ARv7wiaZNsW_I",
+        "google_types": [
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 409,
+        "google_editorial_summary": "Wines & a seasonal American & Mediterranean menu in a garden bistro with weekly live music.",
+        "google_formatted_address": "1250 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8484874,
+          39.756705
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12209917996",
+        "name": "Butte College - Cosmetology & Barbering",
+        "category": "college",
+        "amenity": "college",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2201 Pillsbury Road Chico",
+        "website": "https://www.butte.edu/cosmetology/",
+        "phone": "(530) 895-2202",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Butte College",
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": true,
+        "google_place_id": "ChIJ7dt2VDLZgoAROPE-QStYTNE",
+        "google_types": [
+          "beauty_salon",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "educational_institution",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.4,
+        "google_user_ratings_count": 7,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2201 Pillsbury Rd UNIT 170, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8519368,
+          39.7455769
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12327824560",
+        "name": "JI BEI CHUAN(RICE NOODLES&RAMEN)",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1851 Esplanade Chico",
+        "website": "https://jibeichuan-chico.com/",
+        "phone": "+1-530-487-8719",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJA3t8bkEng4ARCXqKG8KQOzY",
+        "google_types": [
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "CLOSED_PERMANENTLY",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 287,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1851 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8641992,
+          39.755368
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12434600507",
+        "name": "Casa Ramos",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://www.casaramos.net/",
+        "phone": "(530) 894-0119",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJM5oPXYTYgoARY_nLB7ecAz0",
+        "google_types": [
+          "mexican_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "mexican_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 534,
+        "google_editorial_summary": "Casual, family-owned chain offering enchiladas, carne asada & other Mexican favorites.",
+        "google_formatted_address": "216C W East Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8349438,
+          39.7289341
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12535114162",
+        "name": "Tender Loving",
+        "category": "cafe",
+        "amenity": "cafe",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "365 East 6th Street St. Chico",
+        "website": "https://www.tenderlovingcoffee.com/",
+        "phone": "+1-530-433-0414",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJGeGOiv4ng4AR4ZHz6_JgE9A",
+        "google_types": [
+          "cafe",
+          "coffee_shop",
+          "point_of_interest",
+          "food_store",
+          "food",
+          "store",
+          "establishment"
+        ],
+        "google_primary_type": "cafe",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 191,
+        "google_editorial_summary": null,
+        "google_formatted_address": "365 E 6th St, Chico, CA 95928, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8236347,
+          39.7619508
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12695707292",
+        "name": "Halo Hawaiian BBQ",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1354 East Avenue Chico",
+        "website": "https://www.halochico.com/",
+        "phone": "+1-530-592-3898",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ9V1DIAjYgoAR1cpZF5FgnPY",
+        "google_types": [
+          "hawaiian_restaurant",
+          "barbecue_restaurant",
+          "american_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "hawaiian_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 978,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1354 East Ave P, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8625905,
+          39.7570784
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12869562597",
+        "name": "Las Tapatias Mexican Grille",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "118 West East Avenue",
+        "website": "https://www.lastapatiastaqueria.com/",
+        "phone": "+1-530-554-6271",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ71Q0vpbZgoARaT73rESpLTM",
+        "google_types": [
+          "mexican_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "mexican_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 569,
+        "google_editorial_summary": null,
+        "google_formatted_address": "118 W East Ave, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8498305,
+          39.7529307
+        ]
+      },
+      "properties": {
+        "osm_id": "node/12884623681",
+        "name": "Chico Creek Coffee",
+        "category": "cafe",
+        "amenity": "cafe",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": "(530) 330-2888",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJLdiP_ysng4ARmc9kr7TeAtg",
+        "google_types": [
+          "coffee_shop",
+          "cafe",
+          "point_of_interest",
+          "food_store",
+          "food",
+          "store",
+          "establishment"
+        ],
+        "google_primary_type": "coffee_shop",
+        "google_business_status": "CLOSED_PERMANENTLY",
+        "google_rating": 4.8,
+        "google_user_ratings_count": 59,
+        "google_editorial_summary": null,
+        "google_formatted_address": "107 Parmac Rd, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8344401,
+          39.7384484
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13057181313",
+        "name": "Egg Roll King",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://restoer.com/egg-roll-king",
+        "phone": "(530) 893-1838",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJw3vTkL8ng4ARVqR1_Z9HwEs",
+        "google_types": [
+          "chinese_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "chinese_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 3.9,
+        "google_user_ratings_count": 475,
+        "google_editorial_summary": null,
+        "google_formatted_address": "659 Palmetto Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8686686,
+          39.763651
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13057212458",
+        "name": "Ikkyu Japanese Restaurant",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2995 Esplanade",
+        "website": null,
+        "phone": "+1-530-965-5943",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJUUckl5vZgoARtPxywA3B99o",
+        "google_types": [
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "CLOSED_PERMANENTLY",
+        "google_rating": 4.4,
+        "google_user_ratings_count": 55,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2995 Esplanade #104, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8621685,
+          39.7580813
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13179822081",
+        "name": "Prya Indian Cuisine",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2574 Esplanade Chico",
+        "website": "http://chicopriya.com",
+        "phone": "+1 530 899 1055",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ7_9t3oXYgoAR37VDEpdI7JE",
+        "google_types": [
+          "indian_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "indian_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 766,
+        "google_editorial_summary": "Relaxed Indian restaurant offering a lunch buffet & a traditional menu, plus beer & wine.",
+        "google_formatted_address": "2574 Esplanade, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8372673,
+          39.7417014
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13308770421",
+        "name": "Bidwell Perk",
+        "category": "cafe",
+        "amenity": "cafe",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "664 East 1st Avenue Chico",
+        "website": "http://www.bidwellperk.com/",
+        "phone": "(530) 899-1500",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJB7dxTZQng4AR4OkUvUxQtws",
+        "google_types": [
+          "coffee_shop",
+          "tea_house",
+          "cafe",
+          "point_of_interest",
+          "food_store",
+          "food",
+          "store",
+          "establishment"
+        ],
+        "google_primary_type": "coffee_shop",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 477,
+        "google_editorial_summary": null,
+        "google_formatted_address": "664 E 1st Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8442379,
+          39.7740214
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13608269857",
+        "name": "Mekkala Thai Cuisine",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1196 East Lassen Avenue Chico",
+        "website": "http://www.chicothaifood.com/",
+        "phone": "+1-530-636-4620",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": true,
+        "google_place_id": "ChIJK5OCAmjYgoAR0MLR6xHng2U",
+        "google_types": [
+          "thai_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "thai_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.4,
+        "google_user_ratings_count": 316,
+        "google_editorial_summary": "Unassuming, laid-back venue for classic spiced-to-order Thai curries, soups & stir-fries.",
+        "google_formatted_address": "1196 E Lassen Ave Suite 110, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8441596,
+          39.7742831
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13608269858",
+        "name": "La Dolce Piazza",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "3211 Cohasset Road Chico",
+        "website": null,
+        "phone": null,
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": true,
+        "google_place_id": "ChIJw2chsULYgoARicpcMStO8bc",
+        "google_types": [
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 50,
+        "google_editorial_summary": null,
+        "google_formatted_address": "3211 Cohasset Rd, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8440128,
+          39.774317
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13608269859",
+        "name": "Burger Hut",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "3211 Cohasset Road Chico",
+        "website": "https://www.burgerhut.com/",
+        "phone": "+1-530-342-4555",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": true,
+        "google_place_id": "ChIJEzfTqELYgoARWk3q0CRPC5A",
+        "google_types": [
+          "hamburger_restaurant",
+          "fast_food_restaurant",
+          "american_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "hamburger_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 819,
+        "google_editorial_summary": "Burger joint offering charbroiled patties with self-serve toppings, plus hot dogs, fries & shakes.",
+        "google_formatted_address": "3211 Cohasset Rd, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8430397,
+          39.7743612
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13608269862",
+        "name": "Oak Bridge Academy",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1350 East Lassen Avenue Chico",
+        "website": "https://oakbridge.chicousd.org/",
+        "phone": "+1-530-897-8877",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJ5W188ELZgoARoOOLgDMwBPk",
+        "google_types": [
+          "secondary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "secondary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1350 E Lassen Ave, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8432451,
+          39.7733032
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871910",
+        "name": "Marbella Chico",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "13551 East Lassen Avenue Chico",
+        "website": "https://marbellachico.com/",
+        "phone": "+1-530-899-0814",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ0aucSGjYgoARuAgWvcGQKu4",
+        "google_types": [
+          "health",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "health",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 3.9,
+        "google_user_ratings_count": 20,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1351 E Lassen Ave, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8402164,
+          39.7723533
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871913",
+        "name": "Far Northern Regional Center",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1377 East Lassen Avenue Chico",
+        "website": "http://www.farnorthernrc.org/",
+        "phone": "+1-530-895-8633",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJydeGbmnYgoAR3Jk6O8P804A",
+        "google_types": [
+          "point_of_interest",
+          "association_or_organization",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "association_or_organization",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4,
+        "google_user_ratings_count": 61,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1377 E Lassen Ave, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8417694,
+          39.7713159
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871914",
+        "name": "The Country Village",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "966 Kovak Court Chico",
+        "website": "https://www.countryvillagecare.com/",
+        "phone": "+1-530-342-7002",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ0TXF32jYgoARaTLjcSGU_5Y",
+        "google_types": [
+          "health",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "health",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 3.4,
+        "google_user_ratings_count": 14,
+        "google_editorial_summary": null,
+        "google_formatted_address": "966 Kovak Ct, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8371809,
+          39.7713043
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871917",
+        "name": "Sycamore Glen Active Senior Community",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1199 Diablo Avenue Chico",
+        "website": "https://www.sycamoreglen.com/",
+        "phone": "+1-530-894-0384",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJs3VnY2zYgoARAXPk5npvtZI",
+        "google_types": [
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "service",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 52,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1199 Diablo Ave, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8290281,
+          39.7702939
+        ]
+      },
+      "properties": {
+        "osm_id": "node/13609871920",
+        "name": "The Alibi Pub & Grill",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "3010 Floral Ave Chico",
+        "website": "https://www.facebook.com/profile.php?id=100083552231416",
+        "phone": "+1-530-487-8677",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ2QMrblzZgoARUWe4wUEjUF0",
+        "google_types": [
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.2,
+        "google_user_ratings_count": 94,
+        "google_editorial_summary": null,
+        "google_formatted_address": "3010 Floral Ave Ste 125, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.858949,
+          39.7593217
+        ]
+      },
+      "properties": {
+        "osm_id": "way/84968698",
+        "name": "Fairview High School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://fvhs.chicousd.org/",
+        "phone": "(530) 891-3092",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJg5u-qIfYgoARp6dnx2qUCu8",
+        "google_types": [
+          "secondary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "secondary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "290 East Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8175113,
+          39.7590041
+        ]
+      },
+      "properties": {
+        "osm_id": "way/84969018",
+        "name": "Pleasant Valley Senior High School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://pvhs.chicousd.org/",
+        "phone": "(530) 891-3050",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Chico Unified School District",
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJQesNC3Ez4ocROBIDdcFBAqA",
+        "google_types": [
+          "secondary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "secondary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1475 East Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8137306,
+          39.7600944
+        ]
+      },
+      "properties": {
+        "osm_id": "way/84969479",
+        "name": "Marigold Elementary School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://www.chicousd.org/",
+        "phone": "(530) 891-3121",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJiyZaJvwng4ARJXCuPZOH9pE",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2446 Marigold Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8049655,
+          39.7542685
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85064987",
+        "name": "Chico Oaks Adventist School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://www.chicooaks.org/",
+        "phone": "(530) 342-5043",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJNyAH0Q4og4ARtR-hBs6KOuQ",
+        "google_types": [
+          "primary_school",
+          "preschool",
+          "child_care_agency",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1859 Hooker Oak Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.839938,
+          39.7618645
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85087700",
+        "name": "John A. McManus Elementary School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://mcmanus.chicousd.org/",
+        "phone": "(530) 891-3128",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Chico Unified School District",
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJ0yhRt3bYgoARRVwzfdg99qI",
+        "google_types": [
+          "primary_school",
+          "point_of_interest",
+          "school",
+          "educational_institution",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "988 East Ave #988, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.813417,
+          39.7422998
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85243499",
+        "name": "Parkview Elementary School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://parkview.chicousd.org/",
+        "phone": "(530) 891-3114",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJeRRoKN8ng4ARYP47SlUZq_8",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1770 E 8th St, Chico, CA 95928, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8373601,
+          39.7571383
+        ]
+      },
+      "properties": {
+        "osm_id": "way/85629476",
+        "name": "Bidwell Junior High School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2376 North Avenue Chico",
+        "website": "http://bjhs.chicousd.org/",
+        "phone": "(530) 891-3080",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": true,
+        "google_place_id": "ChIJncEPcoong4ARUIIA0-2X0XI",
+        "google_types": [
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2376 North Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8362975,
+          39.7437546
+        ]
+      },
+      "properties": {
+        "osm_id": "way/186727445",
+        "name": "Hooker Oak Elementary School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://hookeroak.chicousd.org/",
+        "phone": "(530) 891-3119",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Chico Unified School District",
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJzfAfdJQng4AR_GPnJ9KF6ec",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1238 Arbutus Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8319426,
+          39.7490335
+        ]
+      },
+      "properties": {
+        "osm_id": "way/186727450",
+        "name": "Neal Dow Elementary School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://nealdow.chicousd.org/",
+        "phone": "(530) 891-3110",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": true,
+        "google_place_id": "ChIJR6D3Tu0ng4AR4H3ymfCVy0E",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1420 Neal Dow Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8831,
+          39.7796217
+        ]
+      },
+      "properties": {
+        "osm_id": "way/186727461",
+        "name": "Shasta Union School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://shasta.chicousd.org/",
+        "phone": "(530) 891-3141",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": true,
+        "google_place_id": "ChIJZTPkFN_YgoARFcXQQrQO7Sg",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "169 Leora Ct, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8592211,
+          39.7550742
+        ]
+      },
+      "properties": {
+        "osm_id": "way/460969400",
+        "name": "Kalico Kitchen",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2396 Esplanade",
+        "website": "https://kalicokitchenchico.com/",
+        "phone": "(530) 343-3968",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJTzkB2IDYgoAR-YpRQUC9hJA",
+        "google_types": [
+          "american_restaurant",
+          "breakfast_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "american_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.2,
+        "google_user_ratings_count": 902,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2396 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8566906,
+          39.7525479
+        ]
+      },
+      "properties": {
+        "osm_id": "way/460969402",
+        "name": "Sin of Cortez",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2290 Esplanade",
+        "website": "https://www.sinofcortezchico.com/",
+        "phone": "+1-530-879-9200",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJWbvTDoDYgoARimV8VpSCuPA",
+        "google_types": [
+          "breakfast_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "breakfast_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 873,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2290 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.855223,
+          39.7513221
+        ]
+      },
+      "properties": {
+        "osm_id": "way/460969403",
+        "name": "Italian Cottage",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2234 Esplanade",
+        "website": "http://theItaliancottage.com",
+        "phone": "+1-530-343-7000",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ-9PYE4Ang4ARks4aGTSdeXk",
+        "google_types": [
+          "italian_restaurant",
+          "breakfast_restaurant",
+          "brunch_restaurant",
+          "pizza_restaurant",
+          "european_restaurant",
+          "american_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "italian_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 1549,
+        "google_editorial_summary": "Established in 1965, this family-owned trattoria dispenses Italian comfort food & breakfast fare.",
+        "google_formatted_address": "2234 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.842552,
+          39.7509498
+        ]
+      },
+      "properties": {
+        "osm_id": "way/460969405",
+        "name": "Roses & Ivy Elder Care",
+        "category": "social_facility",
+        "amenity": "social_facility",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "853 Manzanita Court Chico",
+        "website": "http://www.rosesandivy.com/",
+        "phone": "+1-530-894-7836",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJn5H9Lo8ng4ARo5V8jvti6Qs",
+        "google_types": [
+          "health",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "health",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 5,
+        "google_user_ratings_count": 6,
+        "google_editorial_summary": null,
+        "google_formatted_address": "853 Manzanita Ct, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8426906,
+          39.7470417
+        ]
+      },
+      "properties": {
+        "osm_id": "way/460975277",
+        "name": "Cozy Diner",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1695 Mangrove Avenue",
+        "website": "https://www.cozydinerchico.com/",
+        "phone": "+1-530-895-1195",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJX-gw148ng4AR8hBqZPvDtMM",
+        "google_types": [
+          "restaurant",
+          "diner",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.2,
+        "google_user_ratings_count": 1777,
+        "google_editorial_summary": "Straightforward venue for down-home American comfort food like chicken-fried steak & burgers.",
+        "google_formatted_address": "1695 Mangrove Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8356937,
+          39.739634
+        ]
+      },
+      "properties": {
+        "osm_id": "way/460975281",
+        "name": "La Comida",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://lacomidarestaurants.com/",
+        "phone": "(530) 345-2254",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJtbQzsb8ng4ARsv5K3gQ3xKI",
+        "google_types": [
+          "mexican_restaurant",
+          "family_restaurant",
+          "vegetarian_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "mexican_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 1112,
+        "google_editorial_summary": "Unfussy outlet serving Mexican basics in a relaxed, shopping center setting.",
+        "google_formatted_address": "954 Mangrove Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8402675,
+          39.7355056
+        ]
+      },
+      "properties": {
+        "osm_id": "way/460975283",
+        "name": "Chico Junior High School",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://cjhs.chicousd.org/",
+        "phone": "(530) 891-3066",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Chico Unified School District",
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJj7ArN7wng4ARg-og5NZCYR4",
+        "google_types": [
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "280 Memorial Way, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8377359,
+          39.7332128
+        ]
+      },
+      "properties": {
+        "osm_id": "way/460975284",
+        "name": "Morning Thunder Cafe",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://morningthundercafe.com/",
+        "phone": "(530) 342-9717",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJib-zarkng4ARPGsICTn3j5A",
+        "google_types": [
+          "breakfast_restaurant",
+          "brunch_restaurant",
+          "cafe",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "breakfast_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 1058,
+        "google_editorial_summary": "Relaxed family-owned eatery serving sizable plates of breakfast & lunch fare in a comfy space.",
+        "google_formatted_address": "352 Vallombrosa Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8341933,
+          39.7437809
+        ]
+      },
+      "properties": {
+        "osm_id": "way/461041054",
+        "name": "Butte County Library - Chico Branch",
+        "category": "library",
+        "amenity": "library",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1108 Sherman Avenue Chico",
+        "website": "https://www.buttecounty.net/528/Library",
+        "phone": "+1-530-552-5652;",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": "Butte County",
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ64SgxpQng4AR7IFArlT072k",
+        "google_types": [
+          "library",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "library",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 163,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1108 Sherman Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8565212,
+          39.7506221
+        ]
+      },
+      "properties": {
+        "osm_id": "way/474802431",
+        "name": "Town House Motel",
+        "category": "tourism_motel",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "motel",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2231 Esplanade Chico",
+        "website": "https://rapidhotels.xyz/town-house-motel",
+        "phone": "(530) 343-1621",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Hotel meeting rooms vary widely in price and political-event policy \u2014 confirm with sales team.",
+        "in_district": false,
+        "google_place_id": "ChIJNd6iGIAng4ARMypWH-K8PeQ",
+        "google_types": [
+          "motel",
+          "lodging",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "motel",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 2.2,
+        "google_user_ratings_count": 223,
+        "google_editorial_summary": "Standard rooms with coffeemakers, cable TVs, a/c & free WiFi, outdoor pool & free parking.",
+        "google_formatted_address": "2231 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8127912,
+          39.7509189
+        ]
+      },
+      "properties": {
+        "osm_id": "way/640343883",
+        "name": "Sierra View Elementary",
+        "category": "school",
+        "amenity": "school",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1598 Hooker Oak Avenue Chico",
+        "website": "http://sierraview.chicousd.org/",
+        "phone": "(530) 891-3117",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Chico Unified Schools",
+        "hosting_status": "needs_verification",
+        "notes": "Public school auditoriums and hotel meeting rooms typically require an explicit booking arrangement \u2014 confirm with the venue before assuming.",
+        "in_district": false,
+        "google_place_id": "ChIJnfmH4OEng4ARPkM5BCLxQC4",
+        "google_types": [
+          "primary_school",
+          "school",
+          "educational_institution",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "primary_school",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": null,
+        "google_user_ratings_count": null,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1598 Hooker Oak Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.863934,
+          39.7586579
+        ]
+      },
+      "properties": {
+        "osm_id": "way/745127244",
+        "name": "La Hacienda",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2635 Esplanade",
+        "website": "http://lahacienda-chico.com/",
+        "phone": "+1-530-893-8270",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJzTGOiIXYgoAR1aHNeIyHAiI",
+        "google_types": [
+          "mexican_restaurant",
+          "bar_and_grill",
+          "family_restaurant",
+          "bar",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "mexican_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.2,
+        "google_user_ratings_count": 912,
+        "google_editorial_summary": "Longtime haunt serving Michoacan-style tacos, salads & other Mexican fare with signature margaritas.",
+        "google_formatted_address": "2635 Esplanade, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8808808,
+          39.7752983
+        ]
+      },
+      "properties": {
+        "osm_id": "way/745396754",
+        "name": "Basque Norte",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "3355 Esplanade Chico",
+        "website": "http://www.basquenorte.com/",
+        "phone": "(530) 891-5204",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJd3Afvd3YgoARWiLGc0M78TI",
+        "google_types": [
+          "steak_house",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "steak_house",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 657,
+        "google_editorial_summary": "Rustic, long-running Spanish eatery offering steaks, tapas & cocktails, plus Mediterranean items.",
+        "google_formatted_address": "3355 Esplanade, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8775125,
+          39.7725052
+        ]
+      },
+      "properties": {
+        "osm_id": "way/800854419",
+        "name": "The Grateful Bean",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://www.gratefulbeancoffee.com/",
+        "phone": "(530) 332-9250",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ2Yv094TZgoARIWguZn3xkK4",
+        "google_types": [
+          "coffee_shop",
+          "cafe",
+          "point_of_interest",
+          "food_store",
+          "food",
+          "store",
+          "establishment"
+        ],
+        "google_primary_type": "coffee_shop",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 459,
+        "google_editorial_summary": "Chain outpost offering coffee & tea drinks, plus smoothies & a variety of light fare.",
+        "google_formatted_address": "6 W Eaton Rd, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.9032724,
+          39.7986211
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1138554492",
+        "name": "CJ's Last Chance Diner",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://www.facebook.com/p/CJs-Last-Chance-Diner-100063787200604/",
+        "phone": "(530) 343-1901",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJBU6ltrTegoARVb-Nve7hb8k",
+        "google_types": [
+          "restaurant",
+          "barbecue_restaurant",
+          "diner",
+          "american_restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 224,
+        "google_editorial_summary": null,
+        "google_formatted_address": "13670 Anderson Brothers Dr, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8259243,
+          39.750001
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1138555627",
+        "name": "Coffee Ranch",
+        "category": "cafe",
+        "amenity": "cafe",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://www.coffeeranchchico.com/",
+        "phone": "(530) 809-9338",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": true,
+        "google_place_id": "ChIJVyeoRO4ng4ARt9Sg2MUrHsQ",
+        "google_types": [
+          "coffee_shop",
+          "cafe",
+          "point_of_interest",
+          "food_store",
+          "food",
+          "store",
+          "establishment"
+        ],
+        "google_primary_type": "coffee_shop",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.3,
+        "google_user_ratings_count": 285,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1288 E 1st Ave #120, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8761476,
+          39.771158
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1138556996",
+        "name": "Deja Vu Breakfast Company",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://m.facebook.com/profile.php?id=100069458241902",
+        "phone": "(530) 287-5660",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJvwZYGmvZgoARflZWKTbAmts",
+        "google_types": [
+          "breakfast_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "breakfast_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 378,
+        "google_editorial_summary": null,
+        "google_formatted_address": "3221 Esplanade, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.847369,
+          39.7409507
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1138560355",
+        "name": "Goodman House Bed & Breakfast",
+        "category": "tourism_hotel",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "hotel",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://www.goodmanhouse.net/",
+        "phone": "(530) 566-0256",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Hotel meeting rooms vary widely in price and political-event policy \u2014 confirm with sales team.",
+        "in_district": false,
+        "google_place_id": "ChIJ_RBWKZong4AR5PuSwoxsUng",
+        "google_types": [
+          "bed_and_breakfast",
+          "lodging",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "bed_and_breakfast",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.8,
+        "google_user_ratings_count": 19,
+        "google_editorial_summary": "Refined B&B in a circa-1906 home featuring antiques-filled rooms, gourmet breakfast & free Wi-Fi.",
+        "google_formatted_address": "1362 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8764388,
+          39.7709617
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1138563498",
+        "name": "Hotel James",
+        "category": "tourism_hotel",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "hotel",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "http://hoteljameschico.com/",
+        "phone": "(530) 894-5743",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Hotel meeting rooms vary widely in price and political-event policy \u2014 confirm with sales team.",
+        "in_district": false,
+        "google_place_id": "ChIJhWL6uOnYgoARWUiPsTU3pFc",
+        "google_types": [
+          "hotel",
+          "lodging",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "hotel",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.6,
+        "google_user_ratings_count": 44,
+        "google_editorial_summary": "Boutique hotel featuring streamlined guestrooms & suites with Wi-Fi, plus a wine bar/restaurant.",
+        "google_formatted_address": "10 Lost Dutchman Dr, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876787,
+          39.7704089
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1138567388",
+        "name": "The Lost Dutchman Taproom",
+        "category": "bar",
+        "amenity": "bar",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "25 Lost Dutchman Drive",
+        "website": "http://www.lostdutchmantaproom.com/",
+        "phone": "+1-530-809-1797",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJtx73pOnYgoARtWANeW6VCSM",
+        "google_types": [
+          "bar",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "bar",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 193,
+        "google_editorial_summary": null,
+        "google_formatted_address": "25 Lost Dutchman Dr, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.858633,
+          39.7535125
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1139081099",
+        "name": "Pueblito #2 Mexican Restaurant",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2365 Esplanade",
+        "website": "http://mipueblitochico.com",
+        "phone": "(530) 895-9607",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ07NZwpXZgoARCs9mEILf27c",
+        "google_types": [
+          "mexican_restaurant",
+          "bar_and_grill",
+          "burrito_restaurant",
+          "seafood_restaurant",
+          "cocktail_bar",
+          "catering_service",
+          "taco_restaurant",
+          "bar",
+          "food_delivery",
+          "meal_takeaway",
+          "restaurant",
+          "point_of_interest",
+          "service",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "mexican_restaurant",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.5,
+        "google_user_ratings_count": 264,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2365 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8619049,
+          39.7576763
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1139083879",
+        "name": "Regency Inn",
+        "category": "tourism_hotel",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "hotel",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": null,
+        "phone": "(530) 898-0134",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Hotel meeting rooms vary widely in price and political-event policy \u2014 confirm with sales team.",
+        "in_district": false,
+        "google_place_id": "ChIJAW4s1oXYgoARLYmAUpCJVKg",
+        "google_types": [
+          "motel",
+          "lodging",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "motel",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 2.9,
+        "google_user_ratings_count": 83,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2566 Esplanade, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8350865,
+          39.7288297
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1139185361",
+        "name": "Pageant Theater",
+        "category": "cinema",
+        "amenity": "cinema",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "351 East 6th Street Chico",
+        "website": "http://www.pageantchico.com/",
+        "phone": "(530) 343-0663",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ7Zn_t7cng4ARJZ10sdVboeQ",
+        "google_types": [
+          "movie_theater",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "movie_theater",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.8,
+        "google_user_ratings_count": 180,
+        "google_editorial_summary": "Revered independent movie theater screening art-house films in intimate surrounds.",
+        "google_formatted_address": "351 E 6th St, Chico, CA 95928, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857963,
+          39.8035753
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1292990282",
+        "name": "Chico Air Museum",
+        "category": "tourism_museum",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "museum",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "165 Ryan Avenue Chico",
+        "website": "https://www.chicoairmuseum.org/",
+        "phone": "(530) 345-6468",
+        "capacity": null,
+        "wheelchair": "yes",
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": true,
+        "google_place_id": "ChIJ33RYTwrZgoARP05Y-BBv4go",
+        "google_types": [
+          "museum",
+          "tourist_attraction",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "museum",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.8,
+        "google_user_ratings_count": 319,
+        "google_editorial_summary": null,
+        "google_formatted_address": "165 Ryan Ave, Chico, CA 95973, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8547931,
+          39.7506245
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1314978354",
+        "name": "Sushi Burrito King",
+        "category": "restaurant",
+        "amenity": "restaurant",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2190 Esplanade Chico",
+        "website": "https://www.sushikingchicoca.com/",
+        "phone": "+1-530-892-8688",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ4_I-N4Ang4AR5pphpUp4pRs",
+        "google_types": [
+          "japanese_restaurant",
+          "sushi_restaurant",
+          "restaurant",
+          "point_of_interest",
+          "food",
+          "establishment"
+        ],
+        "google_primary_type": "japanese_restaurant",
+        "google_business_status": "CLOSED_PERMANENTLY",
+        "google_rating": 4.1,
+        "google_user_ratings_count": 525,
+        "google_editorial_summary": null,
+        "google_formatted_address": "2190 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.833301,
+          39.7340607
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1392880190",
+        "name": "CARD Community Center",
+        "category": "community_centre",
+        "amenity": "community_centre",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "545 Vallombrosa Avenue Chico",
+        "website": "http://www.chicorec.com/",
+        "phone": "(530) 895-4711",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJG_PmW8cng4ARoFlOapYaKco",
+        "google_types": [
+          "community_center",
+          "event_venue",
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "community_center",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.8,
+        "google_user_ratings_count": 12,
+        "google_editorial_summary": null,
+        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8335453,
+          39.7338387
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1416654666",
+        "name": "Creekside Rose Garden",
+        "category": "events_venue",
+        "amenity": "events_venue",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": null,
+        "website": "https://www.creeksiderosegarden.com/",
+        "phone": "(530) 895-4711",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJyfAbY8cng4ARkUpcVHUt__A",
+        "google_types": [
+          "point_of_interest",
+          "service",
+          "establishment"
+        ],
+        "google_primary_type": "service",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.9,
+        "google_user_ratings_count": 19,
+        "google_editorial_summary": null,
+        "google_formatted_address": "545 Vallombrosa Ave, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8579747,
+          39.7544202
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1425966900",
+        "name": "Safari Inn - Chico",
+        "category": "tourism_hotel",
+        "amenity": null,
+        "leisure": null,
+        "tourism": "hotel",
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "2352 Esplanade",
+        "website": "http://www.safarichico.com/",
+        "phone": "(530) 343-3201",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": null,
+        "hosting_status": "needs_verification",
+        "notes": "Hotel meeting rooms vary widely in price and political-event policy \u2014 confirm with sales team.",
+        "in_district": false,
+        "google_place_id": "ChIJY-Nq5YDYgoARFoAXARSH97Y",
+        "google_types": [
+          "motel",
+          "hotel",
+          "lodging",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "motel",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 2.9,
+        "google_user_ratings_count": 264,
+        "google_editorial_summary": "Straightforward property offering unpretentious rooms, some with kitchenettes, plus an outdoor pool.",
+        "google_formatted_address": "2352 Esplanade, Chico, CA 95926, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8484662,
+          39.7426033
+        ]
+      },
+      "properties": {
+        "osm_id": "relation/18020131",
+        "name": "Enloe Conference Center",
+        "category": "conference_centre",
+        "amenity": "conference_centre",
+        "leisure": null,
+        "tourism": null,
+        "shop": null,
+        "craft": null,
+        "office": null,
+        "club": null,
+        "address": "1528 Esplanade Frontage Chico",
+        "website": "https://www.enloe.org/locations/locations-profile/?id=141&searchId=4f92955d-57b2-ee11-ad37-dc98402a11c6&sort=11&page=2&pageSize=10",
+        "phone": "+1-530-332-7370",
+        "capacity": null,
+        "wheelchair": null,
+        "operator": "Enloe Medical Center",
+        "hosting_status": "needs_verification",
+        "notes": null,
+        "in_district": false,
+        "google_place_id": "ChIJ1YuFgpsng4AR0eWRJtjyka8",
+        "google_types": [
+          "event_venue",
+          "point_of_interest",
+          "establishment"
+        ],
+        "google_primary_type": "event_venue",
+        "google_business_status": "OPERATIONAL",
+        "google_rating": 4.7,
+        "google_user_ratings_count": 47,
+        "google_editorial_summary": null,
+        "google_formatted_address": "1528 Esplanade, Chico, CA 95926, USA"
+      }
+    }
+  ]
+}

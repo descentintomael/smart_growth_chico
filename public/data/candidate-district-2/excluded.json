@@ -1,0 +1,286 @@
+{
+  "note": "Venues removed during OSM-based filtering. Audit trail for which OSM features were dropped and why.",
+  "count": 28,
+  "entries": [
+    {
+      "osm_id": "node/1706392710",
+      "name": "Super Luper Kids Preschool and Day Care",
+      "reason": "name contains 'preschool' (likely preschool/daycare/inappropriate)",
+      "amenity": "school",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": null
+    },
+    {
+      "osm_id": "node/5382465437",
+      "name": "Starbucks",
+      "reason": "chain venue (OSM brand='Starbucks'); chains rarely book candidate events",
+      "amenity": "cafe",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Starbucks"
+    },
+    {
+      "osm_id": "node/7035250254",
+      "name": "Starbucks",
+      "reason": "chain venue (OSM brand='Starbucks'); chains rarely book candidate events",
+      "amenity": "cafe",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Starbucks"
+    },
+    {
+      "osm_id": "node/11774402813",
+      "name": "Starbucks",
+      "reason": "chain venue (OSM brand='Starbucks'); chains rarely book candidate events",
+      "amenity": "cafe",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Starbucks"
+    },
+    {
+      "osm_id": "node/13049041417",
+      "name": "Hampton Inn & Suites",
+      "reason": "chain venue (OSM brand='Hampton Inn & Suites'); chains rarely book candidate events",
+      "amenity": null,
+      "leisure": null,
+      "tourism": "hotel",
+      "club": null,
+      "brand": "Hampton Inn & Suites"
+    },
+    {
+      "osm_id": "node/13099243411",
+      "name": "Starbucks",
+      "reason": "chain venue (OSM brand='Starbucks'); chains rarely book candidate events",
+      "amenity": "cafe",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Starbucks"
+    },
+    {
+      "osm_id": "node/13482951508",
+      "name": "Dutch Bros. Coffee",
+      "reason": "chain venue (OSM brand='Dutch Bros. Coffee'); chains rarely book candidate events",
+      "amenity": "cafe",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Dutch Bros. Coffee"
+    },
+    {
+      "osm_id": "node/13510612333",
+      "name": "The Human Bean",
+      "reason": "chain venue (OSM brand='The Human Bean'); chains rarely book candidate events",
+      "amenity": "cafe",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "The Human Bean"
+    },
+    {
+      "osm_id": "node/13685696846",
+      "name": "Round Table Pizza",
+      "reason": "chain venue (OSM brand='Round Table Pizza'); chains rarely book candidate events",
+      "amenity": "restaurant",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Round Table Pizza"
+    },
+    {
+      "osm_id": "way/85226704",
+      "name": "Panera Bread",
+      "reason": "known chain (backup name match)",
+      "amenity": "restaurant",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": null
+    },
+    {
+      "osm_id": "way/85226720",
+      "name": "Black Bear Diner",
+      "reason": "chain venue (OSM brand='Black Bear Diner'); chains rarely book candidate events",
+      "amenity": "restaurant",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Black Bear Diner"
+    },
+    {
+      "osm_id": "way/85240650",
+      "name": "Red Lobster",
+      "reason": "chain venue (OSM brand='Red Lobster'); chains rarely book candidate events",
+      "amenity": "restaurant",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Red Lobster"
+    },
+    {
+      "osm_id": "way/85240652",
+      "name": "Olive Garden",
+      "reason": "chain venue (OSM brand='Olive Garden'); chains rarely book candidate events",
+      "amenity": "restaurant",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Olive Garden"
+    },
+    {
+      "osm_id": "way/132766998",
+      "name": "Motel 6 Chico",
+      "reason": "chain venue (OSM brand='Motel 6'); chains rarely book candidate events",
+      "amenity": null,
+      "leisure": null,
+      "tourism": "motel",
+      "club": null,
+      "brand": "Motel 6"
+    },
+    {
+      "osm_id": "way/286803237",
+      "name": "Super 8 by Wyndham Chico",
+      "reason": "chain venue (OSM brand='Super 8'); chains rarely book candidate events",
+      "amenity": null,
+      "leisure": null,
+      "tourism": "motel",
+      "club": null,
+      "brand": "Super 8"
+    },
+    {
+      "osm_id": "way/286803238",
+      "name": "Denny's",
+      "reason": "chain venue (OSM brand=\"Denny's\"); chains rarely book candidate events",
+      "amenity": "restaurant",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Denny's"
+    },
+    {
+      "osm_id": "way/286803239",
+      "name": "Double Tree by Hilton Chico",
+      "reason": "chain venue (OSM brand='DoubleTree'); chains rarely book candidate events",
+      "amenity": null,
+      "leisure": null,
+      "tourism": "hotel",
+      "club": null,
+      "brand": "DoubleTree"
+    },
+    {
+      "osm_id": "way/301852375",
+      "name": "Chili's",
+      "reason": "chain venue (OSM brand=\"Chili's\"); chains rarely book candidate events",
+      "amenity": "restaurant",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Chili's"
+    },
+    {
+      "osm_id": "way/301852376",
+      "name": "Logans",
+      "reason": "known chain (backup name match)",
+      "amenity": "restaurant",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": null
+    },
+    {
+      "osm_id": "way/391770191",
+      "name": "BEST WESTERN Heritage Inn - Chico",
+      "reason": "chain venue (OSM brand='Best Western'); chains rarely book candidate events",
+      "amenity": null,
+      "leisure": null,
+      "tourism": "hotel",
+      "club": null,
+      "brand": "Best Western"
+    },
+    {
+      "osm_id": "way/461041061",
+      "name": "Bowlero",
+      "reason": "chain venue (OSM brand='Bowlero'); chains rarely book candidate events",
+      "amenity": null,
+      "leisure": "bowling_alley",
+      "tourism": null,
+      "club": null,
+      "brand": "Bowlero"
+    },
+    {
+      "osm_id": "way/478070258",
+      "name": "Cinemark Chico 14 and XD",
+      "reason": "chain venue (OSM brand='Cinemark'); chains rarely book candidate events",
+      "amenity": "cinema",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Cinemark"
+    },
+    {
+      "osm_id": "way/624162449",
+      "name": "Americas Best Value Inn Chico",
+      "reason": "chain venue (OSM brand='Americas Best Value Inn'); chains rarely book candidate events",
+      "amenity": null,
+      "leisure": null,
+      "tourism": "motel",
+      "club": null,
+      "brand": "Americas Best Value Inn"
+    },
+    {
+      "osm_id": "way/624162450",
+      "name": "Quality Inn Near Chico State",
+      "reason": "chain venue (OSM brand='Quality Inn'); chains rarely book candidate events",
+      "amenity": null,
+      "leisure": null,
+      "tourism": "hotel",
+      "club": null,
+      "brand": "Quality Inn"
+    },
+    {
+      "osm_id": "way/699795377",
+      "name": "Buffalo Wild Wings",
+      "reason": "chain venue (OSM brand='Buffalo Wild Wings'); chains rarely book candidate events",
+      "amenity": "restaurant",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Buffalo Wild Wings"
+    },
+    {
+      "osm_id": "way/954091548",
+      "name": "Dutch Bros. Coffee",
+      "reason": "chain venue (OSM brand='Dutch Bros. Coffee'); chains rarely book candidate events",
+      "amenity": "cafe",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Dutch Bros. Coffee"
+    },
+    {
+      "osm_id": "way/1392894602",
+      "name": "Dutch Bros. Coffee",
+      "reason": "chain venue (OSM brand='Dutch Bros. Coffee'); chains rarely book candidate events",
+      "amenity": "cafe",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Dutch Bros. Coffee"
+    },
+    {
+      "osm_id": "relation/10384843",
+      "name": "Dutch Bros. Coffee",
+      "reason": "chain venue (OSM brand='Dutch Bros. Coffee'); chains rarely book candidate events",
+      "amenity": "cafe",
+      "leisure": null,
+      "tourism": null,
+      "club": null,
+      "brand": "Dutch Bros. Coffee"
+    }
+  ]
+}
