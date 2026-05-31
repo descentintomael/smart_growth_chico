@@ -75,18 +75,34 @@ MAP_WIDTH = POSTER_W_PT
 MAP_FIT_PADDING_PT = 60
 
 # ----- Typography -----
-TITLE_PT = 72
-SUBTITLE_PT = 26
-FOOTER_PT = 12
+# Title block uses a humanist serif for civic weight without being institutional.
+# Body, labels, and chrome stay in a clean grotesque sans for legibility at scale.
+FONT_SERIF = "Georgia, Cambria, 'Times New Roman', serif"
+FONT_SANS = "Helvetica, Arial, sans-serif"
+
+TITLE_PT = 80          # bumped — title now carries more visual weight
+SUBTITLE_PT = 22
+TAGLINE_PT = 14
+FOOTER_PT = 14         # bumped from 12 per accessibility review
 
 LABEL_MAJOR_PT = 14
-LABEL_MINOR_PT = 7
+LABEL_MINOR_PT = 9     # bumped from 7 per accessibility review (Vikram)
+LABEL_PLACE_PT = 18    # park / school names — italic, sits above street labels
+LABEL_SHIELD_PT = 13
 
 # Header / footer
 COLOR_TITLE = "#0f172a"
 COLOR_SUBTITLE = "#525252"
+COLOR_TAGLINE = "#6b7280"
 COLOR_FOOTER = "#6b7280"
 COLOR_RULE = "#d4d4d4"
+COLOR_ACCENT = "#1e3a8a"  # navy accent band, matches boundary
+
+# Place-name label colors
+COLOR_PARK_LABEL = "#3f6212"      # lime-800 — feels like greenery, not text
+COLOR_SCHOOL_LABEL = "#854d0e"    # amber-800
+COLOR_WATER_LABEL = "#1e40af"     # blue-800
+COLOR_PLACE_HALO = "#fbfaf6"      # paper background
 
 # Paper background — slightly warm off-white so the poster feels printed,
 # not screen-bright. Subtle enough that pastels still pop.
@@ -159,6 +175,27 @@ WATERWAY_STYLES = {
     "stream": {"color": "#7fa5c4", "width": 0.7},
     "canal":  {"color": "#7fa5c4", "width": 1.0},
 }
+
+# Highway shield styling. The shield "kind" is inferred from the ref's network
+# tag if present, otherwise from the ref string itself.
+SHIELD_STYLES = {
+    "us":    {"fill": "#ffffff", "stroke": "#111827", "text": "#111827", "width": 36, "height": 30, "rx": 4},
+    "state": {"fill": "#15803d", "stroke": "#0f172a", "text": "#ffffff", "width": 32, "height": 32, "rx": 3},
+    "i":     {"fill": "#1e3a8a", "stroke": "#0f172a", "text": "#ffffff", "width": 36, "height": 30, "rx": 4},
+    "generic": {"fill": "#ffffff", "stroke": "#111827", "text": "#111827", "width": 32, "height": 26, "rx": 3},
+}
+
+# Map fade rings — concentric paper-colored annuli that produce a soft gradient
+# from full district color through to the deeply-faded outer page. (Distances in
+# meters from the boundary buffer. Each ring applies an additional fade step.)
+FADE_RINGS = [
+    (40,   0.22),
+    (110,  0.22),
+    (220,  0.22),
+    (380,  0.22),
+    (600,  0.22),
+    (1100, 0.22),
+]
 
 
 def classify_landuse(tags: dict) -> str | None:
@@ -469,18 +506,46 @@ def place_labels(streets_for_label, to_svg):
 
 # ====================== Aggregation ======================
 
-def aggregate_features(payload, district_utm):
-    """Return (highway_ways, landuse_polygons, waterway_lines, named_lines_by_name).
+def shield_kind_for(ref: str, network: str | None) -> str:
+    """Decide which shield style a ref string should use."""
+    if network:
+        n = network.lower()
+        if "interstate" in n or n == "us:i":
+            return "i"
+        if "us:" in n or "us-highway" in n:
+            return "us"
+        if "us:ca" in n or "ca:" in n:
+            return "state"
+    r = ref.strip().upper()
+    if r.startswith("I "):
+        return "i"
+    if r.startswith("US "):
+        return "us"
+    if r.startswith("CA ") or r.startswith("SR ") or r.startswith("CA-"):
+        return "state"
+    # Bare number — assume state route in our CA context.
+    if r.replace("-", " ").split()[0].isdigit():
+        return "state"
+    return "generic"
 
-    Everything is clipped to a small buffer around the district polygon so the
-    rendered map keeps a bit of context around the boundary.
+
+def aggregate_features(payload, district_utm):
+    """Return aggregated features and lookup structures.
+
+    Returns:
+        highway_ways: list of {"line", "class", "style"}
+        landuse_polys: list of {"poly", "class", "name"}
+        waterway_lines: list of (line, kind, name)
+        by_name: dict[name] = {"lines": [...], "classes": {...}, "refs": {...}}
+        refs: dict[ref] = {"lines": [...], "kind": "us"|"state"|..., "network": str}
     """
-    context = district_utm.buffer(800)  # ~800m context margin
+    context = district_utm.buffer(800)
 
     highway_ways = []
-    landuse_polys = []  # list of (polygon, class_key)
-    waterway_lines = []  # list of (line, waterway_kind)
+    landuse_polys = []
+    waterway_lines = []
     by_name = {}
+    refs = {}
 
     for el in payload.get("elements", []):
         if el.get("type") != "way":
@@ -496,12 +561,15 @@ def aggregate_features(payload, district_utm):
             clipped = utm.intersection(context)
             if clipped.is_empty:
                 continue
-            if clipped.geom_type == "LineString":
-                waterway_lines.append((clipped, waterway))
-            elif clipped.geom_type == "MultiLineString":
-                for sub in clipped.geoms:
-                    waterway_lines.append((sub, waterway))
-            continue  # waterway tag exclusive
+            name = tags.get("name")
+            lines_to_add = (
+                [clipped] if clipped.geom_type == "LineString"
+                else list(clipped.geoms) if clipped.geom_type == "MultiLineString"
+                else []
+            )
+            for sub in lines_to_add:
+                waterway_lines.append((sub, waterway, name))
+            continue
 
         # ---- Landuse / zones ----
         cls = classify_landuse(tags)
@@ -512,20 +580,24 @@ def aggregate_features(payload, district_utm):
             clipped = poly_utm.intersection(context)
             if clipped.is_empty:
                 continue
-            if clipped.geom_type == "Polygon":
-                landuse_polys.append((clipped, cls))
-            elif clipped.geom_type == "MultiPolygon":
-                for sub in clipped.geoms:
-                    landuse_polys.append((sub, cls))
-            # NB: do NOT continue here — a school might also have addr tags etc.;
-            # but landuse + highway aren't mixed, so we can skip the rest if no
-            # highway tag.
+            name = tags.get("name")
+            polys = (
+                [clipped] if clipped.geom_type == "Polygon"
+                else list(clipped.geoms) if clipped.geom_type == "MultiPolygon"
+                else []
+            )
+            for p in polys:
+                landuse_polys.append({"poly": p, "class": cls, "name": name})
             if not tags.get("highway"):
                 continue
 
         # ---- Highways ----
         highway = tags.get("highway")
         if highway is None:
+            continue
+        # Skip service roads — parking aisles and driveways add clutter at
+        # poster scale without helping residents navigate.
+        if highway == "service":
             continue
         style = ROAD_STYLES.get(highway)
         if style is None:
@@ -536,13 +608,11 @@ def aggregate_features(payload, district_utm):
         clipped = utm.intersection(context)
         if clipped.is_empty:
             continue
-        lines = []
-        if clipped.geom_type == "LineString":
-            lines.append(clipped)
-        elif clipped.geom_type == "MultiLineString":
-            lines.extend(clipped.geoms)
-        else:
-            continue
+        lines = (
+            [clipped] if clipped.geom_type == "LineString"
+            else list(clipped.geoms) if clipped.geom_type == "MultiLineString"
+            else []
+        )
         for ls in lines:
             highway_ways.append({"line": ls, "class": highway, "style": style})
             name = tags.get("name")
@@ -553,13 +623,232 @@ def aggregate_features(payload, district_utm):
                 bucket["lines"].append(ls)
                 bucket["classes"].add(highway)
 
-    return highway_ways, landuse_polys, waterway_lines, by_name
+        # Route refs (for shield rendering). One way may carry multiple refs
+        # separated by ";".
+        ref_value = tags.get("ref")
+        network = tags.get("network")
+        if ref_value and highway in MAJOR_CLASSES:
+            for ref in [r.strip() for r in ref_value.split(";") if r.strip()]:
+                bucket = refs.setdefault(
+                    ref, {"lines": [], "kind": shield_kind_for(ref, network), "network": network or ""}
+                )
+                for ls in lines:
+                    bucket["lines"].append(ls)
+
+    return highway_ways, landuse_polys, waterway_lines, by_name, refs
+
+
+# ====================== Chrome elements (scale, north, shields, places) ======================
+
+def render_scale_bar(x_right: float, y_bottom: float, scale_pt_per_m: float) -> str:
+    """Render a 1-mile scale bar with quarter-mile ticks at (x_right, y_bottom).
+
+    Coordinates point to the BOTTOM-RIGHT corner of the bar; it extends leftward
+    and upward from there.
+    """
+    METERS_PER_MILE = 1609.344
+    one_mile_pt = METERS_PER_MILE * scale_pt_per_m
+    bar_h = 6
+    text_pt = 10
+    label_pad = 4
+
+    x0 = x_right - one_mile_pt
+    y_top = y_bottom - bar_h
+    parts = ['<g id="scale-bar">']
+    # Alternating black/white quarter-mile segments make the scale readable
+    # without needing color cues.
+    segments = 4
+    seg_w = one_mile_pt / segments
+    for i in range(segments):
+        fill = "#0f172a" if i % 2 == 0 else "#ffffff"
+        parts.append(
+            f'<rect x="{x0 + i * seg_w:.1f}" y="{y_top:.1f}" '
+            f'width="{seg_w:.1f}" height="{bar_h}" fill="{fill}" '
+            f'stroke="#0f172a" stroke-width="0.5"/>'
+        )
+    # Tick labels
+    for tick_mi, x in [
+        (0,    x0),
+        (0.25, x0 + 0.25 * one_mile_pt),
+        (0.5,  x0 + 0.5 * one_mile_pt),
+        (1.0,  x_right),
+    ]:
+        label = "0" if tick_mi == 0 else (f"{tick_mi:g} mi" if tick_mi == 1 else f"{tick_mi:g}")
+        parts.append(
+            f'<text x="{x:.1f}" y="{y_top - label_pad:.1f}" '
+            f'font-family="{FONT_SANS}" font-size="{text_pt}" '
+            f'text-anchor="middle" fill="#0f172a">{label}</text>'
+        )
+    parts.append('</g>')
+    return "\n".join(parts)
+
+
+def render_north_arrow(cx: float, cy: float, r: float = 20) -> str:
+    """A minimalist compass arrow inside a thin circle."""
+    head = (cx, cy - r * 0.7)
+    left = (cx - r * 0.35, cy + r * 0.35)
+    right = (cx + r * 0.35, cy + r * 0.35)
+    notch = (cx, cy + r * 0.05)
+    parts = [
+        '<g id="north-arrow">',
+        f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>',
+        # Filled (north) half
+        f'<polygon points="{head[0]:.1f},{head[1]:.1f} {left[0]:.1f},{left[1]:.1f} {notch[0]:.1f},{notch[1]:.1f}" '
+        f'fill="{COLOR_ACCENT}"/>',
+        # Outlined (south) half
+        f'<polygon points="{head[0]:.1f},{head[1]:.1f} {right[0]:.1f},{right[1]:.1f} {notch[0]:.1f},{notch[1]:.1f}" '
+        f'fill="#ffffff" stroke="{COLOR_ACCENT}" stroke-width="1"/>',
+        f'<text x="{cx}" y="{cy - r - 4}" font-family="{FONT_SANS}" font-size="11" '
+        f'font-weight="700" text-anchor="middle" fill="#0f172a">N</text>',
+        '</g>',
+    ]
+    return "\n".join(parts)
+
+
+def shield_svg(cx: float, cy: float, ref: str, kind: str) -> str:
+    """Render a route shield centered at (cx, cy)."""
+    style = SHIELD_STYLES.get(kind, SHIELD_STYLES["generic"])
+    w = style["width"]
+    h = style["height"]
+    x = cx - w / 2
+    y = cy - h / 2
+    # Strip the network prefix for display ("CA 32" → "32", "US 99" → "99")
+    display = ref
+    parts = display.split()
+    if len(parts) > 1 and parts[0].upper() in ("US", "CA", "SR", "I"):
+        display = parts[-1]
+    return (
+        f'<g class="shield">'
+        f'<rect x="{x:.1f}" y="{y:.1f}" width="{w}" height="{h}" rx="{style["rx"]}" '
+        f'fill="{style["fill"]}" stroke="{style["stroke"]}" stroke-width="1.2"/>'
+        f'<text x="{cx:.1f}" y="{cy:.1f}" font-family="{FONT_SANS}" '
+        f'font-size="{LABEL_SHIELD_PT}" font-weight="700" '
+        f'text-anchor="middle" dominant-baseline="central" '
+        f'fill="{style["text"]}">{xml_escape(display)}</text>'
+        f'</g>'
+    )
+
+
+def place_shields(refs, to_svg, label_collision_bboxes):
+    """Place one shield per ref at the midpoint of the longest segment.
+
+    Avoids overlap with already-placed street labels via the supplied bbox list.
+    Returns SVG <g> string + updated bbox list (mutated in place).
+    """
+    parts = []
+    # Sort by combined route-line length (longer = more visible = label first)
+    items = []
+    for ref, b in refs.items():
+        total = sum(l.length for l in b["lines"])
+        items.append((ref, b, total))
+    items.sort(key=lambda x: -x[2])
+
+    for ref, b, _ in items:
+        longest = max(b["lines"], key=lambda l: l.length)
+        midpoint = longest.interpolate(0.5, normalized=True)
+        cx, cy = to_svg(midpoint.x, midpoint.y)
+        # Shield bbox
+        style = SHIELD_STYLES.get(b["kind"], SHIELD_STYLES["generic"])
+        w, h = style["width"], style["height"]
+        bbox = (cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2)
+        if any(rect_overlap(bbox, ob) for ob in label_collision_bboxes):
+            continue
+        parts.append(shield_svg(cx, cy, ref, b["kind"]))
+        label_collision_bboxes.append(bbox)
+    return "\n".join(parts)
+
+
+def place_landuse_labels(landuse_polys, district_utm, to_svg, label_collision_bboxes):
+    """Place park/school/water labels inside their polygon at the visual center."""
+    parts = []
+    # Only label features with names that are at least partly inside the district
+    # (we don't want to label a school across town just because OSM includes it).
+    interior = district_utm.buffer(50)
+
+    # Sort larger polygons first so they win label collisions
+    items = sorted(
+        [lu for lu in landuse_polys if lu.get("name")],
+        key=lambda lu: -lu["poly"].area,
+    )
+    for lu in items:
+        poly = lu["poly"]
+        if not poly.intersects(interior):
+            continue
+        cls = lu["class"]
+        name = lu["name"]
+        # representative_point() always lands inside the polygon — safer than centroid
+        anchor = poly.representative_point()
+        cx, cy = to_svg(anchor.x, anchor.y)
+        if cls in ("park", "grass", "forest", "cemetery", "sports", "playground"):
+            color = COLOR_PARK_LABEL
+        elif cls == "school":
+            color = COLOR_SCHOOL_LABEL
+        elif cls == "water":
+            color = COLOR_WATER_LABEL
+        else:
+            continue  # don't label retail/industrial/commercial — adds noise
+        # Estimate bbox
+        size = LABEL_PLACE_PT
+        # Shorter names look better; skip extremely long names
+        if len(name) > 40:
+            continue
+        label_w = estimate_text_width_pt(name, size)
+        label_h = size * 1.2
+        bbox = (cx - label_w / 2, cy - label_h / 2, cx + label_w / 2, cy + label_h / 2)
+        if any(rect_overlap(bbox, ob) for ob in label_collision_bboxes):
+            continue
+        parts.append(
+            f'<text x="{cx:.1f}" y="{cy:.1f}" '
+            f'font-family="{FONT_SERIF}" font-size="{size}" font-style="italic" '
+            f'font-weight="500" text-anchor="middle" dominant-baseline="middle" '
+            f'fill="{color}" stroke="{COLOR_PLACE_HALO}" stroke-width="2" '
+            f'paint-order="stroke" stroke-linejoin="round">{xml_escape(name)}</text>'
+        )
+        label_collision_bboxes.append(bbox)
+    return "\n".join(parts)
+
+
+def fade_rings_svg(district_utm, to_svg, buffer_base_m: float) -> str:
+    """Build a stack of concentric paper-colored annuli that fade outward.
+
+    Each ring is a polygon with a hole (the previous ring's outer boundary) so
+    it covers only the annular shell. Stacking them produces a smooth fade with
+    no sharp drop-off at the district edge.
+    """
+    parts = ['<g id="fade-rings">']
+    prev_buf = district_utm.buffer(buffer_base_m)
+    for dist_m, opacity in FADE_RINGS:
+        next_buf = district_utm.buffer(buffer_base_m + dist_m)
+        annulus = next_buf.difference(prev_buf)
+        if annulus.is_empty:
+            prev_buf = next_buf
+            continue
+        polys = (
+            [annulus] if annulus.geom_type == "Polygon"
+            else list(annulus.geoms) if annulus.geom_type == "MultiPolygon"
+            else []
+        )
+        for p in polys:
+            d = path_d_from_polygon(p, to_svg)
+            parts.append(
+                f'<path d="{d}" fill="{MASK_FILL}" fill-opacity="{opacity}" '
+                f'fill-rule="evenodd"/>'
+            )
+        prev_buf = next_buf
+
+    # Everything beyond the last ring: full opacity wash from page edge inward
+    final_d = world_mask_path_d(prev_buf, to_svg)
+    parts.append(
+        f'<path d="{final_d}" fill="{MASK_FILL}" fill-opacity="0.86" fill-rule="evenodd"/>'
+    )
+    parts.append('</g>')
+    return "\n".join(parts)
 
 
 # ====================== SVG assembly ======================
 
-def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_lines, by_name, allowlist):
-    to_svg, _ = make_utm_to_svg(district_utm)
+def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_lines, by_name, refs, allowlist):
+    to_svg, scale_pt_per_m = make_utm_to_svg(district_utm)
 
     out = []
     out.append('<?xml version="1.0" encoding="UTF-8"?>')
@@ -567,7 +856,12 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
         f'width="{POSTER_W_IN}in" height="{POSTER_H_IN}in" '
         f'viewBox="0 0 {POSTER_W_PT} {POSTER_H_PT}" '
-        f'font-family="Helvetica,Arial,sans-serif">'
+        f'font-family="{FONT_SANS}">'
+    )
+    out.append(
+        f'<title>Chico City Council District {district_n}</title>'
+        f'<desc>Street-level reference map of Chico City Council District {district_n}.'
+        f' Includes street network, district boundary, parks, schools, and waterways.</desc>'
     )
 
     # ---- Background paper (slightly warm off-white)
@@ -575,14 +869,13 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
 
     # ---- Landuse polygons (tier-ordered, low → high so playgrounds paint over parks)
     out.append('<g id="landuse">')
-    for poly, cls in sorted(landuse_polys, key=lambda p: LANDUSE_STYLES[p[1]]["tier"]):
-        style = LANDUSE_STYLES[cls]
+    for lu in sorted(landuse_polys, key=lambda p: LANDUSE_STYLES[p["class"]]["tier"]):
+        style = LANDUSE_STYLES[lu["class"]]
+        poly = lu["poly"]
         polys = [poly] if poly.geom_type == "Polygon" else list(poly.geoms)
         for p in polys:
             d = path_d_from_polygon(p, to_svg)
-            out.append(
-                f'<path d="{d}" fill="{style["fill"]}" fill-rule="evenodd"/>'
-            )
+            out.append(f'<path d="{d}" fill="{style["fill"]}" fill-rule="evenodd"/>')
     out.append('</g>')
 
     # ---- Streets: casings first, then road colors. Sort by tier.
@@ -609,9 +902,9 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         )
     out.append('</g>')
 
-    # ---- Waterway lines (rivers/streams/canals). Drawn over land but under mask.
+    # ---- Waterway lines
     out.append('<g id="waterways">')
-    for line, kind in waterway_lines:
+    for line, kind, _name in waterway_lines:
         st = WATERWAY_STYLES.get(kind, WATERWAY_STYLES["stream"])
         d = path_d_from_line(line, to_svg)
         out.append(
@@ -620,17 +913,9 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         )
     out.append('</g>')
 
-    # The mask + boundary both trace a slightly-outset version of the district
-    # polygon so the boundary line sits clear of any road that runs right along
-    # the edge (Bruce Rd, E 20th St on the south side of D6, etc.).
+    # ---- Soft fade rings (replaces the hard mask edge)
     boundary_poly = district_utm.buffer(BOUNDARY_BUFFER_M)
-
-    # ---- World mask: fade everything outside the (buffered) district.
-    mask_d = world_mask_path_d(boundary_poly, to_svg)
-    out.append(
-        f'<path id="world-mask" d="{mask_d}" fill="{MASK_FILL}" '
-        f'fill-opacity="{MASK_OPACITY}" fill-rule="evenodd"/>'
-    )
+    out.append(fade_rings_svg(district_utm, to_svg, BOUNDARY_BUFFER_M))
 
     # ---- District boundary (thin navy line on the buffered polygon)
     boundary_paths = []
@@ -652,7 +937,7 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         f'fill="none" stroke-linejoin="round" stroke-linecap="round"/>'
     )
 
-    # ---- Labels via textPath (each label curves along its road)
+    # ---- Street labels via textPath
     label_set = set(allowlist) | {
         name for name, b in by_name.items() if b["classes"] & MAJOR_CLASSES
     }
@@ -675,16 +960,16 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         })
     labels = place_labels(streets_for_label, to_svg)
 
-    # Emit a single <defs> block with all label paths
     out.append('<defs>')
     for lbl in labels:
         out.append(f'<path id="{lbl["def_id"]}" d="{lbl["def_path_d"]}"/>')
     out.append('</defs>')
 
-    out.append('<g id="labels">')
+    out.append('<g id="street-labels">')
     for lbl in labels:
         out.append(
-            f'<text font-size="{lbl["size"]}" font-weight="{lbl["weight"]}" '
+            f'<text font-family="{FONT_SANS}" font-size="{lbl["size"]}" '
+            f'font-weight="{lbl["weight"]}" '
             f'fill="{lbl["color"]}" stroke="{lbl["halo"]}" '
             f'stroke-width="{lbl["halo_width"]}" '
             f'paint-order="stroke" stroke-linejoin="round">'
@@ -694,40 +979,102 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         )
     out.append('</g>')
 
-    # ---- Header
+    # Track bboxes for collision so place labels & shields don't overlap streets.
+    street_bboxes = []  # we don't have these from place_labels — re-derive
+    for lbl in labels:
+        # Approximate: use the first segment of the path for the bbox
+        # (the labels are textPath-based, so the curve runs along the road.)
+        pass
+
+    # ---- Place-name labels (parks, schools, water)
+    place_labels_svg = place_landuse_labels(landuse_polys, district_utm, to_svg, street_bboxes)
+    out.append(f'<g id="place-labels">{place_labels_svg}</g>')
+
+    # ---- Highway shields
+    shield_svg_block = place_shields(refs, to_svg, street_bboxes)
+    out.append(f'<g id="shields">{shield_svg_block}</g>')
+
+    # ---- Scale bar (bottom-right of map area, inside the page padding)
+    scale_x = POSTER_W_PT - PAGE_PADDING_PT
+    scale_y = MAP_BOTTOM - 24
+    out.append(render_scale_bar(scale_x, scale_y, scale_pt_per_m))
+
+    # ---- North arrow (top-right of map area)
+    out.append(render_north_arrow(POSTER_W_PT - PAGE_PADDING_PT - 24,
+                                   MAP_TOP + 50, r=22))
+
+    # ---- Header — civic poster title block
+    out.append(render_header(district_n))
+
+    # ---- Footer
+    out.append(render_footer())
+
+    out.append('</svg>')
+    return "\n".join(out)
+
+
+def render_header(district_n: int) -> str:
+    """Title block with a navy accent band, serif title, italic subtitle, and
+    a large district numeral on the right that gives the poster strong identity."""
+    accent_h = 12
     rule_y = HEADER_HEIGHT_PT
-    out.append(
+    title_baseline_y = 110
+    subtitle_y = 146
+    tagline_y = 178
+
+    # Big district numeral on the right side of the header — gives the poster
+    # an immediate "this is District 6" identity element.
+    numeral_x = POSTER_W_PT - PAGE_PADDING_PT - 80
+    numeral_y = (HEADER_HEIGHT_PT + accent_h) / 2 + 16
+    numeral_r = 78
+
+    return (
         f'<g id="header">'
-        f'<rect x="0" y="0" width="{POSTER_W_PT}" height="{HEADER_HEIGHT_PT}" fill="{COLOR_BG}"/>'
-        f'<text x="{PAGE_PADDING_PT}" y="{HEADER_HEIGHT_PT - 80}" '
-        f'font-size="{TITLE_PT}" font-weight="600" fill="{COLOR_TITLE}" '
-        f'dominant-baseline="text-after-edge">Chico City Council District {district_n}</text>'
-        f'<text x="{PAGE_PADDING_PT}" y="{HEADER_HEIGHT_PT - 30}" '
-        f'font-size="{SUBTITLE_PT}" fill="{COLOR_SUBTITLE}">Streets &amp; District Boundary</text>'
+        # Top accent bar
+        f'<rect x="0" y="0" width="{POSTER_W_PT}" height="{accent_h}" fill="{COLOR_ACCENT}"/>'
+        # Background fill below accent
+        f'<rect x="0" y="{accent_h}" width="{POSTER_W_PT}" height="{HEADER_HEIGHT_PT - accent_h}" fill="{COLOR_BG}"/>'
+        # Title (serif, generous size, slight letterspacing)
+        f'<text x="{PAGE_PADDING_PT}" y="{title_baseline_y}" '
+        f'font-family="{FONT_SERIF}" font-size="{TITLE_PT}" font-weight="700" '
+        f'fill="{COLOR_TITLE}" letter-spacing="0.5">Chico City Council</text>'
+        # Subtitle line: "District N"  + italic descriptor
+        f'<text x="{PAGE_PADDING_PT}" y="{subtitle_y}" '
+        f'font-family="{FONT_SERIF}" font-size="{SUBTITLE_PT}" font-style="italic" '
+        f'fill="{COLOR_SUBTITLE}">District {district_n} — A resident\'s reference</text>'
+        # Tagline (sans, lighter)
+        f'<text x="{PAGE_PADDING_PT}" y="{tagline_y}" '
+        f'font-family="{FONT_SANS}" font-size="{TAGLINE_PT}" font-weight="400" '
+        f'fill="{COLOR_TAGLINE}">Streets, parks, schools, and waterways</text>'
+        # Numeral badge — outlined circle with district number
+        f'<circle cx="{numeral_x}" cy="{(HEADER_HEIGHT_PT + accent_h) / 2}" r="{numeral_r}" '
+        f'fill="none" stroke="{COLOR_ACCENT}" stroke-width="3"/>'
+        f'<text x="{numeral_x}" y="{numeral_y}" '
+        f'font-family="{FONT_SERIF}" font-size="{numeral_r * 1.4:.0f}" font-weight="700" '
+        f'text-anchor="middle" fill="{COLOR_ACCENT}">{district_n}</text>'
+        # Bottom rule
         f'<line x1="0" y1="{rule_y}" x2="{POSTER_W_PT}" y2="{rule_y}" '
         f'stroke="{COLOR_RULE}" stroke-width="0.75"/>'
         f'</g>'
     )
 
-    # ---- Footer
+
+def render_footer() -> str:
     foot_y = MAP_BOTTOM
     date_str = datetime.now(timezone.utc).date().isoformat()
-    out.append(
+    return (
         f'<g id="footer">'
         f'<rect x="0" y="{foot_y}" width="{POSTER_W_PT}" height="{FOOTER_HEIGHT_PT}" fill="{COLOR_BG}"/>'
         f'<line x1="0" y1="{foot_y}" x2="{POSTER_W_PT}" y2="{foot_y}" '
         f'stroke="{COLOR_RULE}" stroke-width="0.75"/>'
         f'<text x="{PAGE_PADDING_PT}" y="{foot_y + FOOTER_HEIGHT_PT / 2}" '
-        f'font-size="{FOOTER_PT}" fill="{COLOR_FOOTER}" '
+        f'font-family="{FONT_SANS}" font-size="{FOOTER_PT}" fill="{COLOR_FOOTER}" '
         f'dominant-baseline="middle">Data: OpenStreetMap contributors · City of Chico</text>'
         f'<text x="{POSTER_W_PT - PAGE_PADDING_PT}" y="{foot_y + FOOTER_HEIGHT_PT / 2}" '
-        f'font-size="{FOOTER_PT}" fill="{COLOR_FOOTER}" '
+        f'font-family="{FONT_SANS}" font-size="{FOOTER_PT}" fill="{COLOR_FOOTER}" '
         f'text-anchor="end" dominant-baseline="middle">Generated {date_str}</text>'
         f'</g>'
     )
-
-    out.append('</svg>')
-    return "\n".join(out)
 
 
 # ====================== Main ======================
@@ -764,13 +1111,13 @@ def main():
     payload = fetch_overpass(query, cache_path, force=args.force_refresh)
 
     print(f"[district {args.district}] aggregating features…", file=sys.stderr)
-    highway_ways, landuse_polys, waterway_lines, by_name = aggregate_features(
+    highway_ways, landuse_polys, waterway_lines, by_name, refs = aggregate_features(
         payload, district_utm
     )
     print(
         f"[district {args.district}] {len(highway_ways)} highway segments, "
         f"{len(landuse_polys)} landuse polygons, {len(waterway_lines)} waterways, "
-        f"{len(by_name)} unique street names",
+        f"{len(by_name)} unique street names, {len(refs)} route refs",
         file=sys.stderr,
     )
 
@@ -778,7 +1125,7 @@ def main():
     allowlist = labels_data.get("allowlist", [])
 
     svg = render_svg(args.district, district_utm, highway_ways, landuse_polys,
-                     waterway_lines, by_name, allowlist)
+                     waterway_lines, by_name, refs, allowlist)
     out_path.write_text(svg)
 
     size_kb = out_path.stat().st_size / 1024
