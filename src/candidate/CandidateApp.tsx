@@ -45,9 +45,12 @@ export function CandidateApp() {
 
   const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(() => {
     try {
-      return localStorage.getItem(SIDEBAR_COLLAPSED_KEY) === '1'
+      const stored = localStorage.getItem(SIDEBAR_COLLAPSED_KEY)
+      // Default collapsed on first visit; honor stored choice on later visits.
+      if (stored === null) return true
+      return stored === '1'
     } catch {
-      return false
+      return true
     }
   })
 

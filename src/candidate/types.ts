@@ -107,6 +107,11 @@ export interface CatchmentAggregate {
   bg_intersect_count: number
 }
 
+export interface CatchmentBands {
+  total: CatchmentAggregate
+  in_district: CatchmentAggregate
+}
+
 export interface CatchmentDemographics {
   generated: string
   district: number
@@ -114,6 +119,6 @@ export interface CatchmentDemographics {
   venues: Record<string, {
     venue_name: string
     in_district_venue: boolean
-    catchments: Partial<Record<'walk_10' | 'walk_15' | 'bike_10' | 'bike_15', CatchmentAggregate>>
+    catchments: Partial<Record<'walk_10' | 'walk_15' | 'bike_10' | 'bike_15', CatchmentBands>>
   }>
 }

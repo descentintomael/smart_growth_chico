@@ -130,6 +130,40 @@ def deep_get(d: dict, path: tuple) -> float:
         return 0
 
 
+def aggregate_polygon(
+    polygon, bg_gdf: gpd.GeoDataFrame, demographics: dict
+) -> dict:
+    """Areal-weighted aggregation of BG demographics within a single polygon."""
+    aggregated: dict[str, float] = defaultdict(float)
+    bg_ids_used: list[str] = []
+
+    if polygon is None or polygon.is_empty:
+        return {k: 0 for _, (k, _) in enumerate(COUNT_PATHS)} | {
+            "catchment_area_acres": 0.0,
+            "bg_intersect_count": 0,
+        }
+
+    candidate_bgs = bg_gdf[bg_gdf.geometry.intersects(polygon)]
+    for _, bg_row in candidate_bgs.iterrows():
+        intersect_area = bg_row.geometry.intersection(polygon).area
+        if intersect_area <= 0:
+            continue
+        weight = min(intersect_area / bg_row["bg_area_ft2"], 1.0)
+        bg_data = demographics.get(bg_row["GEOID"])
+        if not bg_data:
+            continue
+        bg_ids_used.append(bg_row["GEOID"])
+        for out_key, path in COUNT_PATHS:
+            aggregated[out_key] += deep_get(bg_data, path) * weight
+
+    result = {k: round(v) for k, v in aggregated.items()}
+    for out_key, _ in COUNT_PATHS:
+        result.setdefault(out_key, 0)
+    result["catchment_area_acres"] = round(polygon.area / 43560, 1)
+    result["bg_intersect_count"] = len(bg_ids_used)
+    return result
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("district", type=int)
@@ -140,6 +174,13 @@ def main() -> int:
         print(f"catchments.geojson not found. Run compute-catchments.py first.", file=sys.stderr)
         return 1
 
+    boundary_path = district_dir(args.district) / "district-boundary.geojson"
+    if not boundary_path.exists():
+        print(f"district-boundary.geojson not found.", file=sys.stderr)
+        return 1
+    district_gdf = gpd.read_file(boundary_path).to_crs(epsg=2226)
+    district_poly = district_gdf.geometry.iloc[0]
+
     demographics = load_demographics()
     print(f"Loaded ACS demographics for {len(demographics)} block groups")
 
@@ -149,48 +190,25 @@ def main() -> int:
 
     catchments_gdf = gpd.read_file(catchments_path)
     full_catchments = catchments_gdf[catchments_gdf["feature_type"] == "full"].to_crs(epsg=2226).copy()
-    print(f"Aggregating {len(full_catchments)} full catchments × BG intersections...")
+    print(
+        f"Aggregating {len(full_catchments)} full catchments × BG intersections "
+        f"(both total + clipped-to-D{args.district})..."
+    )
 
     results: dict[str, dict[str, dict]] = defaultdict(dict)
     for _, catchment in full_catchments.iterrows():
         venue_id = catchment["venue_id"]
         profile = catchment["profile"]
         catchment_poly = catchment.geometry
-        catchment_area_ft2 = catchment_poly.area
+        in_district_poly = catchment_poly.intersection(district_poly)
 
-        # Find BGs that intersect this catchment
-        candidate_bgs = bg_gdf[bg_gdf.geometry.intersects(catchment_poly)].copy()
-        if candidate_bgs.empty:
-            continue
+        total = aggregate_polygon(catchment_poly, bg_gdf, demographics)
+        in_district = aggregate_polygon(in_district_poly, bg_gdf, demographics)
 
-        # Compute intersection geometry per BG and the areal weight
-        intersected = candidate_bgs.copy()
-        intersected["intersect_geom"] = intersected.geometry.intersection(catchment_poly)
-        intersected["intersect_area_ft2"] = intersected["intersect_geom"].area
-        intersected["areal_weight"] = (
-            intersected["intersect_area_ft2"] / intersected["bg_area_ft2"]
-        ).clip(0, 1)
-
-        # Aggregate count variables
-        aggregated: dict[str, float] = defaultdict(float)
-        bg_ids_used: list[str] = []
-        for _, bg_row in intersected.iterrows():
-            geoid = bg_row["GEOID"]
-            weight = bg_row["areal_weight"]
-            if weight <= 0:
-                continue
-            bg_data = demographics.get(geoid)
-            if not bg_data:
-                continue
-            bg_ids_used.append(geoid)
-            for out_key, path in COUNT_PATHS:
-                aggregated[out_key] += deep_get(bg_data, path) * weight
-
-        # Round to integers (these are estimated counts)
-        aggregated_int = {k: round(v) for k, v in aggregated.items()}
-        aggregated_int["catchment_area_acres"] = round(catchment_area_ft2 / 43560, 1)
-        aggregated_int["bg_intersect_count"] = len(bg_ids_used)
-        results[venue_id][profile] = aggregated_int
+        results[venue_id][profile] = {
+            "total": total,
+            "in_district": in_district,
+        }
 
     # Final report shape: per venue, with profile sub-keys + venue metadata for reference.
     venue_meta = {
@@ -213,6 +231,10 @@ def main() -> int:
         "data_source_note": (
             "Counts are areal-weighted aggregations of ACS 5-year 2023 block-group "
             "demographics intersected with the venue's walking/biking isochrone. "
+            "Each catchment has two stat sets: 'total' = everyone in the catchment "
+            f"polygon regardless of district; 'in_district' = only the slice that "
+            f"falls inside the District {args.district} boundary (the audience the "
+            "candidate can actually win as constituents). "
             "citizen_voting_age_population is estimated from each parent tract's "
             "CVAP rate × the BG's adult population (B05003 is suppressed at BG level)."
         ),
@@ -229,15 +251,23 @@ def main() -> int:
     out_path.write_text(json.dumps(output, indent=2))
     print(f"\nWrote {out_path} ({out_path.stat().st_size:,} bytes; {len(results)} venues)")
 
-    # Quick spot-check: print one in-district venue's walk_15 numbers
+    # Quick spot-check: print one in-district + one adjacency venue's walk_15 numbers
+    samples_shown = 0
+    seen = {"in_district": False, "adjacency": False}
     for venue_id, venue in output["venues"].items():
-        if venue.get("in_district_venue") and "walk_15" in venue["catchments"]:
-            c = venue["catchments"]["walk_15"]
-            print(f"\nSample (walk_15 catchment of '{venue['venue_name']}'):")
-            print(f"  Catchment area:   {c['catchment_area_acres']} ac across {c['bg_intersect_count']} BGs")
-            print(f"  Est. residents:   {c['total_population']:,}")
-            print(f"  Est. CVAP:        {c['citizen_voting_age_population']:,}")
-            print(f"  Owner:Renter:     {c['tenure_owner']:,} : {c['tenure_renter']:,}")
+        kind = "in_district" if venue.get("in_district_venue") else "adjacency"
+        if seen[kind] or "walk_15" not in venue["catchments"]:
+            continue
+        seen[kind] = True
+        bands = venue["catchments"]["walk_15"]
+        total = bands["total"]
+        ind = bands["in_district"]
+        print(f"\nSample ({kind} venue '{venue['venue_name']}' walk_15):")
+        print(f"  Catchment area:   {total['catchment_area_acres']:.0f} ac (in D{args.district}: {ind['catchment_area_acres']:.0f} ac)")
+        print(f"  Est. residents:   {total['total_population']:,} total, {ind['total_population']:,} in D{args.district}")
+        print(f"  Est. CVAP:        {total['citizen_voting_age_population']:,} total, {ind['citizen_voting_age_population']:,} in D{args.district}")
+        samples_shown += 1
+        if samples_shown >= 2:
             break
 
     return 0

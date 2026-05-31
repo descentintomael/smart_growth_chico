@@ -10,6 +10,28 @@ const PROFILE_LABEL: Record<Profile, string> = {
   bike_15: 'Bike 15',
 }
 
+interface DualCountProps {
+  label: string
+  inDistrict: number
+  total: number
+  district: string
+}
+
+function DualCount({ label, inDistrict, total, district }: DualCountProps) {
+  return (
+    <div>
+      <div className="text-gray-500">{label}</div>
+      <div className="font-semibold tabular-nums text-gray-900">
+        {inDistrict.toLocaleString()}
+        <span className="ml-1 text-[10px] font-normal text-gray-500">in D{district}</span>
+      </div>
+      <div className="text-[10px] tabular-nums text-gray-400">
+        of {total.toLocaleString()} total
+      </div>
+    </div>
+  )
+}
+
 interface BarRowProps {
   label: string
   value: number
@@ -46,23 +68,29 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 export function CatchmentDemographicsPanel({
   data,
   venueId,
+  district,
 }: {
   data: CatchmentDemographics | null
   venueId: string | null
+  district: string
 }) {
   const [profile, setProfile] = useState<Profile>('walk_15')
 
   if (!data || !venueId) return null
   const venue = data.venues[venueId]
   if (!venue) return null
-  const c: CatchmentAggregate | undefined = venue.catchments[profile]
-  if (!c) {
+  const bands = venue.catchments[profile]
+  if (!bands) {
     return (
       <div className="mt-3 rounded-md bg-white/95 p-2 text-xs text-gray-500 ring-1 ring-gray-200">
         No catchment data for {PROFILE_LABEL[profile]}.
       </div>
     )
   }
+  // Bar-chart distributions use the in-district slice (that's the audience that
+  // can actually vote for the candidate).
+  const c: CatchmentAggregate = bands.in_district
+  const t: CatchmentAggregate = bands.total
 
   const totalRace =
     c.race_white_nh + c.race_black_nh + c.race_native_nh + c.race_asian_nh +
@@ -74,6 +102,7 @@ export function CatchmentDemographicsPanel({
     c.income_low_under_25k + c.income_lower_mid_25_50k + c.income_mid_50_75k +
     c.income_upper_mid_75_125k + c.income_high_125k_plus
   const totalTenure = c.tenure_owner + c.tenure_renter
+  const noInDistrict = c.total_population === 0
 
   return (
     <div className="mt-3 max-h-[70vh] overflow-y-auto rounded-md bg-white/95 p-3 ring-1 ring-gray-200 backdrop-blur">
@@ -99,29 +128,25 @@ export function CatchmentDemographicsPanel({
         </div>
       </div>
 
-      <div className="mt-2 grid grid-cols-2 gap-x-2 gap-y-1 text-xs">
-        <div>
-          <div className="text-gray-500">Residents</div>
-          <div className="font-semibold tabular-nums text-gray-900">
-            {c.total_population.toLocaleString()}
-          </div>
+      {noInDistrict && (
+        <div className="mt-2 rounded bg-red-50 px-2 py-1.5 text-[11px] text-red-800">
+          This catchment doesn't reach any residents inside District {district}.
+          Useful only for cross-district outreach.
         </div>
-        <div>
-          <div className="text-gray-500">Est. voters (CVAP)</div>
-          <div className="font-semibold tabular-nums text-gray-900">
-            {c.citizen_voting_age_population.toLocaleString()}
-          </div>
-        </div>
-        <div>
-          <div className="text-gray-500">Households</div>
-          <div className="font-semibold tabular-nums text-gray-900">
-            {c.households_total.toLocaleString()}
-          </div>
-        </div>
+      )}
+
+      <div className="mt-2 grid grid-cols-2 gap-x-2 gap-y-1.5 text-xs">
+        <DualCount label="Residents" inDistrict={c.total_population} total={t.total_population} district={district} />
+        <DualCount label="Est. voters (CVAP)" inDistrict={c.citizen_voting_age_population} total={t.citizen_voting_age_population} district={district} />
+        <DualCount label="Households" inDistrict={c.households_total} total={t.households_total} district={district} />
         <div>
           <div className="text-gray-500">Catchment area</div>
           <div className="font-semibold tabular-nums text-gray-900">
-            {c.catchment_area_acres.toFixed(0)} ac
+            {c.catchment_area_acres.toFixed(0)}
+            <span className="ml-1 text-[10px] font-normal text-gray-500">ac in D{district}</span>
+          </div>
+          <div className="text-[10px] tabular-nums text-gray-400">
+            of {t.catchment_area_acres.toFixed(0)} ac total
           </div>
         </div>
       </div>
@@ -169,8 +194,10 @@ export function CatchmentDemographicsPanel({
       </div>
 
       <div className="mt-3 text-[10px] leading-snug text-gray-500">
-        Areal-weighted ACS 2023 across {c.bg_intersect_count} block groups.
-        CVAP is estimated from each parent tract's citizen rate × this BG's adult population.
+        Distributions are for residents <strong>inside District {district}</strong> only
+        ({c.bg_intersect_count} block groups areal-weighted from ACS 2023).
+        Total counts compare against everyone the venue reaches regardless of district.
+        CVAP is estimated from each parent tract's citizen rate × the BG's adult population.
       </div>
     </div>
   )

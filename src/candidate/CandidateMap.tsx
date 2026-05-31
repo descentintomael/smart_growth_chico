@@ -50,9 +50,11 @@ const CATCHMENT_RENDER_ORDER: CatchmentProfile[] = [
 function FitToBounds({ bounds }: { bounds: LatLngBoundsExpression | null }) {
   const map = useMap()
   useEffect(() => {
-    if (bounds) {
-      map.fitBounds(bounds, { padding: [12, 12] })
-    }
+    if (!bounds) return
+    // Tight fit (no padding). Then nudge zoom up by one step so the boundary
+    // dominates the viewport — fitBounds alone tends to over-leave whitespace.
+    map.fitBounds(bounds, { padding: [0, 0] })
+    map.setZoom(map.getZoom() + 1)
   }, [bounds, map])
   return null
 }
@@ -247,7 +249,7 @@ export function CandidateMap({ district }: { district: string }) {
             </li>
           </ul>
           </div>
-          <CatchmentDemographicsPanel data={catchmentDemo} venueId={selectedVenueId} />
+          <CatchmentDemographicsPanel data={catchmentDemo} venueId={selectedVenueId} district={district} />
         </div>
       )}
       <LeafletMapContainer
