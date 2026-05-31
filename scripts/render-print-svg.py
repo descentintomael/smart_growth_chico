@@ -10,13 +10,16 @@
 """Render a print-ready SVG poster of a council district.
 
 Outputs a 36×48" SVG with:
-  * The district boundary (red with a white casing) over a world-mask
-    that dims everything outside the polygon.
+  * Landuse / leisure / water polygons (parks, schools, lakes, etc.)
+    rendered in subtle, professional pastel tints under the road network.
+  * Waterways (creeks, streams) drawn as blue lines.
   * All OSM highways color-coded and width-scaled by class
     (motorway/trunk/primary/secondary/tertiary/residential/...).
-  * Street name labels for entries on the print-street-labels.json
-    allowlist (output of score-streets-for-print.py) plus all
-    major-class names, placed greedily with simple AABB collision.
+  * A thin red district-boundary line over a world-mask that dims
+    everything outside the polygon.
+  * Street name labels — including residential streets from the
+    print-street-labels.json allowlist plus all major-class names —
+    placed via SVG <textPath> so each label curves along its road.
   * Title block, subtitle, and footer with attribution + date.
 
 All sizes are point-units (1pt = 1/72 inch); viewBox is 2592×3456pt.
@@ -39,7 +42,13 @@ from pathlib import Path
 
 import requests
 from pyproj import Transformer
-from shapely.geometry import LineString, MultiLineString, shape
+from shapely.geometry import (
+    LineString,
+    MultiLineString,
+    MultiPolygon,
+    Polygon,
+    shape,
+)
 from shapely.ops import transform as shapely_transform, unary_union
 
 OVERPASS_URL = "https://overpass-api.de/api/interpreter"
@@ -72,25 +81,28 @@ FOOTER_PT = 12
 
 LABEL_MAJOR_PT = 14
 LABEL_MINOR_PT = 7
-LABEL_NEIGHBORHOOD_PT = 20
 
-# Colors (match PrintMap.tsx)
+# Header / footer
 COLOR_TITLE = "#0f172a"
 COLOR_SUBTITLE = "#525252"
 COLOR_FOOTER = "#6b7280"
 COLOR_RULE = "#d4d4d4"
 
+# Paper background — slightly warm off-white so the poster feels printed,
+# not screen-bright. Subtle enough that pastels still pop.
+COLOR_BG = "#fbfaf6"
+
+# District boundary — single thin red line, no casing. The mask handles the
+# in/out separation; this is just an indicator, not the dominant visual.
 COLOR_BOUNDARY = "#b91c1c"
-COLOR_BOUNDARY_CASING = "#ffffff"
-BOUNDARY_WIDTH = 5
-BOUNDARY_CASING_WIDTH = 10
+BOUNDARY_WIDTH = 1.5
 
+# World mask — dims everything outside the district polygon.
 MASK_FILL = "#ffffff"
-MASK_OPACITY = 0.65
+MASK_OPACITY = 0.55
 
-# Road styles, indexed by OSM highway class. Widths are point-units.
-# Streets are drawn in two passes: first all casings, then all road colors.
-# Adding a casing to a class means a darker "outline" appears under the road.
+# Road styles, indexed by OSM highway class. Two-pass render: casings first
+# (drawn for arterials only), then road fills on top.
 ROAD_STYLES = {
     "motorway":         {"color": "#d97706", "width": 3.0, "casing_color": "#b45309", "casing_width": 4.0, "tier": 5},
     "motorway_link":    {"color": "#d97706", "width": 2.0, "casing_color": "#b45309", "casing_width": 2.6, "tier": 5},
@@ -113,18 +125,91 @@ ROAD_STYLES = {
     "pedestrian":       {"color": "#a3a3a3", "width": 0.5, "tier": 0},
 }
 
-# Major-class highway classes (always labeled in addition to allowlist).
 MAJOR_CLASSES = {"motorway", "trunk", "primary", "secondary", "tertiary"}
+
+# Landuse / zone styles — pale, professional pastels. Each entry maps the
+# classification key (assigned by `classify_landuse`) to a fill color.
+# z-order matters: lower-tier zones get painted first, so things like
+# sports fields paint over the underlying park.
+LANDUSE_STYLES = {
+    # tier, fill
+    "forest":     {"fill": "#cfdcc0", "tier": 1},
+    "wood":       {"fill": "#cfdcc0", "tier": 1},
+    "grass":      {"fill": "#e6efd0", "tier": 1},
+    "farmland":   {"fill": "#eee9d2", "tier": 1},
+    "meadow":     {"fill": "#e6eecf", "tier": 1},
+    "cemetery":   {"fill": "#dadfca", "tier": 2},
+    "park":       {"fill": "#d6e4c4", "tier": 2},
+    "sports":     {"fill": "#c8dfb8", "tier": 3},
+    "playground": {"fill": "#d4e6c2", "tier": 3},
+    "school":     {"fill": "#fbe6b0", "tier": 4},
+    "hospital":   {"fill": "#eecaca", "tier": 4},
+    "industrial": {"fill": "#dedede", "tier": 2},
+    "commercial": {"fill": "#e7e4ea", "tier": 2},
+    "retail":     {"fill": "#ebd9c8", "tier": 2},
+    "water":      {"fill": "#bfd6e8", "tier": 6},  # always on top of land
+}
+
+WATERWAY_STYLES = {
+    "river":  {"color": "#7fa5c4", "width": 1.6},
+    "stream": {"color": "#7fa5c4", "width": 0.7},
+    "canal":  {"color": "#7fa5c4", "width": 1.0},
+}
+
+
+def classify_landuse(tags: dict) -> str | None:
+    """Map OSM tags → a single landuse class. Returns None if not interesting."""
+    water = tags.get("water")
+    natural = tags.get("natural")
+    landuse = tags.get("landuse")
+    leisure = tags.get("leisure")
+    amenity = tags.get("amenity")
+
+    if water or natural == "water":
+        return "water"
+    if natural == "wood" or landuse == "forest":
+        return "forest"
+    if landuse == "cemetery":
+        return "cemetery"
+    if leisure in ("park", "garden", "nature_reserve"):
+        return "park"
+    if landuse in ("park", "recreation_ground"):
+        return "park"
+    if landuse in ("grass", "meadow"):
+        return "grass"
+    if landuse == "farmland":
+        return "farmland"
+    if leisure in ("stadium", "sports_centre", "pitch"):
+        return "sports"
+    if leisure == "playground":
+        return "playground"
+    if amenity in ("school", "university", "college", "kindergarten"):
+        return "school"
+    if amenity == "hospital":
+        return "hospital"
+    if landuse == "industrial":
+        return "industrial"
+    if landuse == "commercial":
+        return "commercial"
+    if landuse == "retail":
+        return "retail"
+    return None
 
 
 # ====================== Overpass + caching ======================
 
 def overpass_query(south, west, north, east) -> str:
-    """All highway ways in the bbox, with geometries and tags."""
+    """All highways + landuse/leisure/water/amenity features in the bbox."""
     return f"""
-[out:json][timeout:300];
+[out:json][timeout:400];
 (
   way["highway"]({south},{west},{north},{east});
+  way["landuse"~"^(park|recreation_ground|grass|forest|cemetery|industrial|commercial|retail|meadow|farmland)$"]({south},{west},{north},{east});
+  way["leisure"~"^(park|garden|playground|stadium|sports_centre|pitch|nature_reserve)$"]({south},{west},{north},{east});
+  way["natural"~"^(water|wood)$"]({south},{west},{north},{east});
+  way["water"]({south},{west},{north},{east});
+  way["amenity"~"^(school|university|college|hospital|kindergarten)$"]({south},{west},{north},{east});
+  way["waterway"~"^(river|stream|canal)$"]({south},{west},{north},{east});
 );
 out geom tags;
 """.strip()
@@ -159,14 +244,13 @@ def load_district_polygon(path: Path):
 
 
 def make_utm_to_svg(district_utm):
-    """Return (transform_fn, district_svg_polygon, scale_pt_per_m)."""
     minx, miny, maxx, maxy = district_utm.bounds
     bbox_w = maxx - minx
     bbox_h = maxy - miny
 
     avail_w = MAP_WIDTH - 2 * MAP_FIT_PADDING_PT
     avail_h = MAP_HEIGHT - 2 * MAP_FIT_PADDING_PT
-    scale = min(avail_w / bbox_w, avail_h / bbox_h)  # SVG pt per UTM meter
+    scale = min(avail_w / bbox_w, avail_h / bbox_h)
 
     map_cx = MAP_WIDTH / 2
     map_cy = (MAP_TOP + MAP_BOTTOM) / 2
@@ -190,10 +274,29 @@ def way_to_utm_line(way):
     return shapely_transform(WGS84_TO_UTM, wgs)
 
 
+def way_to_utm_polygon(way):
+    """Way geometry → shapely Polygon (closed). Returns None if not closeable."""
+    geom = way.get("geometry")
+    if not geom or len(geom) < 3:
+        return None
+    coords = [(p["lon"], p["lat"]) for p in geom]
+    # Some OSM ways tagged as areas aren't explicitly closed.
+    if coords[0] != coords[-1]:
+        coords.append(coords[0])
+    try:
+        poly = Polygon(coords)
+        if not poly.is_valid:
+            poly = poly.buffer(0)
+        if poly.is_empty:
+            return None
+        return shapely_transform(WGS84_TO_UTM, poly)
+    except Exception:
+        return None
+
+
 # ====================== SVG path helpers ======================
 
 def path_d_from_line(line, to_svg) -> str:
-    """LineString → SVG path 'd' string, no rounding loss."""
     coords = list(line.coords)
     pts = [to_svg(x, y) for x, y in coords]
     parts = [f"M{pts[0][0]:.1f},{pts[0][1]:.1f}"]
@@ -202,9 +305,27 @@ def path_d_from_line(line, to_svg) -> str:
     return "".join(parts)
 
 
+def path_d_from_svg_coords(coords) -> str:
+    parts = [f"M{coords[0][0]:.1f},{coords[0][1]:.1f}"]
+    for x, y in coords[1:]:
+        parts.append(f"L{x:.1f},{y:.1f}")
+    return "".join(parts)
+
+
+def path_d_from_polygon(poly, to_svg) -> str:
+    """Polygon (with optional holes) → SVG path d. Use fill-rule='evenodd'."""
+    parts = []
+    rings = [list(poly.exterior.coords)] + [list(h.coords) for h in poly.interiors]
+    for ring in rings:
+        svg_pts = [to_svg(x, y) for x, y in ring]
+        parts.append(f"M{svg_pts[0][0]:.1f},{svg_pts[0][1]:.1f}")
+        for x, y in svg_pts[1:]:
+            parts.append(f"L{x:.1f},{y:.1f}")
+        parts.append("Z")
+    return "".join(parts)
+
+
 def world_mask_path_d(district_utm, to_svg) -> str:
-    """SVG path: map area rectangle with district polygon punched out."""
-    # Outer rectangle: the entire map band
     outer = [
         (0, MAP_TOP),
         (POSTER_W_PT, MAP_TOP),
@@ -236,7 +357,6 @@ def world_mask_path_d(district_utm, to_svg) -> str:
 # ====================== Label placement ======================
 
 def estimate_text_width_pt(text: str, size_pt: float) -> float:
-    """Rough sans-serif text width. 0.55em per character is a decent average."""
     return len(text) * size_pt * 0.55
 
 
@@ -244,116 +364,183 @@ def rect_overlap(a, b) -> bool:
     return not (a[2] < b[0] or b[2] < a[0] or a[3] < b[1] or b[3] < a[1])
 
 
-def pick_label_anchor(svg_lines, label_w, label_h):
-    """Return (cx, cy) and the anchored bounding box for the longest segment.
+def label_anchor_and_bbox(svg_coords, label_w, label_h):
+    """Return (midpoint, bbox) for a label centered on the longest in-line segment.
 
-    We use the midpoint of the line whose on-poster length is longest, so the
-    label sits where the street is most visible.
+    Returns (None, None) if the line is too short to host the label.
     """
-    best = None
-    best_len = -1.0
-    for svg_line in svg_lines:
-        if len(svg_line) < 2:
-            continue
-        # Compute total length and walk to midpoint
-        seg_lens = []
-        total = 0.0
-        for i in range(1, len(svg_line)):
-            dx = svg_line[i][0] - svg_line[i - 1][0]
-            dy = svg_line[i][1] - svg_line[i - 1][1]
-            d = (dx * dx + dy * dy) ** 0.5
-            seg_lens.append(d)
-            total += d
-        if total <= 0:
-            continue
-        if total > best_len:
-            best_len = total
-            # Walk to midpoint
-            half = total / 2
-            acc = 0.0
-            mid = svg_line[0]
-            for i, d in enumerate(seg_lens):
-                if acc + d >= half:
-                    t = (half - acc) / d if d > 0 else 0
-                    x0, y0 = svg_line[i]
-                    x1, y1 = svg_line[i + 1]
-                    mid = (x0 + (x1 - x0) * t, y0 + (y1 - y0) * t)
-                    break
-                acc += d
-            best = (mid, total)
-    if best is None:
+    if len(svg_coords) < 2:
         return None, None
-    (cx, cy), street_len = best
-    # Require the street to be at least as long as the label, otherwise skip.
-    if street_len < label_w * 0.9:
+    # Total length and per-segment lengths
+    seg_lens = []
+    total = 0.0
+    for i in range(1, len(svg_coords)):
+        dx = svg_coords[i][0] - svg_coords[i - 1][0]
+        dy = svg_coords[i][1] - svg_coords[i - 1][1]
+        d = (dx * dx + dy * dy) ** 0.5
+        seg_lens.append(d)
+        total += d
+    if total < label_w * 0.9:
         return None, None
-    bbox = (cx - label_w / 2, cy - label_h / 2, cx + label_w / 2, cy + label_h / 2)
-    return (cx, cy), bbox
+    half = total / 2
+    acc = 0.0
+    mid = svg_coords[0]
+    for i, d in enumerate(seg_lens):
+        if acc + d >= half:
+            t = (half - acc) / d if d > 0 else 0
+            x0, y0 = svg_coords[i]
+            x1, y1 = svg_coords[i + 1]
+            mid = (x0 + (x1 - x0) * t, y0 + (y1 - y0) * t)
+            break
+        acc += d
+    bbox = (mid[0] - label_w / 2, mid[1] - label_h / 2,
+            mid[0] + label_w / 2, mid[1] + label_h / 2)
+    return mid, bbox
+
+
+def reorient_for_readability(svg_coords):
+    """Reverse the path if it would render text upside-down or bottom-up.
+
+    For mostly-horizontal paths we want net dx > 0 (left-to-right).
+    For mostly-vertical paths we want net dy > 0 (top-to-bottom in SVG).
+    """
+    if len(svg_coords) < 2:
+        return svg_coords
+    sx, sy = svg_coords[0]
+    ex, ey = svg_coords[-1]
+    dx = ex - sx
+    dy = ey - sy
+    if abs(dy) > abs(dx):
+        if dy < 0:
+            return list(reversed(svg_coords))
+    else:
+        if dx < 0:
+            return list(reversed(svg_coords))
+    return svg_coords
 
 
 def place_labels(streets_for_label, to_svg):
-    """Greedy AABB-collision label placement, highest priority first."""
+    """Greedy AABB-collision label placement, highest priority first.
+
+    Returns a list of dicts: { def_path_d, def_id, size, text, color, halo,
+    halo_width }. The textPath then references def_id.
+    """
     placed = []
+    out = []
+    idx = 0
     for s in sorted(streets_for_label, key=lambda r: -r["priority"]):
         size = s["size_pt"]
         text = s["name"]
         label_w = estimate_text_width_pt(text, size)
         label_h = size * 1.2
-        # Convert each utm line of this street to SVG pixel points
-        svg_lines = []
-        for utm_line in s["lines"]:
-            pts = [to_svg(x, y) for x, y in utm_line.coords]
-            svg_lines.append(pts)
-        anchor, bbox = pick_label_anchor(svg_lines, label_w, label_h)
+
+        # Pick the longest line as the label baseline
+        longest = max(s["lines"], key=lambda l: l.length)
+        svg_coords = [to_svg(x, y) for x, y in longest.coords]
+        anchor, bbox = label_anchor_and_bbox(svg_coords, label_w, label_h)
         if bbox is None:
             continue
         if any(rect_overlap(bbox, b) for (b, _) in placed):
             continue
-        placed.append((bbox, {
-            "x": anchor[0],
-            "y": anchor[1],
+
+        # Make sure the path is right-side-up for the chosen baseline.
+        oriented = reorient_for_readability(svg_coords)
+        path_d = path_d_from_svg_coords(oriented)
+
+        idx += 1
+        def_id = f"lp-{idx}"
+        out.append({
+            "def_id": def_id,
+            "def_path_d": path_d,
             "size": size,
             "text": text,
             "color": s["color"],
             "halo": s["halo"],
             "halo_width": s["halo_width"],
-        }))
-    return [p[1] for p in placed]
+            "weight": s.get("weight", 500),
+        })
+        placed.append((bbox, def_id))
+    return out
 
 
 # ====================== Aggregation ======================
 
-def aggregate_ways(payload, district_utm):
-    """Return: list of dicts, one per OSM way clipped to UTM, plus per-name index."""
-    ways = []  # all clipped ways with style info
-    by_name = {}  # name → {lines: [LineString], classes: set}
+def aggregate_features(payload, district_utm):
+    """Return (highway_ways, landuse_polygons, waterway_lines, named_lines_by_name).
+
+    Everything is clipped to a small buffer around the district polygon so the
+    rendered map keeps a bit of context around the boundary.
+    """
+    context = district_utm.buffer(800)  # ~800m context margin
+
+    highway_ways = []
+    landuse_polys = []  # list of (polygon, class_key)
+    waterway_lines = []  # list of (line, waterway_kind)
+    by_name = {}
+
     for el in payload.get("elements", []):
         if el.get("type") != "way":
             continue
         tags = el.get("tags") or {}
+
+        # ---- Waterways ----
+        waterway = tags.get("waterway")
+        if waterway in WATERWAY_STYLES:
+            utm = way_to_utm_line(el)
+            if utm is None:
+                continue
+            clipped = utm.intersection(context)
+            if clipped.is_empty:
+                continue
+            if clipped.geom_type == "LineString":
+                waterway_lines.append((clipped, waterway))
+            elif clipped.geom_type == "MultiLineString":
+                for sub in clipped.geoms:
+                    waterway_lines.append((sub, waterway))
+            continue  # waterway tag exclusive
+
+        # ---- Landuse / zones ----
+        cls = classify_landuse(tags)
+        if cls is not None and cls in LANDUSE_STYLES:
+            poly_utm = way_to_utm_polygon(el)
+            if poly_utm is None:
+                continue
+            clipped = poly_utm.intersection(context)
+            if clipped.is_empty:
+                continue
+            if clipped.geom_type == "Polygon":
+                landuse_polys.append((clipped, cls))
+            elif clipped.geom_type == "MultiPolygon":
+                for sub in clipped.geoms:
+                    landuse_polys.append((sub, cls))
+            # NB: do NOT continue here — a school might also have addr tags etc.;
+            # but landuse + highway aren't mixed, so we can skip the rest if no
+            # highway tag.
+            if not tags.get("highway"):
+                continue
+
+        # ---- Highways ----
         highway = tags.get("highway")
-        if not highway:
+        if highway is None:
             continue
         style = ROAD_STYLES.get(highway)
         if style is None:
-            continue  # unknown class; skip
+            continue
         utm = way_to_utm_line(el)
         if utm is None:
             continue
-        clipped = utm.intersection(district_utm.buffer(800))  # small buffer for context
+        clipped = utm.intersection(context)
         if clipped.is_empty:
             continue
-        # Normalise to LineString iterable
         lines = []
         if clipped.geom_type == "LineString":
             lines.append(clipped)
         elif clipped.geom_type == "MultiLineString":
-            for ls in clipped.geoms:
-                lines.append(ls)
+            lines.extend(clipped.geoms)
         else:
             continue
         for ls in lines:
-            ways.append({"line": ls, "class": highway, "style": style})
+            highway_ways.append({"line": ls, "class": highway, "style": style})
             name = tags.get("name")
             if name:
                 bucket = by_name.setdefault(
@@ -361,31 +548,42 @@ def aggregate_ways(payload, district_utm):
                 )
                 bucket["lines"].append(ls)
                 bucket["classes"].add(highway)
-    return ways, by_name
+
+    return highway_ways, landuse_polys, waterway_lines, by_name
 
 
 # ====================== SVG assembly ======================
 
-def render_svg(district_n, district_utm, ways, by_name, allowlist) -> str:
-    to_svg, scale = make_utm_to_svg(district_utm)
+def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_lines, by_name, allowlist):
+    to_svg, _ = make_utm_to_svg(district_utm)
 
     out = []
-    out.append(f'<?xml version="1.0" encoding="UTF-8"?>')
+    out.append('<?xml version="1.0" encoding="UTF-8"?>')
     out.append(
-        f'<svg xmlns="http://www.w3.org/2000/svg" '
+        f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
         f'width="{POSTER_W_IN}in" height="{POSTER_H_IN}in" '
         f'viewBox="0 0 {POSTER_W_PT} {POSTER_H_PT}" '
         f'font-family="Helvetica,Arial,sans-serif">'
     )
-    # Background
-    out.append(f'<rect width="{POSTER_W_PT}" height="{POSTER_H_PT}" fill="#ffffff"/>')
 
-    # ---- Streets: casings first, then road colors. Both sorted by tier so
-    # higher-class roads paint over lower-class ones.
-    out.append('<g id="streets">')
-    # Pass 1: casings
-    out.append('<g id="casings">')
-    for w in sorted(ways, key=lambda x: x["style"].get("tier", 0)):
+    # ---- Background paper (slightly warm off-white)
+    out.append(f'<rect width="{POSTER_W_PT}" height="{POSTER_H_PT}" fill="{COLOR_BG}"/>')
+
+    # ---- Landuse polygons (tier-ordered, low → high so playgrounds paint over parks)
+    out.append('<g id="landuse">')
+    for poly, cls in sorted(landuse_polys, key=lambda p: LANDUSE_STYLES[p[1]]["tier"]):
+        style = LANDUSE_STYLES[cls]
+        polys = [poly] if poly.geom_type == "Polygon" else list(poly.geoms)
+        for p in polys:
+            d = path_d_from_polygon(p, to_svg)
+            out.append(
+                f'<path d="{d}" fill="{style["fill"]}" fill-rule="evenodd"/>'
+            )
+    out.append('</g>')
+
+    # ---- Streets: casings first, then road colors. Sort by tier.
+    out.append('<g id="street-casings">')
+    for w in sorted(highway_ways, key=lambda x: x["style"].get("tier", 0)):
         st = w["style"]
         if "casing_color" not in st:
             continue
@@ -396,9 +594,8 @@ def render_svg(district_n, district_utm, ways, by_name, allowlist) -> str:
             f'stroke-linecap="round" stroke-linejoin="round"/>'
         )
     out.append('</g>')
-    # Pass 2: road fills
-    out.append('<g id="roads">')
-    for w in sorted(ways, key=lambda x: x["style"].get("tier", 0)):
+    out.append('<g id="streets">')
+    for w in sorted(highway_ways, key=lambda x: x["style"].get("tier", 0)):
         st = w["style"]
         d = path_d_from_line(w["line"], to_svg)
         out.append(
@@ -407,16 +604,26 @@ def render_svg(district_n, district_utm, ways, by_name, allowlist) -> str:
             f'stroke-linecap="round" stroke-linejoin="round"/>'
         )
     out.append('</g>')
+
+    # ---- Waterway lines (rivers/streams/canals). Drawn over land but under mask.
+    out.append('<g id="waterways">')
+    for line, kind in waterway_lines:
+        st = WATERWAY_STYLES.get(kind, WATERWAY_STYLES["stream"])
+        d = path_d_from_line(line, to_svg)
+        out.append(
+            f'<path d="{d}" stroke="{st["color"]}" stroke-width="{st["width"]}" '
+            f'fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+        )
     out.append('</g>')
 
-    # ---- World mask: dim everything outside the district.
+    # ---- World mask: dim everything outside the district (over color, under boundary)
     mask_d = world_mask_path_d(district_utm, to_svg)
     out.append(
         f'<path id="world-mask" d="{mask_d}" fill="{MASK_FILL}" '
         f'fill-opacity="{MASK_OPACITY}" fill-rule="evenodd"/>'
     )
 
-    # ---- District boundary: casing then line.
+    # ---- District boundary (thin solid red, no casing — just an indicator)
     boundary_paths = []
     if district_utm.geom_type == "Polygon":
         rings = [list(district_utm.exterior.coords)]
@@ -431,17 +638,12 @@ def render_svg(district_n, district_utm, ways, by_name, allowlist) -> str:
         boundary_paths.append("".join(parts))
     boundary_d = " ".join(boundary_paths)
     out.append(
-        f'<path id="boundary-casing" d="{boundary_d}" '
-        f'stroke="{COLOR_BOUNDARY_CASING}" stroke-width="{BOUNDARY_CASING_WIDTH}" '
-        f'fill="none" stroke-linejoin="round" stroke-linecap="round"/>'
-    )
-    out.append(
         f'<path id="boundary-line" d="{boundary_d}" '
         f'stroke="{COLOR_BOUNDARY}" stroke-width="{BOUNDARY_WIDTH}" '
         f'fill="none" stroke-linejoin="round" stroke-linecap="round"/>'
     )
 
-    # ---- Labels: build list of (name, lines, size, priority).
+    # ---- Labels via textPath (each label curves along its road)
     label_set = set(allowlist) | {
         name for name, b in by_name.items() if b["classes"] & MAJOR_CLASSES
     }
@@ -456,25 +658,30 @@ def render_svg(district_n, district_utm, ways, by_name, allowlist) -> str:
             "lines": bucket["lines"],
             "size_pt": LABEL_MAJOR_PT if is_major else LABEL_MINOR_PT,
             "color": "#1f2937" if is_major else "#374151",
-            "halo": "#ffffff",
-            "halo_width": 1.5 if is_major else 1.0,
+            "halo": COLOR_BG,
+            "halo_width": 2.0 if is_major else 1.2,
+            "weight": 600 if is_major else 500,
             "priority": (10 if is_major else 0)
             + sum(ls.length for ls in bucket["lines"]) / 100.0,
         })
-
     labels = place_labels(streets_for_label, to_svg)
+
+    # Emit a single <defs> block with all label paths
+    out.append('<defs>')
+    for lbl in labels:
+        out.append(f'<path id="{lbl["def_id"]}" d="{lbl["def_path_d"]}"/>')
+    out.append('</defs>')
+
     out.append('<g id="labels">')
     for lbl in labels:
-        # paint-order=stroke draws the halo (stroke) underneath the fill,
-        # producing the classic cartographic halo.
         out.append(
-            f'<text x="{lbl["x"]:.1f}" y="{lbl["y"]:.1f}" '
-            f'font-size="{lbl["size"]}" font-weight="500" '
-            f'text-anchor="middle" dominant-baseline="middle" '
+            f'<text font-size="{lbl["size"]}" font-weight="{lbl["weight"]}" '
             f'fill="{lbl["color"]}" stroke="{lbl["halo"]}" '
             f'stroke-width="{lbl["halo_width"]}" '
             f'paint-order="stroke" stroke-linejoin="round">'
-            f'{xml_escape(lbl["text"])}</text>'
+            f'<textPath xlink:href="#{lbl["def_id"]}" startOffset="50%" '
+            f'text-anchor="middle">{xml_escape(lbl["text"])}</textPath>'
+            f'</text>'
         )
     out.append('</g>')
 
@@ -482,6 +689,7 @@ def render_svg(district_n, district_utm, ways, by_name, allowlist) -> str:
     rule_y = HEADER_HEIGHT_PT
     out.append(
         f'<g id="header">'
+        f'<rect x="0" y="0" width="{POSTER_W_PT}" height="{HEADER_HEIGHT_PT}" fill="{COLOR_BG}"/>'
         f'<text x="{PAGE_PADDING_PT}" y="{HEADER_HEIGHT_PT - 80}" '
         f'font-size="{TITLE_PT}" font-weight="600" fill="{COLOR_TITLE}" '
         f'dominant-baseline="text-after-edge">Chico City Council District {district_n}</text>'
@@ -497,6 +705,7 @@ def render_svg(district_n, district_utm, ways, by_name, allowlist) -> str:
     date_str = datetime.now(timezone.utc).date().isoformat()
     out.append(
         f'<g id="footer">'
+        f'<rect x="0" y="{foot_y}" width="{POSTER_W_PT}" height="{FOOTER_HEIGHT_PT}" fill="{COLOR_BG}"/>'
         f'<line x1="0" y1="{foot_y}" x2="{POSTER_W_PT}" y2="{foot_y}" '
         f'stroke="{COLOR_RULE}" stroke-width="0.75"/>'
         f'<text x="{PAGE_PADDING_PT}" y="{foot_y + FOOTER_HEIGHT_PT / 2}" '
@@ -516,20 +725,18 @@ def render_svg(district_n, district_utm, ways, by_name, allowlist) -> str:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("district", type=int, help="Council district number (e.g. 6)")
+    parser.add_argument("district", type=int)
     parser.add_argument("--force-refresh", action="store_true")
-    parser.add_argument(
-        "--out",
-        type=Path,
-        help="Output SVG path (default: public/data/candidate-district-N/print-map.svg)",
-    )
+    parser.add_argument("--out", type=Path)
     args = parser.parse_args()
 
     base = PROJECT_ROOT / "public" / "data" / f"candidate-district-{args.district}"
     boundary_path = base / "district-boundary.geojson"
     labels_path = base / "print-street-labels.json"
     out_path = args.out or (base / "print-map.svg")
-    cache_path = PROJECT_ROOT / ".cache" / "overpass" / f"district-{args.district}-all-highways.json"
+    # New cache filename — broader query than the highway-only one. The old
+    # district-{n}-all-highways.json cache is left alone for the JSON pipeline.
+    cache_path = PROJECT_ROOT / ".cache" / "overpass" / f"district-{args.district}-features.json"
 
     if not boundary_path.exists():
         sys.exit(f"Boundary file not found: {boundary_path}")
@@ -543,19 +750,17 @@ def main():
     district_wgs = load_district_polygon(boundary_path)
     district_utm = shapely_transform(WGS84_TO_UTM, district_wgs)
 
-    miny, minx, maxy, maxx = (
-        district_wgs.bounds[1],
-        district_wgs.bounds[0],
-        district_wgs.bounds[3],
-        district_wgs.bounds[2],
-    )
+    minx, miny, maxx, maxy = district_wgs.bounds
     query = overpass_query(miny, minx, maxy, maxx)
     payload = fetch_overpass(query, cache_path, force=args.force_refresh)
 
-    print(f"[district {args.district}] aggregating ways…", file=sys.stderr)
-    ways, by_name = aggregate_ways(payload, district_utm)
+    print(f"[district {args.district}] aggregating features…", file=sys.stderr)
+    highway_ways, landuse_polys, waterway_lines, by_name = aggregate_features(
+        payload, district_utm
+    )
     print(
-        f"[district {args.district}] {len(ways)} way segments, "
+        f"[district {args.district}] {len(highway_ways)} highway segments, "
+        f"{len(landuse_polys)} landuse polygons, {len(waterway_lines)} waterways, "
         f"{len(by_name)} unique street names",
         file=sys.stderr,
     )
@@ -563,15 +768,16 @@ def main():
     labels_data = json.loads(labels_path.read_text())
     allowlist = labels_data.get("allowlist", [])
 
-    svg = render_svg(args.district, district_utm, ways, by_name, allowlist)
+    svg = render_svg(args.district, district_utm, highway_ways, landuse_polys,
+                     waterway_lines, by_name, allowlist)
     out_path.write_text(svg)
 
     size_kb = out_path.stat().st_size / 1024
-    label_count = svg.count("<text")
+    label_count = svg.count("<textPath")
     print(
         f"[out] wrote {out_path}\n"
         f"      {size_kb:,.0f} KB  ({size_kb / 1024:.1f} MB)\n"
-        f"      {label_count} <text> elements (streets + chrome)",
+        f"      {label_count} curved labels placed",
         file=sys.stderr,
     )
 
