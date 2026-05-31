@@ -18,18 +18,26 @@ import type {
 } from './types'
 import { styleForVenue } from './categoryStyle'
 
+// Shell-based rendering: each band is a geometrically distinct ring (or innermost
+// disk) with no overlap, so a single solid fill per band reads clearly. The four
+// shell profiles tile the full bike_15 catchment with no gaps and no overlaps.
 const CATCHMENT_LAYER_STYLE: Record<CatchmentProfile, PathOptions> = {
-  bike_15: { color: '#16a34a', weight: 1, fillColor: '#16a34a', fillOpacity: 0.10 },
-  bike_10: { color: '#16a34a', weight: 1, fillColor: '#16a34a', fillOpacity: 0.10 },
-  walk_15: { color: '#2563eb', weight: 1.5, fillColor: '#2563eb', fillOpacity: 0.18 },
-  walk_10: { color: '#1e40af', weight: 1.5, fillColor: '#1e40af', fillOpacity: 0.28 },
+  walk_10:      { color: '#1e3a8a', weight: 1.5, fillColor: '#2563eb', fillOpacity: 0.55 },
+  walk_15_only: { color: '#2563eb', weight: 1,   fillColor: '#60a5fa', fillOpacity: 0.45 },
+  bike_10_only: { color: '#a16207', weight: 1,   fillColor: '#f59e0b', fillOpacity: 0.40 },
+  bike_15_only: { color: '#b45309', weight: 1,   fillColor: '#fcd34d', fillOpacity: 0.30 },
+  // Full polygons (not normally rendered — kept for demographics aggregation only)
+  walk_15: { color: '#000', weight: 0, fillColor: '#000', fillOpacity: 0 },
+  bike_10: { color: '#000', weight: 0, fillColor: '#000', fillOpacity: 0 },
+  bike_15: { color: '#000', weight: 0, fillColor: '#000', fillOpacity: 0 },
 }
 
-// Render bottom→top so smaller catchments stack on larger ones.
+// Render order: largest (outermost) shell first, smallest (innermost) last.
+// Because shells don't overlap, this z-order only matters for the highlighted borders.
 const CATCHMENT_RENDER_ORDER: CatchmentProfile[] = [
-  'bike_15',
-  'bike_10',
-  'walk_15',
+  'bike_15_only',
+  'bike_10_only',
+  'walk_15_only',
   'walk_10',
 ]
 
@@ -180,23 +188,23 @@ export function CandidateMap({ district }: { district: string }) {
               ✕
             </button>
           </div>
-          <div className="mt-1 text-[10px] uppercase tracking-wide text-gray-500">Catchments shown</div>
+          <div className="mt-1 text-[10px] uppercase tracking-wide text-gray-500">Catchment bands</div>
           <ul className="mt-1 space-y-0.5">
             <li className="flex items-center gap-1.5">
-              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: '#1e40af', opacity: 0.7 }} />
-              <span>Walk 10 min · ~½ mi</span>
+              <span className="inline-block h-3 w-3 rounded-sm" style={{ backgroundColor: '#2563eb', opacity: 0.55 }} />
+              <span>Walk · 0–10 min (~½ mi)</span>
             </li>
             <li className="flex items-center gap-1.5">
-              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: '#2563eb', opacity: 0.5 }} />
-              <span>Walk 15 min · ~¾ mi</span>
+              <span className="inline-block h-3 w-3 rounded-sm" style={{ backgroundColor: '#60a5fa', opacity: 0.45 }} />
+              <span>Walk · 10–15 min</span>
             </li>
             <li className="flex items-center gap-1.5">
-              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: '#16a34a', opacity: 0.4 }} />
-              <span>Bike 10 min · ~1⅔ mi</span>
+              <span className="inline-block h-3 w-3 rounded-sm" style={{ backgroundColor: '#f59e0b', opacity: 0.4 }} />
+              <span>Bike · &lt;10 min beyond walk</span>
             </li>
             <li className="flex items-center gap-1.5">
-              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: '#16a34a', opacity: 0.25 }} />
-              <span>Bike 15 min · ~2½ mi</span>
+              <span className="inline-block h-3 w-3 rounded-sm" style={{ backgroundColor: '#fcd34d', opacity: 0.3 }} />
+              <span>Bike · 10–15 min</span>
             </li>
           </ul>
         </div>
@@ -225,11 +233,16 @@ export function CandidateMap({ district }: { district: string }) {
           />
         )}
 
-        {/* Catchment overlays for the currently-selected venue, rendered bottom-up. */}
+        {/* Catchment overlays for the currently-selected venue. Only the shell features
+            are rendered — they tile the full bike_15 area with no overlaps, so each
+            band has a single clean color with no alpha-stacking artifacts. */}
         {catchments && selectedVenueId &&
           CATCHMENT_RENDER_ORDER.map(profile => {
             const feature = catchments.features.find(
-              f => f.properties.venue_id === selectedVenueId && f.properties.profile === profile
+              f =>
+                f.properties.venue_id === selectedVenueId &&
+                f.properties.profile === profile &&
+                f.properties.feature_type === 'shell'
             )
             if (!feature) return null
             return (

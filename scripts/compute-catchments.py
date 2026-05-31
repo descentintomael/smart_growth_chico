@@ -156,17 +156,31 @@ def main() -> int:
 
     G = load_or_download_network(north, south, east, west, args.district)
 
-    print(f"Computing catchments for {len(venues['features'])} venues × 4 profiles...")
+    # Shell definitions: each entry maps a shell key to (outer_full, inner_full) keys.
+    # The shell = outer_full - inner_full = the "additional reach" of that band, and is
+    # what the UI renders so consecutive catchments don't compound alpha visually.
+    SHELL_DEFS = [
+        ("walk_15_only", "walk_15", "walk_10"),
+        ("bike_10_only", "bike_10", "walk_15"),
+        ("bike_15_only", "bike_15", "bike_10"),
+    ]
+
+    print(f"Computing catchments for {len(venues['features'])} venues × 4 profiles + shells...")
     out_features = []
     for i, venue in enumerate(venues["features"], start=1):
         venue_id = venue["properties"]["osm_id"]
         name = venue["properties"]["name"]
         lon, lat = venue["geometry"]["coordinates"]
+        in_district_venue = venue["properties"].get("in_district", True)
+
+        # Phase 1 — the four full polygons (needed for demographics aggregation later)
+        polys: dict[str, BaseGeometry] = {}
         for profile_key, mode, minutes, mpm in PROFILES:
             max_dist_m = mpm * minutes
             poly = compute_one_isochrone(G, lat, lon, max_dist_m)
             if poly is None or poly.is_empty:
                 continue
+            polys[profile_key] = poly
             out_features.append({
                 "type": "Feature",
                 "geometry": shapely.geometry.mapping(poly),
@@ -174,11 +188,52 @@ def main() -> int:
                     "venue_id": venue_id,
                     "venue_name": name,
                     "profile": profile_key,
+                    "feature_type": "full",
                     "mode": mode,
                     "minutes": minutes,
-                    "in_district_venue": venue["properties"].get("in_district", True),
+                    "in_district_venue": in_district_venue,
                 },
             })
+
+        # Phase 2 — innermost shell (walk_10) aliases the full polygon
+        if "walk_10" in polys:
+            out_features.append({
+                "type": "Feature",
+                "geometry": shapely.geometry.mapping(polys["walk_10"]),
+                "properties": {
+                    "venue_id": venue_id,
+                    "venue_name": name,
+                    "profile": "walk_10",
+                    "feature_type": "shell",
+                    "mode": "walk",
+                    "minutes": 10,
+                    "in_district_venue": in_district_venue,
+                },
+            })
+
+        # Phase 3 — outer shells, each = outer_full - inner_full
+        for shell_key, outer_key, inner_key in SHELL_DEFS:
+            if outer_key not in polys or inner_key not in polys:
+                continue
+            shell = polys[outer_key].difference(polys[inner_key])
+            if shell.is_empty:
+                continue
+            mode = "walk" if shell_key.startswith("walk") else "bike"
+            minutes = int(outer_key.rsplit("_", 1)[1])
+            out_features.append({
+                "type": "Feature",
+                "geometry": shapely.geometry.mapping(shell),
+                "properties": {
+                    "venue_id": venue_id,
+                    "venue_name": name,
+                    "profile": shell_key,
+                    "feature_type": "shell",
+                    "mode": mode,
+                    "minutes": minutes,
+                    "in_district_venue": in_district_venue,
+                },
+            })
+
         if i % 10 == 0 or i == len(venues["features"]):
             print(f"  {i}/{len(venues['features'])} venues done")
 

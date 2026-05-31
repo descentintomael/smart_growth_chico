@@ -46,12 +46,23 @@ export type DistrictBoundaryCollection = FeatureCollection<
   DistrictBoundaryProperties
 >
 
-export type CatchmentProfile = 'walk_10' | 'walk_15' | 'bike_10' | 'bike_15'
+export type CatchmentProfile =
+  | 'walk_10'
+  | 'walk_15'
+  | 'bike_10'
+  | 'bike_15'
+  // Shell profiles — the ring between consecutive isochrones, no overlap.
+  | 'walk_15_only'
+  | 'bike_10_only'
+  | 'bike_15_only'
 
 export interface CatchmentProperties {
   venue_id: string
   venue_name: string
   profile: CatchmentProfile
+  /** "full" = the cumulative isochrone polygon. "shell" = the ring between this band
+   *  and the previous one. UI renders shells; demographics aggregation uses fulls. */
+  feature_type: 'full' | 'shell'
   mode: 'walk' | 'bike'
   minutes: 10 | 15
   in_district_venue: boolean
