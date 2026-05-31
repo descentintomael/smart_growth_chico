@@ -1,0 +1,146 @@
+{
+  "generated": "2026-05-31 09:16:37",
+  "cycle": 2024,
+  "source": "FEC bulk download indiv24.zip + cm24.zip",
+  "note": "Sums of individual contributions per Chico ZIP, classified by the receiving committee's FEC party affiliation. PACs without a party affiliation aggregate to OTHER. Donor counts dedupe by NAME|ZIP.",
+  "by_zip": {
+    "95928": {
+      "donor_count": 694,
+      "total_amount": 715804.0,
+      "by_party": {
+        "DEM": {
+          "amount": 180681.0,
+          "donor_count": 273
+        },
+        "OTHER": {
+          "amount": 389144.0,
+          "donor_count": 475
+        },
+        "IND": {
+          "amount": 9498.0,
+          "donor_count": 24
+        },
+        "REP": {
+          "amount": 136481.0,
+          "donor_count": 136
+        }
+      }
+    },
+    "95973": {
+      "donor_count": 585,
+      "total_amount": 500675.0,
+      "by_party": {
+        "DEM": {
+          "amount": 87348.0,
+          "donor_count": 168
+        },
+        "OTHER": {
+          "amount": 325955.0,
+          "donor_count": 390
+        },
+        "REP": {
+          "amount": 82868.0,
+          "donor_count": 148
+        },
+        "IND": {
+          "amount": 4504.0,
+          "donor_count": 10
+        }
+      }
+    },
+    "95927": {
+      "donor_count": 65,
+      "total_amount": 72522.0,
+      "by_party": {
+        "DEM": {
+          "amount": 7256.0,
+          "donor_count": 16
+        },
+        "OTHER": {
+          "amount": 56568.0,
+          "donor_count": 47
+        },
+        "IND": {
+          "amount": 3166.0,
+          "donor_count": 5
+        },
+        "REP": {
+          "amount": 5532.0,
+          "donor_count": 14
+        }
+      }
+    },
+    "95926": {
+      "donor_count": 649,
+      "total_amount": 586284.0,
+      "by_party": {
+        "DEM": {
+          "amount": 183474.0,
+          "donor_count": 301
+        },
+        "OTHER": {
+          "amount": 356901.0,
+          "donor_count": 429
+        },
+        "REP": {
+          "amount": 37999.0,
+          "donor_count": 93
+        },
+        "IND": {
+          "amount": 3648.0,
+          "donor_count": 11
+        },
+        "GRE": {
+          "amount": 4262.0,
+          "donor_count": 3
+        }
+      }
+    },
+    "95975": {
+      "donor_count": 30,
+      "total_amount": 17406.0,
+      "by_party": {
+        "OTHER": {
+          "amount": 11721.0,
+          "donor_count": 20
+        },
+        "DEM": {
+          "amount": 5272.0,
+          "donor_count": 15
+        },
+        "IND": {
+          "amount": 192.0,
+          "donor_count": 2
+        },
+        "REP": {
+          "amount": 221.0,
+          "donor_count": 4
+        }
+      }
+    },
+    "95929": {
+      "donor_count": 6,
+      "total_amount": 1918.0,
+      "by_party": {
+        "OTHER": {
+          "amount": 1524.0,
+          "donor_count": 3
+        },
+        "IND": {
+          "amount": 394.0,
+          "donor_count": 3
+        }
+      }
+    },
+    "95976": {
+      "donor_count": 1,
+      "total_amount": 120.0,
+      "by_party": {
+        "OTHER": {
+          "amount": 120.0,
+          "donor_count": 1
+        }
+      }
+    }
+  }
+}

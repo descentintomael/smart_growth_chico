@@ -33,9 +33,11 @@ const ZERO_AGGREGATE: CatchmentAggregate = {
 }
 
 function addAggregates(a: CatchmentAggregate, b: CatchmentAggregate): CatchmentAggregate {
-  const result = { ...ZERO_AGGREGATE }
+  const result = { ...ZERO_AGGREGATE } as CatchmentAggregate
   for (const k of Object.keys(result) as Array<keyof CatchmentAggregate>) {
-    result[k] = a[k] + b[k]
+    const av = (a[k] ?? 0) as number
+    const bv = (b[k] ?? 0) as number
+    ;(result[k] as number) = av + bv
   }
   return result
 }

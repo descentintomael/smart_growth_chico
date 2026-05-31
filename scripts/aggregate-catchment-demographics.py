@@ -83,6 +83,37 @@ def load_demographics() -> dict:
     return json.loads(path.read_text())["block_groups"]
 
 
+def load_or_fetch_fec_zctas():
+    """Load Chico ZCTA polygons + the FEC by-ZIP donor totals. Returns
+    (gdf, fec_data) or (None, None) if either is missing."""
+    zcta_path = PROJECT_ROOT / "public" / "data" / "_shared" / "butte-zctas.geojson"
+    fec_path = PROJECT_ROOT / "public" / "data" / "_shared" / "fec-chico-by-zip.json"
+    if not zcta_path.exists() or not fec_path.exists():
+        return None, None
+    gdf = gpd.read_file(zcta_path).to_crs(epsg=2226)
+    gdf["geometry"] = gdf.geometry.buffer(0)
+    gdf["zcta_area_ft2"] = gdf.geometry.area
+    gdf["zip5"] = gdf["BASENAME"].astype(str)
+    fec_data = json.loads(fec_path.read_text())["by_zip"]
+    return gdf, fec_data
+
+
+def load_or_fetch_precincts(election: str):
+    """Load SWDB precincts for a given election (g24, g22, ...). Returns None
+    if the file isn't present so the aggregator can skip cleanly."""
+    path = PROJECT_ROOT / "public" / "data" / "_shared" / f"butte-precincts-{election}.geojson"
+    # Backwards compatibility: also try the unsuffixed name.
+    if not path.exists():
+        legacy = PROJECT_ROOT / "public" / "data" / "_shared" / "butte-precincts.geojson"
+        if not legacy.exists():
+            return None
+        path = legacy
+    g = gpd.read_file(path).to_crs(epsg=2226)
+    g["geometry"] = g.geometry.buffer(0)  # fix topology issues
+    g["precinct_area_ft2"] = g.geometry.area
+    return g
+
+
 # Flat path → value extractor for the deep demographic dict.
 # Each entry: (output_key, (path tuple from BG record root))
 # Plus a derived "total_population" / "citizen_voting_age_population" at top level.
@@ -116,7 +147,79 @@ COUNT_PATHS = [
     ("households_total", ("household_income", "total_households")),
     ("tenure_owner", ("tenure", "owner")),
     ("tenure_renter", ("tenure", "renter")),
+    # Commute mode
+    ("commute_total_workers", ("commute", "total_workers")),
+    ("commute_drove_alone", ("commute", "drove_alone")),
+    ("commute_carpooled", ("commute", "carpooled")),
+    ("commute_public_transit", ("commute", "public_transit")),
+    ("commute_bicycle", ("commute", "bicycle")),
+    ("commute_walked", ("commute", "walked")),
+    ("commute_work_from_home", ("commute", "work_from_home")),
+    # Housing structure
+    ("housing_single_family", ("housing_structure", "single_family")),
+    ("housing_small_multifamily", ("housing_structure", "small_multifamily_2_9")),
+    ("housing_large_multifamily", ("housing_structure", "large_multifamily_10plus")),
+    ("housing_mobile_home", ("housing_structure", "mobile_home")),
+    # Employment
+    ("employment_employed", ("employment", "employed")),
+    ("employment_unemployed", ("employment", "unemployed")),
+    ("employment_not_in_labor_force", ("employment", "not_in_labor_force")),
+    # School enrollment
+    ("school_k12", ("school_enrollment", "k12")),
+    ("school_college_undergrad", ("school_enrollment", "college_undergrad")),
+    ("school_graduate_professional", ("school_enrollment", "graduate_professional")),
+    ("school_not_enrolled", ("school_enrollment", "not_enrolled")),
+    # SNAP
+    ("snap_receiving", ("snap_assistance", "receiving")),
+    ("snap_total_households", ("snap_assistance", "total_households")),
+    # Rent burden
+    ("rent_burden_30_plus", ("rent_burden", "burdened_30_plus_pct")),
+    ("rent_burden_50_plus", ("rent_burden", "severely_burdened_50_plus_pct")),
+    ("rent_burden_total", ("rent_burden", "renters_with_cash_rent")),
+    # Mobility
+    ("mobility_same_house", ("mobility", "same_house_year_ago")),
+    ("mobility_moved_within_county", ("mobility", "moved_within_county")),
+    ("mobility_moved_within_state", ("mobility", "moved_within_state")),
+    ("mobility_moved_from_other_state", ("mobility", "moved_from_other_state")),
+    ("mobility_moved_from_abroad", ("mobility", "moved_from_abroad")),
+    # Language
+    ("lang_english_only", ("language_at_home", "english_only")),
+    ("lang_spanish", ("language_at_home", "spanish")),
+    ("lang_other_indo_european", ("language_at_home", "other_indo_european")),
+    ("lang_asian_pacific_islander", ("language_at_home", "asian_pacific_islander")),
+    ("lang_other", ("language_at_home", "other")),
+    # Occupation
+    ("occ_management_business_science_arts", ("occupation", "management_business_science_arts")),
+    ("occ_service", ("occupation", "service")),
+    ("occ_sales_office", ("occupation", "sales_office")),
+    ("occ_natural_resources_construction_maintenance", ("occupation", "natural_resources_construction_maintenance")),
+    ("occ_production_transportation_material_moving", ("occupation", "production_transportation_material_moving")),
 ]
+
+# Per-election precinct paths. We apply the same template to each election file
+# and produce keys prefixed by the election (e.g. g24_reg_democratic, g22_top_race_democratic).
+PER_ELECTION_TEMPLATE = [
+    ("total_registered", ("total_registered",)),
+    ("total_votes", ("total_votes",)),
+    ("reg_democratic", ("registration", "democratic")),
+    ("reg_republican", ("registration", "republican")),
+    ("reg_no_party_preference", ("registration", "no_party_preference")),
+    ("reg_american_independent", ("registration", "american_independent")),
+    ("reg_libertarian", ("registration", "libertarian")),
+    ("reg_green", ("registration", "green")),
+    ("reg_peace_and_freedom", ("registration", "peace_and_freedom")),
+    ("reg_other", ("registration", "other")),
+    ("top_race_democratic", ("top_race", "democratic")),
+    ("top_race_republican", ("top_race", "republican")),
+    ("top_race_libertarian", ("top_race", "libertarian")),
+    ("top_race_green", ("top_race", "green")),
+    ("top_race_peace_and_freedom", ("top_race", "peace_and_freedom")),
+    ("top_race_american_independent", ("top_race", "american_independent")),
+    ("sen_democratic", ("senate", "democratic")),
+    ("sen_republican", ("senate", "republican")),
+]
+
+ELECTIONS_TO_LOAD = ["g24", "g22"]
 
 
 def deep_get(d: dict, path: tuple) -> float:
@@ -130,18 +233,31 @@ def deep_get(d: dict, path: tuple) -> float:
         return 0
 
 
+FEC_PARTY_KEYS = ("DEM", "REP", "LIB", "GRE", "IND", "OTHER")
+
+
 def aggregate_polygon(
-    polygon, bg_gdf: gpd.GeoDataFrame, demographics: dict
+    polygon,
+    bg_gdf: gpd.GeoDataFrame,
+    demographics: dict,
+    precinct_gdfs: dict[str, gpd.GeoDataFrame],
+    zcta_gdf: gpd.GeoDataFrame | None = None,
+    fec_data: dict | None = None,
 ) -> dict:
-    """Areal-weighted aggregation of BG demographics within a single polygon."""
+    """Areal-weighted aggregation of BG demographics + per-election precinct voter data."""
     aggregated: dict[str, float] = defaultdict(float)
     bg_ids_used: list[str] = []
+    precincts_used_by_election: dict[str, list[str]] = {e: [] for e in precinct_gdfs}
 
     if polygon is None or polygon.is_empty:
-        return {k: 0 for _, (k, _) in enumerate(COUNT_PATHS)} | {
-            "catchment_area_acres": 0.0,
-            "bg_intersect_count": 0,
-        }
+        result = {k: 0 for k, _ in COUNT_PATHS}
+        for election in ELECTIONS_TO_LOAD:
+            for k, _ in PER_ELECTION_TEMPLATE:
+                result[f"{election}_{k}"] = 0
+        result |= {"catchment_area_acres": 0.0, "bg_intersect_count": 0}
+        for e in precinct_gdfs:
+            result[f"{e}_precinct_intersect_count"] = 0
+        return result
 
     candidate_bgs = bg_gdf[bg_gdf.geometry.intersects(polygon)]
     for _, bg_row in candidate_bgs.iterrows():
@@ -156,11 +272,61 @@ def aggregate_polygon(
         for out_key, path in COUNT_PATHS:
             aggregated[out_key] += deep_get(bg_data, path) * weight
 
+    for election, gdf in precinct_gdfs.items():
+        candidate_precincts = gdf[gdf.geometry.intersects(polygon)]
+        for _, prec in candidate_precincts.iterrows():
+            intersect_area = prec.geometry.intersection(polygon).area
+            if intersect_area <= 0:
+                continue
+            weight = min(intersect_area / prec["precinct_area_ft2"], 1.0)
+            prec_data = {
+                "total_registered": prec["total_registered"],
+                "total_votes": prec["total_votes"],
+                "registration": prec["registration"],
+                "top_race": prec["top_race"],
+                "senate": prec["senate"],
+            }
+            precincts_used_by_election[election].append(str(prec["srprec"]))
+            for out_key, path in PER_ELECTION_TEMPLATE:
+                aggregated[f"{election}_{out_key}"] += deep_get(prec_data, path) * weight
+
+    # FEC partisan donations — areal-weighted from ZCTA polygons.
+    zctas_used: list[str] = []
+    if zcta_gdf is not None and fec_data is not None:
+        candidate_zctas = zcta_gdf[zcta_gdf.geometry.intersects(polygon)]
+        for _, zr in candidate_zctas.iterrows():
+            intersect_area = zr.geometry.intersection(polygon).area
+            if intersect_area <= 0:
+                continue
+            weight = min(intersect_area / zr["zcta_area_ft2"], 1.0)
+            zip5 = zr["zip5"]
+            fec_entry = fec_data.get(zip5)
+            if not fec_entry:
+                continue
+            zctas_used.append(zip5)
+            aggregated["fec_donor_count"] += fec_entry["donor_count"] * weight
+            aggregated["fec_total_amount"] += fec_entry["total_amount"] * weight
+            for party in FEC_PARTY_KEYS:
+                pdata = fec_entry["by_party"].get(party, {"amount": 0, "donor_count": 0})
+                aggregated[f"fec_{party.lower()}_amount"] += pdata["amount"] * weight
+                aggregated[f"fec_{party.lower()}_donor_count"] += pdata["donor_count"] * weight
+
     result = {k: round(v) for k, v in aggregated.items()}
     for out_key, _ in COUNT_PATHS:
         result.setdefault(out_key, 0)
+    for election in ELECTIONS_TO_LOAD:
+        for k, _ in PER_ELECTION_TEMPLATE:
+            result.setdefault(f"{election}_{k}", 0)
+    for party in FEC_PARTY_KEYS:
+        result.setdefault(f"fec_{party.lower()}_amount", 0)
+        result.setdefault(f"fec_{party.lower()}_donor_count", 0)
+    result.setdefault("fec_donor_count", 0)
+    result.setdefault("fec_total_amount", 0)
     result["catchment_area_acres"] = round(polygon.area / 43560, 1)
     result["bg_intersect_count"] = len(bg_ids_used)
+    result["fec_zcta_intersect_count"] = len(zctas_used)
+    for e in precinct_gdfs:
+        result[f"{e}_precinct_intersect_count"] = len(precincts_used_by_election[e])
     return result
 
 
@@ -188,6 +354,19 @@ def main() -> int:
     bg_gdf["bg_area_ft2"] = bg_gdf.geometry.area
     print(f"BG polygons projected to EPSG:2226 (CA State Plane, feet)")
 
+    precinct_gdfs: dict[str, gpd.GeoDataFrame] = {}
+    for election in ELECTIONS_TO_LOAD:
+        g = load_or_fetch_precincts(election)
+        if g is not None:
+            precinct_gdfs[election] = g
+            print(f"Loaded {len(g)} SWDB {election} precincts with voter data")
+    if not precinct_gdfs:
+        print("No precinct voter data found — political sections will be zero")
+
+    zcta_gdf, fec_data = load_or_fetch_fec_zctas()
+    if zcta_gdf is not None:
+        print(f"Loaded {len(zcta_gdf)} ZCTAs with FEC partisan donor data")
+
     catchments_gdf = gpd.read_file(catchments_path)
     full_catchments = catchments_gdf[catchments_gdf["feature_type"] == "full"].to_crs(epsg=2226).copy()
     print(
@@ -202,8 +381,8 @@ def main() -> int:
         catchment_poly = catchment.geometry
         in_district_poly = catchment_poly.intersection(district_poly)
 
-        total = aggregate_polygon(catchment_poly, bg_gdf, demographics)
-        in_district = aggregate_polygon(in_district_poly, bg_gdf, demographics)
+        total = aggregate_polygon(catchment_poly, bg_gdf, demographics, precinct_gdfs, zcta_gdf, fec_data)
+        in_district = aggregate_polygon(in_district_poly, bg_gdf, demographics, precinct_gdfs, zcta_gdf, fec_data)
 
         results[venue_id][profile] = {
             "total": total,

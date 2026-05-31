@@ -193,11 +193,256 @@ export function CatchmentDemographicsPanel({
         <BarRow label="Renter" value={c.tenure_renter} total={totalTenure} color="#f97316" />
       </div>
 
+      {/* === Voter registration + election results === */}
+      {c.g24_total_registered != null && c.g24_total_registered > 0 && (() => {
+        const reg24 = c.g24_total_registered ?? 0
+        const reg22 = c.g22_total_registered ?? 0
+        const turnout24 = reg24 ? (c.g24_total_votes ?? 0) / reg24 : 0
+        const turnout22 = reg22 ? (c.g22_total_votes ?? 0) / reg22 : 0
+        const dShare24 = reg24 ? (c.g24_reg_democratic ?? 0) / reg24 : 0
+        const dShare22 = reg22 ? (c.g22_reg_democratic ?? 0) / reg22 : 0
+        const rShare24 = reg24 ? (c.g24_reg_republican ?? 0) / reg24 : 0
+        const rShare22 = reg22 ? (c.g22_reg_republican ?? 0) / reg22 : 0
+        const topD24 = c.g24_top_race_democratic ?? 0
+        const topR24 = c.g24_top_race_republican ?? 0
+        const topD22 = c.g22_top_race_democratic ?? 0
+        const topR22 = c.g22_top_race_republican ?? 0
+        const topTotal24 = topD24 + topR24 + (c.g24_top_race_libertarian ?? 0) + (c.g24_top_race_green ?? 0) + (c.g24_top_race_peace_and_freedom ?? 0) + (c.g24_top_race_american_independent ?? 0)
+        const topTotal22 = topD22 + topR22
+        const presDshare = topTotal24 ? topD24 / topTotal24 : 0
+        const govDshare = topTotal22 ? topD22 / topTotal22 : 0
+        return (
+          <>
+            <SectionTitle>Registered voters · 2024 vs 2022 trend</SectionTitle>
+            <div className="mt-1 grid grid-cols-3 gap-x-2 gap-y-1 text-[11px]">
+              <div className="font-medium text-gray-500"></div>
+              <div className="text-right font-medium text-gray-500">2022</div>
+              <div className="text-right font-medium text-gray-500">2024</div>
+              <div className="text-gray-600">Registered</div>
+              <div className="text-right tabular-nums">{reg22.toLocaleString()}</div>
+              <div className="text-right tabular-nums">{reg24.toLocaleString()}</div>
+              <div className="text-gray-600">Turnout</div>
+              <div className="text-right tabular-nums">{(turnout22 * 100).toFixed(0)}%</div>
+              <div className="text-right tabular-nums">{(turnout24 * 100).toFixed(0)}%</div>
+              <div className="text-gray-600">% Democratic</div>
+              <div className="text-right tabular-nums">{(dShare22 * 100).toFixed(0)}%</div>
+              <div className="text-right tabular-nums">
+                {(dShare24 * 100).toFixed(0)}%
+                <span className={`ml-1 text-[10px] ${dShare24 > dShare22 ? 'text-blue-600' : 'text-gray-400'}`}>
+                  {dShare24 > dShare22 ? '↑' : dShare24 < dShare22 ? '↓' : '→'}
+                  {Math.abs(dShare24 - dShare22) > 0.005 ? `${Math.abs((dShare24 - dShare22) * 100).toFixed(1)}pt` : ''}
+                </span>
+              </div>
+              <div className="text-gray-600">% Republican</div>
+              <div className="text-right tabular-nums">{(rShare22 * 100).toFixed(0)}%</div>
+              <div className="text-right tabular-nums">
+                {(rShare24 * 100).toFixed(0)}%
+                <span className={`ml-1 text-[10px] ${rShare24 > rShare22 ? 'text-red-600' : 'text-gray-400'}`}>
+                  {rShare24 > rShare22 ? '↑' : rShare24 < rShare22 ? '↓' : '→'}
+                  {Math.abs(rShare24 - rShare22) > 0.005 ? `${Math.abs((rShare24 - rShare22) * 100).toFixed(1)}pt` : ''}
+                </span>
+              </div>
+            </div>
+
+            <SectionTitle>Top-of-ticket vote · D vs R share</SectionTitle>
+            <div className="mt-1 grid grid-cols-3 gap-x-2 gap-y-1 text-[11px]">
+              <div className="font-medium text-gray-500"></div>
+              <div className="text-right font-medium text-gray-500">2022 (Gov)</div>
+              <div className="text-right font-medium text-gray-500">2024 (Pres)</div>
+              <div className="text-gray-600">D share</div>
+              <div className="text-right tabular-nums">{(govDshare * 100).toFixed(0)}%</div>
+              <div className="text-right tabular-nums">
+                {(presDshare * 100).toFixed(0)}%
+                <span className={`ml-1 text-[10px] ${presDshare > govDshare ? 'text-blue-600' : 'text-gray-400'}`}>
+                  {presDshare > govDshare ? '↑' : presDshare < govDshare ? '↓' : '→'}
+                  {Math.abs(presDshare - govDshare) > 0.005 ? `${Math.abs((presDshare - govDshare) * 100).toFixed(1)}pt` : ''}
+                </span>
+              </div>
+            </div>
+
+            <SectionTitle>Registration 2024 by party</SectionTitle>
+            <div className="mt-1 space-y-0.5">
+              <BarRow label="Democratic" value={c.g24_reg_democratic ?? 0} total={reg24} color="#2563eb" />
+              <BarRow label="Republican" value={c.g24_reg_republican ?? 0} total={reg24} color="#dc2626" />
+              <BarRow label="No party pref" value={c.g24_reg_no_party_preference ?? 0} total={reg24} color="#64748b" />
+              <BarRow label="Libertarian" value={c.g24_reg_libertarian ?? 0} total={reg24} color="#f59e0b" />
+              <BarRow label="Am. Indep." value={c.g24_reg_american_independent ?? 0} total={reg24} color="#a16207" />
+              <BarRow label="Green" value={c.g24_reg_green ?? 0} total={reg24} color="#16a34a" />
+              <BarRow label="Peace & Freedom" value={c.g24_reg_peace_and_freedom ?? 0} total={reg24} color="#7c3aed" />
+            </div>
+          </>
+        )
+      })()}
+
+      {/* === FEC partisan donations === */}
+      {c.fec_total_amount != null && c.fec_total_amount > 0 && (() => {
+        const total = c.fec_total_amount
+        const dem = c.fec_dem_amount ?? 0
+        const rep = c.fec_rep_amount ?? 0
+        const lib = c.fec_lib_amount ?? 0
+        const grn = c.fec_gre_amount ?? 0
+        const ind = c.fec_ind_amount ?? 0
+        const other = c.fec_other_amount ?? 0
+        // Show partisan-only ratio (excluding "OTHER" = nonpartisan/issue PACs)
+        const partisanTotal = dem + rep
+        return (
+          <>
+            <SectionTitle>FEC partisan donations · 2024 cycle</SectionTitle>
+            <div className="mt-1 grid grid-cols-2 gap-x-2 gap-y-1 text-[11px]">
+              <div>
+                <div className="text-gray-500">Donors</div>
+                <div className="font-semibold tabular-nums text-gray-900">
+                  {(c.fec_donor_count ?? 0).toLocaleString()}
+                </div>
+              </div>
+              <div>
+                <div className="text-gray-500">Total $</div>
+                <div className="font-semibold tabular-nums text-gray-900">
+                  ${Math.round(total).toLocaleString()}
+                </div>
+              </div>
+            </div>
+            <div className="mt-2 space-y-0.5">
+              <BarRow label="Democratic" value={dem} total={total} color="#2563eb" />
+              <BarRow label="Republican" value={rep} total={total} color="#dc2626" />
+              <BarRow label="Libertarian" value={lib} total={total} color="#f59e0b" />
+              <BarRow label="Green" value={grn} total={total} color="#16a34a" />
+              <BarRow label="Independent" value={ind} total={total} color="#7c3aed" />
+              <BarRow label="PACs / nonpartisan" value={other} total={total} color="#94a3b8" />
+            </div>
+            {partisanTotal > 0 && (
+              <div className="mt-2 rounded bg-gray-50 px-2 py-1.5 text-[10px] text-gray-600">
+                Partisan ratio (D vs R, excluding PACs): {' '}
+                <strong>D ${Math.round(dem).toLocaleString()}</strong> vs {' '}
+                <strong>R ${Math.round(rep).toLocaleString()}</strong>
+                {' — '}
+                <span style={{ color: dem >= rep ? '#2563eb' : '#dc2626' }}>
+                  {Math.round(dem / partisanTotal * 100)}% D
+                </span>
+              </div>
+            )}
+          </>
+        )
+      })()}
+
+      {/* === Occupation === */}
+      {c.commute_total_workers != null && c.commute_total_workers > 0 && (() => {
+        const occTotal =
+          (c.occ_management_business_science_arts ?? 0) +
+          (c.occ_service ?? 0) +
+          (c.occ_sales_office ?? 0) +
+          (c.occ_natural_resources_construction_maintenance ?? 0) +
+          (c.occ_production_transportation_material_moving ?? 0)
+        return occTotal > 0 ? (
+          <>
+            <SectionTitle>Occupations (employed 16+)</SectionTitle>
+            <div className="mt-1 space-y-0.5">
+              <BarRow label="Mgmt/Bus/Sci/Arts" value={c.occ_management_business_science_arts ?? 0} total={occTotal} color="#1e40af" />
+              <BarRow label="Service"           value={c.occ_service ?? 0} total={occTotal} color="#0ea5e9" />
+              <BarRow label="Sales / office"    value={c.occ_sales_office ?? 0} total={occTotal} color="#10b981" />
+              <BarRow label="Construction etc." value={c.occ_natural_resources_construction_maintenance ?? 0} total={occTotal} color="#a16207" />
+              <BarRow label="Prod / transport"  value={c.occ_production_transportation_material_moving ?? 0} total={occTotal} color="#7c3aed" />
+            </div>
+          </>
+        ) : null
+      })()}
+
+      {/* === Commute mode === */}
+      {c.commute_total_workers != null && c.commute_total_workers > 0 && (
+        <>
+          <SectionTitle>Commute mode</SectionTitle>
+          <div className="mt-1 space-y-0.5">
+            <BarRow label="Drove alone"   value={c.commute_drove_alone ?? 0} total={c.commute_total_workers} color="#94a3b8" />
+            <BarRow label="Carpool"       value={c.commute_carpooled ?? 0} total={c.commute_total_workers} color="#64748b" />
+            <BarRow label="Public transit" value={c.commute_public_transit ?? 0} total={c.commute_total_workers} color="#0ea5e9" />
+            <BarRow label="Bicycle"       value={c.commute_bicycle ?? 0} total={c.commute_total_workers} color="#16a34a" />
+            <BarRow label="Walked"        value={c.commute_walked ?? 0} total={c.commute_total_workers} color="#22c55e" />
+            <BarRow label="Work from home" value={c.commute_work_from_home ?? 0} total={c.commute_total_workers} color="#7c3aed" />
+          </div>
+        </>
+      )}
+
+      {/* === Housing structure === */}
+      {((c.housing_single_family ?? 0) + (c.housing_small_multifamily ?? 0) + (c.housing_large_multifamily ?? 0) + (c.housing_mobile_home ?? 0)) > 0 && (() => {
+        const hTotal = (c.housing_single_family ?? 0) + (c.housing_small_multifamily ?? 0) + (c.housing_large_multifamily ?? 0) + (c.housing_mobile_home ?? 0)
+        return (
+          <>
+            <SectionTitle>Housing structure</SectionTitle>
+            <div className="mt-1 space-y-0.5">
+              <BarRow label="Single-family"      value={c.housing_single_family ?? 0} total={hTotal} color="#94a3b8" />
+              <BarRow label="Small multifamily"  value={c.housing_small_multifamily ?? 0} total={hTotal} color="#3b82f6" />
+              <BarRow label="Large multifamily"  value={c.housing_large_multifamily ?? 0} total={hTotal} color="#1d4ed8" />
+              <BarRow label="Mobile home"        value={c.housing_mobile_home ?? 0} total={hTotal} color="#a16207" />
+            </div>
+          </>
+        )
+      })()}
+
+      {/* === Language at home === */}
+      {(c.lang_english_only ?? 0) + (c.lang_spanish ?? 0) + (c.lang_other ?? 0) > 0 && (() => {
+        const lTotal =
+          (c.lang_english_only ?? 0) + (c.lang_spanish ?? 0) +
+          (c.lang_other_indo_european ?? 0) + (c.lang_asian_pacific_islander ?? 0) +
+          (c.lang_other ?? 0)
+        return (
+          <>
+            <SectionTitle>Language at home</SectionTitle>
+            <div className="mt-1 space-y-0.5">
+              <BarRow label="English only"       value={c.lang_english_only ?? 0} total={lTotal} color="#475569" />
+              <BarRow label="Spanish"            value={c.lang_spanish ?? 0} total={lTotal} color="#f59e0b" />
+              <BarRow label="Other Indo-Euro"    value={c.lang_other_indo_european ?? 0} total={lTotal} color="#8b5cf6" />
+              <BarRow label="Asian / Pacific Is" value={c.lang_asian_pacific_islander ?? 0} total={lTotal} color="#10b981" />
+              <BarRow label="Other"              value={c.lang_other ?? 0} total={lTotal} color="#94a3b8" />
+            </div>
+          </>
+        )
+      })()}
+
+      {/* === Rent burden + SNAP === */}
+      {c.rent_burden_total != null && c.rent_burden_total > 0 && (
+        <>
+          <SectionTitle>Economic stress signals</SectionTitle>
+          <div className="mt-1 grid grid-cols-2 gap-x-2 gap-y-1 text-[11px]">
+            <div>
+              <div className="text-gray-500">Rent-burdened</div>
+              <div className="font-semibold tabular-nums text-gray-900">
+                {Math.round(((c.rent_burden_30_plus ?? 0) / c.rent_burden_total) * 100)}%
+                <span className="ml-1 text-[10px] font-normal text-gray-400">of renters {">"}30% income</span>
+              </div>
+            </div>
+            <div>
+              <div className="text-gray-500">Severely</div>
+              <div className="font-semibold tabular-nums text-gray-900">
+                {Math.round(((c.rent_burden_50_plus ?? 0) / c.rent_burden_total) * 100)}%
+                <span className="ml-1 text-[10px] font-normal text-gray-400">{">"} 50% income</span>
+              </div>
+            </div>
+            {c.snap_total_households != null && c.snap_total_households > 0 && (
+              <div>
+                <div className="text-gray-500">SNAP receiving</div>
+                <div className="font-semibold tabular-nums text-gray-900">
+                  {Math.round(((c.snap_receiving ?? 0) / c.snap_total_households) * 100)}%
+                  <span className="ml-1 text-[10px] font-normal text-gray-400">of households</span>
+                </div>
+              </div>
+            )}
+            {c.employment_unemployed != null && (c.employment_employed ?? 0) + c.employment_unemployed > 0 && (
+              <div>
+                <div className="text-gray-500">Unemployment</div>
+                <div className="font-semibold tabular-nums text-gray-900">
+                  {Math.round((c.employment_unemployed / ((c.employment_employed ?? 0) + c.employment_unemployed)) * 100)}%
+                </div>
+              </div>
+            )}
+          </div>
+        </>
+      )}
+
       <div className="mt-3 text-[10px] leading-snug text-gray-500">
         Distributions are for residents <strong>inside District {district}</strong> only
-        ({c.bg_intersect_count} block groups areal-weighted from ACS 2023).
+        ({c.bg_intersect_count} block groups{c.g24_precinct_intersect_count ? ` + ${c.g24_precinct_intersect_count} 2024 precincts` : ''}{c.fec_zcta_intersect_count ? ` + ${c.fec_zcta_intersect_count} ZIPs` : ''} areal-weighted).
         Total counts compare against everyone the venue reaches regardless of district.
-        CVAP is estimated from each parent tract's citizen rate × the BG's adult population.
+        Sources: ACS 5-year 2023; SWDB Butte 2022+2024 General; FEC 2024 cycle.
       </div>
     </div>
   )
