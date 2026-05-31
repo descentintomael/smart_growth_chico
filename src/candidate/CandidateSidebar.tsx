@@ -1,11 +1,11 @@
 import { allCategoryStyles } from './categoryStyle'
 
-export function CandidateSidebar() {
+export function CandidateSidebar({ district }: { district: string }) {
   return (
     <aside className="flex w-72 shrink-0 flex-col gap-4 overflow-y-auto border-r border-gray-200 bg-white p-4 text-sm">
       <div>
         <h2 className="text-base font-semibold text-gray-900">Candidate venue map</h2>
-        <p className="mt-1 text-xs text-gray-500">District 6, Chico CA</p>
+        <p className="mt-1 text-xs text-gray-500">District {district}, Chico CA</p>
       </div>
 
       <div>
@@ -73,12 +73,22 @@ export function CandidateSidebar() {
         </ul>
       </div>
 
+      <div>
+        <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+          Catchments
+        </h3>
+        <p className="mt-2 text-xs text-gray-600">
+          <strong>Click any venue</strong> to see its walking (blue) and biking (green)
+          catchment areas at 10 and 15 minutes. Catchments are computed against the
+          actual OSM road network — not just radius circles.
+        </p>
+      </div>
+
       <div className="mt-auto rounded bg-amber-50 p-3 text-xs text-amber-900">
         <strong>Preview build.</strong> Venues sourced from OpenStreetMap, filtered for
-        chains/gyms/fast-food, enriched by website assessments where available.
-        OSM coverage in east Chico is incomplete — additions from the candidate's
-        local knowledge are welcome. Walk/bike catchments and demographic overlays
-        are not yet wired in.
+        chains/gyms/fast-food, enriched by Google Places attributes and website
+        assessments where available. Demographic overlays (registered voters, ACS
+        block groups) are next.
       </div>
     </aside>
   )

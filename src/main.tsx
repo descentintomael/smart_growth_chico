@@ -15,7 +15,8 @@ createRoot(rootElement).render(
     <HashRouter>
       <Routes>
         {/* Candidate map: standalone, outside shared Layout. Sets its own noindex meta. */}
-        <Route path="candidate/district-6" element={<CandidateApp />} />
+        {/* Dynamic route — works for any district: /candidate/district-6, /candidate/district-4, etc. */}
+        <Route path="candidate/district-:district" element={<CandidateApp />} />
 
         <Route element={<Layout />}>
           <Route index element={<MapPage />} />

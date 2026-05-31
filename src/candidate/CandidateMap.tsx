@@ -10,14 +10,37 @@ import {
 import type { LatLngBoundsExpression, PathOptions } from 'leaflet'
 import type { GeoJsonObject } from 'geojson'
 import type {
+  CatchmentCollection,
+  CatchmentProfile,
   DistrictBoundaryCollection,
   VenueCollection,
   VenueFeature,
 } from './types'
 import { styleForVenue } from './categoryStyle'
 
-const BOUNDARY_URL = `${import.meta.env.BASE_URL}data/candidate-district-6/district-boundary.geojson`
-const VENUES_URL = `${import.meta.env.BASE_URL}data/candidate-district-6/venues.geojson`
+const CATCHMENT_LAYER_STYLE: Record<CatchmentProfile, PathOptions> = {
+  bike_15: { color: '#16a34a', weight: 1, fillColor: '#16a34a', fillOpacity: 0.10 },
+  bike_10: { color: '#16a34a', weight: 1, fillColor: '#16a34a', fillOpacity: 0.10 },
+  walk_15: { color: '#2563eb', weight: 1.5, fillColor: '#2563eb', fillOpacity: 0.18 },
+  walk_10: { color: '#1e40af', weight: 1.5, fillColor: '#1e40af', fillOpacity: 0.28 },
+}
+
+// Render bottom→top so smaller catchments stack on larger ones.
+const CATCHMENT_RENDER_ORDER: CatchmentProfile[] = [
+  'bike_15',
+  'bike_10',
+  'walk_15',
+  'walk_10',
+]
+
+function dataUrls(district: string) {
+  const base = `${import.meta.env.BASE_URL}data/candidate-district-${district}`
+  return {
+    boundary: `${base}/district-boundary.geojson`,
+    venues: `${base}/venues.geojson`,
+    catchments: `${base}/catchments.geojson`,
+  }
+}
 
 // Center fallback — overridden by fitBounds when the boundary loads.
 const CHICO_CENTER: [number, number] = [39.7285, -121.8375]
@@ -75,29 +98,38 @@ function statusBadge(status: VenueFeature['properties']['hosting_status']): {
   }
 }
 
-export function CandidateMap() {
+export function CandidateMap({ district }: { district: string }) {
   const [boundary, setBoundary] = useState<DistrictBoundaryCollection | null>(null)
   const [venues, setVenues] = useState<VenueCollection | null>(null)
+  const [catchments, setCatchments] = useState<CatchmentCollection | null>(null)
+  const [selectedVenueId, setSelectedVenueId] = useState<string | null>(null)
   const [bounds, setBounds] = useState<LatLngBoundsExpression | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
 
   useEffect(() => {
     let cancelled = false
+    const urls = dataUrls(district)
     async function load() {
       try {
-        const [b, v] = await Promise.all([
-          fetch(BOUNDARY_URL).then(r => {
+        const [b, v, c] = await Promise.all([
+          fetch(urls.boundary).then(r => {
             if (!r.ok) throw new Error(`boundary ${r.status}`)
             return r.json() as Promise<DistrictBoundaryCollection>
           }),
-          fetch(VENUES_URL).then(r => {
+          fetch(urls.venues).then(r => {
             if (!r.ok) throw new Error(`venues ${r.status}`)
             return r.json() as Promise<VenueCollection>
           }),
+          // Catchments are optional — older builds may not have them.
+          fetch(urls.catchments).then(r => {
+            if (!r.ok) return null
+            return r.json() as Promise<CatchmentCollection>
+          }).catch(() => null),
         ])
         if (cancelled) return
         setBoundary(b)
         setVenues(v)
+        setCatchments(c)
 
         // Compute simple bbox for fitBounds
         const coords: [number, number][] = []
@@ -128,10 +160,47 @@ export function CandidateMap() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [district])
+
+  const selectedVenue = selectedVenueId
+    ? venues?.features.find(f => f.properties.osm_id === selectedVenueId)
+    : null
 
   return (
     <div className="relative h-full w-full">
+      {selectedVenue && (
+        <div className="absolute left-4 top-4 z-[1000] max-w-xs rounded-md bg-white/95 px-3 py-2 text-xs shadow-lg ring-1 ring-gray-200 backdrop-blur">
+          <div className="flex items-center justify-between gap-2">
+            <span className="font-semibold text-gray-900">{selectedVenue.properties.name}</span>
+            <button
+              onClick={() => setSelectedVenueId(null)}
+              className="text-gray-400 hover:text-gray-700"
+              aria-label="Clear selection"
+            >
+              ✕
+            </button>
+          </div>
+          <div className="mt-1 text-[10px] uppercase tracking-wide text-gray-500">Catchments shown</div>
+          <ul className="mt-1 space-y-0.5">
+            <li className="flex items-center gap-1.5">
+              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: '#1e40af', opacity: 0.7 }} />
+              <span>Walk 10 min · ~½ mi</span>
+            </li>
+            <li className="flex items-center gap-1.5">
+              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: '#2563eb', opacity: 0.5 }} />
+              <span>Walk 15 min · ~¾ mi</span>
+            </li>
+            <li className="flex items-center gap-1.5">
+              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: '#16a34a', opacity: 0.4 }} />
+              <span>Bike 10 min · ~1⅔ mi</span>
+            </li>
+            <li className="flex items-center gap-1.5">
+              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: '#16a34a', opacity: 0.25 }} />
+              <span>Bike 15 min · ~2½ mi</span>
+            </li>
+          </ul>
+        </div>
+      )}
       <LeafletMapContainer
         center={CHICO_CENTER}
         zoom={DEFAULT_ZOOM}
@@ -156,21 +225,42 @@ export function CandidateMap() {
           />
         )}
 
+        {/* Catchment overlays for the currently-selected venue, rendered bottom-up. */}
+        {catchments && selectedVenueId &&
+          CATCHMENT_RENDER_ORDER.map(profile => {
+            const feature = catchments.features.find(
+              f => f.properties.venue_id === selectedVenueId && f.properties.profile === profile
+            )
+            if (!feature) return null
+            return (
+              <GeoJSON
+                key={`catch-${selectedVenueId}-${profile}`}
+                data={feature as unknown as GeoJsonObject}
+                style={() => CATCHMENT_LAYER_STYLE[profile]}
+                interactive={false}
+              />
+            )
+          })}
+
         {venues?.features.map(f => {
           const style = styleForVenue(f.properties)
           const [lon, lat] = f.geometry.coordinates as [number, number]
           const badge = statusBadge(f.properties.hosting_status)
+          const isSelected = selectedVenueId === f.properties.osm_id
           return (
             <CircleMarker
               key={f.properties.osm_id}
               center={[lat, lon]}
-              radius={venueRadius(f)}
+              radius={isSelected ? venueRadius(f) + 3 : venueRadius(f)}
               pathOptions={{
-                color: style.color,
-                weight: venueBorderWeight(f),
+                color: isSelected ? '#111827' : style.color,
+                weight: isSelected ? 3 : venueBorderWeight(f),
                 fillColor: style.color,
                 fillOpacity: venueFillOpacity(f),
                 opacity: venueBorderOpacity(f),
+              }}
+              eventHandlers={{
+                click: () => setSelectedVenueId(f.properties.osm_id),
               }}
             >
               <Popup maxWidth={340}>

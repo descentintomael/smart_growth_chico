@@ -45,3 +45,19 @@ export type DistrictBoundaryCollection = FeatureCollection<
   Polygon | MultiPolygon,
   DistrictBoundaryProperties
 >
+
+export type CatchmentProfile = 'walk_10' | 'walk_15' | 'bike_10' | 'bike_15'
+
+export interface CatchmentProperties {
+  venue_id: string
+  venue_name: string
+  profile: CatchmentProfile
+  mode: 'walk' | 'bike'
+  minutes: 10 | 15
+  in_district_venue: boolean
+}
+
+export type CatchmentCollection = FeatureCollection<
+  Polygon | MultiPolygon,
+  CatchmentProperties
+>
