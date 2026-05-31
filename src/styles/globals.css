@@ -54,24 +54,24 @@ body,
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Permanent rank badges on top-10 priority venues */
-.leaflet-tooltip.venue-rank-tooltip {
-  background: #111827;
+/* Permanent ✕ badge for venues that won't work (closed, excluded). */
+.leaflet-tooltip.venue-excluded-tooltip {
+  background: #dc2626;
   color: white;
   border: 2px solid white;
   border-radius: 50%;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 14px;
   padding: 0;
-  width: 22px;
-  height: 22px;
-  line-height: 18px;
+  width: 20px;
+  height: 20px;
+  line-height: 16px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   pointer-events: none;
   white-space: nowrap;
 }
-.leaflet-tooltip.venue-rank-tooltip::before {
+.leaflet-tooltip.venue-excluded-tooltip::before {
   display: none;
 }
 

@@ -123,12 +123,20 @@ function venueFillOpacity(feature: VenueFeature): number {
 }
 
 function venueBorderWeight(feature: VenueFeature): number {
-  if (feature.properties.hosting_status === 'excluded') return 1
+  if (feature.properties.hosting_status === 'excluded') return 2
+  if (feature.properties.priority_tier === 'top') return 3
   return feature.properties.in_district ? 1.5 : 2.5
 }
 
 function venueBorderOpacity(feature: VenueFeature): number {
-  return feature.properties.hosting_status === 'excluded' ? 0.4 : 0.95
+  if (feature.properties.hosting_status === 'excluded') return 0.85
+  return 0.95
+}
+
+function venueBorderColor(feature: VenueFeature, fallback: string, isSelected: boolean): string {
+  if (feature.properties.hosting_status === 'excluded') return '#dc2626'
+  if (isSelected) return '#111827'
+  return fallback
 }
 
 function priorityBreakdownBar(label: string, value: number, color: string) {
@@ -335,7 +343,7 @@ export function CandidateMap({ district }: { district: string }) {
               center={[lat, lon]}
               radius={isSelected ? venueRadius(f) + 3 : venueRadius(f)}
               pathOptions={{
-                color: isSelected ? '#111827' : style.color,
+                color: venueBorderColor(f, style.color, isSelected),
                 weight: isSelected ? 3 : venueBorderWeight(f),
                 fillColor: style.color,
                 fillOpacity: venueFillOpacity(f),
@@ -345,14 +353,14 @@ export function CandidateMap({ district }: { district: string }) {
                 click: () => setSelectedVenueId(f.properties.osm_id),
               }}
             >
-              {f.properties.priority_rank != null && f.properties.priority_rank <= 10 && (
+              {f.properties.hosting_status === 'excluded' && (
                 <Tooltip
                   permanent
                   direction="top"
                   offset={[0, -venueRadius(f) - 2]}
-                  className="venue-rank-tooltip"
+                  className="venue-excluded-tooltip"
                 >
-                  {f.properties.priority_rank}
+                  ✕
                 </Tooltip>
               )}
               <Popup maxWidth={340}>

@@ -68,22 +68,32 @@ export function CandidateSidebar({ district, collapsed, onToggle }: SidebarProps
 
       <div>
         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-          Marker shape
+          Marker encoding
         </h3>
         <ul className="mt-2 space-y-1.5 text-xs">
           <li className="flex items-center gap-2">
-            <span
-              className="inline-block h-3 w-3 rounded-full"
-              style={{ backgroundColor: '#374151' }}
-            />
+            <span className="inline-flex w-5 items-center justify-center">
+              <span className="inline-block h-4 w-4 rounded-full border-[3px]" style={{ backgroundColor: '#374151', borderColor: '#374151' }} />
+            </span>
+            <span><strong>Bigger</strong> = higher forum priority (top → low)</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-flex w-5 items-center justify-center">
+              <span className="inline-block h-3 w-3 rounded-full" style={{ backgroundColor: '#374151' }} />
+            </span>
             <span>Filled = inside District {district}</span>
           </li>
           <li className="flex items-center gap-2">
-            <span
-              className="inline-block h-3 w-3 rounded-full border-2"
-              style={{ borderColor: '#374151' }}
-            />
-            <span>Ring = adjacency zone (≤1 mi outside — walking catchment may still reach district residents)</span>
+            <span className="inline-flex w-5 items-center justify-center">
+              <span className="inline-block h-3 w-3 rounded-full border-2" style={{ borderColor: '#374151' }} />
+            </span>
+            <span>Ring = adjacency zone (≤1 mi outside)</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-flex w-5 items-center justify-center">
+              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full font-bold text-white" style={{ backgroundColor: '#dc2626', fontSize: 10 }}>✕</span>
+            </span>
+            <span>✕ = won't work (closed, excluded)</span>
           </li>
         </ul>
       </div>
