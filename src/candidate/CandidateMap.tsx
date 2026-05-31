@@ -6,16 +6,19 @@ import {
   CircleMarker,
   Popup,
   ZoomControl,
+  useMap,
 } from 'react-leaflet'
 import type { LatLngBoundsExpression, PathOptions } from 'leaflet'
 import type { GeoJsonObject } from 'geojson'
 import type {
   CatchmentCollection,
+  CatchmentDemographics,
   CatchmentProfile,
   DistrictBoundaryCollection,
   VenueCollection,
   VenueFeature,
 } from './types'
+import { CatchmentDemographicsPanel } from './CatchmentDemographicsPanel'
 import { styleForVenue } from './categoryStyle'
 
 // Shell-based rendering: each band is a geometrically distinct ring (or innermost
@@ -41,12 +44,26 @@ const CATCHMENT_RENDER_ORDER: CatchmentProfile[] = [
   'walk_10',
 ]
 
+/** Re-fits the map view when the boundary bounds become available.
+ *  react-leaflet only honors center/zoom/bounds at mount, so we update
+ *  imperatively via the map handle. */
+function FitToBounds({ bounds }: { bounds: LatLngBoundsExpression | null }) {
+  const map = useMap()
+  useEffect(() => {
+    if (bounds) {
+      map.fitBounds(bounds, { padding: [12, 12] })
+    }
+  }, [bounds, map])
+  return null
+}
+
 function dataUrls(district: string) {
   const base = `${import.meta.env.BASE_URL}data/candidate-district-${district}`
   return {
     boundary: `${base}/district-boundary.geojson`,
     venues: `${base}/venues.geojson`,
     catchments: `${base}/catchments.geojson`,
+    catchmentDemographics: `${base}/catchment-demographics.json`,
   }
 }
 
@@ -110,6 +127,7 @@ export function CandidateMap({ district }: { district: string }) {
   const [boundary, setBoundary] = useState<DistrictBoundaryCollection | null>(null)
   const [venues, setVenues] = useState<VenueCollection | null>(null)
   const [catchments, setCatchments] = useState<CatchmentCollection | null>(null)
+  const [catchmentDemo, setCatchmentDemo] = useState<CatchmentDemographics | null>(null)
   const [selectedVenueId, setSelectedVenueId] = useState<string | null>(null)
   const [bounds, setBounds] = useState<LatLngBoundsExpression | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
@@ -119,7 +137,7 @@ export function CandidateMap({ district }: { district: string }) {
     const urls = dataUrls(district)
     async function load() {
       try {
-        const [b, v, c] = await Promise.all([
+        const [b, v, c, d] = await Promise.all([
           fetch(urls.boundary).then(r => {
             if (!r.ok) throw new Error(`boundary ${r.status}`)
             return r.json() as Promise<DistrictBoundaryCollection>
@@ -133,11 +151,17 @@ export function CandidateMap({ district }: { district: string }) {
             if (!r.ok) return null
             return r.json() as Promise<CatchmentCollection>
           }).catch(() => null),
+          // Catchment demographics are also optional.
+          fetch(urls.catchmentDemographics).then(r => {
+            if (!r.ok) return null
+            return r.json() as Promise<CatchmentDemographics>
+          }).catch(() => null),
         ])
         if (cancelled) return
         setBoundary(b)
         setVenues(v)
         setCatchments(c)
+        setCatchmentDemo(d)
 
         // Compute simple bbox for fitBounds
         const coords: [number, number][] = []
@@ -177,7 +201,8 @@ export function CandidateMap({ district }: { district: string }) {
   return (
     <div className="relative h-full w-full">
       {selectedVenue && (
-        <div className="absolute left-4 top-4 z-[1000] max-w-xs rounded-md bg-white/95 px-3 py-2 text-xs shadow-lg ring-1 ring-gray-200 backdrop-blur">
+        <div className="absolute left-4 top-4 z-[1000] w-80 max-w-[calc(100vw-2rem)]">
+          <div className="rounded-md bg-white/95 px-3 py-2 text-xs shadow-lg ring-1 ring-gray-200 backdrop-blur">
           <div className="flex items-center justify-between gap-2">
             <span className="font-semibold text-gray-900">{selectedVenue.properties.name}</span>
             <button
@@ -207,6 +232,8 @@ export function CandidateMap({ district }: { district: string }) {
               <span>Bike · 10–15 min</span>
             </li>
           </ul>
+          </div>
+          <CatchmentDemographicsPanel data={catchmentDemo} venueId={selectedVenueId} />
         </div>
       )}
       <LeafletMapContainer
@@ -214,9 +241,8 @@ export function CandidateMap({ district }: { district: string }) {
         zoom={DEFAULT_ZOOM}
         zoomControl={false}
         className="h-full w-full"
-        bounds={bounds ?? undefined}
-        boundsOptions={{ padding: [20, 20] }}
       >
+        <FitToBounds bounds={bounds} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"

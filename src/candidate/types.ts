@@ -72,3 +72,48 @@ export type CatchmentCollection = FeatureCollection<
   Polygon | MultiPolygon,
   CatchmentProperties
 >
+
+export interface CatchmentAggregate {
+  total_population: number
+  adult_population_18plus: number
+  citizen_voting_age_population: number
+  age_under_18: number
+  age_18_34: number
+  age_35_54: number
+  age_55_64: number
+  age_65_plus: number
+  race_white_nh: number
+  race_black_nh: number
+  race_native_nh: number
+  race_asian_nh: number
+  race_pacific_nh: number
+  race_other_nh: number
+  race_two_or_more_nh: number
+  race_hispanic: number
+  edu_less_than_hs: number
+  edu_high_school: number
+  edu_some_college: number
+  edu_bachelors: number
+  edu_graduate: number
+  income_low_under_25k: number
+  income_lower_mid_25_50k: number
+  income_mid_50_75k: number
+  income_upper_mid_75_125k: number
+  income_high_125k_plus: number
+  households_total: number
+  tenure_owner: number
+  tenure_renter: number
+  catchment_area_acres: number
+  bg_intersect_count: number
+}
+
+export interface CatchmentDemographics {
+  generated: string
+  district: number
+  data_source_note: string
+  venues: Record<string, {
+    venue_name: string
+    in_district_venue: boolean
+    catchments: Partial<Record<'walk_10' | 'walk_15' | 'bike_10' | 'bike_15', CatchmentAggregate>>
+  }>
+}
