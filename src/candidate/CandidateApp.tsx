@@ -1,7 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { CandidateMap } from './CandidateMap'
 import { CandidateSidebar } from './CandidateSidebar'
+
+const SIDEBAR_COLLAPSED_KEY = 'candidate-sidebar-collapsed'
 
 const ROBOTS_META_CONTENT = 'noindex, nofollow, noarchive, nosnippet'
 
@@ -41,6 +43,22 @@ export function CandidateApp() {
   const { slug } = useParams<{ slug: string }>()
   const districtNum = parseDistrictFromSlug(slug)
 
+  const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem(SIDEBAR_COLLAPSED_KEY) === '1'
+    } catch {
+      return false
+    }
+  })
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(SIDEBAR_COLLAPSED_KEY, sidebarCollapsed ? '1' : '0')
+    } catch {
+      /* ignore */
+    }
+  }, [sidebarCollapsed])
+
   return (
     <div className="flex h-screen w-screen flex-col">
       <header className="flex h-12 shrink-0 items-center border-b border-gray-200 bg-gray-50 px-4">
@@ -52,7 +70,11 @@ export function CandidateApp() {
         </span>
       </header>
       <div className="flex flex-1 overflow-hidden">
-        <CandidateSidebar district={districtNum} />
+        <CandidateSidebar
+          district={districtNum}
+          collapsed={sidebarCollapsed}
+          onToggle={() => setSidebarCollapsed(v => !v)}
+        />
         <main className="relative flex-1">
           <CandidateMap district={districtNum} />
         </main>
