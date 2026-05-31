@@ -1,0 +1,3091 @@
+{
+  "generated": "2026-05-31",
+  "queried_at": "2026-05-31T16:58:46.980945+00:00",
+  "district": 6,
+  "summary": {
+    "total_named_streets": 290,
+    "score_percentiles": {
+      "p10": 0.5,
+      "p25": 0.85,
+      "p50": 1.71,
+      "p75": 4.06,
+      "p90": 8.28,
+      "p95": 20.98
+    },
+    "threshold": 1.5,
+    "allowlist_size": 165,
+    "coverage_pct": 56.9
+  },
+  "allowlist": [
+    "Alameda Park Circle",
+    "Albion Court",
+    "Amanecida Common",
+    "Ascolano Way",
+    "Awahnee Commons",
+    "Bancroft Drive",
+    "Baney Lane",
+    "Banning Park Drive",
+    "Bar Triangle Street",
+    "Baroni Drive",
+    "Beacham Loop",
+    "Beachcomber Cove",
+    "Beaumont Avenue",
+    "Belgium Avenue",
+    "Benatar Way",
+    "Bending Oak Way",
+    "Benson Terrace",
+    "Betsey Way",
+    "Blackstone Court",
+    "Blanqueta Court",
+    "Bloomington Avenue",
+    "Boston Drive",
+    "Brenda Drive",
+    "Brookside Drive",
+    "Bruce Road",
+    "Burlingame Drive",
+    "Burney Drive",
+    "Business Lane",
+    "Cactus Avenue",
+    "California Park Drive",
+    "Canyon Oaks Terrace",
+    "Ceanothus Avenue",
+    "Centennial Avenue",
+    "Champlain Way",
+    "Chico Canyon Road",
+    "Chicory Road",
+    "Christopher Alan Lane",
+    "Cohasset Road",
+    "Coit Tower Way",
+    "Colonial Drive",
+    "Comanche Court",
+    "Commonwealth Court",
+    "Comstock Road",
+    "Copperfield Drive",
+    "Dana Point Road",
+    "Dawncrest Drive",
+    "Deer Creek Highway",
+    "Delaney Drive",
+    "Desert Spring Place",
+    "Dog Leg Drive",
+    "Dolphin Bend",
+    "Dominic Drive",
+    "Duffy Drive",
+    "East 20th Street",
+    "East 8th Street",
+    "East Avenue",
+    "East Lassen Avenue",
+    "Eaton Road",
+    "Echo Peak Terrace",
+    "Edgewater Court",
+    "England Street",
+    "Fairfield Common",
+    "Farmington Avenue",
+    "Flying V Street",
+    "Forest Avenue",
+    "Garden Valley Terrace",
+    "Glacier Peak Lane",
+    "Goldeneye Court",
+    "Half Dome Way",
+    "Harmony Park Circle",
+    "Heritage Oak Drive",
+    "Hidden Brooke Way",
+    "Hudson Avenue",
+    "Humboldt Road",
+    "Huntington Drive",
+    "Hutchinson Street",
+    "Idyllwild Circle",
+    "Jasper Drive",
+    "Kestrel Court",
+    "Kevin Court",
+    "Kinswood Lane",
+    "Kona Drive",
+    "La Rocco Drive",
+    "Lakeside Village Commons",
+    "Lakewest Drive",
+    "Lance Terrace",
+    "Lawler Street",
+    "Lazy's Lane",
+    "Levi Lane",
+    "Longwood Drive",
+    "Mansfield Court",
+    "Manzanita Avenue",
+    "Marigold Avenue",
+    "Marilyn Drive",
+    "Marlin Court",
+    "Matada Court",
+    "Matson Street",
+    "Middletown Avenue",
+    "Morrow Lane",
+    "Native Oak Drive",
+    "Navarro Drive",
+    "New Dawn Circle",
+    "Niagara Way",
+    "Notre Dame Boulevard",
+    "Noyo Court",
+    "Palo Alto Street",
+    "Parkhurst Street",
+    "Parkway Village Drive",
+    "Patches Drive",
+    "Pendant Place",
+    "Peninsula Drive",
+    "Pennyroyal Drive",
+    "Picholine Way",
+    "Picual Court",
+    "Pin Oak Lane",
+    "Pinyon Hills Drive",
+    "Plumwood Court",
+    "Poppy View Terrace",
+    "Potter Road",
+    "Premier Court",
+    "Preservation Oak Drive",
+    "Raley Boulevard",
+    "Remington Drive",
+    "Ridge Hollow Lane",
+    "Ridgebrook Way",
+    "Robailey Drive",
+    "Roth Street",
+    "Saint Augustine Drive",
+    "Saint Laurence Avenue",
+    "Sandstone Lane",
+    "Saratoga Drive",
+    "Sausalito Street",
+    "Shadybrook Lane",
+    "Shallow Springs Terrace",
+    "Shari Lane",
+    "Shearwater Court",
+    "Sierra Lakeside Lane",
+    "Sierra Ridge Loop",
+    "Sierra Sunrise Terrace",
+    "Skymountain Circle",
+    "Skyway Road",
+    "Sparrow Hawk Lane",
+    "Springfield Drive",
+    "Sterling Oaks Drive",
+    "Stilson Canyon Road",
+    "Summit Ridge Terrace",
+    "Talbert Drive",
+    "Tilden Lane",
+    "Tioga Way",
+    "Titleist Way",
+    "Tuolumne Drive",
+    "Upper Park Road",
+    "Valley Forge Drive",
+    "Via Mission Drive",
+    "Via Terraza Place",
+    "Webster Drive",
+    "Westminster Court",
+    "Whitehall Place",
+    "Wildwood Avenue",
+    "Wingfield Avenue",
+    "Wood Creek Drive",
+    "Woodstone Lane",
+    "Wrangler Court",
+    "Yosemite Drive",
+    "Zanella Way"
+  ],
+  "all_named_streets": [
+    {
+      "name": "Bruce Road",
+      "score": 59.04,
+      "length_m": 4853.8,
+      "addr_count": 1,
+      "classes": [
+        "secondary",
+        "tertiary"
+      ],
+      "class_bonus": 10
+    },
+    {
+      "name": "Forest Avenue",
+      "score": 56.25,
+      "length_m": 4724.5,
+      "addr_count": 6,
+      "classes": [
+        "residential",
+        "tertiary"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "Deer Creek Highway",
+      "score": 55.82,
+      "length_m": 4082.3,
+      "addr_count": 0,
+      "classes": [
+        "primary"
+      ],
+      "class_bonus": 15
+    },
+    {
+      "name": "East 20th Street",
+      "score": 54.46,
+      "length_m": 3796.2,
+      "addr_count": 21,
+      "classes": [
+        "residential",
+        "tertiary"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "Upper Park Road",
+      "score": 52.78,
+      "length_m": 5077.9,
+      "addr_count": 0,
+      "classes": [
+        "unclassified"
+      ],
+      "class_bonus": 2
+    },
+    {
+      "name": "Eaton Road",
+      "score": 43.07,
+      "length_m": 3706.6,
+      "addr_count": 0,
+      "classes": [
+        "tertiary"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "Skyway Road",
+      "score": 40.5,
+      "length_m": 3000.0,
+      "addr_count": 1,
+      "classes": [
+        "secondary"
+      ],
+      "class_bonus": 10
+    },
+    {
+      "name": "Notre Dame Boulevard",
+      "score": 38.06,
+      "length_m": 2406.4,
+      "addr_count": 16,
+      "classes": [
+        "residential",
+        "tertiary",
+        "unclassified"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "Humboldt Road",
+      "score": 33.84,
+      "length_m": 3383.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Springfield Drive",
+      "score": 32.25,
+      "length_m": 3175.0,
+      "addr_count": 1,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Canyon Oaks Terrace",
+      "score": 28.55,
+      "length_m": 2854.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Shallow Springs Terrace",
+      "score": 27.82,
+      "length_m": 2781.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Chico Canyon Road",
+      "score": 24.93,
+      "length_m": 1892.6,
+      "addr_count": 0,
+      "classes": [
+        "residential",
+        "tertiary"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "California Park Drive",
+      "score": 24.81,
+      "length_m": 2481.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Native Oak Drive",
+      "score": 22.19,
+      "length_m": 2218.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Yosemite Drive",
+      "score": 19.5,
+      "length_m": 1949.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Manzanita Avenue",
+      "score": 17.2,
+      "length_m": 1119.8,
+      "addr_count": 0,
+      "classes": [
+        "tertiary"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "Idyllwild Circle",
+      "score": 16.25,
+      "length_m": 1624.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Shadybrook Lane",
+      "score": 14.14,
+      "length_m": 1414.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Picholine Way",
+      "score": 13.28,
+      "length_m": 1327.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Stilson Canyon Road",
+      "score": 12.85,
+      "length_m": 1285.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Summit Ridge Terrace",
+      "score": 12.78,
+      "length_m": 1277.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Morrow Lane",
+      "score": 12.63,
+      "length_m": 1013.2,
+      "addr_count": 1,
+      "classes": [
+        "residential",
+        "unclassified"
+      ],
+      "class_bonus": 2
+    },
+    {
+      "name": "Marigold Avenue",
+      "score": 12.36,
+      "length_m": 636.2,
+      "addr_count": 0,
+      "classes": [
+        "residential",
+        "tertiary"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "East Avenue",
+      "score": 11.95,
+      "length_m": 195.0,
+      "addr_count": 0,
+      "classes": [
+        "residential",
+        "secondary"
+      ],
+      "class_bonus": 10
+    },
+    {
+      "name": "Sierra Sunrise Terrace",
+      "score": 10.99,
+      "length_m": 1098.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Lakewest Drive",
+      "score": 10.48,
+      "length_m": 1047.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Centennial Avenue",
+      "score": 9.42,
+      "length_m": 341.9,
+      "addr_count": 0,
+      "classes": [
+        "residential",
+        "tertiary"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "Delaney Drive",
+      "score": 8.92,
+      "length_m": 891.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Skymountain Circle",
+      "score": 8.21,
+      "length_m": 821.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Dominic Drive",
+      "score": 7.94,
+      "length_m": 193.7,
+      "addr_count": 0,
+      "classes": [
+        "tertiary",
+        "unclassified"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "East 8th Street",
+      "score": 7.59,
+      "length_m": 158.9,
+      "addr_count": 0,
+      "classes": [
+        "tertiary"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "Via Mission Drive",
+      "score": 7.53,
+      "length_m": 753.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Peninsula Drive",
+      "score": 7.25,
+      "length_m": 724.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Business Lane",
+      "score": 7.23,
+      "length_m": 372.7,
+      "addr_count": 3,
+      "classes": [
+        "unclassified"
+      ],
+      "class_bonus": 2
+    },
+    {
+      "name": "Bar Triangle Street",
+      "score": 7.08,
+      "length_m": 708.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Potter Road",
+      "score": 7.07,
+      "length_m": 706.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Cohasset Road",
+      "score": 7.05,
+      "length_m": 105.1,
+      "addr_count": 0,
+      "classes": [
+        "tertiary"
+      ],
+      "class_bonus": 6
+    },
+    {
+      "name": "Brookside Drive",
+      "score": 6.83,
+      "length_m": 683.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Baney Lane",
+      "score": 6.69,
+      "length_m": 419.0,
+      "addr_count": 1,
+      "classes": [
+        "unclassified"
+      ],
+      "class_bonus": 2
+    },
+    {
+      "name": "Ceanothus Avenue",
+      "score": 6.55,
+      "length_m": 604.6,
+      "addr_count": 1,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Wildwood Avenue",
+      "score": 6.3,
+      "length_m": 629.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Hudson Avenue",
+      "score": 6.13,
+      "length_m": 612.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Bancroft Drive",
+      "score": 6.11,
+      "length_m": 610.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Coit Tower Way",
+      "score": 6.07,
+      "length_m": 607.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "New Dawn Circle",
+      "score": 5.91,
+      "length_m": 591.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Robailey Drive",
+      "score": 5.71,
+      "length_m": 570.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Talbert Drive",
+      "score": 5.68,
+      "length_m": 567.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Lakeside Village Commons",
+      "score": 5.54,
+      "length_m": 553.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Saratoga Drive",
+      "score": 5.54,
+      "length_m": 254.0,
+      "addr_count": 6,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "England Street",
+      "score": 5.48,
+      "length_m": 548.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Shari Lane",
+      "score": 5.33,
+      "length_m": 532.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Parkhurst Street",
+      "score": 5.29,
+      "length_m": 528.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Huntington Drive",
+      "score": 5.28,
+      "length_m": 528.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Saint Augustine Drive",
+      "score": 5.11,
+      "length_m": 511.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Pinyon Hills Drive",
+      "score": 5.07,
+      "length_m": 506.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Cactus Avenue",
+      "score": 4.77,
+      "length_m": 476.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Dawncrest Drive",
+      "score": 4.77,
+      "length_m": 477.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Banning Park Drive",
+      "score": 4.6,
+      "length_m": 460.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Valley Forge Drive",
+      "score": 4.59,
+      "length_m": 458.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Longwood Drive",
+      "score": 4.54,
+      "length_m": 453.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Lazy's Lane",
+      "score": 4.49,
+      "length_m": 448.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Mansfield Court",
+      "score": 4.45,
+      "length_m": 444.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Flying V Street",
+      "score": 4.44,
+      "length_m": 343.7,
+      "addr_count": 2,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Dog Leg Drive",
+      "score": 4.41,
+      "length_m": 440.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Burney Drive",
+      "score": 4.4,
+      "length_m": 439.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Pennyroyal Drive",
+      "score": 4.4,
+      "length_m": 439.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Preservation Oak Drive",
+      "score": 4.33,
+      "length_m": 432.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Saint Laurence Avenue",
+      "score": 4.31,
+      "length_m": 431.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Parkway Village Drive",
+      "score": 4.3,
+      "length_m": 429.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Zanella Way",
+      "score": 4.3,
+      "length_m": 380.2,
+      "addr_count": 1,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Chicory Road",
+      "score": 4.25,
+      "length_m": 425.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Raley Boulevard",
+      "score": 4.1,
+      "length_m": 409.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Wood Creek Drive",
+      "score": 3.96,
+      "length_m": 395.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Burlingame Drive",
+      "score": 3.94,
+      "length_m": 394.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Marilyn Drive",
+      "score": 3.93,
+      "length_m": 392.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sierra Lakeside Lane",
+      "score": 3.91,
+      "length_m": 391.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sterling Oaks Drive",
+      "score": 3.71,
+      "length_m": 370.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Ridgebrook Way",
+      "score": 3.7,
+      "length_m": 370.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sparrow Hawk Lane",
+      "score": 3.64,
+      "length_m": 364.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Wingfield Avenue",
+      "score": 3.59,
+      "length_m": 359.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Pin Oak Lane",
+      "score": 3.35,
+      "length_m": 334.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Jasper Drive",
+      "score": 3.34,
+      "length_m": 334.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Heritage Oak Drive",
+      "score": 3.31,
+      "length_m": 331.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Middletown Avenue",
+      "score": 3.28,
+      "length_m": 327.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Belgium Avenue",
+      "score": 3.27,
+      "length_m": 327.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Baroni Drive",
+      "score": 3.26,
+      "length_m": 326.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Benatar Way",
+      "score": 3.22,
+      "length_m": 321.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "La Rocco Drive",
+      "score": 3.22,
+      "length_m": 322.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Dolphin Bend",
+      "score": 3.18,
+      "length_m": 317.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sierra Ridge Loop",
+      "score": 3.17,
+      "length_m": 317.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Navarro Drive",
+      "score": 3.15,
+      "length_m": 314.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Betsey Way",
+      "score": 3.13,
+      "length_m": 313.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Roth Street",
+      "score": 3.12,
+      "length_m": 312.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Farmington Avenue",
+      "score": 3.1,
+      "length_m": 309.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Amanecida Common",
+      "score": 3.09,
+      "length_m": 309.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Beachcomber Cove",
+      "score": 3.08,
+      "length_m": 307.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Tuolumne Drive",
+      "score": 3.03,
+      "length_m": 303.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sandstone Lane",
+      "score": 3.01,
+      "length_m": 301.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Copperfield Drive",
+      "score": 3.0,
+      "length_m": 299.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Matada Court",
+      "score": 2.98,
+      "length_m": 97.8,
+      "addr_count": 4,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Remington Drive",
+      "score": 2.96,
+      "length_m": 295.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Webster Drive",
+      "score": 2.92,
+      "length_m": 291.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Beacham Loop",
+      "score": 2.91,
+      "length_m": 290.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Blackstone Court",
+      "score": 2.91,
+      "length_m": 290.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Bloomington Avenue",
+      "score": 2.88,
+      "length_m": 288.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Lawler Street",
+      "score": 2.86,
+      "length_m": 285.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Comstock Road",
+      "score": 2.83,
+      "length_m": 283.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Brenda Drive",
+      "score": 2.8,
+      "length_m": 280.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Noyo Court",
+      "score": 2.75,
+      "length_m": 274.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Echo Peak Terrace",
+      "score": 2.7,
+      "length_m": 270.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Plumwood Court",
+      "score": 2.7,
+      "length_m": 270.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Whitehall Place",
+      "score": 2.7,
+      "length_m": 269.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Matson Street",
+      "score": 2.65,
+      "length_m": 265.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Comanche Court",
+      "score": 2.63,
+      "length_m": 263.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Ridge Hollow Lane",
+      "score": 2.63,
+      "length_m": 263.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Fairfield Common",
+      "score": 2.61,
+      "length_m": 260.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Pendant Place",
+      "score": 2.61,
+      "length_m": 261.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sausalito Street",
+      "score": 2.56,
+      "length_m": 255.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Lance Terrace",
+      "score": 2.49,
+      "length_m": 248.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Tioga Way",
+      "score": 2.49,
+      "length_m": 248.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Albion Court",
+      "score": 2.45,
+      "length_m": 244.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Levi Lane",
+      "score": 2.4,
+      "length_m": 239.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Woodstone Lane",
+      "score": 2.39,
+      "length_m": 238.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Alameda Park Circle",
+      "score": 2.3,
+      "length_m": 230.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Duffy Drive",
+      "score": 2.29,
+      "length_m": 229.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "East Lassen Avenue",
+      "score": 2.23,
+      "length_m": 222.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Titleist Way",
+      "score": 2.18,
+      "length_m": 217.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Palo Alto Street",
+      "score": 2.03,
+      "length_m": 202.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Glacier Peak Lane",
+      "score": 2.0,
+      "length_m": 199.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Desert Spring Place",
+      "score": 1.99,
+      "length_m": 199.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Edgewater Court",
+      "score": 1.99,
+      "length_m": 199.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Christopher Alan Lane",
+      "score": 1.98,
+      "length_m": 198.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Dana Point Road",
+      "score": 1.97,
+      "length_m": 196.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Marlin Court",
+      "score": 1.96,
+      "length_m": 196.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Half Dome Way",
+      "score": 1.95,
+      "length_m": 194.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Ascolano Way",
+      "score": 1.93,
+      "length_m": 193.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Champlain Way",
+      "score": 1.93,
+      "length_m": 192.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Harmony Park Circle",
+      "score": 1.9,
+      "length_m": 190.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Niagara Way",
+      "score": 1.85,
+      "length_m": 185.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Westminster Court",
+      "score": 1.8,
+      "length_m": 179.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Commonwealth Court",
+      "score": 1.78,
+      "length_m": 177.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Kestrel Court",
+      "score": 1.77,
+      "length_m": 176.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Blanqueta Court",
+      "score": 1.74,
+      "length_m": 173.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Hutchinson Street",
+      "score": 1.74,
+      "length_m": 174.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Kevin Court",
+      "score": 1.69,
+      "length_m": 118.8,
+      "addr_count": 1,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Beaumont Avenue",
+      "score": 1.67,
+      "length_m": 167.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Premier Court",
+      "score": 1.67,
+      "length_m": 167.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Awahnee Commons",
+      "score": 1.66,
+      "length_m": 165.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Bending Oak Way",
+      "score": 1.66,
+      "length_m": 166.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Goldeneye Court",
+      "score": 1.66,
+      "length_m": 166.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Wrangler Court",
+      "score": 1.66,
+      "length_m": 166.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Benson Terrace",
+      "score": 1.65,
+      "length_m": 164.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Kinswood Lane",
+      "score": 1.65,
+      "length_m": 164.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Poppy View Terrace",
+      "score": 1.63,
+      "length_m": 163.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Picual Court",
+      "score": 1.61,
+      "length_m": 161.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Colonial Drive",
+      "score": 1.6,
+      "length_m": 160.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Garden Valley Terrace",
+      "score": 1.6,
+      "length_m": 160.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Kona Drive",
+      "score": 1.59,
+      "length_m": 158.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Tilden Lane",
+      "score": 1.58,
+      "length_m": 158.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Hidden Brooke Way",
+      "score": 1.57,
+      "length_m": 157.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Shearwater Court",
+      "score": 1.57,
+      "length_m": 156.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Patches Drive",
+      "score": 1.51,
+      "length_m": 151.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Via Terraza Place",
+      "score": 1.51,
+      "length_m": 151.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Boston Drive",
+      "score": 1.5,
+      "length_m": 100.1,
+      "addr_count": 1,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Husa Lane",
+      "score": 1.47,
+      "length_m": 146.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Parliament Court",
+      "score": 1.46,
+      "length_m": 145.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Lower Lake Court",
+      "score": 1.45,
+      "length_m": 145.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Zachary Court",
+      "score": 1.43,
+      "length_m": 143.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Auburn Oak Way",
+      "score": 1.41,
+      "length_m": 140.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sterling Court",
+      "score": 1.41,
+      "length_m": 141.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Cork Oak Way",
+      "score": 1.38,
+      "length_m": 138.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Griffith Park Lane",
+      "score": 1.38,
+      "length_m": 137.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Barker Court",
+      "score": 1.37,
+      "length_m": 136.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Wildflower Court",
+      "score": 1.35,
+      "length_m": 134.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Laguna Point Road",
+      "score": 1.33,
+      "length_m": 132.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Harvest Glen Drive",
+      "score": 1.31,
+      "length_m": 130.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "North Valley Court",
+      "score": 1.31,
+      "length_m": 131.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Wawona Place",
+      "score": 1.31,
+      "length_m": 131.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Catalina Point Road",
+      "score": 1.29,
+      "length_m": 128.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sierra Ladera",
+      "score": 1.28,
+      "length_m": 127.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Saffron Way",
+      "score": 1.27,
+      "length_m": 126.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Coach Lite Drive",
+      "score": 1.26,
+      "length_m": 125.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Stonehaven Court",
+      "score": 1.26,
+      "length_m": 126.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Buckwheat Way",
+      "score": 1.25,
+      "length_m": 124.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Hancock Drive",
+      "score": 1.24,
+      "length_m": 124.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Morning Rose Way",
+      "score": 1.24,
+      "length_m": 124.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Donner Lane",
+      "score": 1.23,
+      "length_m": 123.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Towser Road",
+      "score": 1.22,
+      "length_m": 121.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Roxanne Court",
+      "score": 1.19,
+      "length_m": 118.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Fremont Street",
+      "score": 1.18,
+      "length_m": 118.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Glenview Court",
+      "score": 1.18,
+      "length_m": 118.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Lily Way",
+      "score": 1.15,
+      "length_m": 114.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Patriot Way",
+      "score": 1.15,
+      "length_m": 115.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Wysong Court",
+      "score": 1.15,
+      "length_m": 114.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sir Andrew Court",
+      "score": 1.14,
+      "length_m": 113.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Via Casita Place",
+      "score": 1.14,
+      "length_m": 114.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Montreal Lane",
+      "score": 1.13,
+      "length_m": 112.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Walnut Park Drive",
+      "score": 1.11,
+      "length_m": 110.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Lakeshore Terrace",
+      "score": 1.09,
+      "length_m": 108.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Pathfinder Way",
+      "score": 1.05,
+      "length_m": 105.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Trinity Lane",
+      "score": 1.04,
+      "length_m": 103.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Street A",
+      "score": 1.03,
+      "length_m": 102.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Budlee Court",
+      "score": 1.01,
+      "length_m": 101.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Luciano Court",
+      "score": 0.99,
+      "length_m": 98.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Avenida Brisa Court",
+      "score": 0.98,
+      "length_m": 98.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Hill Oak Commons",
+      "score": 0.97,
+      "length_m": 96.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Stoney Point Way",
+      "score": 0.97,
+      "length_m": 97.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Banner Peak Drive",
+      "score": 0.96,
+      "length_m": 95.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Autumnfields Way",
+      "score": 0.95,
+      "length_m": 95.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Anna Court",
+      "score": 0.93,
+      "length_m": 93.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "White Cedar Lane",
+      "score": 0.89,
+      "length_m": 88.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Autumn Hill Lane",
+      "score": 0.87,
+      "length_m": 86.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Granite View Way",
+      "score": 0.86,
+      "length_m": 86.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Messenger Court",
+      "score": 0.86,
+      "length_m": 86.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Rainier Lane",
+      "score": 0.86,
+      "length_m": 85.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Bidwell Ridge Court",
+      "score": 0.85,
+      "length_m": 85.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Carrington Way",
+      "score": 0.85,
+      "length_m": 85.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Phyllis Court",
+      "score": 0.82,
+      "length_m": 82.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Stonewood Court",
+      "score": 0.82,
+      "length_m": 82.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Bunker Court",
+      "score": 0.81,
+      "length_m": 81.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Serrano Court",
+      "score": 0.77,
+      "length_m": 77.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Carson Street",
+      "score": 0.76,
+      "length_m": 76.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Roberto Court",
+      "score": 0.76,
+      "length_m": 75.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sebastian Court",
+      "score": 0.76,
+      "length_m": 75.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Saint Helens Lane",
+      "score": 0.75,
+      "length_m": 74.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Switzerland Lane",
+      "score": 0.74,
+      "length_m": 73.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Woodbridge Court",
+      "score": 0.73,
+      "length_m": 73.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Nevadillo Court",
+      "score": 0.72,
+      "length_m": 72.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Rose River Avenue",
+      "score": 0.72,
+      "length_m": 72.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Heartwood Court",
+      "score": 0.7,
+      "length_m": 69.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Megan Way",
+      "score": 0.7,
+      "length_m": 70.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Ventana Court",
+      "score": 0.7,
+      "length_m": 69.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Echo Lane",
+      "score": 0.69,
+      "length_m": 68.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Arizona Way",
+      "score": 0.68,
+      "length_m": 67.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Coolwater Commons",
+      "score": 0.67,
+      "length_m": 66.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Camba Court",
+      "score": 0.66,
+      "length_m": 66.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Cloud Court",
+      "score": 0.66,
+      "length_m": 66.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Valley Lake Commons",
+      "score": 0.66,
+      "length_m": 66.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Ashford Way",
+      "score": 0.65,
+      "length_m": 65.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Cornicabra Court",
+      "score": 0.65,
+      "length_m": 64.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Elderberry Court",
+      "score": 0.65,
+      "length_m": 65.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Autumn Oak Way",
+      "score": 0.63,
+      "length_m": 63.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "High Meadow Lane",
+      "score": 0.63,
+      "length_m": 62.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Oxford Way",
+      "score": 0.63,
+      "length_m": 62.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Foxwood Drive",
+      "score": 0.62,
+      "length_m": 62.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Freda Court",
+      "score": 0.62,
+      "length_m": 62.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Jan Court",
+      "score": 0.61,
+      "length_m": 60.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sky Mountain Road",
+      "score": 0.61,
+      "length_m": 60.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "McGie Street",
+      "score": 0.59,
+      "length_m": 58.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Shooting Star Way",
+      "score": 0.57,
+      "length_m": 56.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Jordanne Court",
+      "score": 0.56,
+      "length_m": 56.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Lava Cap Court",
+      "score": 0.56,
+      "length_m": 56.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Cramer Lane",
+      "score": 0.55,
+      "length_m": 4.7,
+      "addr_count": 1,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Dartmouth Court",
+      "score": 0.55,
+      "length_m": 55.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Cecil Place",
+      "score": 0.53,
+      "length_m": 52.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Golden Birch Place",
+      "score": 0.52,
+      "length_m": 52.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "20th Street",
+      "score": 0.5,
+      "length_m": 0.0,
+      "addr_count": 1,
+      "classes": [],
+      "class_bonus": 0
+    },
+    {
+      "name": "2535 Notre Dame Blvd",
+      "score": 0.5,
+      "length_m": 0.0,
+      "addr_count": 1,
+      "classes": [],
+      "class_bonus": 0
+    },
+    {
+      "name": "El Monte Avenue",
+      "score": 0.5,
+      "length_m": 0.0,
+      "addr_count": 1,
+      "classes": [],
+      "class_bonus": 0
+    },
+    {
+      "name": "Notre Dame Blvd",
+      "score": 0.5,
+      "length_m": 0.0,
+      "addr_count": 1,
+      "classes": [],
+      "class_bonus": 0
+    },
+    {
+      "name": "Olympus Lane",
+      "score": 0.5,
+      "length_m": 50.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Palisades Drive",
+      "score": 0.5,
+      "length_m": 49.6,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Farga Court",
+      "score": 0.47,
+      "length_m": 46.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sir Aaron Court",
+      "score": 0.47,
+      "length_m": 46.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Top Flight Court",
+      "score": 0.47,
+      "length_m": 47.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Five Iron Court",
+      "score": 0.46,
+      "length_m": 46.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Windmill Court",
+      "score": 0.45,
+      "length_m": 44.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Creek Hollow Drive",
+      "score": 0.44,
+      "length_m": 44.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Swamp Oak Court",
+      "score": 0.44,
+      "length_m": 43.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Courtland Circle",
+      "score": 0.43,
+      "length_m": 42.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Palomar Lane",
+      "score": 0.42,
+      "length_m": 41.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Laredo Lane",
+      "score": 0.38,
+      "length_m": 38.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Thorntree Drive",
+      "score": 0.38,
+      "length_m": 38.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Princess T J Court",
+      "score": 0.34,
+      "length_m": 34.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Warfield Road",
+      "score": 0.33,
+      "length_m": 33.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Spicebush Court",
+      "score": 0.3,
+      "length_m": 30.1,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Casa de Logo",
+      "score": 0.28,
+      "length_m": 28.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Links Court",
+      "score": 0.28,
+      "length_m": 28.0,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sevilland Court",
+      "score": 0.25,
+      "length_m": 24.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Ginger Lane",
+      "score": 0.23,
+      "length_m": 22.8,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Sedona Avenue",
+      "score": 0.23,
+      "length_m": 23.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Arch Way",
+      "score": 0.21,
+      "length_m": 21.2,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Via Morro Court",
+      "score": 0.17,
+      "length_m": 17.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Falcon Pointe Drive",
+      "score": 0.13,
+      "length_m": 13.3,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Hartford Drive",
+      "score": 0.07,
+      "length_m": 6.9,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Concord Avenue",
+      "score": 0.04,
+      "length_m": 4.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Gallatin Gateway",
+      "score": 0.01,
+      "length_m": 0.7,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Maddie Court",
+      "score": 0.01,
+      "length_m": 1.5,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    },
+    {
+      "name": "Delaware Drive",
+      "score": 0.0,
+      "length_m": 0.4,
+      "addr_count": 0,
+      "classes": [
+        "residential"
+      ],
+      "class_bonus": 0
+    }
+  ]
+}

@@ -119,6 +119,7 @@ export function PrintApp() {
             <div className="relative flex-1 overflow-hidden">
               <PrintMap
                 boundaryUrl="/data/candidate-district-6/district-boundary.geojson"
+                labelsUrl="/data/candidate-district-6/print-street-labels.json"
                 bbox={DISTRICT_6_BBOX}
                 onReady={(m) => {
                   mapRef.current = m

@@ -31,7 +31,7 @@ const browser = await chromium.launch({
 })
 // Viewport sized to hold the un-scaled print canvas (5400×7200) + page chrome.
 const page = await browser.newPage({
-  viewport: { width: 5600, height: 7500 },
+  viewport: { width: 7400, height: 9900 },
   deviceScaleFactor: 1,
 })
 
@@ -85,11 +85,20 @@ await page.evaluate(async () => {
   await new Promise((r) => requestAnimationFrame(() => r(undefined)))
 })
 
-// Quick probe — confirm the map ended up at the expected zoom.
+// Probe: zoom + label counts.
 const probe = await page.evaluate(() => {
   const map = window.__printMap
   if (!map) return { ok: false }
-  return { ok: true, zoom: map.getZoom() }
+  const minor = map.queryRenderedFeatures(undefined, { layers: ['highway-name-minor'] }) || []
+  const major = map.queryRenderedFeatures(undefined, { layers: ['highway-name-major'] }) || []
+  return {
+    ok: true,
+    zoom: map.getZoom(),
+    minor_count: minor.length,
+    minor_unique: new Set(minor.map((f) => f.properties?.name).filter(Boolean)).size,
+    major_count: major.length,
+    major_unique: new Set(major.map((f) => f.properties?.name).filter(Boolean)).size,
+  }
 })
 console.log('Probe:', JSON.stringify(probe))
 

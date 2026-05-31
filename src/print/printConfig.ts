@@ -9,16 +9,14 @@ export const POSTER_INCHES_HEIGHT = 48
 
 // Logical render dimensions in CSS pixels.
 //
-// At 150 DPI we render the full 36×48" poster as 5400×7200 pixels. The
-// MapLibre fit-bounds at that size lands the district at ~z16, which is the
-// minzoom for positron's `highway-name-minor` layer — so individual residential
-// street names become visible.
+// At 200 DPI we render the full 36×48" poster as 7200×9600 pixels. This lands
+// the fit-to-district zoom at ~z15.6 — high enough that even short residential
+// street segments have enough on-screen length for MapLibre to place a label
+// without collision.
 //
-// 150 DPI is a reasonable print resolution for posters viewed at a few feet.
-// For an even sharper export we can bump these dimensions later; the code is
-// resolution-agnostic.
-export const PRINT_WIDTH = 5400
-export const PRINT_HEIGHT = 7200
+// 200 DPI is a comfortable print resolution for a poster viewed at a few feet.
+export const PRINT_WIDTH = 7200
+export const PRINT_HEIGHT = 9600
 
 // Effective DPI of the current render.
 export const PREVIEW_DPI = PRINT_WIDTH / POSTER_INCHES_WIDTH // 150
@@ -29,7 +27,7 @@ export const pt = (points: number) => (points / 72) * PREVIEW_DPI
 // On-screen scale factor. The print canvas is far too large to view 1:1, so we
 // scale it down with a CSS transform for browser viewing. The screenshot script
 // strips this transform before capture.
-export const SCREEN_SCALE = 0.16
+export const SCREEN_SCALE = 0.12
 
 // District 6 bounding box (lon/lat) — derived from district-boundary.geojson.
 export const DISTRICT_6_BBOX: [number, number, number, number] = [

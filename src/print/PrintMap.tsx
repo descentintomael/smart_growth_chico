@@ -6,8 +6,15 @@ import { pt } from './printConfig'
 interface PrintMapProps {
   boundaryUrl: string
   bbox: [number, number, number, number]
+  /** URL of the per-street label scoring JSON (output of score-streets-for-print.py). */
+  labelsUrl?: string
   styleUrl?: string
   onReady?: (map: MapLibreMap) => void
+}
+
+interface PrintLabelsFile {
+  allowlist: string[]
+  summary?: { threshold: number; allowlist_size: number; coverage_pct: number }
 }
 
 const DEFAULT_STYLE = 'https://tiles.openfreemap.org/styles/positron'
@@ -66,6 +73,10 @@ const LABEL_OVERRIDES: Array<{
   color: string
   halo: string
   minzoom?: number
+  /** text-padding in pixels — smaller values pack labels closer (less collision). */
+  textPadding?: number
+  /** symbol-spacing in pixels — distance between repeats of the same label along a line. */
+  symbolSpacing?: number
 }> = [
   // Major road labels — arterials, highway names.
   {
@@ -77,13 +88,17 @@ const LABEL_OVERRIDES: Array<{
   },
   // Residential street names — the critical layer for "find your street".
   // Positron hides these below z15; we render at ~z14.8, so we lower it.
+  // Sized smaller than major-class names and packed tight so more labels fit
+  // through MapLibre's collision pass at print scale.
   {
     test: (id) => id === 'highway-name-minor',
-    textSize: pt(9),
-    haloWidth: pt(1.2),
+    textSize: pt(7),
+    haloWidth: pt(0.9),
     color: '#374151',
     halo: '#ffffff',
     minzoom: 13,
+    textPadding: 0,
+    symbolSpacing: pt(120), // ~1.67" between repeats on long streets
   },
   // Paths / trails — keep hidden to reduce label clutter.
   {
@@ -183,6 +198,12 @@ function applyLabelOverrides(map: MapLibreMap) {
           if (override.minzoom !== undefined) {
             map.setLayerZoomRange(layer.id, override.minzoom, 24)
           }
+          if (override.textPadding !== undefined) {
+            map.setLayoutProperty(layer.id, 'text-padding', override.textPadding)
+          }
+          if (override.symbolSpacing !== undefined) {
+            map.setLayoutProperty(layer.id, 'symbol-spacing', override.symbolSpacing)
+          }
         } catch {
           /* ignore */
         }
@@ -192,7 +213,30 @@ function applyLabelOverrides(map: MapLibreMap) {
   }
 }
 
-export function PrintMap({ boundaryUrl, bbox, styleUrl = DEFAULT_STYLE, onReady }: PrintMapProps) {
+/**
+ * Filter the residential-street label layer to only the names on the print
+ * allowlist (output of score-streets-for-print.py). Major-class labels
+ * (highway-name-major) are left untouched — those always label.
+ */
+function applyStreetAllowlist(map: MapLibreMap, allowlist: string[]) {
+  const layerId = 'highway-name-minor'
+  if (!map.getLayer(layerId)) return
+  const existing = map.getFilter(layerId)
+  // `match` is faster than `in` for large literal arrays in MapLibre.
+  const allowFilter = ['match', ['get', 'name'], allowlist, true, false]
+  const combined = existing
+    ? (['all', existing, allowFilter] as unknown)
+    : (allowFilter as unknown)
+  map.setFilter(layerId, combined as never)
+}
+
+export function PrintMap({
+  boundaryUrl,
+  bbox,
+  labelsUrl,
+  styleUrl = DEFAULT_STYLE,
+  onReady,
+}: PrintMapProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
 
@@ -212,11 +256,20 @@ export function PrintMap({ boundaryUrl, bbox, styleUrl = DEFAULT_STYLE, onReady 
     ;(window as unknown as { __printMap?: MapLibreMap }).__printMap = map
 
     map.on('load', async () => {
-      const resp = await fetch(boundaryUrl)
-      const boundary = (await resp.json()) as GeoJSON.FeatureCollection
+      const [boundaryResp, labelsResp] = await Promise.all([
+        fetch(boundaryUrl),
+        labelsUrl
+          ? fetch(labelsUrl).then((r) => (r.ok ? r.json() : null))
+          : Promise.resolve(null),
+      ])
+      const boundary = (await boundaryResp.json()) as GeoJSON.FeatureCollection
+      const labels = labelsResp as PrintLabelsFile | null
 
       applyRoadOverrides(map)
       applyLabelOverrides(map)
+      if (labels?.allowlist?.length) {
+        applyStreetAllowlist(map, labels.allowlist)
+      }
 
       const labelLayers = map.getStyle().layers ?? []
       const firstSymbolId = labelLayers.find((l) => l.type === 'symbol')?.id
