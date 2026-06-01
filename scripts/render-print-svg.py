@@ -64,7 +64,7 @@ POSTER_W_PT = POSTER_W_IN * 72  # 2592
 POSTER_H_PT = POSTER_H_IN * 72  # 3456
 
 HEADER_HEIGHT_PT = 220
-FOOTER_HEIGHT_PT = 80
+FOOTER_HEIGHT_PT = 0  # no footer band — map area runs to the bottom edge
 PAGE_PADDING_PT = 48
 
 MAP_TOP = HEADER_HEIGHT_PT
@@ -1222,8 +1222,13 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
     # ---- Header — civic poster title block
     out.append(render_header(district_n))
 
-    # ---- Footer
-    out.append(render_footer())
+    # ---- Tiny attribution inline (OSM ODbL still requires it)
+    out.append(
+        f'<text x="{PAGE_PADDING_PT}" y="{MAP_BOTTOM - 16}" '
+        f'font-family="{FONT_SANS}" font-size="9" fill="#9ca3af">'
+        f'Data: OpenStreetMap contributors · City of Chico'
+        f'</text>'
+    )
 
     out.append('</svg>')
     return "\n".join(out)
