@@ -86,8 +86,47 @@ SUBTITLE_PT = 22
 TAGLINE_PT = 14
 FOOTER_PT = 14         # bumped from 12 per accessibility review
 
-LABEL_MAJOR_PT = 14
-LABEL_MINOR_PT = 9     # bumped from 7 per accessibility review (Vikram)
+# Road label sizes — graduated by OSM highway class. For a mixed-class way
+# (e.g. Chico Canyon Road is tagged tertiary/residential/track in different
+# segments), we pick the HIGHEST class present and use its size.
+#
+# Poster is viewed at arm's length, so the residential floor drops below the
+# usual print-poster minimum. Scale runs from 7pt (residential cul-de-sacs) to
+# 17pt (state highways), with the bulk of the visual hierarchy living in the
+# 10-13pt secondary/tertiary range.
+ROAD_LABEL_PT = {
+    "motorway":         17,
+    "motorway_link":    14,
+    "trunk":            17,
+    "trunk_link":       14,
+    "primary":          15,
+    "primary_link":     12,
+    "secondary":        12,
+    "secondary_link":   10,
+    "tertiary":         10,
+    "tertiary_link":     9,
+    "unclassified":      8,
+    "residential":       7,
+    "living_street":     7,
+}
+# Class-aware weight and halo — bigger labels get more punch.
+ROAD_LABEL_WEIGHT = {17: 700, 15: 700, 14: 600, 12: 600, 10: 500, 9: 500, 8: 500, 7: 500}
+ROAD_LABEL_COLOR_MAJOR = "#0f172a"  # primary/trunk
+ROAD_LABEL_COLOR_MID = "#1f2937"    # secondary/tertiary
+ROAD_LABEL_COLOR_MINOR = "#374151"  # residential / unclassified
+
+# Class ranking — lower index = higher priority (used to pick a single size for
+# a way with multiple class tags).
+CLASS_RANK = {
+    "motorway": 0, "trunk": 0,
+    "motorway_link": 1, "trunk_link": 1,
+    "primary": 2, "primary_link": 3,
+    "secondary": 4, "secondary_link": 5,
+    "tertiary": 6, "tertiary_link": 7,
+    "unclassified": 8,
+    "residential": 9, "living_street": 9,
+}
+
 LABEL_PLACE_PT = 18    # park / school names — italic, sits above street labels
 LABEL_SHIELD_PT = 13
 
@@ -1139,7 +1178,7 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         f'fill="none" stroke-linejoin="round" stroke-linecap="round"/>'
     )
 
-    # ---- Street labels via textPath
+    # ---- Street labels via textPath, sized by OSM highway class
     label_set = set(allowlist) | {
         name for name, b in by_name.items() if b["classes"] & MAJOR_CLASSES
     }
@@ -1148,17 +1187,34 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         bucket = by_name.get(name)
         if bucket is None:
             continue
-        is_major = bool(bucket["classes"] & MAJOR_CLASSES)
+        # Pick the highest-class tag present on this way (lower CLASS_RANK = higher).
+        best_class = min(
+            (c for c in bucket["classes"] if c in CLASS_RANK),
+            key=lambda c: CLASS_RANK[c],
+            default="residential",
+        )
+        size_pt = ROAD_LABEL_PT.get(best_class, ROAD_LABEL_PT["residential"])
+        weight = ROAD_LABEL_WEIGHT.get(size_pt, 500)
+        # Color graded by tier
+        if size_pt >= 15:
+            color = ROAD_LABEL_COLOR_MAJOR
+        elif size_pt >= 10:
+            color = ROAD_LABEL_COLOR_MID
+        else:
+            color = ROAD_LABEL_COLOR_MINOR
+        # Halo width scales with text size so the proportions stay constant.
+        halo_w = max(0.8, size_pt * 0.12)
         streets_for_label.append({
             "name": name,
             "lines": bucket["lines"],
-            "size_pt": LABEL_MAJOR_PT if is_major else LABEL_MINOR_PT,
-            "color": "#1f2937" if is_major else "#374151",
+            "size_pt": size_pt,
+            "color": color,
             "halo": COLOR_BG,
-            "halo_width": 2.0 if is_major else 1.2,
-            "weight": 600 if is_major else 500,
-            "priority": (10 if is_major else 0)
-            + sum(ls.length for ls in bucket["lines"]) / 100.0,
+            "halo_width": halo_w,
+            "weight": weight,
+            # Bigger roads label first so collision drops the residential side.
+            "priority": (10 - CLASS_RANK.get(best_class, 9))
+            + sum(ls.length for ls in bucket["lines"]) / 1000.0,
         })
     labels = place_labels(streets_for_label, to_svg)
 
