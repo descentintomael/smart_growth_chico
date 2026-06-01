@@ -46,6 +46,7 @@ from shapely.geometry import (
     LineString,
     MultiLineString,
     MultiPolygon,
+    Point,
     Polygon,
     shape,
 )
@@ -211,27 +212,22 @@ SHIELD_STYLES = {
     },
 }
 
-# Map fade — concentric paper-colored layers that produce a smooth gradient
-# from full district color through to a deeply-faded outer page.
+# Map fade — overlapping paper-colored layers that ramp aggressively at the
+# boundary, then taper. Each entry is
+# (distance-from-buffered-boundary-meters, per-layer fade-opacity). Each layer
+# is rendered as "everything outside this buffered polygon" so they STACK.
 #
-# Each entry is (distance-from-boundary-meters, per-layer fade-opacity). Each
-# layer is rendered as "everything outside this buffered polygon" so they STACK
-# (a point at 1000m outside the boundary is under every inner layer). Cumulative
-# fade at a point is `1 - product(1 - opacity_i for inner layers covering it)`.
-#
-# Tuned for: ~30% fade at 100m, ~60% at 500m, ~90% at the far edge.
+# Tuned for: ~60% fade right at the boundary (dramatic drop), ~75% at 200m,
+# ~88% at the far edge.
 FADE_LAYERS = [
-    (20,   0.18),
-    (60,   0.18),
-    (120,  0.18),
-    (210,  0.18),
-    (330,  0.18),
-    (480,  0.18),
-    (680,  0.18),
-    (940,  0.18),
-    (1280, 0.18),
-    (1700, 0.22),
-    (2200, 0.25),
+    (0,    0.60),  # immediate hard drop at the boundary
+    (50,   0.12),
+    (130,  0.12),
+    (260,  0.12),
+    (440,  0.12),
+    (680,  0.15),
+    (1000, 0.18),
+    (1500, 0.22),
 ]
 
 
@@ -404,6 +400,14 @@ def path_d_from_polygon(poly, to_svg) -> str:
 
 
 def world_mask_path_d(district_utm, to_svg) -> str:
+    """Build an evenodd path: world rectangle MINUS district exterior PLUS
+    district interior holes.
+
+    With evenodd:
+      - Outer rect:     fill IN     (1 crossing)
+      - District ext:   fill OUT    (2 crossings — district interior is unmasked)
+      - District holes: fill IN     (3 crossings — sub-district carve-outs ARE masked)
+    """
     outer = [
         (0, MAP_TOP),
         (POSTER_W_PT, MAP_TOP),
@@ -415,19 +419,29 @@ def world_mask_path_d(district_utm, to_svg) -> str:
         parts.append(f"L{x:.1f},{y:.1f}")
     parts.append("Z")
 
-    rings = []
-    if district_utm.geom_type == "Polygon":
-        rings.append(list(district_utm.exterior.coords))
-    else:
-        for poly in district_utm.geoms:
-            rings.append(list(poly.exterior.coords))
-
-    for ring in rings:
-        svg_pts = [to_svg(x, y) for x, y in ring]
+    polys = (
+        [district_utm] if district_utm.geom_type == "Polygon"
+        else list(district_utm.geoms)
+    )
+    for poly in polys:
+        # Exterior: punches a hole in the world mask (the district interior
+        # remains unmasked).
+        ext = list(poly.exterior.coords)
+        svg_pts = [to_svg(x, y) for x, y in ext]
         parts.append(f"M{svg_pts[0][0]:.1f},{svg_pts[0][1]:.1f}")
         for x, y in svg_pts[1:]:
             parts.append(f"L{x:.1f},{y:.1f}")
         parts.append("Z")
+        # Interior rings (carve-outs of other districts): re-fill so they ARE
+        # masked alongside the rest of the outside-world. Evenodd handles the
+        # alternation automatically.
+        for interior in poly.interiors:
+            int_coords = list(interior.coords)
+            svg_pts = [to_svg(x, y) for x, y in int_coords]
+            parts.append(f"M{svg_pts[0][0]:.1f},{svg_pts[0][1]:.1f}")
+            for x, y in svg_pts[1:]:
+                parts.append(f"L{x:.1f},{y:.1f}")
+            parts.append("Z")
 
     return "".join(parts)
 
@@ -822,110 +836,192 @@ SKIP_NAME_PATTERNS = (
 )
 
 
-def place_landuse_labels(landuse_polys, district_utm, to_svg, label_collision_bboxes):
-    """Label parks, schools, and water bodies with cluster-aware deduplication.
-
-    Rules:
-      - Sub-features whose representative point falls inside an already-labeled
-        polygon get skipped (this drops the cluster of "Goose Island Cove Park",
-        "Rocky Cove Park", etc. that sit inside Bidwell Park — Bidwell Park gets
-        labeled, the smaller named coves don't).
-      - Names matching SKIP_NAME_PATTERNS (paragliding etc.) are dropped — those
-        aren't parks, they're activity zones inside parks.
-      - Anchors closer than 200 svg-points to another placed park label get
-        skipped (catches the case where two adjacent OSM polygons aren't nested
-        but their labels still pile up).
-    """
-    parts = []
-    interior = district_utm.buffer(50)
-
-    # Sort larger polygons first so the umbrella feature (Bidwell Park) wins.
-    items = sorted(
-        [lu for lu in landuse_polys if lu.get("name")],
-        key=lambda lu: -lu["poly"].area,
+def _emit_place_label(name, cx, cy, color, size) -> str:
+    return (
+        f'<text x="{cx:.1f}" y="{cy:.1f}" '
+        f'font-family="{FONT_SERIF}" font-size="{size}" font-style="italic" '
+        f'font-weight="500" text-anchor="middle" dominant-baseline="middle" '
+        f'fill="{color}" stroke="{COLOR_PLACE_HALO}" stroke-width="2" '
+        f'paint-order="stroke" stroke-linejoin="round">{xml_escape(name)}</text>'
     )
 
-    placed_polys = []          # already-labeled landuse polygons (for containment)
-    placed_anchors = []        # (cx, cy) of placed labels (for proximity dedupe)
-    MIN_LABEL_SPACING_PT = 220
 
-    for lu in items:
+def _candidate_anchors_within(poly, base_anchor):
+    """Yield (utm_x, utm_y) anchor candidates: representative_point first,
+    then a ring of offsets inside the polygon at increasing radii.
+
+    Used so labels for adjacent polygons (Marsh / Little Chico Creek; Pleasant
+    Valley / Marigold) can find a non-overlapping spot inside their own polygon
+    instead of getting killed by their neighbor's bbox.
+    """
+    yield (base_anchor.x, base_anchor.y)
+    minx, miny, maxx, maxy = poly.bounds
+    # Try offsets in cardinal + diagonal directions at multiple radii (meters)
+    for radius_m in (50, 100, 160, 240):
+        for dx, dy in (
+            (0, -radius_m), (0, radius_m),
+            (-radius_m, 0), (radius_m, 0),
+            (-radius_m * 0.7, -radius_m * 0.7),
+            (radius_m * 0.7, -radius_m * 0.7),
+            (-radius_m * 0.7, radius_m * 0.7),
+            (radius_m * 0.7, radius_m * 0.7),
+        ):
+            x = base_anchor.x + dx
+            y = base_anchor.y + dy
+            if minx <= x <= maxx and miny <= y <= maxy and poly.contains(Point(x, y)):
+                yield (x, y)
+
+
+def place_landuse_labels(landuse_polys, district_utm, to_svg, label_collision_bboxes):
+    """Label parks, schools, and water bodies with class-aware rules.
+
+    Schools are processed FIRST and use a multi-position search inside their
+    polygon — when the representative-point would collide with an adjacent
+    school's bbox (Little Chico Creek vs Marsh; Marigold vs Pleasant Valley),
+    we walk a ring of UTM offsets and use the first non-colliding position.
+
+    Schools use a wider 800m inclusion radius so nearby schools just outside
+    the district line still appear as navigation landmarks.
+    """
+    parts = []
+    interior_tight = district_utm.buffer(50)
+    interior_schools = district_utm.buffer(800)
+    placed_polys = []
+    PARK_SPACING_PT = 220
+    WATER_SPACING_PT = 160
+    placed_anchors = []  # only used for parks/water proximity (schools rely on
+                         # bbox collision via the multi-anchor search)
+
+    def try_place(lu, color, size, spacing, interior_buf, use_multi_anchor=False):
+        nonlocal parts
         poly = lu["poly"]
-        cls = lu["class"]
         name = lu["name"]
-
-        if not poly.intersects(interior):
-            continue
+        if not poly.intersects(interior_buf):
+            return False
         if any(p in name.lower() for p in SKIP_NAME_PATTERNS):
-            continue
+            return False
         if len(name) > 40:
-            continue
-
-        # Sub-feature filter: skip anything whose anchor sits inside an
-        # already-labeled (larger) feature.
+            return False
         anchor = poly.representative_point()
+        # Sub-feature dedup (Goose Cove inside Bidwell, etc.) still applies.
         if any(
             placed_poly.contains(anchor) or placed_poly.contains(poly.centroid)
             for placed_poly in placed_polys
         ):
-            continue
+            return False
 
-        cx, cy = to_svg(anchor.x, anchor.y)
-
-        # Proximity dedupe — even when polygons aren't nested, two coves a few
-        # meters apart shouldn't both label.
-        too_close = any(
-            ((cx - px) ** 2 + (cy - py) ** 2) ** 0.5 < MIN_LABEL_SPACING_PT
-            for (px, py) in placed_anchors
-        )
-        if too_close:
-            continue
-
-        if cls in ("park", "grass", "forest", "cemetery", "sports", "playground"):
-            color = COLOR_PARK_LABEL
-        elif cls == "school":
-            color = COLOR_SCHOOL_LABEL
-        elif cls == "water":
-            color = COLOR_WATER_LABEL
-        else:
-            continue
-
-        size = LABEL_PLACE_PT
         label_w = estimate_text_width_pt(name, size)
         label_h = size * 1.2
-        bbox = (cx - label_w / 2, cy - label_h / 2,
-                cx + label_w / 2, cy + label_h / 2)
-        if any(rect_overlap(bbox, ob) for ob in label_collision_bboxes):
-            continue
 
-        parts.append(
-            f'<text x="{cx:.1f}" y="{cy:.1f}" '
-            f'font-family="{FONT_SERIF}" font-size="{size}" font-style="italic" '
-            f'font-weight="500" text-anchor="middle" dominant-baseline="middle" '
-            f'fill="{color}" stroke="{COLOR_PLACE_HALO}" stroke-width="2" '
-            f'paint-order="stroke" stroke-linejoin="round">{xml_escape(name)}</text>'
-        )
-        label_collision_bboxes.append(bbox)
-        placed_polys.append(poly)
-        placed_anchors.append((cx, cy))
+        # Candidate anchors: rep-point first, then ring search if the call site
+        # asked for multi-anchor placement (schools), single-shot otherwise.
+        if use_multi_anchor:
+            candidates = list(_candidate_anchors_within(poly, anchor))
+        else:
+            candidates = [(anchor.x, anchor.y)]
+
+        for utm_x, utm_y in candidates:
+            cx, cy = to_svg(utm_x, utm_y)
+            # Spacing test (single proximity check for non-school classes).
+            if not use_multi_anchor and spacing > 0:
+                too_close = any(
+                    ((cx - px) ** 2 + (cy - py) ** 2) ** 0.5 < spacing
+                    for (px, py, _) in placed_anchors
+                )
+                if too_close:
+                    return False
+            bbox = (cx - label_w / 2, cy - label_h / 2,
+                    cx + label_w / 2, cy + label_h / 2)
+            if any(rect_overlap(bbox, ob) for ob in label_collision_bboxes):
+                continue
+            parts.append(_emit_place_label(name, cx, cy, color, size))
+            label_collision_bboxes.append(bbox)
+            placed_polys.append(poly)
+            placed_anchors.append((cx, cy, lu["class"]))
+            return True
+        return False
+
+    named = [lu for lu in landuse_polys if lu.get("name")]
+
+    # ---- Schools first (use wider 800m radius so nearby schools just outside
+    #      the district still appear as navigation landmarks)
+    schools = sorted(
+        [lu for lu in named if lu["class"] == "school"],
+        key=lambda lu: -lu["poly"].area,
+    )
+    for lu in schools:
+        # use_multi_anchor=True lets schools find an alternate position inside
+        # their polygon when their representative-point bbox collides.
+        try_place(lu, COLOR_SCHOOL_LABEL, LABEL_PLACE_PT, 0, interior_schools,
+                  use_multi_anchor=True)
+
+    # ---- Parks (umbrella features first so Bidwell beats sub-cove names)
+    parks = sorted(
+        [lu for lu in named if lu["class"] in
+         ("park", "grass", "forest", "cemetery", "sports", "playground")],
+        key=lambda lu: -lu["poly"].area,
+    )
+    for lu in parks:
+        try_place(lu, COLOR_PARK_LABEL, LABEL_PLACE_PT, PARK_SPACING_PT, interior_tight,
+                  use_multi_anchor=False)
+
+    # ---- Water last
+    waters = sorted(
+        [lu for lu in named if lu["class"] == "water"],
+        key=lambda lu: -lu["poly"].area,
+    )
+    for lu in waters:
+        try_place(lu, COLOR_WATER_LABEL, LABEL_PLACE_PT, WATER_SPACING_PT, interior_tight,
+                  use_multi_anchor=False)
+
     return "\n".join(parts)
 
 
-def fade_rings_svg(district_utm, to_svg, buffer_base_m: float) -> str:
-    """Build a stack of overlapping paper-colored "outside" masks that fade
-    cumulatively as you move away from the district.
+def buffer_exterior_keep_holes(polygon, dist_m):
+    """Buffer the polygon's exterior outward by dist_m but keep its interior
+    holes at their ORIGINAL size.
 
-    Each layer is "the map area MINUS this buffered polygon" — i.e. it covers
-    *everything outside* the buffer, extending to the canvas edge. Layers
-    overlap, so cumulative opacity at point P is
-        1 - product(1 - layer_opacity_i for layers whose inner buffer is closer
-                    to the district than P).
-    Near the boundary only the first 1-2 layers cover, so fade is light;
-    far away every layer covers, so fade is deep. Result: smooth gradient.
+    Standard shapely.buffer(d) shrinks interior holes by d as well — which is
+    wrong for our fade mask. A peninsula carve-out 250m across vanishes after a
+    layer with buffer 250m+, and the entire peninsula starts being treated as
+    "inside the district" by that layer. This helper preserves the holes so
+    every fade layer's geometry has the same interior structure.
+    """
+    polys = (
+        [polygon] if polygon.geom_type == "Polygon"
+        else list(polygon.geoms)
+    )
+    result_polys = []
+    for p in polys:
+        ext_only = Polygon(p.exterior.coords)
+        buffered_ext = ext_only.buffer(dist_m)
+        for interior in p.interiors:
+            hole = Polygon(interior.coords)
+            buffered_ext = buffered_ext.difference(hole)
+        if buffered_ext.is_empty:
+            continue
+        if buffered_ext.geom_type == "Polygon":
+            result_polys.append(buffered_ext)
+        else:
+            result_polys.extend(buffered_ext.geoms)
+    if not result_polys:
+        return polygon
+    return unary_union(result_polys)
+
+
+def fade_rings_svg(district_utm, to_svg, buffer_base_m: float) -> str:
+    """Stack of overlapping paper-colored "outside" masks producing a soft fade.
+
+    Each layer covers *everything outside* the (exterior-buffered, holes-kept)
+    polygon and extends to the canvas edge. Layers overlap, so cumulative
+    opacity at a point P is `1 - product(1 - layer_opacity_i for layers whose
+    inner edge is closer to the district than P)`. Near the boundary one layer
+    covers (light fade); far away every layer covers (deep fade). Result:
+    smooth gradient AND uniform coverage of interior carve-outs.
     """
     parts = ['<g id="fade-mask">']
     for dist_m, opacity in FADE_LAYERS:
-        buf = district_utm.buffer(buffer_base_m + dist_m)
+        buf = buffer_exterior_keep_holes(district_utm, buffer_base_m + dist_m)
         d = world_mask_path_d(buf, to_svg)
         parts.append(
             f'<path d="{d}" fill="{MASK_FILL}" fill-opacity="{opacity}" '
@@ -1009,11 +1105,18 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
 
     # ---- District boundary: a soft paper-colored casing under a navy line.
     # Drawn AFTER the fade so it isn't dimmed by the mask layers near the edge.
+    # Includes interior holes (carve-outs of other districts) so the boundary
+    # wraps around the peninsula areas too.
     boundary_paths = []
-    if boundary_poly.geom_type == "Polygon":
-        rings = [list(boundary_poly.exterior.coords)]
-    else:
-        rings = [list(p.exterior.coords) for p in boundary_poly.geoms]
+    boundary_polys = (
+        [boundary_poly] if boundary_poly.geom_type == "Polygon"
+        else list(boundary_poly.geoms)
+    )
+    rings = []
+    for poly in boundary_polys:
+        rings.append(list(poly.exterior.coords))
+        for interior in poly.interiors:
+            rings.append(list(interior.coords))
     for ring in rings:
         svg_pts = [to_svg(x, y) for x, y in ring]
         parts = [f"M{svg_pts[0][0]:.1f},{svg_pts[0][1]:.1f}"]
