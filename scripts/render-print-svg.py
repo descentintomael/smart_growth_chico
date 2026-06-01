@@ -212,22 +212,25 @@ SHIELD_STYLES = {
     },
 }
 
-# Map fade — overlapping paper-colored layers that ramp aggressively at the
-# boundary, then taper. Each entry is
+# Map fade — overlapping paper-colored layers that drop hard at the boundary,
+# then keep compounding outward. Each entry is
 # (distance-from-buffered-boundary-meters, per-layer fade-opacity). Each layer
-# is rendered as "everything outside this buffered polygon" so they STACK.
+# is rendered as "everything outside this buffered polygon AND inside the
+# original interior holes". Layers overlap, so cumulative opacity at point P is
+# 1 − Π(1 − op_i) for every layer covering P.
 #
-# Tuned for: ~60% fade right at the boundary (dramatic drop), ~75% at 200m,
-# ~88% at the far edge.
+# Tuned for: ~80% fade right at the boundary, ~88% at the peninsula center
+# (~250m), ~95% at the far edge. Outside-district content drops to a faint
+# wash, including inside the carve-out hole.
 FADE_LAYERS = [
-    (0,    0.60),  # immediate hard drop at the boundary
-    (50,   0.12),
-    (130,  0.12),
-    (260,  0.12),
-    (440,  0.12),
-    (680,  0.15),
-    (1000, 0.18),
-    (1500, 0.22),
+    (0,    0.80),  # very strong immediate drop right at the boundary line
+    (30,   0.25),
+    (80,   0.20),
+    (180,  0.15),
+    (350,  0.15),
+    (620,  0.18),
+    (1000, 0.20),
+    (1600, 0.25),
 ]
 
 
