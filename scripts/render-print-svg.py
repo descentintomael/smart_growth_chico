@@ -95,16 +95,16 @@ FOOTER_PT = 14         # bumped from 12 per accessibility review
 # 17pt (state highways), with the bulk of the visual hierarchy living in the
 # 10-13pt secondary/tertiary range.
 ROAD_LABEL_PT = {
-    "motorway":         17,
-    "motorway_link":    14,
-    "trunk":            17,
-    "trunk_link":       14,
-    "primary":          15,
-    "primary_link":     12,
-    "secondary":        12,
-    "secondary_link":   10,
-    "tertiary":         10,
-    "tertiary_link":     9,
+    "motorway":         16,
+    "motorway_link":    13,
+    "trunk":            16,
+    "trunk_link":       13,
+    "primary":          13,
+    "primary_link":     11,
+    "secondary":        11,
+    "secondary_link":    9,
+    "tertiary":          9,
+    "tertiary_link":     8,
     "unclassified":      8,
     "residential":       7,
     "living_street":     7,
@@ -711,9 +711,9 @@ def aggregate_features(payload, district_utm):
             name = tags.get("name")
             if name:
                 bucket = by_name.setdefault(
-                    name, {"lines": [], "classes": set()}
+                    name, {"by_class": {}, "classes": set()}
                 )
-                bucket["lines"].append(ls)
+                bucket["by_class"].setdefault(highway, []).append(ls)
                 bucket["classes"].add(highway)
 
         # Route refs (for shield rendering). One way may carry multiple refs
@@ -1178,7 +1178,10 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         f'fill="none" stroke-linejoin="round" stroke-linecap="round"/>'
     )
 
-    # ---- Street labels via textPath, sized by OSM highway class
+    # ---- Street labels via textPath. One candidate per (name, OSM class)
+    # pair, so a road that changes class along its length (East 8th Street is
+    # primary as CA-32 west of the freeway, tertiary east of it) gets labels
+    # sized for each segment's actual classification.
     label_set = set(allowlist) | {
         name for name, b in by_name.items() if b["classes"] & MAJOR_CLASSES
     }
@@ -1187,35 +1190,30 @@ def render_svg(district_n, district_utm, highway_ways, landuse_polys, waterway_l
         bucket = by_name.get(name)
         if bucket is None:
             continue
-        # Pick the highest-class tag present on this way (lower CLASS_RANK = higher).
-        best_class = min(
-            (c for c in bucket["classes"] if c in CLASS_RANK),
-            key=lambda c: CLASS_RANK[c],
-            default="residential",
-        )
-        size_pt = ROAD_LABEL_PT.get(best_class, ROAD_LABEL_PT["residential"])
-        weight = ROAD_LABEL_WEIGHT.get(size_pt, 500)
-        # Color graded by tier
-        if size_pt >= 15:
-            color = ROAD_LABEL_COLOR_MAJOR
-        elif size_pt >= 10:
-            color = ROAD_LABEL_COLOR_MID
-        else:
-            color = ROAD_LABEL_COLOR_MINOR
-        # Halo width scales with text size so the proportions stay constant.
-        halo_w = max(0.8, size_pt * 0.12)
-        streets_for_label.append({
-            "name": name,
-            "lines": bucket["lines"],
-            "size_pt": size_pt,
-            "color": color,
-            "halo": COLOR_BG,
-            "halo_width": halo_w,
-            "weight": weight,
-            # Bigger roads label first so collision drops the residential side.
-            "priority": (10 - CLASS_RANK.get(best_class, 9))
-            + sum(ls.length for ls in bucket["lines"]) / 1000.0,
-        })
+        for highway_class, class_lines in bucket["by_class"].items():
+            if highway_class not in CLASS_RANK:
+                continue
+            size_pt = ROAD_LABEL_PT.get(highway_class, ROAD_LABEL_PT["residential"])
+            weight = ROAD_LABEL_WEIGHT.get(size_pt, 500)
+            if size_pt >= 13:
+                color = ROAD_LABEL_COLOR_MAJOR
+            elif size_pt >= 9:
+                color = ROAD_LABEL_COLOR_MID
+            else:
+                color = ROAD_LABEL_COLOR_MINOR
+            halo_w = max(0.8, size_pt * 0.12)
+            streets_for_label.append({
+                "name": name,
+                "lines": class_lines,
+                "size_pt": size_pt,
+                "color": color,
+                "halo": COLOR_BG,
+                "halo_width": halo_w,
+                "weight": weight,
+                # Higher class label first so collision drops smaller siblings.
+                "priority": (10 - CLASS_RANK.get(highway_class, 9))
+                + sum(ls.length for ls in class_lines) / 1000.0,
+            })
     labels = place_labels(streets_for_label, to_svg)
 
     out.append('<defs>')
