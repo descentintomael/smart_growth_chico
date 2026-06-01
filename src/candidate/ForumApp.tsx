@@ -19,7 +19,7 @@ function useNoIndexMeta() {
     meta.setAttribute('content', ROBOTS_META_CONTENT)
     if (!existing) document.head.appendChild(meta)
 
-    document.title = 'Forum venue map (private preview)'
+    document.title = 'Forum venue map'
 
     return () => {
       if (previous === null) {
