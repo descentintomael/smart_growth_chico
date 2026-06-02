@@ -58,6 +58,16 @@ await page.setContent(html, { waitUntil: 'load' })
 // Give the browser a beat to layout textPath glyphs
 await page.waitForTimeout(500)
 
-await page.screenshot({ path: resolve(outPath), omitBackground: false, type: 'png' })
+// Output type from extension — accept .jpg/.jpeg for print shops that want
+// smaller files (JPEG quality 92 is print-grade and 3-5x smaller than PNG).
+const isJpeg = /\.(jpg|jpeg)$/i.test(outPath)
+const opts = { path: resolve(outPath), omitBackground: false }
+if (isJpeg) {
+  opts.type = 'jpeg'
+  opts.quality = 92
+} else {
+  opts.type = 'png'
+}
+await page.screenshot(opts)
 await browser.close()
 console.log(`Saved: ${outPath} (${outW}x${outH})`)
