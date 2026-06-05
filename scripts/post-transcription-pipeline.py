@@ -41,8 +41,9 @@ def log(msg: str) -> None:
 
 def run_identify_speakers(clip_id: int) -> bool:
     """Invoke the identify_speakers script. It's a separate top-level script,
-    not a library, so we shell out."""
+    not a library, so we shell out. Nice'd to coexist with other GPU work."""
     cmd = [
+        "nice", "-n", "19",
         "python3",
         str(PROJECT_ROOT / "scripts" / "identify_speakers.py"),
         str(clip_id),
@@ -58,12 +59,16 @@ def run_identify_speakers(clip_id: int) -> bool:
     return False
 
 
-def process_validated(clip_id: int, skip_diarize: bool = False) -> None:
+def process_validated(
+    clip_id: int,
+    skip_diarize: bool = False,
+    skip_analyze: bool = False,
+) -> None:
     """Diarize -> identify -> analyze for a clip that's just been validated.
 
-    If skip_diarize is True (Phase 1), runs analyze without speaker
-    attribution. Run a separate Phase 2 pass with diarize+identify+re-analyze
-    once GPU contention with transcription is over.
+    Phase-1 invocation (--skip-analyze) is the right mode when Ollama is
+    serving a different model for another GPU workload — defer analyze so we
+    only thrash the model swap once, not 10 times.
     """
     if not skip_diarize:
         log(f"  diarize {clip_id}...")
@@ -83,6 +88,10 @@ def process_validated(clip_id: int, skip_diarize: bool = False) -> None:
         else:
             log(f"  no minutes JSON for {clip_id}; skipping identify_speakers")
 
+    if skip_analyze:
+        log(f"  analyze {clip_id} deferred (--skip-analyze)")
+        return
+
     log(f"  analyze {clip_id}...")
     try:
         analyze_meeting(clip_id)
@@ -91,7 +100,11 @@ def process_validated(clip_id: int, skip_diarize: bool = False) -> None:
         log(f"  analyze {clip_id} EXCEPTION: {e}")
 
 
-def process_transcribed(clip_id: int, skip_diarize: bool = False) -> None:
+def process_transcribed(
+    clip_id: int,
+    skip_diarize: bool = False,
+    skip_analyze: bool = False,
+) -> None:
     """Validate a clip; if it passes, kick into the post-validate chain."""
     log(f"validate {clip_id}...")
     try:
@@ -104,7 +117,7 @@ def process_transcribed(clip_id: int, skip_diarize: bool = False) -> None:
         log(f"  validate {clip_id} EXCEPTION: {e}")
         return
 
-    process_validated(clip_id, skip_diarize=skip_diarize)
+    process_validated(clip_id, skip_diarize=skip_diarize, skip_analyze=skip_analyze)
 
 
 def main() -> int:
@@ -112,11 +125,16 @@ def main() -> int:
     parser.add_argument("--once", action="store_true",
                         help="Process current queue and exit (don't poll forever)")
     parser.add_argument("--skip-diarize", action="store_true",
-                        help="Skip diarize+identify_speakers steps (Phase 1 use)")
+                        help="Skip diarize+identify_speakers steps")
+    parser.add_argument("--skip-analyze", action="store_true",
+                        help="Skip analyze step (Phase 1 — defer until Ollama is idle)")
     args = parser.parse_args()
 
     init_database()
-    log(f"post-transcription pipeline started (skip_diarize={args.skip_diarize})")
+    log(
+        f"post-transcription pipeline started "
+        f"(skip_diarize={args.skip_diarize}, skip_analyze={args.skip_analyze})"
+    )
 
     while True:
         # Pick up anything stuck at 'transcribed' (didn't get validated yet)
@@ -140,9 +158,17 @@ def main() -> int:
             continue
 
         for m in validated:
-            process_validated(m["clip_id"], skip_diarize=args.skip_diarize)
+            process_validated(
+                m["clip_id"],
+                skip_diarize=args.skip_diarize,
+                skip_analyze=args.skip_analyze,
+            )
         for m in transcribed:
-            process_transcribed(m["clip_id"], skip_diarize=args.skip_diarize)
+            process_transcribed(
+                m["clip_id"],
+                skip_diarize=args.skip_diarize,
+                skip_analyze=args.skip_analyze,
+            )
 
 
 if __name__ == "__main__":
