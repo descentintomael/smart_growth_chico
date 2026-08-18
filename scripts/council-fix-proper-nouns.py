@@ -64,8 +64,10 @@ FLAT_CORRECTIONS: list[tuple[str, str]] = [
     ("Bamlett", "Bamlet"),
     ("Hagen Lane", "Hegan Lane"),
     ("Stillson Canyon", "Stilson Canyon"),
-    ("Bibble Park", "Bidwell Park"),
-    ("Bimble Park", "Bidwell Park"),
+    # Bibble/Bimble are not words in any other context here — they are always
+    # Bidwell, whether the speaker meant the park, the mansion or the avenue.
+    ("Bibble", "Bidwell"),
+    ("Bimble", "Bidwell"),
     ("Bainey Lane", "Baney Lane"),
     ("Tiger Pond", "Teichert Pond"),
     ("Tigard Ponds", "Teichert Ponds"),
@@ -255,6 +257,95 @@ def apply_corrections(text: str, tally: Counter) -> str:
     return text
 
 
+def phrase_replacements() -> list[tuple[list[str], list[str]]]:
+    """Flat corrections expressed as token sequences, for word-level repair.
+
+    Whisper stores each word of a segment as its own JSON string, so a phrase
+    rule like "Hagen Lane" -> "Hegan Lane" matches the segment text but cannot
+    span the separator between two word tokens. The result is a transcript
+    whose text says "Hegan Lane" while its own word timestamps still say
+    "Hagen". Every correction pass so far has left that mismatch in place.
+    """
+    pairs = []
+    for wrong, right in FLAT_CORRECTIONS:
+        wrong_tokens, right_tokens = wrong.split(), right.split()
+        # Same-length only: replacing n tokens with m would desynchronise the
+        # per-word timestamps that sit alongside them.
+        if len(wrong_tokens) == len(right_tokens):
+            pairs.append((wrong_tokens, right_tokens))
+    return pairs
+
+
+PHRASE_REPLACEMENTS = phrase_replacements()
+
+
+def fix_word_tokens(payload: dict, tally: Counter) -> bool:
+    """Repair proper nouns inside segments[].words[], returning True if changed.
+
+    Matches whole token windows rather than bare words: "Hagen" is only
+    corrected when the following token is "Lane", so a legitimate surname is
+    never rewritten on the strength of one ambiguous token.
+    """
+    changed = False
+    for segment in payload.get("segments") or []:
+        words = segment.get("words")
+        if not isinstance(words, list):
+            continue
+
+        for index, entry in enumerate(words):
+            if not isinstance(entry, dict) or "word" not in entry:
+                continue
+
+            for wrong_tokens, right_tokens in PHRASE_REPLACEMENTS:
+                span = len(wrong_tokens)
+                if index + span > len(words):
+                    continue
+                window = words[index:index + span]
+                if not all(isinstance(w, dict) and "word" in w for w in window):
+                    continue
+
+                # Compare on the bare word, ignoring the leading space and any
+                # trailing punctuation Whisper attaches to the final token.
+                actual = [str(w["word"]).strip() for w in window]
+                stripped = [a.rstrip(".,;:!?") for a in actual]
+                if [s.lower() for s in stripped] != [t.lower() for t in wrong_tokens]:
+                    continue
+
+                for offset, (target, replacement) in enumerate(zip(window, right_tokens)):
+                    original = str(target["word"])
+                    leading = original[: len(original) - len(original.lstrip())]
+                    trailing = actual[offset][len(stripped[offset]):]
+                    if stripped[offset].isupper():
+                        replacement = replacement.upper()
+                    target["word"] = f"{leading}{replacement}{trailing}"
+
+                tally[f"words: {' '.join(wrong_tokens)} -> {' '.join(right_tokens)}"] += 1
+                changed = True
+                break
+
+    return changed
+
+
+def fix_word_token_files(paths: list[Path], tally: Counter, backup: Path | None) -> int:
+    """Apply word-token repair across transcript JSON files."""
+    touched = 0
+    for path in paths:
+        try:
+            payload = json.loads(path.read_text())
+        except (json.JSONDecodeError, OSError):
+            continue
+        if not isinstance(payload, dict) or not payload.get("segments"):
+            continue
+        if not fix_word_tokens(payload, tally):
+            continue
+        touched += 1
+        if backup:
+            if not (backup / path.name).exists():
+                shutil.copy2(path, backup / path.name)
+            path.write_text(json.dumps(payload, ensure_ascii=False))
+    return touched
+
+
 def transcript_files(clip_id: int | None) -> list[Path]:
     """Transcript JSON files, optionally narrowed to a single clip."""
     pattern = f"{clip_id}_*.json" if clip_id else "*.json"
@@ -342,6 +433,11 @@ def parse_args() -> argparse.Namespace:
         "--clip-id", type=int, default=None,
         help="Restrict to a single meeting, for use as a post-transcription step.",
     )
+    parser.add_argument(
+        "--word-tokens", action="store_true",
+        help="Also repair segments[].words[], which phrase rules cannot reach. "
+             "Rewrites the JSON rather than patching raw text.",
+    )
     return parser.parse_args()
 
 
@@ -364,6 +460,10 @@ def main() -> int:
     paths = transcript_files(args.clip_id)
     touched = fix_files(paths, tally, backup)
     print(f"transcript files changed: {touched} of {len(paths)}")
+
+    if args.word_tokens:
+        word_touched = fix_word_token_files(paths, tally, backup)
+        print(f"word-token files changed: {word_touched} of {len(paths)}")
 
     conn = sqlite3.connect(DATA_DIR / "meetings.db")
     conn.row_factory = sqlite3.Row
