@@ -138,6 +138,21 @@ def build_context_rules() -> list[tuple[str, re.Pattern, callable]]:
         r"\b(?:Marion|Miriam|Mary)\s+Park\b",
         lambda m: keep_case("Meriam Park", m.group(0)),
     )
+    # The flat "Merriam Park" rule joins words with \s+, so the hyphenated form
+    # slips past it.
+    rule(
+        "Meriam Park (hyphenated)",
+        r"\bMerriam[-–]Park\b",
+        lambda m: keep_case("Meriam Park", m.group(0)),
+    )
+    # Speakers also say the name bare ("places like Merriam", "the Merriam
+    # project"). Every bare occurrence in this corpus is the park; the only
+    # realistic false positive is the dictionary, which is excluded.
+    rule(
+        "Meriam (bare)",
+        r"\bMerriam(s?)\b(?![-\s]*Webster)",
+        lambda m: keep_case("Meriam" + m.group(1), m.group(0)),
+    )
     # Only these two orgs are really "North Valley" — Northern Valley Indian
     # Health is correct and is deliberately left alone.
     rule(
