@@ -185,9 +185,12 @@ def build_context_rules() -> list[tuple[str, re.Pattern, callable]]:
         rf"\b({TITLE}\s+|Mark\s+)Sorenson\b",
         lambda m: m.group(1) + "Sorensen",
     )
+    # The canonical form matches this pattern too, so without the lookahead the
+    # rule rewrites its own output on every run and the tally reports hundreds
+    # of "corrections" that changed nothing.
     rule(
         "Bykerk-Kauffman",
-        r"\bByker[k]?[-\s]?Kau?f+man\b",
+        r"\b(?!Bykerk-Kauffman\b)Byker[k]?[-\s]?Kau?f+man\b",
         lambda m: keep_case("Bykerk-Kauffman", m.group(0)),
     )
     rule(
