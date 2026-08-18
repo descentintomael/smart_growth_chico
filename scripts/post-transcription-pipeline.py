@@ -42,9 +42,13 @@ def log(msg: str) -> None:
 def run_identify_speakers(clip_id: int) -> bool:
     """Invoke the identify_speakers script. It's a separate top-level script,
     not a library, so we shell out. Nice'd to coexist with other GPU work."""
+    # sys.executable, not bare "python3": this pipeline runs under the project
+    # venv, but "python3" resolves to the Homebrew interpreter, which has none
+    # of the project's dependencies. That made every identify_speakers call die
+    # with ModuleNotFoundError: rich, silently costing speaker attribution.
     cmd = [
         "nice", "-n", "19",
-        "python3",
+        sys.executable,
         str(PROJECT_ROOT / "scripts" / "identify_speakers.py"),
         str(clip_id),
     ]

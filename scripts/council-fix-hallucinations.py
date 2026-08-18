@@ -147,8 +147,19 @@ def collapse_repeats(text: str, tally: Counter) -> str:
 
 
 def transcript_paths(clip_id: int | None, suffix: str) -> list[Path]:
-    """Transcript files of a given kind, optionally for one clip."""
-    pattern = f"{clip_id}_*{suffix}" if clip_id else f"*{suffix}"
+    """Transcript files of a given kind, optionally for one clip.
+
+    Model transcripts are named <clip>_large_v3.json / <clip>_medium.json, but
+    the diarization file is just <clip>_diarization.json — so a single
+    "<clip>_*<suffix>" glob silently matches nothing for diarization and the
+    clip-scoped run quietly skips it.
+    """
+    if clip_id is None:
+        pattern = f"*{suffix}"
+    elif suffix == ".json":
+        pattern = f"{clip_id}_*{suffix}"
+    else:
+        pattern = f"{clip_id}{suffix}"
     return sorted((DATA_DIR / "transcripts").glob(pattern))
 
 
