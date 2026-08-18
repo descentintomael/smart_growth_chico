@@ -19,6 +19,10 @@ AUDIO_DIR="$HOME/Projects/council-meeting-analyzer/data/audio"
 LOG_DIR="/tmp/parallel-dl-logs"
 CONCURRENCY="${1:-2}"
 
+# As of Aug 2026 archive-stream.granicus.com returns 403 Forbidden to ffmpeg's
+# default User-Agent. A browser UA gets 200. Without this every download fails.
+BROWSER_UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+
 mkdir -p "$LOG_DIR"
 
 # Priority SQL: dated 2026 City Council meetings, newest first; then anything
@@ -58,8 +62,10 @@ start_download() {
   local clip_id="$1" url="$2"
   local out="$AUDIO_DIR/$clip_id.mp3"
   local log="$LOG_DIR/$clip_id.log"
-  print -- ">> spawning ffmpeg for clip $clip_id -> $out"
-  nohup ffmpeg -y -i "$url" \
+  # Progress chatter goes to stderr: this function's stdout IS its return
+  # value, and the caller reads only the first line of it.
+  print -u2 -- ">> spawning ffmpeg for clip $clip_id -> $out"
+  nohup ffmpeg -y -user_agent "$BROWSER_UA" -i "$url" \
     -vn -acodec libmp3lame -q:a 2 -map 0:a:0 \
     "$out" > "$log" 2>&1 &
   local pid=$!
@@ -88,10 +94,12 @@ while (( ${#active_clips[@]} < CONCURRENCY )); do
   row=$(claim_next) || break
   read -r clip_id url <<<"${row//|/ }"
   result=$(start_download "$clip_id" "$url")
-  read -r cid pid path <<<"$result"
+  # NB: never name a variable `path` here — in zsh it is tied to $PATH, so
+  # assigning a filename to it wipes the command search path mid-run.
+  read -r cid pid out_path <<<"$result"
   active_clips+=("$cid")
   active_pids+=("$pid")
-  active_paths+=("$path")
+  active_paths+=("$out_path")
 done
 
 # Main loop: when any active ffmpeg exits, mark it done and queue the next.
@@ -104,8 +112,8 @@ while (( ${#active_clips[@]} > 0 )); do
     if ! kill -0 "$pid" 2>/dev/null; then
       # Process exited
       cid=${active_clips[$i]}
-      path=${active_paths[$i]}
-      mark_done "$cid" "$path"
+      out_path=${active_paths[$i]}
+      mark_done "$cid" "$out_path"
       # Remove from arrays
       active_clips[$i]=()
       active_pids[$i]=()
