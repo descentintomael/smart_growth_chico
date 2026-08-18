@@ -71,6 +71,7 @@ FLAT_CORRECTIONS: list[tuple[str, str]] = [
     ("Bainey Lane", "Baney Lane"),
     ("Tiger Pond", "Teichert Pond"),
     ("Tigard Ponds", "Teichert Ponds"),
+    ("Tigard Pond", "Teichert Pond"),
     ("Myers Street", "Meyers Street"),
     ("Cusick Avenue", "Cussick Avenue"),
     ("Cusick Apartments", "Cussick Apartments"),
