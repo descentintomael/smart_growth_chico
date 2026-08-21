@@ -1,0 +1,109 @@
+#!/bin/zsh
+# Block restricted material from entering a commit in this PUBLIC repo.
+#
+# This exists because the issue tracker auto-exports every issue to a JSONL
+# file inside the repo. Anything typed into an issue title or description was
+# therefore one `git push` away from being public, with no review step in
+# between. That directory is now gitignored; this hook is the backstop.
+#
+# WHY THE PATTERNS LIVE IN A SEPARATE FILE
+#
+# The sensitive strings are NOT in this file, deliberately. A blocklist that
+# names a data vendor and its record fields is itself a disclosure of both the
+# vendor and the fact that licensed records are held locally — the exact thing
+# being guarded against. An earlier version inlined them and correctly refused
+# to let itself be committed.
+#
+# So: this file holds the logic and is tracked. The strings live in
+#   .githooks/blocked-patterns.local
+# one extended-regex pattern per line, '#' for comments. That path is already
+# covered by the root .gitignore's `*.local` rule and must never be tracked.
+#
+# The structural checks below need no secret strings and run unconditionally.
+#
+# It fails CLOSED. Override only with a deliberate `git commit --no-verify`.
+#
+# Install (once per clone):
+#   git config core.hooksPath .githooks
+
+set -uo pipefail
+
+HOOK_DIR=${0:a:h}
+PATTERN_FILE="$HOOK_DIR/blocked-patterns.local"
+
+staged_files=$(git diff --cached --name-only --diff-filter=ACMR)
+[[ -z "$staged_files" ]] && exit 0
+
+# Added lines only, and never this hook's own directory: the hook must remain
+# committable, and its contents are reviewed source rather than data.
+added=$(git diff --cached --diff-filter=ACMR -U0 -- . ':(exclude).githooks/' \
+        | grep '^+' | grep -v '^+++' || true)
+
+fail=0
+report() {
+  if (( fail == 0 )); then
+    print -u2 ""
+    print -u2 "COMMIT BLOCKED — restricted material in staged changes."
+    print -u2 "This repository is PUBLIC."
+    print -u2 ""
+  fi
+  fail=1
+  print -u2 "  ✗ $1"
+  [[ -n "${2:-}" ]] && print -u2 "      $2"
+}
+
+# --- Structural checks (no sensitive strings required) ----------------------
+
+# 1. The issue tracker's export directory must never be tracked again.
+if print -r -- "$staged_files" | grep -qE '(^|/)\.beads/'; then
+  report "staged path under the issue-tracker directory" \
+         "it is gitignored on purpose; do not re-add it"
+fi
+
+# 2. Anything under public/ is copied verbatim into dist/ and published, so a
+#    gitignore entry there is NOT protection. Catch obvious record dumps.
+while IFS= read -r f; do
+  [[ -n "$f" && -f "$f" ]] || continue
+  if grep -qEi 'registrant|date_of_birth|\bDOB\b|voter_id' "$f" 2>/dev/null; then
+    report "public/ file appears to hold person-level records: $f" \
+           "public/ is published verbatim; gitignoring a file there does nothing"
+  fi
+done <<< "$(print -r -- "$staged_files" | grep -E '^public/' || true)"
+
+# 3. A .local file must never be staged — that suffix marks restricted paths.
+if print -r -- "$staged_files" | grep -qE '\.local$'; then
+  report "staged a .local path" \
+         "that suffix marks restricted local-only files"
+fi
+
+# --- Content checks (require the local pattern file) ------------------------
+
+if [[ -r "$PATTERN_FILE" ]]; then
+  lineno=0
+  while IFS= read -r pattern; do
+    (( lineno++ ))
+    [[ -z "$pattern" || "$pattern" == \#* ]] && continue
+    if print -r -- "$added" | grep -qEi -- "$pattern"; then
+      # Report the blocklist LINE NUMBER, never the pattern itself. Echoing
+      # the matched term would reproduce it in terminal scrollback, CI logs
+      # and screenshots — reintroducing the disclosure from another angle.
+      report "an added line matched blocklist rule on line $lineno" \
+             "see .githooks/blocked-patterns.local:$lineno (local-only)"
+    fi
+  done < "$PATTERN_FILE"
+else
+  print -u2 ""
+  print -u2 "  ! No blocklist at .githooks/blocked-patterns.local"
+  print -u2 "    Structural checks ran; CONTENT checks did NOT."
+  print -u2 "    Recreate it before trusting this hook on a fresh clone."
+  print -u2 ""
+fi
+
+if (( fail )); then
+  print -u2 ""
+  print -u2 "If this is genuinely a false positive: git commit --no-verify"
+  print -u2 ""
+  exit 1
+fi
+
+exit 0

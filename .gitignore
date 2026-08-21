@@ -50,8 +50,17 @@ lerna-debug.log*
 test-results/
 *.observations.json
 
+# Local session notes — not for a public repo
+docs/session-logs/
+
+# Local working files and source evidence — not for a public repo
+scratchpad/
+
 # Beads / Dolt files (added by bd init)
 .dolt/
 *.db
 .beads-credential-key
 __pycache__/
+
+# Local issue-tracker state — never tracked
+.beads/
